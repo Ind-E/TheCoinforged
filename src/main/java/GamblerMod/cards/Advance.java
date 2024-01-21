@@ -1,17 +1,18 @@
 package GamblerMod.cards;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
+import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-import java.util.concurrent.ThreadLocalRandom;
+public class Advance extends BaseCard{
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
-public class LuckyDefend extends BaseCard{
-
-    public static final String ID = makeID(LuckyDefend.class.getSimpleName());
+    public static final String ID = makeID(Advance.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Gambler.Enums.CARD_COLOR, 
             CardType.SKILL, 
@@ -20,18 +21,15 @@ public class LuckyDefend extends BaseCard{
             0 
     );
 
-    public LuckyDefend() {
+    public Advance() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
-        tags.add(CardTags.STARTER_DEFEND);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.block = ThreadLocalRandom.current().nextInt(1, 6 + 1);
-        if (this.upgraded) {
-            this.block += 3;
-        } 
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new DrawCardAction(p, this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1)));
     }
 
 }

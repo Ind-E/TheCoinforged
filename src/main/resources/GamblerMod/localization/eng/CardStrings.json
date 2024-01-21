@@ -13,5 +13,26 @@
     "NAME": "Lucky Strike",
     "DESCRIPTION": "Deal [E] [E] damage.",
     "UPGRADE_DESCRIPTION": "Deal [E] [E] +3 damage."
+  },
+  "${modID}:LuckyDefend": {
+    "NAME": "Lucky Strike",
+    "DESCRIPTION": "Gain [E] Block.",
+    "UPGRADE_DESCRIPTION": "Gain [E] +3 Block."
+  },
+  "${modID}:StrikeGambler": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:DefendGambler": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:Advance": {
+    "NAME": "Advance",
+    "DESCRIPTION": "Draw !M! Cards. NL draw 1 fewer card next turn."
+  },
+  "${modID}:AllIn": {
+    "NAME": "All In",
+    "DESCRIPTION": "Deal !D! Damage. You can't gain Block from cards next turn."
   }
 }

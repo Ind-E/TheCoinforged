@@ -82,8 +82,15 @@ public class Gambler extends CustomPlayer {
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
         retVal.add(GamblerMod.cards.LuckyStrike.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Neutralize.ID);
+        retVal.add(GamblerMod.cards.StrikeGambler.ID);
+        retVal.add(GamblerMod.cards.StrikeGambler.ID);
+        retVal.add(GamblerMod.cards.StrikeGambler.ID);
+        retVal.add(GamblerMod.cards.LuckyDefend.ID);
+        retVal.add(GamblerMod.cards.DefendGambler.ID);
+        retVal.add(GamblerMod.cards.DefendGambler.ID);
+        retVal.add(GamblerMod.cards.DefendGambler.ID);
+        retVal.add(GamblerMod.cards.Advance.ID);
+        retVal.add(GamblerMod.cards.AllIn.ID);
 
         return retVal;
     }

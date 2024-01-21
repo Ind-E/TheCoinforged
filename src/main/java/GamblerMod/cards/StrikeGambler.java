@@ -5,15 +5,14 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-import java.util.concurrent.ThreadLocalRandom;
+public class StrikeGambler extends BaseCard{
+    private static final int DAMAGE = 6;
+    private static final int UPG_DAMAGE = 3;
 
-public class LuckyStrike extends BaseCard{
-
-    public static final String ID = makeID(LuckyStrike.class.getSimpleName());
+    public static final String ID = makeID(StrikeGambler.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Gambler.Enums.CARD_COLOR, 
             CardType.ATTACK, 
@@ -22,16 +21,15 @@ public class LuckyStrike extends BaseCard{
             1 
     );
 
-    public LuckyStrike() {
+    public StrikeGambler() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
+        setDamage(DAMAGE, UPG_DAMAGE); 
+        tags.add(CardTags.STARTER_STRIKE);
+        tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.damage = ThreadLocalRandom.current().nextInt(1, 6 + 1) + ThreadLocalRandom.current().nextInt(1, 6 + 1);
-        if (this.upgraded) {
-            this.damage += 3;
-        } 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
     }
 

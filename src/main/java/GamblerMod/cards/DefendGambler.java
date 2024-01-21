@@ -1,37 +1,39 @@
 package GamblerMod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-import java.util.concurrent.ThreadLocalRandom;
+public class DefendGambler extends BaseCard{
+    private static final int BLOCK = 5;
+    private static final int UPG_BLOCK = 3;
 
-public class LuckyDefend extends BaseCard{
-
-    public static final String ID = makeID(LuckyDefend.class.getSimpleName());
+    public static final String ID = makeID(DefendGambler.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Gambler.Enums.CARD_COLOR, 
             CardType.SKILL, 
             CardRarity.BASIC, 
             CardTarget.NONE, 
-            0 
+            1 
     );
 
-    public LuckyDefend() {
+    public DefendGambler() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
+        setBlock(BLOCK, UPG_BLOCK);
         tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.block = ThreadLocalRandom.current().nextInt(1, 6 + 1);
-        if (this.upgraded) {
-            this.block += 3;
-        } 
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new GainBlockAction(p, p, block));
     }
 
 }
