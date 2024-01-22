@@ -2,10 +2,12 @@ package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import GamblerMod.character.Gambler;
+import GamblerMod.powers.PlayerAppliedDrawReductionPower;
 import GamblerMod.util.CardStats;
 
 public class Advance extends BaseCard{
@@ -29,7 +31,8 @@ public class Advance extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1)));
+        //UNINTENDED: draw reduction happens for 2 turns
+        addToTop(new ApplyPowerAction(p, p, new PlayerAppliedDrawReductionPower(p, 1)));
     }
 
 }

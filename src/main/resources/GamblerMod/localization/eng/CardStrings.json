@@ -11,12 +11,12 @@
   },
   "${modID}:LuckyStrike": {
     "NAME": "Lucky Strike",
-    "DESCRIPTION": "Deal [E] [E] damage.",
+    "DESCRIPTION": "Deal [E] [E]  damage.",
     "UPGRADE_DESCRIPTION": "Deal [E] [E] +3 damage."
   },
   "${modID}:LuckyDefend": {
     "NAME": "Lucky Defend",
-    "DESCRIPTION": "Gain [E] Block.",
+    "DESCRIPTION": "Gain [E]  Block.",
     "UPGRADE_DESCRIPTION": "Gain [E] +3 Block."
   },
   "${modID}:StrikeGambler": {
@@ -34,5 +34,9 @@
   "${modID}:AllIn": {
     "NAME": "All In",
     "DESCRIPTION": "Deal !D! Damage. NL You cannot gain Block from cards next turn."
+  },
+  "${modID}:Gamble": {
+    "NAME": "Gamble",
+    "DESCRIPTION": "If you win next turn, gain !M! Gold."
   }
 }
