@@ -15,7 +15,7 @@ import GamblerMod.util.CardStats;
 
 public class Gamble extends BaseCard{
     private static final int MAGIC = 40;
-    private static final int UPG_MAGIC = 50;
+    private static final int UPG_MAGIC = 10;
 
     public static final String ID = makeID(Gamble.class.getSimpleName());
     private static final CardStats info = new CardStats(

@@ -80,14 +80,13 @@ public class Gambler extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(GamblerMod.cards.StrikeGambler.ID);
-        retVal.add(GamblerMod.cards.StrikeGambler.ID);
-        retVal.add(GamblerMod.cards.StrikeGambler.ID);
-        retVal.add(GamblerMod.cards.LuckyStrike.ID);
+        retVal.add(GamblerMod.cards.RollRed.ID);
+        retVal.add(GamblerMod.cards.RollRed.ID);
+        retVal.add(GamblerMod.cards.RollRed.ID);
+        retVal.add(GamblerMod.cards.RollRed.ID);
         retVal.add(GamblerMod.cards.DefendGambler.ID);
         retVal.add(GamblerMod.cards.DefendGambler.ID);
         retVal.add(GamblerMod.cards.DefendGambler.ID);
-        retVal.add(GamblerMod.cards.LuckyDefend.ID);
         retVal.add(GamblerMod.cards.Advance.ID);
         retVal.add(GamblerMod.cards.AllIn.ID);
 
@@ -98,7 +97,6 @@ public class Gambler extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BustedCrown.ID);
         retVal.add(PrismaticShard.ID);
 
         return retVal;

@@ -38,5 +38,54 @@
   "${modID}:Gamble": {
     "NAME": "Gamble",
     "DESCRIPTION": "If you win next turn, gain !M! Gold."
+  },
+  "${modID}:RedOne": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedTwo": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedThree": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedFour": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedFive": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedSix": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedSeven": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedEight": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedNine": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RedTen": {
+    "NAME": "Red Die",
+    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+  },
+  "${modID}:RollRed": {
+    "NAME": "Roll Red",
+    "DESCRIPTION": "Add !M! *Red *Dice to your hand."
+  },
+  "${modID}:Advantage": {
+    "NAME": "Gain the Advantage",
+    "DESCRIPTION": "Gain 1 *Advantage for each *Die in your hand.",
+    "UPGRADE_DESCRIPTION": "Gain 1 *Advantage for each *Die in your hand. NL Retain."
   }
 }

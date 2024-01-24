@@ -12,9 +12,24 @@
     ]
   },
   "${modID}:GamblePower": {
-    "NAME": "Gamble",
+    "NAME": "Risk",
     "DESCRIPTIONS": [
-      "If you win with exactly 1 stack remaining, gain Gold."
+      "If you win next turn, gain #b",
+      " Gold."
+    ]
+  },
+  "${modID}:GoldIfWinPower": {
+    "NAME": "Reward",
+    "DESCRIPTIONS": [
+      "If you win this turn, gain #b",
+      " Gold."
+    ]
+  },
+  "${modID}:AdvantagePower": {
+    "NAME": "Advantage",
+    "DESCRIPTIONS": [
+      "Whenever you roll #yDice, roll #b",
+      " extra times and take the highest roll."
     ]
   }
 }
