@@ -33,59 +33,79 @@
   },
   "${modID}:AllIn": {
     "NAME": "All In",
-    "DESCRIPTION": "Deal !D! Damage. NL You cannot gain Block from cards next turn."
+    "DESCRIPTION": "Deal !D! damage. NL You cannot gain Block from cards next turn."
   },
   "${modID}:Gamble": {
-    "NAME": "Gamble",
-    "DESCRIPTION": "If you win next turn, gain !M! Gold."
+    "NAME": "Risky Investment",
+    "DESCRIPTION": "Lose 10 Gold. NL If you win next turn, gain !M! Gold."
   },
   "${modID}:RedOne": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedTwo": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedThree": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedFour": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedFive": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedSix": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedSeven": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedEight": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedNine": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RedTen": {
     "NAME": "Red Die",
-    "DESCRIPTION": "Deal !D! Damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   },
   "${modID}:RollRed": {
     "NAME": "Roll Red",
     "DESCRIPTION": "Add !M! *Red *Dice to your hand."
   },
   "${modID}:Advantage": {
-    "NAME": "Gain the Advantage",
+    "NAME": "Gain Advantage",
     "DESCRIPTION": "Gain 1 *Advantage for each *Die in your hand.",
     "UPGRADE_DESCRIPTION": "Gain 1 *Advantage for each *Die in your hand. NL Retain."
+  },
+  "${modID}:SmallBlind": {
+    "NAME": "Small Blind",
+    "DESCRIPTION": "Gain !B! Block. NL Lose !M! Gold."
+  },
+  "${modID}:CursedDie": {
+    "NAME": "Cursed Die",
+    "DESCRIPTION": "1/6 chance to permanently remove a *Cursed *Die from your deck when played. NL Exhaust."
+  },
+  "${modID}:SunkCost": {
+    "NAME": "Sunk Cost",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Permanently increase this card's Block or damage by !M!. NL Exhaust."
+  },
+  "${modID}:SnakeEyes": {
+    "NAME": "Snake Eyes",
+    "DESCRIPTION": "*Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer."
+  },
+  "${modID}:RedKing": {
+    "NAME": "Red King",
+    "DESCRIPTION": "*Red *Dice now damage ALL enemies. NL Add !M! *Red *Dice to your hand."
   }
 }

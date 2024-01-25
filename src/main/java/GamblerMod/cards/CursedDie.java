@@ -1,35 +1,39 @@
 package GamblerMod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import java.util.concurrent.ThreadLocalRandom;
+
+import com.badlogic.gdx.scenes.scene2d.actions.RemoveAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
-import GamblerMod.powers.GamblePower;
 import GamblerMod.util.CardStats;
+import basemod.BaseMod;
 
-public class Gamble extends BaseCard{
-    private static final int MAGIC = 50;
-    private static final int UPG_MAGIC = 10;
+public class CursedDie extends BaseCard{
 
-    public static final String ID = makeID(Gamble.class.getSimpleName());
+    public static final String ID = makeID(CursedDie.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.RARE, 
+            CardType.CURSE, 
+            CardRarity.SPECIAL, 
             CardTarget.NONE, 
             1 
     );
 
-    public Gamble() {
+    public CursedDie() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
-        setMagic(MAGIC, UPG_MAGIC);
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.player.loseGold(10);
-        addToBot(new ApplyPowerAction(p, p, new GamblePower(p, this.magicNumber)));
+        int num = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        AbstractDungeon.player.masterDeck.removeCard(CursedDie.ID);
+        if (num == 6) {
+            
+        }
+
     }
 
 }

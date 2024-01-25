@@ -31,5 +31,17 @@
       "Whenever you roll #yDice, roll #b",
       " extra times and take the highest roll."
     ]
+  },
+  "${modID}:SnakeEyesPower": {
+    "NAME": "Snake Eyes",
+    "DESCRIPTIONS": [
+      "#yDice rolls are #b1."
+    ]
+  },
+  "${modID}:RedKingPower": {
+    "NAME": "Red King",
+    "DESCRIPTIONS": [
+      "#yRed #yDice damage ALL enemies."
+    ]
   }
 }

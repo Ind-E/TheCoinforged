@@ -10,4 +10,8 @@ public class RedSeven extends RedDieBase{
         super(ID, DAMAGE, UPG_DAMAGE);
     }
 
+    public RedSeven(boolean redKingActive) {
+        super(ID, info_all, DAMAGE, UPG_DAMAGE, redKingActive);
+    }
+
 }

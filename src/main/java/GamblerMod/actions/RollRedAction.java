@@ -4,6 +4,8 @@ import static GamblerMod.GamblerMod.makeID;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -24,6 +26,8 @@ import GamblerMod.cards.tempCards.RedTen;
 import GamblerMod.cards.tempCards.RedThree;
 import GamblerMod.cards.tempCards.RedTwo;
 import GamblerMod.powers.AdvantagePower;
+import GamblerMod.powers.RedKingPower;
+import GamblerMod.powers.SnakeEyesPower;
 
 
 public class RollRedAction extends AbstractGameAction{
@@ -31,6 +35,7 @@ public class RollRedAction extends AbstractGameAction{
     private int maxroll = 6;
     private int magic = 0;
     private AbstractPlayer player;
+    private boolean redKingActive = false;
 
     public RollRedAction(AbstractCreature owner, int magic) {
         this.player = AbstractDungeon.player;
@@ -45,7 +50,10 @@ public class RollRedAction extends AbstractGameAction{
 
     public AbstractCard roll() {
         int dmg;
-        if (player.hasPower(AdvantagePower.POWER_ID)) {
+        if (player.hasPower(SnakeEyesPower.POWER_ID)) {
+            dmg = 1;
+        }
+        else if (player.hasPower(AdvantagePower.POWER_ID)) {
             int adv = player.getPower(AdvantagePower.POWER_ID).amount;
             ArrayList<Integer> rolls = new ArrayList<Integer>();
             for (int i = 0; i < adv; i++) {
@@ -56,41 +64,45 @@ public class RollRedAction extends AbstractGameAction{
         } else {
             dmg = ThreadLocalRandom.current().nextInt(minroll, maxroll + 1);
         }
-        
+
+        if (player.hasPower(RedKingPower.POWER_ID)) {
+            redKingActive = true;   
+        }
+
         AbstractCard cardToAdd = null;
         switch(dmg) {
             case 1:
-                cardToAdd = new RedOne();
+                cardToAdd = redKingActive ? new RedOne(true) : new RedOne();  
                 break;
             case 2:
-                cardToAdd = new RedTwo();
+                cardToAdd = redKingActive ? new RedTwo(true) : new RedTwo();  
                 break;
             case 3:
-                cardToAdd = new RedThree();
+                cardToAdd = redKingActive ? new RedThree(true) : new RedThree();  
                 break;
             case 4:
-                cardToAdd = new RedFour();
+                cardToAdd = redKingActive ? new RedFour(true) : new RedFour();  
                 break;
             case 5:
-                cardToAdd = new RedFive();
+                cardToAdd = redKingActive ? new RedFive(true) : new RedFive();  
                 break;
             case 6:
-                cardToAdd = new RedSix();
+                cardToAdd = redKingActive ? new RedSix(true) : new RedSix();  
                 break;
             case 7:
-                cardToAdd = new RedSeven();   
+                cardToAdd = redKingActive ? new RedSeven(true) : new RedSeven();  
                 break;
             case 8:
-                cardToAdd = new RedEight();   
+                cardToAdd = redKingActive ? new RedEight(true) : new RedEight();  
                 break;
             case 9:
-                cardToAdd = new RedNine();   
+                cardToAdd = redKingActive ? new RedNine(true) : new RedNine();  
                 break;
             case 10 :
-                cardToAdd = new RedTen();
+                cardToAdd = redKingActive ? new RedTen(true) : new RedTen();  
                 break;
             default:
-                cardToAdd = new RedTen(dmg);   
+                cardToAdd = redKingActive ? new RedTen(dmg, true) : new RedTen(dmg);  
                 break;
         }
         return cardToAdd;

@@ -15,6 +15,8 @@ import GamblerMod.GamblerMod;
 public class RollRed extends BaseCard{
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
+    private static final int minroll = 1;
+    private static final int maxroll = 6;
 
     private float rotationTimer;
     private int previewIndex;
@@ -36,7 +38,7 @@ public class RollRed extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-            addToBot(new RollRedAction(p, this.magicNumber, 1, 20));
+        addToBot(new RollRedAction(p, this.magicNumber, minroll, maxroll));
     }
     
     private ArrayList<AbstractCard> getList() {

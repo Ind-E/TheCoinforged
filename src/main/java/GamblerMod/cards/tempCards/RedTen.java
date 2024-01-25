@@ -14,4 +14,12 @@ public class RedTen extends RedDieBase{
         super(ID, dmg, UPG_DAMAGE);
     }
 
+    public RedTen(boolean redKingActive) {
+        super(ID, info_all, DAMAGE, UPG_DAMAGE, redKingActive);
+    }
+
+    public RedTen(int dmg, boolean redKingActive) {
+        super(ID, info_all, dmg, UPG_DAMAGE, redKingActive);
+    }
+
 }
