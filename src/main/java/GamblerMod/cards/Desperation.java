@@ -1,37 +1,35 @@
 package GamblerMod.cards;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import GamblerMod.actions.DesperationAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-import java.util.concurrent.ThreadLocalRandom;
+//draw 4(5) cards, increase the cost of cards in your hand by 1
+public class Desperation extends BaseCard{
+    private static final int MAGIC = 4;
 
-public class LuckyDefend extends BaseCard{
-
-    public static final String ID = makeID(LuckyDefend.class.getSimpleName());
+    public static final String ID = makeID(Desperation.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Gambler.Enums.CARD_COLOR, 
             CardType.SKILL, 
-            CardRarity.BASIC, 
+            CardRarity.UNCOMMON, 
             CardTarget.NONE, 
             0 
     );
 
-    public LuckyDefend() {
+    public Desperation() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
-        tags.add(CardTags.STARTER_DEFEND);
+        setMagic(MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.block = ThreadLocalRandom.current().nextInt(1, 6 + 1);
-        if (this.upgraded) {
-            this.block += 3;
-        } 
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new DrawCardAction(p, this.magicNumber));
+        addToBot(new DesperationAction(this.upgraded));
     }
 
 }

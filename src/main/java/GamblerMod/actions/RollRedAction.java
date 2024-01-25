@@ -1,11 +1,7 @@
 package GamblerMod.actions;
 
-import static GamblerMod.GamblerMod.makeID;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

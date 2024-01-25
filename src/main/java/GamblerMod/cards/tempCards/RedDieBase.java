@@ -9,12 +9,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.GamblerMod;
 
 import GamblerMod.cards.BaseCard;
+import GamblerMod.powers.RedKingPower;
 import GamblerMod.util.CardStats;
 
-public class RedDieBase extends BaseCard{
+public abstract class RedDieBase extends BaseCard{
     private static final int DAMAGE = 99;
     private static final int UPG_DAMAGE = 3;
-    private boolean redKingActive = false;
 
     public static final String ID = makeID(RedDieBase.class.getSimpleName());
     public static final CardStats info = new CardStats(
@@ -45,13 +45,12 @@ public class RedDieBase extends BaseCard{
         setDamage(DAMAGE, UPG_DAMAGE);
         this.exhaust = true; 
         tags.add(GamblerMod.DIE);
+        
     }
 
     public RedDieBase(String ID, CardStats info, int DAMAGE, int UPG_DAMAGE, boolean redKingActive) {
         this(ID, info, DAMAGE, UPG_DAMAGE);
-        this.baseDamage = DAMAGE;
         this.isMultiDamage = true;
-        
     }
 
     public RedDieBase() {
@@ -60,8 +59,8 @@ public class RedDieBase extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (redKingActive) {
-            addToBot(new DamageAllEnemiesAction(p, this.damage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        if (p.hasPower(RedKingPower.POWER_ID) && this.target == CardTarget.ALL_ENEMY) {
+                addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         } else {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
         }

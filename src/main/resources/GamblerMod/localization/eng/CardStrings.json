@@ -107,5 +107,10 @@
   "${modID}:RedKing": {
     "NAME": "Red King",
     "DESCRIPTION": "*Red *Dice now damage ALL enemies. NL Add !M! *Red *Dice to your hand."
+  },
+  "${modID}:Desperation": {
+    "NAME": "Desperation",
+    "DESCRIPTION": "Draw !M! Cards. NL Increase the cost of ALL cards in hand by 1.",
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Increase the cost of ALL cards in hand by 1. NL (Up to 2)"
   }
 }
