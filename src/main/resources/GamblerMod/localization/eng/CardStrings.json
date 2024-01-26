@@ -102,7 +102,8 @@
   },
   "${modID}:SnakeEyes": {
     "NAME": "Snake Eyes",
-    "DESCRIPTION": "*Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer."
+    "DESCRIPTION": "*Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "*Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer."
   },
   "${modID}:RedKing": {
     "NAME": "Red King",
