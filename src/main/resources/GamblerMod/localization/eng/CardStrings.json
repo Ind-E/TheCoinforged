@@ -28,7 +28,7 @@
     "DESCRIPTION": "Gain !B! Block."
   },
   "${modID}:Advance": {
-    "NAME": "Advance",
+    "NAME": "Cash Advance",
     "DESCRIPTION": "Draw !M! Cards. NL Draw 1 less card next turn."
   },
   "${modID}:AllIn": {
@@ -110,7 +110,11 @@
   },
   "${modID}:Desperation": {
     "NAME": "Desperation",
-    "DESCRIPTION": "Draw !M! Cards. NL Increase the cost of ALL cards in hand by 1.",
-    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Increase the cost of ALL cards in hand by 1. NL (Up to 2)"
+    "DESCRIPTION": "Draw !M! Cards. NL Increase the cost of ALL cards in hand by 1 this turn.",
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Increase the cost of ALL cards in hand by 1 this turn. NL (Up to 2)"
+  },
+  "${modID}:DoubleDealing": {
+    "NAME": "Double-Dealing",
+    "DESCRIPTION": "Choose 2 cards. NL Swap their cost this combat. NL Exhaust."
   }
 }

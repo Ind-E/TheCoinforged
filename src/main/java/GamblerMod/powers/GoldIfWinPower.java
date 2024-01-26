@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
+import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
 import static GamblerMod.GamblerMod.makeID;
 
@@ -33,8 +34,7 @@ public class GoldIfWinPower extends BasePower{
         AbstractPlayer p = AbstractDungeon.player;
         if (this.amount > 0) {
             p.gainGold(this.amount);
-            for (int i = 0; i < this.amount; i++)
-                AbstractDungeon.effectList.add(new GainPennyEffect(this.owner, this.owner.hb.cX, this.owner.hb.cY, this.owner.hb.cX, this.owner.hb.cY, true)); 
+            AbstractDungeon.effectList.add(new RainingGoldEffect(this.amount * 2, true));
         }
         
     }
