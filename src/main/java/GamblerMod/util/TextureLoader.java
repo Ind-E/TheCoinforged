@@ -106,9 +106,9 @@ public class TextureLoader {
         return textureString;
     }
 
-    private static void loadTexture(final String textureString) throws GdxRuntimeException {
-        loadTexture(textureString, false);
-    }
+    // private static void loadTexture(final String textureString) throws GdxRuntimeException {
+    //     loadTexture(textureString, false);
+    // }
 
     private static void loadTexture(final String textureString, boolean linearFilter) throws GdxRuntimeException {
         Texture texture = new Texture(textureString);

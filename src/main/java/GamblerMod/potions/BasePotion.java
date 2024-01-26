@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 public abstract class BasePotion extends AbstractPotion {
     private static final Field containerImg, outlineImg, liquidImg, hybridImg, spotsImg;
@@ -156,8 +157,8 @@ public abstract class BasePotion extends AbstractPotion {
     @Override
     public AbstractPotion makeCopy() {
         try {
-            return this.getClass().newInstance();
-        } catch (IllegalAccessException | InstantiationException e) {
+            return this.getClass().getConstructor().newInstance();
+        } catch (IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             throw new RuntimeException("Failed to auto-generate makeCopy for potion: " + this.ID);
         }
     }
