@@ -15,7 +15,7 @@ public class DefendGambler extends BaseCard{
             Gambler.Enums.CARD_COLOR, 
             CardType.SKILL, 
             CardRarity.BASIC, 
-            CardTarget.NONE, 
+            CardTarget.SELF, 
             1 
     );
 

@@ -16,7 +16,7 @@ public class SnakeEyes extends BaseCard{
             Gambler.Enums.CARD_COLOR, 
             CardType.SKILL, 
             CardRarity.UNCOMMON, 
-            CardTarget.NONE, 
+            CardTarget.SELF, 
             2 
     );
 

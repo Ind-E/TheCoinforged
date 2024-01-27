@@ -18,7 +18,7 @@ public class RedKing extends BaseCard{
         Gambler.Enums.CARD_COLOR, 
         CardType.POWER, 
         CardRarity.UNCOMMON, 
-        CardTarget.NONE, 
+        CardTarget.SELF, 
         1 
     );
 

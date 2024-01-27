@@ -8,7 +8,7 @@ import GamblerMod.actions.FatesHandAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class FatesHand extends BaseCard{
+public class FatesHand extends BaseCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
@@ -18,8 +18,7 @@ public class FatesHand extends BaseCard{
             CardType.SKILL, 
             CardRarity.UNCOMMON, 
             CardTarget.NONE, 
-            1 
-    );
+            1);
 
     public FatesHand() {
         super(ID, info);

@@ -129,5 +129,9 @@
   "${modID}:LuckyBreak": {
     "NAME": "Lucky Break",
     "DESCRIPTION": "Draw 2 Cards. NL If they have the same cost, gan !M! Dexterity."
+  },
+  "${modID}:DoubleDown": {
+    "NAME": "Double Down",
+    "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less block, apply !M! Vulnerable to all enemies."
   }
 }
