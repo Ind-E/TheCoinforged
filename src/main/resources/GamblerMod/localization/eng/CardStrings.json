@@ -132,6 +132,7 @@
   },
   "${modID}:DoubleDown": {
     "NAME": "Double Down",
-    "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less block, apply !M! Vulnerable to all enemies."
+    "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less block, apply !M! Vulnerable to ALL enemies.",
+    "DESCRIPTIONS": ["hi"]
   }
 }

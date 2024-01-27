@@ -43,5 +43,13 @@
     "DESCRIPTIONS": [
       "#yRed #yDice damage ALL enemies."
     ]
+  },
+  "${modID}:DoubleDownPower": {
+    "NAME": "Doubled Down",
+    "DESCRIPTIONS": [
+      "If you end your turn with #b",
+      " or less Block, apply #b",
+      " #yVulnerable to ALL enemies."
+    ]
   }
 }

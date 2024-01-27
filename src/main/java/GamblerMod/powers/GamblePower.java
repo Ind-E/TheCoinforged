@@ -20,8 +20,8 @@ public class GamblePower extends BasePower{
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
     public void atStartOfTurn() {
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("GamblePower")));
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new GoldIfWinPower(this.owner, this.amount)));
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("GamblePower")));
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new GoldIfWinPower(this.owner, this.amount)));
     }
     public void stackPower(int stackAmount) {
         this.amount += stackAmount;
