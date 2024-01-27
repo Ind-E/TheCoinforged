@@ -117,5 +117,17 @@
   "${modID}:DoubleDealing": {
     "NAME": "Double-Dealing",
     "DESCRIPTION": "Choose 2 cards. NL Swap their cost this combat. NL Exhaust."
+  },
+  "${modID}:FatesHand": {
+    "NAME": "Fate's Hand",
+    "DESCRIPTION": "Draw 3 cards, then discard 2. NL If the discarded cards had the same cost, gain !M! Strength."
+  },
+  "${modID}:TrickstersMark": {
+    "NAME": "Trickster's Mark",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable to random enemies."
+  },
+  "${modID}:LuckyBreak": {
+    "NAME": "Lucky Break",
+    "DESCRIPTION": "Draw 2 Cards. NL If they have the same cost, gan !M! Dexterity."
   }
 }

@@ -1,5 +1,6 @@
 package GamblerMod.powers;
 
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import static GamblerMod.GamblerMod.makeID;
@@ -17,5 +18,9 @@ public class SnakeEyesPower extends BasePower{
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }
+
+    public void atEndOfRound() {
+        this.addToBot(new ReducePowerAction(this.owner, this.owner, makeID("SnakeEyesPower"), 1));
+   }
 
 }

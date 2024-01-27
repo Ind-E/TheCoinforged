@@ -16,6 +16,5 @@ public class PlayerAppliedDrawReductionPower extends DrawReductionPower{
     @Override
     public void atEndOfRound() {
         this.addToBot(new ReducePowerAction(this.owner, this.owner, "Draw Reduction", 1));
-
    }
 }
