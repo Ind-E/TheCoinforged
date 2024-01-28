@@ -44,9 +44,7 @@ public class ChaosFormAction extends AbstractGameAction{
     }
 
     public void update() {
-        for (int i = 0; i < this.amount; i++) {
-            addToBot(new MakeTempCardInHandAction(roll(), 1));
-        }
+        addToBot(new MakeTempCardInHandAction(roll(), 1));
         this.isDone = true;
     }
 }

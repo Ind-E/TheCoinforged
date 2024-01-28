@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ChaosEchoPower extends BasePower {
-    public static final String POWER_ID = makeID("GamblePower");
+    public static final String POWER_ID = makeID("ChaosEchoPower");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = true;
 
@@ -51,7 +51,7 @@ public class ChaosEchoPower extends BasePower {
       AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
       this.amount--;
       if (this.amount == 0)
-        addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "Burst")); 
+        addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("ChaosEchoPower"))); 
     } 
   }
   

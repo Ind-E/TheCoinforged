@@ -56,8 +56,15 @@
     "NAME": "Echo",
     "DESCRIPTIONS": [
       "Your next card is played twice this turn.",
-      "Your next ",
+      "Your next #b",
       " cards are played twice this turn."
+    ]
+  },
+  "${modID}:ChaosFormPower": {
+    "NAME": "Chaos Form",
+    "DESCRIPTIONS": [
+      "At the start of your turn, roll #b",
+      " #yChaos #yDie."
     ]
   }
 }

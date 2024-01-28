@@ -145,7 +145,7 @@
   },
   "${modID}:ChaosThree": {
     "NAME": "Chaos Die",
-    "DESCRIPTION": "Gain !E! !E! . NL Exhaust."
+    "DESCRIPTION": "Gain [E] [E] . NL Exhaust."
   },
   "${modID}:ChaosFour": {
     "NAME": "Chaos Die",
@@ -158,5 +158,9 @@
   "${modID}:ChaosSix": {
     "NAME": "Chaos Die",
     "DESCRIPTION": "Your next !M! cards this turn are played twice. NL Exhaust."
+  },
+  "${modID}:ChaosForm": {
+    "NAME": "Chaos Form",
+    "DESCRIPTION": "At the start of your turn, roll a *Chaos *Die."
   }
 }
