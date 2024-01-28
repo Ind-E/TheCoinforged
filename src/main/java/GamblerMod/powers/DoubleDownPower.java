@@ -20,9 +20,8 @@ public class DoubleDownPower extends BasePower{
     private AbstractPlayer p = AbstractDungeon.player;
     private int magic, baseMagic;
 
-    public DoubleDownPower(AbstractCreature owner, int magic, int amount, boolean upgraded) {
+    public DoubleDownPower(AbstractCreature owner, int magic, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-        this.amount = amount;
         this.magic = this.baseMagic = magic;
         this.updateDescription();
     }

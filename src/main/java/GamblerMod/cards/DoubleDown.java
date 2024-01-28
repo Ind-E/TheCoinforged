@@ -31,7 +31,7 @@ public class DoubleDown extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new DoubleDownPower(p, this.magicNumber, this.block, this.upgraded)));
+        addToBot(new ApplyPowerAction(p, p, new DoubleDownPower(p, this.magicNumber, this.block)));
     }
 
 }

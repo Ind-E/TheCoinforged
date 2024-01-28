@@ -1,0 +1,36 @@
+package GamblerMod.cards.tempCards;
+
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import GamblerMod.cards.BaseCard;
+import GamblerMod.powers.ChaosEchoPower;
+import GamblerMod.util.CardStats;
+import GamblerMod.GamblerMod;
+
+public class ChaosSix extends BaseCard{
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
+
+    public static final String ID = makeID(ChaosSix.class.getSimpleName());
+    public static final CardStats info = new CardStats(
+            CardColor.COLORLESS, 
+            CardType.SKILL, 
+            CardRarity.SPECIAL, 
+            CardTarget.SELF, 
+            0 
+    );
+
+    public ChaosSix() {
+        super(ID, info);
+        setMagic(MAGIC, UPG_MAGIC);
+        this.exhaust = true;
+        tags.add(GamblerMod.MAGIC_DIE);
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new ChaosEchoPower(p, this.magicNumber)));
+    }
+
+}

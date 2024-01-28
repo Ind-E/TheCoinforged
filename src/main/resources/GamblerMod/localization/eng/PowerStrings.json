@@ -51,5 +51,13 @@
       " or less Block, apply #b",
       " #yVulnerable to ALL enemies."
     ]
+  },
+  "${modID}:ChaosEchoPower": {
+    "NAME": "Echo",
+    "DESCRIPTIONS": [
+      "Your next card is played twice this turn.",
+      "Your next ",
+      " cards are played twice this turn."
+    ]
   }
 }

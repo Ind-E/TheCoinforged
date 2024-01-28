@@ -134,5 +134,29 @@
     "NAME": "Double Down",
     "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less block, apply !M! Vulnerable to ALL enemies.",
     "DESCRIPTIONS": ["hi"]
+  },
+  "${modID}:ChaosOne": {
+    "NAME": "Chaos Die",
+    "DESCRIPTION": "Gain !M! Strength. NL Exhaust."
+  },
+  "${modID}:ChaosTwo": {
+    "NAME": "Chaos Die",
+    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaust."
+  },
+  "${modID}:ChaosThree": {
+    "NAME": "Chaos Die",
+    "DESCRIPTION": "Gain !E! !E! . NL Exhaust."
+  },
+  "${modID}:ChaosFour": {
+    "NAME": "Chaos Die",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable to ALL enemies. NL Exhaust."
+  },
+  "${modID}:ChaosFive": {
+    "NAME": "Chaos Die",
+    "DESCRIPTION": "Gain !M! Artifact and 1 Intangible. NL Exhaust."
+  },
+  "${modID}:ChaosSix": {
+    "NAME": "Chaos Die",
+    "DESCRIPTION": "Your next !M! cards this turn are played twice. NL Exhaust."
   }
 }

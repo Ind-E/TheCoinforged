@@ -51,6 +51,9 @@ public class GamblerMod implements
     @SpireEnum 
     public static AbstractCard.CardTags DIE;
 
+    @SpireEnum 
+    public static AbstractCard.CardTags MAGIC_DIE;
+
     private static final String BG_ATTACK = characterPath("cardback/bg_attack.png");
     private static final String BG_ATTACK_P = characterPath("cardback/bg_attack_p.png");
     private static final String BG_SKILL = characterPath("cardback/bg_skill.png");
