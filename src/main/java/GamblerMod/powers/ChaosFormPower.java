@@ -16,12 +16,19 @@ public class ChaosFormPower extends BasePower{
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        if (this.amount == 1) {
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        } else {
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+        }
+        
     }
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ChaosFormAction());
+        for (int i = 0; i < this.amount; i++) {
+            addToBot(new ChaosFormAction());
+        }
     }
     public void stackPower(int stackAmount) {
         this.amount += stackAmount;

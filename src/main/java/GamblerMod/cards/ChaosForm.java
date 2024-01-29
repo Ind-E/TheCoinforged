@@ -35,8 +35,8 @@ public class ChaosForm extends BaseCard{
     }
 
     public void upgrade() {
-        super.upgrade();
         if (!this.upgraded) {
+            super.upgrade();
             upgradeBaseCost(2);
         } 
     }

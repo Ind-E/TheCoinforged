@@ -162,5 +162,14 @@
   "${modID}:ChaosForm": {
     "NAME": "Chaos Form",
     "DESCRIPTION": "At the start of your turn, roll a *Chaos *Die."
+  },
+  "${modID}:Fold": {
+    "NAME": "Fold",
+    "DESCRIPTION": "Gain !M! Block for each card played this turn. NL End your turn. NL ",
+    "EXTENDED_DESCRIPTION": [
+      "(",
+      " card played.)",
+      " cards played.)"
+    ]
   }
 }

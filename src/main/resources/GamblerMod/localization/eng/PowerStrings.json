@@ -64,7 +64,8 @@
     "NAME": "Chaos Form",
     "DESCRIPTIONS": [
       "At the start of your turn, roll #b",
-      " #yChaos #yDie."
+      " #yChaos #yDie.",
+      " #yChaos #yDice."
     ]
   }
 }
