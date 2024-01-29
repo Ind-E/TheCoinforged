@@ -67,5 +67,12 @@
       " #yChaos #yDie.",
       " #yChaos #yDice."
     ]
+  },
+  "${modID}:LuckOfTheDrawPower": {
+    "NAME": "Lucky Draw",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card, randomly gain 1 Block or deal ",
+      " damage to a random enemy."
+    ]
   }
 }

@@ -171,5 +171,9 @@
       " card played.)",
       " cards played.)"
     ]
+  },
+  "${modID}:LuckOfTheDraw": {
+    "NAME": "Luck of the Draw",
+    "DESCRIPTION": "Whenever you draw a card, randomly gain 1 Block or deal !M! damage to a random enemy."
   }
 }
