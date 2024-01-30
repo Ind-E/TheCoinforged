@@ -183,5 +183,10 @@
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
     "DESCRIPTION": "Gain [E] . If you have more energy than cards in hand, draw !M! cards. Otherwise, Exhaust."
+  },
+  "${modID}:Call": {
+    "NAME": "Call",
+    "DESCRIPTION": "Discard a card: Attack deals !D! damage NL Skill applies !M! weak to all enemies NL Power gains [E] [E].",
+    "UPGRADE_DESCRIPTION": "Discard a card: Attack deals !D! damage NL Skill applies !M! weak to all enemies NL Power gains [E] [E] [E]."
   }
 }

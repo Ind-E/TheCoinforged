@@ -42,7 +42,7 @@ public class LuckOfTheDrawPower extends BasePower{
             AbstractCreature m = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
             if (m != null) {
                 addToBot(new VFXAction(new FlickCoinEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.15F));
-                addToBot(new DamageAction(m, new DamageInfo(owner, this.amount), AbstractGameAction.AttackEffect.NONE));
+                addToBot(new DamageAction(m, new DamageInfo(owner, this.amount, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.NONE));
             }
         } else {
             throw new ArrayIndexOutOfBoundsException("Luck Of the Draw != 0,1");

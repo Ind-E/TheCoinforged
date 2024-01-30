@@ -18,7 +18,7 @@ public class BlazingTacticsAction extends AbstractGameAction{
     }
 
     public void update() {
-        if (EnergyPanel.totalCount > AbstractDungeon.player.hand.size() - 1) {
+        if (EnergyPanel.totalCount > AbstractDungeon.player.hand.size()) {
             addToBot(new DrawCardAction(AbstractDungeon.player, magic));
         } else {
             this.addToBot(new ExhaustSpecificCardAction(targetCard, AbstractDungeon.player.hand));

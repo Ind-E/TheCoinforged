@@ -36,7 +36,7 @@ public class BlazingTactics extends BaseCard{
     }
 
     public void triggerOnGlowCheck() {
-        if (EnergyPanel.totalCount > AbstractDungeon.player.hand.size() - 1) {
+        if (EnergyPanel.totalCount + 1 > AbstractDungeon.player.hand.size() - 1) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
