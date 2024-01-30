@@ -175,5 +175,13 @@
   "${modID}:LuckOfTheDraw": {
     "NAME": "Luck of the Draw",
     "DESCRIPTION": "Whenever you draw a card, randomly gain 1 Block or deal !M! damage to a random enemy."
+  },
+  "${modID}:CardShark": {
+    "NAME": "Card Shark",
+    "DESCRIPTION": "Deal !D! Damage. If this is the leftmost card in your hand, it costs 0 and deals double damage."
+  },
+  "${modID}:BlazingTactics": {
+    "NAME": "Blazing Tactics",
+    "DESCRIPTION": "Gain [E] . If you have more energy than cards in hand, draw !M! cards. Otherwise, Exhaust."
   }
 }

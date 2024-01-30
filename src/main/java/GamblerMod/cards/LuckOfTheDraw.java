@@ -10,7 +10,6 @@ import GamblerMod.util.CardStats;
 
 public class LuckOfTheDraw extends BaseCard{
     private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(LuckOfTheDraw.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -18,12 +17,19 @@ public class LuckOfTheDraw extends BaseCard{
             CardType.POWER, 
             CardRarity.RARE, 
             CardTarget.SELF, 
-            1 
+            2 
     );
 
     public LuckOfTheDraw() {
         super(ID, info); 
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(MAGIC);
+    }
+
+    public void upgrade() {
+        if (!this.upgraded) {
+            super.upgrade();
+            upgradeBaseCost(1);
+        } 
     }
 
     @Override

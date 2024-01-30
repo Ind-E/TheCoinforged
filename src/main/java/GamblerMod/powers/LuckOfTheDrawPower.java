@@ -23,16 +23,14 @@ public class LuckOfTheDrawPower extends BasePower{
     private static final boolean TURN_BASED = false;
     
     private AbstractPlayer p = AbstractDungeon.player;
-    private int damage;
 
     public LuckOfTheDrawPower(AbstractCreature owner, int damage, int block) {
         super(POWER_ID, TYPE, TURN_BASED, owner, 1);
-        this.damage = damage;
+        this.updateDescription();
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount * this.damage + DESCRIPTIONS[1];
-        
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
     }
 
     @Override
@@ -43,16 +41,12 @@ public class LuckOfTheDrawPower extends BasePower{
         } else if (rand == 1) {
             AbstractCreature m = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
             if (m != null) {
-                addToBot(new VFXAction(new FlickCoinEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.1F));
-                addToBot(new DamageAction(m, new DamageInfo(owner, this.amount * this.damage), AbstractGameAction.AttackEffect.NONE));
+                addToBot(new VFXAction(new FlickCoinEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.15F));
+                addToBot(new DamageAction(m, new DamageInfo(owner, this.amount), AbstractGameAction.AttackEffect.NONE));
             }
         } else {
             throw new ArrayIndexOutOfBoundsException("Luck Of the Draw != 0,1");
         }
-    }
-
-    public void stackPower(int stackAmount) {
-        this.amount += stackAmount;
     }
 
 }
