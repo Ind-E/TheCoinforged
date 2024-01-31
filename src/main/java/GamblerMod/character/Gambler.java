@@ -19,8 +19,6 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BurningBlood;
-import com.megacrit.cardcrawl.relics.PrismaticShard;
-import com.megacrit.cardcrawl.relics.WristBlade;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import static GamblerMod.GamblerMod.characterPath;
