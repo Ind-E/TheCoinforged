@@ -10,7 +10,7 @@ import GamblerMod.util.CardStats;
 public class Call extends BaseCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
-    private static final int DAMAGE = 13;
+    private static final int DAMAGE = 10;
     private static final int UPG_DAMAGE = 4;
 
     public static final String ID = makeID(Call.class.getSimpleName());

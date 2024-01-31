@@ -11,8 +11,8 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class AllIn extends BaseCard{
-    private static final int DAMAGE = 20;
-    private static final int UPG_DAMAGE = 5;
+    private static final int DAMAGE = 17;
+    private static final int UPG_DAMAGE = 7;
 
     public static final String ID = makeID(AllIn.class.getSimpleName());
     private static final CardStats info = new CardStats(

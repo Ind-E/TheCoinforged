@@ -178,7 +178,7 @@
   },
   "${modID}:CardShark": {
     "NAME": "Card Shark",
-    "DESCRIPTION": "Deal !D! Damage. If this is the leftmost card in your hand, it costs 0 and deals double damage."
+    "DESCRIPTION": "Deal !D! damage. If this is the leftmost card in your hand, it costs 0 and deals double damage."
   },
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
@@ -186,7 +186,12 @@
   },
   "${modID}:Call": {
     "NAME": "Call",
-    "DESCRIPTION": "Discard a card: Attack deals !D! damage NL Skill applies !M! weak to all enemies NL Power gains [E] [E].",
-    "UPGRADE_DESCRIPTION": "Discard a card: Attack deals !D! damage NL Skill applies !M! weak to all enemies NL Power gains [E] [E] [E]."
+    "DESCRIPTION": "Discard a card. NL Attack: deal !D! damage to a random enemy. NL Skill: apply !M! Weak to all enemies. NL Power: gain [E] [E].",
+    "UPGRADE_DESCRIPTION": "Discard a card. NL Attack: deal !D! damage to a random enemy. NL Skill: apply !M! Weak to all enemies. NL Power: gain [E] [E] [E]."
+  },
+  "${modID}:Bluff": {
+    "NAME": "Bluff",
+    "DESCRIPTION": "Deal !D! damage. If you have no debuffs, gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you have 1 or less debuffs, gain !B! Block."
   }
 }
