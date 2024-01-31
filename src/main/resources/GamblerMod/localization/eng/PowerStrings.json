@@ -75,5 +75,12 @@
       " Block or deal #b",
       " damage to a random enemy."
     ]
+  },
+  "${modID}:FoolsFortunePower": {
+    "NAME": "Fool's Fortune",
+    "DESCRIPTIONs": [
+      "If you end your turn with no cards in hand, gain #b",
+      " Block and [E] [E] next turn."
+  ]
   }
 }

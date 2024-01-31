@@ -13,7 +13,7 @@ import GamblerMod.character.Gambler;
 @SpirePatch(clz = HandCardSelectScreen.class, method = "prep")
 public class SelectScreenPatch2 {
   @SpirePrefixPatch
-  public static SpireReturn SelectionPrePatch(HandCardSelectScreen reg) {
+  public static SpireReturn<Object> SelectionPrePatch(HandCardSelectScreen reg) {
     if (AbstractDungeon.player.chosenClass == Gambler.Enums.GAMBLER) {
       SelectScreenPatch.handClone = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
       for (AbstractCard c : AbstractDungeon.player.hand.group)
