@@ -196,6 +196,6 @@
   },
   "${modID}:FoolsFortune": {
     "NAME": "Fool's Fortune",
-    "DESCRIPTION": "If you end your turn with no cards in hand, gain !B! Block and [E] [E] next turn."
+    "DESCRIPTION": "If you end your turn with no Attacks in hand, gain !B! Block and [E] next turn."
   }
 }

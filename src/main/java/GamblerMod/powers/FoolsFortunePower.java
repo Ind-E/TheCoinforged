@@ -2,6 +2,8 @@ package GamblerMod.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,8 +19,8 @@ public class FoolsFortunePower extends BasePower{
     private int magic;
     private AbstractPlayer p = AbstractDungeon.player;
 
-    public FoolsFortunePower(AbstractCreature owner, int magic) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, 1);
+    public FoolsFortunePower(AbstractCreature owner, int magic, int amount) {
+        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
         this.magic = magic;
     }
 
@@ -30,10 +32,12 @@ public class FoolsFortunePower extends BasePower{
     public void atEndOfTurn(boolean isPlayer) {
         if (!isPlayer)
             return;
-        if (p.hand.size() == 0) {
-            addToBot(new GainBlockAction(p, this.amount));
-            addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magic)));
+        for (AbstractCard c : p.hand.group) {
+            if (c.type == AbstractCard.CardType.ATTACK) 
+                return;
         }
+        addToBot(new GainBlockAction(p, this.amount));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, magic)));
     }
 
     @Override
