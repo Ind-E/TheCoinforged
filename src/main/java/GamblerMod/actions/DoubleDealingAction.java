@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class DoubleDealingAction extends AbstractGameAction{
     
     private AbstractPlayer p = AbstractDungeon.player;
-    private String prompt = " to swap costs.";
+    private String prompt = "swap costs.";
     private ArrayList<AbstractCard> chosenCards;
 
     public DoubleDealingAction() {

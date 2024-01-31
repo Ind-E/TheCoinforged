@@ -70,7 +70,8 @@ public class CardShark extends BaseCard{
             this.baseDamage = 2 * this.baseBaseDamage;
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-            this.costForTurn = baseCost;
+            if (!this.isCostModified)
+                this.costForTurn = baseCost;
             this.damage = this.baseBaseDamage;
             this.baseDamage = this.baseBaseDamage;
         } 

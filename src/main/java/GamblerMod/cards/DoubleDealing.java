@@ -7,6 +7,7 @@ import GamblerMod.actions.DoubleDealingAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
+// BUG: If switched card has retain (or upgrades to have retain), it isn't retained after switching cost, even on future turns
 public class DoubleDealing extends BaseCard{
 
     public static final String ID = makeID(DoubleDealing.class.getSimpleName());

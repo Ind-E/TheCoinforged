@@ -17,7 +17,7 @@ public class FoldAction extends AbstractGameAction {
     public void update() {
         int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1;
         for (int i = 0; i < count; i++)
-            addToTop(new GainBlockAction(p, magic)); 
+            addToTop(new GainBlockAction(p, magic, true)); 
         this.isDone = true;
     }
 }
