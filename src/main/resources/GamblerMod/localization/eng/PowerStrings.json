@@ -82,5 +82,12 @@
       "If you end your turn with no Attacks in hand, gain #b",
       " Block and [E] next turn."
   ]
+  },
+  "${modID}:DeadlyWagerPower": {
+    "NAME": "Deadly Wager",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b",
+      " HP."
+  ]
   }
 }

@@ -197,5 +197,9 @@
   "${modID}:FoolsFortune": {
     "NAME": "Fool's Fortune",
     "DESCRIPTION": "If you end your turn with no Attacks in hand, gain !B! Block and [E] next turn."
+  },
+  "${modID}:DeadlyWager": {
+    "NAME": "Deadly Wager",
+    "DESCRIPTION": "ALL enemies lose !M! Strength. At the start of your turn, lose 3 HP"
   }
 }
