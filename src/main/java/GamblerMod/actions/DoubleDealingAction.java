@@ -21,6 +21,10 @@ public class DoubleDealingAction extends AbstractGameAction{
     }
 
     public void update() {
+        for (int i = 0; i < p.hand.size(); i++) {
+            AbstractCard card = p.hand.group.get(i);
+            card.baseHeal = i;
+        }
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (this.p.hand.isEmpty() || this.p.hand.size() == 1) {
                 this.isDone = true;
@@ -37,6 +41,7 @@ public class DoubleDealingAction extends AbstractGameAction{
                 AbstractCard card1 = this.chosenCards.get(0);
                 AbstractCard card2 = this.chosenCards.get(1);
                 int temp = card1.costForTurn;
+
                 card1.cost = card1.costForTurn = card2.costForTurn;
                 card2.cost = card2.costForTurn = temp;
                 
@@ -47,10 +52,7 @@ public class DoubleDealingAction extends AbstractGameAction{
                 card1.targetDrawScale = 0.75F;
                 card1.current_x = CardGroup.DRAW_PILE_X;
                 card1.current_y = CardGroup.DRAW_PILE_Y;
-                AbstractDungeon.player.hand.addToTop(card1);
-                AbstractDungeon.player.hand.refreshHandLayout();
-                AbstractDungeon.player.hand.applyPowers();
-
+                
                 card2.unhover();
                 card2.lighten(true);
                 card2.setAngle(0.0F);
@@ -58,7 +60,17 @@ public class DoubleDealingAction extends AbstractGameAction{
                 card2.targetDrawScale = 0.75F;
                 card2.current_x = CardGroup.DRAW_PILE_X;
                 card2.current_y = CardGroup.DRAW_PILE_Y;
-                AbstractDungeon.player.hand.addToTop(card2);
+
+                card1.untip();
+                card2.untip();
+                if (card1.baseHeal < card2.baseHeal) {
+                    p.hand.group.add(card1.baseHeal, card1);
+                    p.hand.group.add(card2.baseHeal, card2);
+                } else {
+                    p.hand.group.add(card2.baseHeal, card2);
+                    p.hand.group.add(card1.baseHeal, card1);
+                }
+                
                 AbstractDungeon.player.hand.refreshHandLayout();
                 AbstractDungeon.player.hand.applyPowers();
 

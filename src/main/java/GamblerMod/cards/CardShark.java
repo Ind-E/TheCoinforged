@@ -17,8 +17,8 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class CardShark extends BaseCard{
-    private static final int DAMAGE = 9;
-    private static final int UPG_DAMAGE = 5;
+    private static final int DAMAGE = 8;
+    private static final int UPG_DAMAGE = 4;
     private AbstractPlayer p = AbstractDungeon.player;
 
     public static final String ID = makeID(CardShark.class.getSimpleName());
@@ -47,8 +47,7 @@ public class CardShark extends BaseCard{
                 for (int i = 0; i < 5; i++)
                     addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY))); 
             } 
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage * 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
         } else {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
         }
