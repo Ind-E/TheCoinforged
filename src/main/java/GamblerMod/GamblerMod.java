@@ -249,6 +249,6 @@ public class GamblerMod implements
     @Override
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new Gambler(),
-                CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, Gambler.Enums.TheGambler);
+                CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, Gambler.Enums.GAMBLER);
     }
 }

@@ -51,7 +51,7 @@ public class Gambler extends CustomPlayer {
         //These are used to identify your character, as well as your character's card color.
         //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
-        public static AbstractPlayer.PlayerClass TheGambler;
+        public static AbstractPlayer.PlayerClass GAMBLER;
         @SpireEnum(name = "GAMBLER_COLOR") // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
         @SpireEnum(name = "GAMBLER_COLOR") @SuppressWarnings("unused")
@@ -59,7 +59,7 @@ public class Gambler extends CustomPlayer {
     }
 
     public Gambler() {
-        super(NAMES[0], Enums.TheGambler,
+        super(NAMES[0], Enums.GAMBLER,
                 new CustomEnergyOrb(null, null, null), //Energy Orb
                 new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
 
