@@ -201,5 +201,15 @@
   "${modID}:DeadlyWager": {
     "NAME": "Deadly Wager",
     "DESCRIPTION": "ALL enemies lose !M! Strength. At the start of your turn, lose 3 HP"
+  },
+  "${modID}:StrategistsShield": {
+    "NAME": "Strategist's Shield",
+    "DESCRIPTION": "Gain !B! Block. Gain 1 Strength for each Power in hand.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain 1 Strength for each Power and Status in hand."
+  },
+  "${modID}:Rig": {
+    "NAME": "Rig",
+    "DESCRIPTION": "Cards in your draw pile cost 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Cards in your draw pile cost 0 this turn. Draw 2 cards"
   }
 }
