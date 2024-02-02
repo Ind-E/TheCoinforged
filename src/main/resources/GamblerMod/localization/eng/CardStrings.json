@@ -219,5 +219,10 @@
     "NAME": "Heart Of The Cards",
     "DESCRIPTION": "Discard your hand. Draw that many cards and set their cost to 0 this turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Discard your hand. Draw that many cards and set their cost to 0 this turn. NL Exhaust."
+  },
+  "${modID}:StackedDeck": {
+    "NAME": "Stacked Deck",
+    "DESCRIPTION": "At the end of your turn, set the cost of a random card in your draw pile to 0 until played.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, set the cost of a random card in your draw pile to 0 until played."
   }
 }

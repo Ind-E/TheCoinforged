@@ -89,5 +89,13 @@
       "At the start of your turn, lose #b",
       " HP."
   ]
+  },
+  "${modID}:StackedDeckPower": {
+    "NAME": "Stacked Deck",
+    "DESCRIPTIONS": [
+      "At the end of your turn, set the cost of a random card in your draw pile to 0 until played.",
+      "At the end of your turn, set the cost of #b",
+      " random cards in your draw pile to 0 until played."
+  ]
   }
 }

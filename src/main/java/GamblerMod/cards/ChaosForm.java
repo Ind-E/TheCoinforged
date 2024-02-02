@@ -30,7 +30,7 @@ public class ChaosForm extends BaseCard{
     );
 
     public ChaosForm() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setMagic(MAGIC);
     }
 
