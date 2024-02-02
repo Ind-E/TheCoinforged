@@ -214,5 +214,10 @@
   "${modID}:Jackpot": {
     "NAME": "Jackpot",
     "DESCRIPTION": "Retain. NL If this is the only card in your hand, draw !M! cards and gain [E] [E]. NL Exhaust."
+  },
+  "${modID}:HeartOfTheCards": {
+    "NAME": "Heart Of The Cards",
+    "DESCRIPTION": "Discard your hand. Draw that many cards and set their cost to 0 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Discard your hand. Draw that many cards and set their cost to 0 this turn. NL Exhaust."
   }
 }
