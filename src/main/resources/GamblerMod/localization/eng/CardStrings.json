@@ -209,7 +209,10 @@
   },
   "${modID}:Rig": {
     "NAME": "Rig",
-    "DESCRIPTION": "Cards in your draw pile cost 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Cards in your draw pile cost 0 this turn. Draw 2 cards"
+    "DESCRIPTION": "Cards in your draw and discard pile cost 0 until played this turn. NL Draw !M! card. NL Exhaust"
+  },
+  "${modID}:Jackpot": {
+    "NAME": "Jackpot",
+    "DESCRIPTION": "Retain. NL If this is the only card in your hand, draw !M! cards and gain [E] [E]. NL Exhaust."
   }
 }
