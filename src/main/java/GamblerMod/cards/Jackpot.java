@@ -28,9 +28,9 @@ public class Jackpot extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hand.group.size() == 0) {
-        addToBot(new DrawCardAction(p, MAGIC));
-        addToBot(new GainEnergyAction(2));
+        if (p.hand.group.size() <= 1) {
+            addToBot(new DrawCardAction(p, this.magicNumber));
+            addToBot(new GainEnergyAction(2));
         }
     }
 

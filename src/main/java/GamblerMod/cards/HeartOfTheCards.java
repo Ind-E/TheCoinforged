@@ -2,10 +2,11 @@ package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import GamblerMod.actions.HeartOfTheCardsAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
@@ -40,8 +41,8 @@ public class HeartOfTheCards extends BaseCard{
         if (count != 0) {
             addToTop(new DrawCardAction(p, count));
             addToTop(new DiscardAction(p, p, count, true));
-            for (AbstractCard c : AbstractDungeon.player.hand.group)
-                c.setCostForTurn(0);
+            addToBot(new HeartOfTheCardsAction());
+            
         } 
     }
 
