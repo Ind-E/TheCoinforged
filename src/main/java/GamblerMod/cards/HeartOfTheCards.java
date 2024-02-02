@@ -1,7 +1,6 @@
 package GamblerMod.cards;
 
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.unique.CalculatedGambleAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -39,8 +38,7 @@ public class HeartOfTheCards extends BaseCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         int count = AbstractDungeon.player.hand.size();
         if (count != 0) {
-            addToTop(new DrawCardAction(p, count));
-            addToTop(new DiscardAction(p, p, count, true));
+            addToTop(new CalculatedGambleAction(false));
             addToBot(new HeartOfTheCardsAction());
             
         } 

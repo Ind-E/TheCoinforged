@@ -10,6 +10,7 @@ public class HeartOfTheCardsAction extends AbstractGameAction{
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
            c.setCostForTurn(0); 
         }
+        this.isDone = true;
     }
 
 }
