@@ -241,5 +241,29 @@
     "NAME": "Poker Face",
     "DESCRIPTION": "In 2 turns, set your health to its current value. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "In 2 turns, set your health to its current value."
+  },
+  "${modID}:BlueOne": {
+    "NAME": "Blue Die",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
+  },
+  "${modID}:BlueTwo": {
+    "NAME": "Blue Die",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
+  },
+  "${modID}:BlueThree": {
+    "NAME": "Blue Die",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
+  },
+  "${modID}:BlueFour": {
+    "NAME": "Blue Die",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
+  },
+  "${modID}:BlueFive": {
+    "NAME": "Blue Die",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
+  },
+  "${modID}:BlueSix": {
+    "NAME": "Blue Die",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
   }
 }
