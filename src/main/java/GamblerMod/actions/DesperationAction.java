@@ -16,10 +16,10 @@ public class DesperationAction extends AbstractGameAction {
   }
   public void update() {
     for (AbstractCard c : this.p.hand.group) {
-        if (!upgraded || upgraded && c.cost <2) {
-          c.setCostForTurn(c.costForTurn + 1);
-            c.superFlash(Color.RED.cpy());
-        }
+      if (!upgraded || upgraded && c.cost <2) {
+        c.setCostForTurn(c.costForTurn + 1);
+        c.superFlash(Color.RED.cpy());
+      }
     }
     tickDuration();
   }

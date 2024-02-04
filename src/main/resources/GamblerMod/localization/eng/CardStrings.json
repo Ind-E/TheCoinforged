@@ -224,5 +224,13 @@
     "NAME": "Stacked Deck",
     "DESCRIPTION": "At the end of your turn, set the cost of a random card in your draw pile to 0 until played.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, set the cost of a random card in your draw pile to 0 until played."
+  },
+  "${modID}:HitAndRun": {
+    "NAME": "Hit and Run",
+    "DESCRIPTION": "Your Attacks deal double damage. Whenever you play an Attack, Exhaust it."
+  },
+  "${modID}:MaxedOut": {
+    "NAME": "Maxed Out",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL Exhaust."
   }
 }
