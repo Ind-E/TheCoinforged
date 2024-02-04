@@ -33,7 +33,6 @@ public class PokerFace extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new PokerFacePower(p, p.currentHealth), 2));
-    
     }
 
 }

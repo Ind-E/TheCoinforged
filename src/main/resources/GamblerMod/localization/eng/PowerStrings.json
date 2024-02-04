@@ -8,7 +8,7 @@
   "${modID}:AllInPower": {
     "NAME": "All In",
     "DESCRIPTIONS": [
-      "You cannot gain Block from cards next turn."
+      "You cannot gain #yBlock from cards next turn."
     ]
   },
   "${modID}:GamblePower": {
@@ -48,7 +48,7 @@
     "NAME": "Doubled Down",
     "DESCRIPTIONS": [
       "If you end your turn with #b",
-      " or less Block, apply #b",
+      " or less #yBlock, apply #b",
       " #yVulnerable to ALL enemies."
     ]
   },
@@ -72,7 +72,7 @@
     "NAME": "Lucky Draw",
     "DESCRIPTIONS": [
       "Whenever you draw a card, randomly gain #b",
-      " Block or deal #b",
+      " #yBlock or deal #b",
       " damage to a random enemy."
     ]
   },
@@ -80,7 +80,7 @@
     "NAME": "Fool's Fortune",
     "DESCRIPTIONS": [
       "If you end your turn with no Attacks in hand, gain #b",
-      " Block and [E] next turn."
+      " #yBlock and [E] next turn."
   ]
   },
   "${modID}:DeadlyWagerPower": {
@@ -102,6 +102,14 @@
     "NAME": "Hit and Run",
     "DESCRIPTIONS": [
       "Your Attacks deal double damage. Whenever you play an Attack, #yExhaust it."
+  ]
+  },
+  "${modID}:PokerFacePower": {
+    "NAME": "Power Face",
+    "DESCRIPTIONS": [
+      "In #b",
+      " turn, set your HP to #b",
+      " turns, set your HP to #b"
   ]
   }
 }
