@@ -23,7 +23,7 @@ public class RedKing extends BaseCard{
     );
 
     public RedKing() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
     }
 

@@ -1,0 +1,114 @@
+{
+	// Place your GamblerMod workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"power template": {
+		"scope": "java",
+		"prefix": "newPower",
+		"body": [
+			"package GamblerMod.powers;"
+
+			"import com.megacrit.cardcrawl.core.AbstractCreature;"
+			"import com.megacrit.cardcrawl.powers.AbstractPower;"
+			"import static GamblerMod.GamblerMod.makeID;"
+
+			"public class $0 extends BasePower{"
+				"public static final String POWER_ID = makeID(\"$0\");"
+				"private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.?;"
+				"private static final boolean TURN_BASED = ?;"
+
+				"public $0(AbstractCreature owner, int amount) {"
+					"super(POWER_ID, TYPE, TURN_BASED, owner, amount);"
+				"}"
+
+				"public void updateDescription() {"
+					"this.description = DESCRIPTIONS[0];"
+				"}"
+			"}"
+
+		],
+		"description": "default power template"
+	},
+	"card template": {
+		"scope": "java",
+		"prefix": "newCard",
+		"body": [
+			"package GamblerMod.cards;"
+
+			"import com.megacrit.cardcrawl.characters.AbstractPlayer;"
+			"import com.megacrit.cardcrawl.monsters.AbstractMonster;"
+			"import GamblerMod.character.Gambler;"
+			"import GamblerMod.util.CardStats;"
+
+			"public class $0 extends BaseCard{"
+				"private static final int DAMAGE = 0;"
+				"private static final int UPG_DAMAGE = 0;"
+				"private static final int BLOCK = 0;"
+				"private static final int UPG_BLOCK = 0;"
+				"private static final int MAGIC = 0;"
+				"private static final int UPG_MAGIC = 0;"
+
+				"public static final String ID = makeID($0.class.getSimpleName());"
+				"private static final CardStats info = new CardStats("
+						"Gambler.Enums.CARD_COLOR, "
+						"CardType.?,"
+						"CardRarity.?,"
+						"CardTarget.?,"
+						"?"
+				");"
+
+				"public $0() {"
+					"super(ID, info);"
+					"setDamage(DAMAGE, UPG_DAMAGE); "
+					"setBlock(BLOCK, UPG_BLOCK);"
+					"setMagic(MAGIC, UPG_MAGIC);"
+				"}"
+
+				"@Override"
+				"public void use(AbstractPlayer p, AbstractMonster m) {"
+					
+				"}"
+
+			"}"
+		],
+		"description": "default card template"
+	},
+	"action template": {
+		"scope": "java",
+		"prefix": "newAction",
+		"body": [
+			"package GamblerMod.actions;"
+
+			"import com.megacrit.cardcrawl.actions.AbstractGameAction;"
+			"import com.megacrit.cardcrawl.cards.AbstractCard;"
+			"import com.megacrit.cardcrawl.dungeons.AbstractDungeon;"
+
+			"public class $0 extends AbstractGameAction{"
+
+				"public $0() {"
+					"super();"
+				"}"
+
+				"public void update() {"
+					
+					"this.isDone = true;"
+				"}"
+			"}"
+
+		],
+		"description": "default action template"
+	}
+}

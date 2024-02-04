@@ -232,5 +232,14 @@
   "${modID}:MaxedOut": {
     "NAME": "Maxed Out",
     "DESCRIPTION": "Retain. NL Deal !D! damage. NL Exhaust."
+  },
+  "${modID}:CoinBarrage": {
+    "NAME": "Coin Barrage",
+    "DESCRIPTION": "Deal !D! damage 12 times. NL Reduce your max hand size by !M!."
+  },
+  "${modID}:PokerFace": {
+    "NAME": "Poker Face",
+    "DESCRIPTION": "In 2 turns, set your health to its current value. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "In 2 turns, set your health to its current value."
   }
 }
