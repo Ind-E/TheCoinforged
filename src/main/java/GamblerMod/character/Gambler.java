@@ -86,6 +86,7 @@ public class Gambler extends CustomPlayer {
         retVal.add(GamblerMod.cards.DefendGambler.ID);
         retVal.add(GamblerMod.cards.DefendGambler.ID);
         retVal.add(GamblerMod.cards.DefendGambler.ID);
+        retVal.add(GamblerMod.cards.RollBlue.ID);
         retVal.add(GamblerMod.cards.Advance.ID);
         retVal.add(GamblerMod.cards.AllIn.ID);
 
