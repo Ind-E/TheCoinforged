@@ -105,7 +105,7 @@
   ]
   },
   "${modID}:PokerFacePower": {
-    "NAME": "Power Face",
+    "NAME": "Poker Face",
     "DESCRIPTIONS": [
       "In #b",
       " turn, set your HP to #b",

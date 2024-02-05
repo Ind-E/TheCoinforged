@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-
+//TODO: 2 damage isn't calculated as damage (unaffected by vuln, strength, etc.)
 public class Misplay extends BaseCard{
     private static final int DAMAGE = 30;
     private static final int UPG_DAMAGE = 7;
@@ -52,7 +52,7 @@ public class Misplay extends BaseCard{
                 addToBot(new DamageAction(p, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE)); 
             } else {
                 AbstractCreature r = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
-                while (r != target && numMonsters > 1) {
+                while (r.id != target.id && numMonsters > 1) {
                     r = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
                 }
                 addToBot(new DamageAction(r, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));

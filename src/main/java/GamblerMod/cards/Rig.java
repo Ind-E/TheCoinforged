@@ -1,16 +1,16 @@
 package GamblerMod.cards;
 
-import GamblerMod.GamblerMod;
+import GamblerMod.actions.RigAction;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
 import GamblerMod.powers.RigPower;
 import GamblerMod.util.CardStats;
 
+//TODO: check to make sure the card drawn has 0 cost.
 public class Rig extends BaseCard{
     private static final int MAGIC = 1;
     public static final String ID = makeID(Rig.class.getSimpleName());
@@ -19,7 +19,7 @@ public class Rig extends BaseCard{
             CardType.SKILL, 
             CardRarity.RARE, 
             CardTarget.NONE, 
-            1 
+            2
     );
 
     public Rig() {
@@ -32,20 +32,13 @@ public class Rig extends BaseCard{
     public void upgrade() {
         if (!this.upgraded) {
             super.upgrade();
-            upgradeBaseCost(0);
+            upgradeBaseCost(1);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractCard c : p.drawPile.group) {
-            c.freeToPlayOnce = true;
-            c.tags.add(GamblerMod.RIGGED);
-        }
-        for (AbstractCard c : p.discardPile.group) {
-            c.freeToPlayOnce = true;
-            c.tags.add(GamblerMod.RIGGED);
-        }
+        addToBot(new RigAction());
         addToBot(new DrawCardAction(p, MAGIC));
         addToBot(new ApplyPowerAction(p, p, new RigPower(p)));
     }

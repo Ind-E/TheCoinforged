@@ -9,8 +9,8 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class MaxedOut extends BaseCard{
-    private static final int DAMAGE = 99;
-    private static final int UPG_DAMAGE = 50;
+    private static final int DAMAGE = 60;
+    private static final int UPG_DAMAGE = 15;
 
     public static final String ID = makeID(MaxedOut.class.getSimpleName());
     private static final CardStats info = new CardStats(

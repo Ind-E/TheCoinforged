@@ -96,7 +96,7 @@
 			"import com.megacrit.cardcrawl.cards.AbstractCard;"
 			"import com.megacrit.cardcrawl.dungeons.AbstractDungeon;"
 
-			"\npublic class $0 extends AbstractGameAction{"
+			"\n\tpublic class $0 extends AbstractGameAction{"
 				"\tpublic $0() {"
 					"\t\tsuper();"
 				"\t}"

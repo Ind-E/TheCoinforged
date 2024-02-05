@@ -13,7 +13,7 @@ public class HitAndRun extends BaseCard{
     private static final CardStats info = new CardStats(
             Gambler.Enums.CARD_COLOR, 
             CardType.POWER, 
-            CardRarity.UNCOMMON, 
+            CardRarity.RARE, 
             CardTarget.SELF, 
             2
     );

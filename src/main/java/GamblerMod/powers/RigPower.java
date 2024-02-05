@@ -32,6 +32,11 @@ public class RigPower extends BasePower implements InvisiblePower{
                 c.freeToPlayOnce = false;
             }
         }
+        for (AbstractCard c : p.hand.group) {
+            if (c.hasTag(GamblerMod.RIGGED)) {
+                c.freeToPlayOnce = false;
+            }
+        }
     }
 
 }
