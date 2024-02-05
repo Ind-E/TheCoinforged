@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 
 public abstract class RollBaseAction extends AbstractGameAction{
-    private int minroll = 1;
-    private int maxroll = 6;
-    private int magic = 0;
-    private AbstractPlayer player;
+    public int minroll = 1;
+    public int maxroll = 6;
+    public int magic = 0;
+    public AbstractPlayer player;
 
     public RollBaseAction(AbstractCreature owner, int magic) {
         this.player = AbstractDungeon.player;

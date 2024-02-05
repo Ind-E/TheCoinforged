@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import GamblerMod.cards.tempCards.RedEight;
 import GamblerMod.cards.tempCards.RedFive;
@@ -23,9 +22,6 @@ import GamblerMod.powers.SnakeEyesPower;
 
 
 public class RollRedAction extends RollBaseAction{
-    private int minroll = 1;
-    private int maxroll = 6;
-    private AbstractPlayer player;
     private boolean redKingActive = false;
 
     public RollRedAction(AbstractCreature owner, int magic) {
