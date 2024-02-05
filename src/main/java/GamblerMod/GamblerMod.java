@@ -1,14 +1,22 @@
 package GamblerMod;
 
-import basemod.AutoAdd;
-import basemod.BaseMod;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.scannotation.AnnotationDB;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.cards.targeting.SelfOrEnemyTargeting;
@@ -16,12 +24,20 @@ import com.evacipated.cardcrawl.mod.stslib.patches.CustomTargeting;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.localization.PotionStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 
 import GamblerMod.cards.BaseCard;
 import GamblerMod.character.Gambler;
@@ -29,14 +45,13 @@ import GamblerMod.potions.BasePotion;
 import GamblerMod.util.GeneralUtils;
 import GamblerMod.util.KeywordInfo;
 import GamblerMod.util.TextureLoader;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.scannotation.AnnotationDB;
-import com.badlogic.gdx.graphics.Color;
-
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+import basemod.AutoAdd;
+import basemod.BaseMod;
+import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
 
 @SpireInitializer
 public class GamblerMod implements
@@ -112,6 +127,31 @@ public class GamblerMod implements
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
         registerPotions();
         CustomTargeting.registerCustomTargeting(SelfOrEnemyTargeting.SELF_OR_ENEMY, new SelfOrEnemyTargeting());
+        countCards();
+    }
+
+    public static void countCards() {
+        String filePath = "C:\\Users\\sacha\\Documents\\GitHub\\GamblerMod\\card_data.csv";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            // Write header to the CSV file
+            writer.write("Name,Cost,Type,Rarity\n");
+
+            // Loop through the card list and write data to the CSV file
+            for (AbstractCard c : CardLibrary.getCardList(CardLibrary.LibraryType.valueOf("GAMBLER_COLOR"))) {
+                String cardName = c.name;
+                String cardType = c.type.toString();
+                String cardRarity = c.rarity.toString();
+                int cardCost = c.cost;
+
+                // Write card information to the CSV file
+                writer.write(String.format("%s,%s,%s,%s\n", cardName, cardCost,cardType, cardRarity));
+            }
+
+            System.out.println("Card data exported to " + filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void registerPotions() {
