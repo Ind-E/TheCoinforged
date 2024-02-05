@@ -265,5 +265,9 @@
   "${modID}:BlueSix": {
     "NAME": "Blue Die",
     "DESCRIPTION": "Gain !B! Block. NL Exhaust."
+  },
+  "${modID}:RollBlue": {
+    "NAME": "Roll Blue",
+    "DESCRIPTION": "Add !M! *Blue *Dice to your hand."
   }
 }
