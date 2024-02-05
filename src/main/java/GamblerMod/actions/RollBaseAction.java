@@ -1,11 +1,14 @@
 package GamblerMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import GamblerMod.powers.HighRollerPower;
 
 
 public abstract class RollBaseAction extends AbstractGameAction{
@@ -31,7 +34,12 @@ public abstract class RollBaseAction extends AbstractGameAction{
 
     public void update() {
         for (int i = 0; i < magic; i++) {
-            addToBot(new MakeTempCardInHandAction(roll(), 1));
+            AbstractCard rolledCard = roll();
+            if (player.hasPower(HighRollerPower.POWER_ID) && rolledCard.cardID.endsWith("Six")) {
+                int n = player.getPower(HighRollerPower.POWER_ID).amount;
+                addToBot(new DrawCardAction(player, n));
+            }
+            addToBot(new MakeTempCardInHandAction(rolledCard, 1));
         }
         this.isDone = true;
     }

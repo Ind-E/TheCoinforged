@@ -1,6 +1,7 @@
 package GamblerMod.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import GamblerMod.actions.ChaosFormAction;
 
@@ -27,7 +28,7 @@ public class ChaosFormPower extends BasePower{
     @Override
     public void atStartOfTurn() {
         for (int i = 0; i < this.amount; i++) {
-            addToBot(new ChaosFormAction());
+            addToBot(new ChaosFormAction(AbstractDungeon.player));
         }
     }
     public void stackPower(int stackAmount) {

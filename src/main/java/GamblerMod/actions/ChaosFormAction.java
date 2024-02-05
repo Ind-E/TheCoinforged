@@ -2,9 +2,9 @@ package GamblerMod.actions;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+
 import GamblerMod.cards.tempCards.ChaosOne;
 import GamblerMod.cards.tempCards.ChaosSix;
 import GamblerMod.cards.tempCards.ChaosTwo;
@@ -13,9 +13,11 @@ import GamblerMod.cards.tempCards.ChaosFive;
 import GamblerMod.cards.tempCards.ChaosFour;
 
 
-public class ChaosFormAction extends AbstractGameAction{
+public class ChaosFormAction extends RollBaseAction{
 
-    public ChaosFormAction() {}
+    public ChaosFormAction(AbstractCreature owner) {
+        super(owner, 1);
+    }
 
     public AbstractCard roll() {
         int chaosRoll = ThreadLocalRandom.current().nextInt(1, 6 + 1);
@@ -41,10 +43,5 @@ public class ChaosFormAction extends AbstractGameAction{
                 break;
         }
         return cardToAdd;
-    }
-
-    public void update() {
-        addToBot(new MakeTempCardInHandAction(roll(), 1));
-        this.isDone = true;
     }
 }

@@ -111,5 +111,12 @@
       " turn, set your HP to #b",
       " turns, set your HP to #b"
   ]
-  }
+  },
+  "${modID}:HighRollerPower": {
+    "NAME": "High Roller",
+    "DESCRIPTIONS": [
+      "Whenever you play a #ySix, draw #b",
+      " cards."
+  ]
+}
 }
