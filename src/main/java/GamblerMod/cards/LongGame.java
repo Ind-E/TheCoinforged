@@ -57,7 +57,7 @@ public class LongGame extends BaseCard{
         super.applyPowers();
         int count = this.magicNumber - GameActionManager.turn;
         if (count <= 0) {
-            this.rawDescription = "Retain. NL Deal !D! damage to ALL enemies. NL Gain 3 Strength. NL Exhaust.";
+            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
             initializeDescription();
             return;
         }
