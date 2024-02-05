@@ -14,7 +14,7 @@ import static GamblerMod.GamblerMod.makeID;
 public class FoolsFortunePower extends BasePower{
     public static final String POWER_ID = makeID("FoolsFortunePower");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
-    private static final boolean TURN_BASED = true;
+    private static final boolean TURN_BASED = false;
     private int magic;
     private AbstractPlayer p = AbstractDungeon.player;
 

@@ -41,10 +41,11 @@ public class Misplay extends BaseCard{
             target = p;
 
         addToBot(new DamageAction(target, new DamageInfo(p, 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+
         if (target == p) {
             addToBot(new DamageRandomEnemyAction(new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
         } else {
-            int numMonsters = AbstractDungeon.getMonsters().getMonsterNames().size();
+            int numMonsters = AbstractDungeon.getCurrRoom().monsters.monsters.size();
             int rand = ThreadLocalRandom.current().nextInt(0, numMonsters + 1);
 
             if (numMonsters == 1 || rand == 0) {

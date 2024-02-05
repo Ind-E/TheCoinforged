@@ -8,9 +8,8 @@ import GamblerMod.powers.FoolsFortunePower;
 import GamblerMod.util.CardStats;
 
 public class FoolsFortune extends BaseCard{
-    private static final int MAGIC = 1;
-    private static final int BLOCK = 6;
-    private static final int UPG_BLOCK = 2;
+    private static final int MAGIC = 6;
+    private static final int UPG_MAGIC = 2;
     
 
     public static final String ID = makeID(FoolsFortune.class.getSimpleName());
@@ -24,13 +23,12 @@ public class FoolsFortune extends BaseCard{
 
     public FoolsFortune() {
         super(ID, info);
-        setMagic(MAGIC);
-        setBlock(BLOCK, UPG_BLOCK);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new FoolsFortunePower(p, this.magicNumber, this.block)));
+        addToBot(new ApplyPowerAction(p, p, new FoolsFortunePower(p, 1, this.magicNumber)));
     }
 
 }

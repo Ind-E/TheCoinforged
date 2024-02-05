@@ -124,7 +124,7 @@
   },
   "${modID}:TrickstersMark": {
     "NAME": "Trickster's Mark",
-    "DESCRIPTION": "Apply !M! Weak and Vulnerable to random enemies."
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable to a random enemy."
   },
   "${modID}:LuckyBreak": {
     "NAME": "Lucky Break",
@@ -196,7 +196,7 @@
   },
   "${modID}:FoolsFortune": {
     "NAME": "Fool's Fortune",
-    "DESCRIPTION": "If you end your turn with no Attacks in hand, gain !B! Block and [E] next turn."
+    "DESCRIPTION": "If you end your turn with no Attacks in hand, gain !M! Block and [E] next turn."
   },
   "${modID}:DeadlyWager": {
     "NAME": "Deadly Wager",
@@ -284,5 +284,9 @@
       "Retain. NL Deal !D! damage to ALL enemies. Gain 3 Strength. NL Exhaust.",
       "It is not yet turn "
     ]
+  },
+  "${modID}:HighRoller": {
+    "NAME": "High Roller",
+    "DESCRIPTION": "Whenever you roll a *Six, draw a card."
   }
 }
