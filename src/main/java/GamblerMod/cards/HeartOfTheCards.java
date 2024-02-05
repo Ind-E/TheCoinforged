@@ -30,7 +30,7 @@ public class HeartOfTheCards extends BaseCard{
     public void upgrade() {
         if (!upgraded) {
             super.upgrade();
-            this.retain = true;
+            this.selfRetain = true;
         }
     }
 

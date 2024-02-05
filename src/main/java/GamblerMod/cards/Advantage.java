@@ -28,7 +28,7 @@ public class Advantage extends BaseCard{
     }
 
     public void upgrade() {
-        this.retain = true;
+        this.selfRetain = true;
         super.upgrade();
     }
 

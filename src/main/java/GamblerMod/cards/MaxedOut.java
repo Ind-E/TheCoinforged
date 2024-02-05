@@ -24,7 +24,7 @@ public class MaxedOut extends BaseCard{
     public MaxedOut() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE); 
-        this.retain = true;
+        this.selfRetain = true;
         this.exhaust = true;
     }
 

@@ -23,7 +23,7 @@ public class Jackpot extends BaseCard{
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
         this.exhaust = true;
-        this.retain = true;
+        this.selfRetain = true;
     }
 
     @Override

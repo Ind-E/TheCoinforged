@@ -21,22 +21,22 @@
 		"body": [
 			"package GamblerMod.powers;"
 
-			"import com.megacrit.cardcrawl.core.AbstractCreature;"
+			"\nimport com.megacrit.cardcrawl.core.AbstractCreature;"
 			"import com.megacrit.cardcrawl.powers.AbstractPower;"
 			"import static GamblerMod.GamblerMod.makeID;"
 
-			"public class $0 extends BasePower{"
-				"public static final String POWER_ID = makeID(\"$0\");"
-				"private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.?;"
-				"private static final boolean TURN_BASED = ?;"
+			"\npublic class $0 extends BasePower{"
+				"\tpublic static final String POWER_ID = makeID(\"$0\");"
+				"\tprivate static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.?;"
+				"\tprivate static final boolean TURN_BASED = ?;"
 
-				"public $0(AbstractCreature owner, int amount) {"
-					"super(POWER_ID, TYPE, TURN_BASED, owner, amount);"
-				"}"
+				"\n\tpublic $0(AbstractCreature owner, int amount) {"
+					"\t\tsuper(POWER_ID, TYPE, TURN_BASED, owner, amount);"
+				"\t}"
 
-				"public void updateDescription() {"
-					"this.description = DESCRIPTIONS[0];"
-				"}"
+				"\n\tpublic void updateDescription() {"
+					"\t\tthis.description = DESCRIPTIONS[0];"
+				"\t}"
 			"}"
 
 		],
@@ -48,39 +48,39 @@
 		"body": [
 			"package GamblerMod.cards;"
 
-			"import com.megacrit.cardcrawl.characters.AbstractPlayer;"
+			"\nimport com.megacrit.cardcrawl.characters.AbstractPlayer;"
 			"import com.megacrit.cardcrawl.monsters.AbstractMonster;"
 			"import GamblerMod.character.Gambler;"
 			"import GamblerMod.util.CardStats;"
 
-			"public class $0 extends BaseCard{"
-				"private static final int DAMAGE = 0;"
-				"private static final int UPG_DAMAGE = 0;"
-				"private static final int BLOCK = 0;"
-				"private static final int UPG_BLOCK = 0;"
-				"private static final int MAGIC = 0;"
-				"private static final int UPG_MAGIC = 0;"
+			"\npublic class $0 extends BaseCard{"
+				"\tprivate static final int DAMAGE = 0;"
+				"\tprivate static final int UPG_DAMAGE = 0;"
+				"\tprivate static final int BLOCK = 0;"
+				"\tprivate static final int UPG_BLOCK = 0;"
+				"\tprivate static final int MAGIC = 0;"
+				"\tprivate static final int UPG_MAGIC = 0;"
 
-				"public static final String ID = makeID($0.class.getSimpleName());"
-				"private static final CardStats info = new CardStats("
-						"Gambler.Enums.CARD_COLOR, "
-						"CardType.?,"
-						"CardRarity.?,"
-						"CardTarget.?,"
-						"?"
-				");"
+				"\n\tpublic static final String ID = makeID($0.class.getSimpleName());"
+				"\tprivate static final CardStats info = new CardStats("
+					"\t\tGambler.Enums.CARD_COLOR, "
+					"\t\tCardType.?,"
+					"\t\tCardRarity.?,"
+					"\t\tCardTarget.?,"
+					"\t\t?"
+				"\t);"
 
-				"public $0() {"
-					"super(ID, info);"
-					"setDamage(DAMAGE, UPG_DAMAGE); "
-					"setBlock(BLOCK, UPG_BLOCK);"
-					"setMagic(MAGIC, UPG_MAGIC);"
-				"}"
+				"\n\tpublic $0() {"
+					"\t\tsuper(ID, info);"
+					"\t\tsetDamage(DAMAGE, UPG_DAMAGE); "
+					"\t\tsetBlock(BLOCK, UPG_BLOCK);"
+					"\t\tsetMagic(MAGIC, UPG_MAGIC);"
+				"\t}"
 
-				"@Override"
-				"public void use(AbstractPlayer p, AbstractMonster m) {"
-					
-				"}"
+				"\n\t@Override"
+				"\tpublic void use(AbstractPlayer p, AbstractMonster m) {"
+					"\t"
+				"\t}"
 
 			"}"
 		],
@@ -92,20 +92,19 @@
 		"body": [
 			"package GamblerMod.actions;"
 
-			"import com.megacrit.cardcrawl.actions.AbstractGameAction;"
+			"\nimport com.megacrit.cardcrawl.actions.AbstractGameAction;"
 			"import com.megacrit.cardcrawl.cards.AbstractCard;"
 			"import com.megacrit.cardcrawl.dungeons.AbstractDungeon;"
 
-			"public class $0 extends AbstractGameAction{"
+			"\npublic class $0 extends AbstractGameAction{"
+				"\tpublic $0() {"
+					"\t\tsuper();"
+				"\t}"
 
-				"public $0() {"
-					"super();"
-				"}"
-
-				"public void update() {"
+				"\t\npublic void update() {"
 					
-					"this.isDone = true;"
-				"}"
+					"\n\t\tthis.isDone = true;"
+				"\t}"
 			"}"
 
 		],
