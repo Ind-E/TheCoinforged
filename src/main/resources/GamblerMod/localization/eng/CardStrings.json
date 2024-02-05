@@ -81,7 +81,7 @@
   },
   "${modID}:RollRed": {
     "NAME": "Roll Red",
-    "DESCRIPTION": "Add !M! *Red *Dice to your hand."
+    "DESCRIPTION": "Roll !M! *Red *Dice."
   },
   "${modID}:Advantage": {
     "NAME": "Gain Advantage",
@@ -268,6 +268,10 @@
   },
   "${modID}:RollBlue": {
     "NAME": "Roll Blue",
-    "DESCRIPTION": "Add !M! *Blue *Dice to your hand."
+    "DESCRIPTION": "Roll !M! *Blue *Dice."
+  },
+  "${modID}:Misplay": {
+    "NAME": "Misplay",
+    "DESCRIPTION": "Deal 2 damage. NL Then, deal !D! damage to a random other character."
   }
 }
