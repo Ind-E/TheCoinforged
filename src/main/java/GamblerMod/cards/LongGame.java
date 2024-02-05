@@ -58,11 +58,8 @@ public class LongGame extends BaseCard{
         int count = this.magicNumber - GameActionManager.turn;
         if (count <= 0) {
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
-            initializeDescription();
-            return;
         }
-
-        if (count == 1) {
+        else if (count == 1) {
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.EXTENDED_DESCRIPTION[3];
         } else {
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + count + cardStrings.EXTENDED_DESCRIPTION[2] + cardStrings.EXTENDED_DESCRIPTION[3];
