@@ -28,7 +28,8 @@ public abstract class BlueDieBase extends BaseCard{
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
         this.exhaust = true; 
-        tags.add(GamblerMod.DIE);  
+        tags.add(GamblerMod.DIE); 
+        tags.add(GamblerMod.BLUE_DIE);  
     }
 
     @Override

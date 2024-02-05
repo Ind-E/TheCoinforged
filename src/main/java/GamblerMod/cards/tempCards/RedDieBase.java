@@ -45,6 +45,7 @@ public abstract class RedDieBase extends BaseCard{
         setDamage(DAMAGE, UPG_DAMAGE);
         this.exhaust = true; 
         tags.add(GamblerMod.DIE);
+        tags.add(GamblerMod.RED_DIE);
         
     }
 

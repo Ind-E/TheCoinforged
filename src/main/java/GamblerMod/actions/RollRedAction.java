@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
 import GamblerMod.cards.tempCards.RedEight;
 import GamblerMod.cards.tempCards.RedFive;
 import GamblerMod.cards.tempCards.RedFour;
@@ -26,24 +22,20 @@ import GamblerMod.powers.RedKingPower;
 import GamblerMod.powers.SnakeEyesPower;
 
 
-public class RollRedAction extends AbstractGameAction{
+public class RollRedAction extends RollBaseAction{
     private int minroll = 1;
     private int maxroll = 6;
-    private int magic = 0;
     private AbstractPlayer player;
     private boolean redKingActive = false;
 
     public RollRedAction(AbstractCreature owner, int magic) {
-        this.player = AbstractDungeon.player;
-        this.magic = magic;
+        super(owner, magic);
     }
     public RollRedAction(AbstractCreature owner, int magic, int minroll, int maxroll) {
-        this.player = AbstractDungeon.player;
-        this.magic = magic;
-        this.minroll = minroll;
-        this.maxroll = maxroll;
+        super(owner, magic, minroll, maxroll);
     }
 
+    @Override
     public AbstractCard roll() {
         int dmg;
         if (player.hasPower(SnakeEyesPower.POWER_ID)) {
@@ -102,13 +94,5 @@ public class RollRedAction extends AbstractGameAction{
                 break;
         }
         return cardToAdd;
-    }
-
-    public void update() {
-        for (int i = 0; i < magic; i++) {
-            addToBot(new MakeTempCardInHandAction(roll(), 1));
-        }
-        
-        this.isDone = true;
     }
 }

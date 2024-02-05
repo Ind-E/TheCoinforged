@@ -53,6 +53,12 @@ public class GamblerMod implements
     public static AbstractCard.CardTags DIE;
 
     @SpireEnum 
+    public static AbstractCard.CardTags BLUE_DIE;
+
+    @SpireEnum 
+    public static AbstractCard.CardTags RED_DIE;
+
+    @SpireEnum 
     public static AbstractCard.CardTags MAGIC_DIE;
 
     @SpireEnum 

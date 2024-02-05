@@ -9,4 +9,8 @@ public class BlueSix extends BlueDieBase{
         super(ID, BLOCK);
     }
 
+    public BlueSix(int block) {
+        super(ID, block);
+    }
+
 }
