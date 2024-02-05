@@ -272,6 +272,6 @@
   },
   "${modID}:Misplay": {
     "NAME": "Misplay",
-    "DESCRIPTION": "Deal 2 damage. NL Then, deal !D! damage to a random other character."
+    "DESCRIPTION": "Deal 2 damage. NL Deal !D! damage to a random other character."
   }
 }
