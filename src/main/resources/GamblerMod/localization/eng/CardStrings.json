@@ -277,5 +277,9 @@
   "${modID}:HighRoller": {
     "NAME": "High Roller",
     "DESCRIPTION": "Whenever you roll a *Six, draw a card."
+  },
+  "${modID}:FullHouse": {
+    "NAME": "Full House",
+    "DESCRIPTION": "Deal !D! damage for each card type in your hand."
   }
 }
