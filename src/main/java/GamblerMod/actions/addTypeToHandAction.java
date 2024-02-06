@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import basemod.BaseMod;
@@ -18,13 +19,15 @@ import basemod.BaseMod;
     public addTypeToHandAction(CardType type) {
         super();
         this.type = type;
+        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+        this.duration = Settings.ACTION_DUR_MED;
     }
     
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractCard cardToDraw;
         ArrayList<AbstractCard> possibleCards = new ArrayList<AbstractCard>();
-        for (AbstractCard c : p.hand.group) {
+        for (AbstractCard c : p.drawPile.group) {
             if (c.type == this.type) {
                 possibleCards.add(c);
             }
@@ -47,6 +50,7 @@ import basemod.BaseMod;
           cardToDraw.current_x = CardGroup.DRAW_PILE_X;
           cardToDraw.current_y = CardGroup.DRAW_PILE_Y;
           p.drawPile.removeCard(cardToDraw);
+          cardToDraw.costForTurn = 0;
           AbstractDungeon.player.hand.addToTop(cardToDraw);
           AbstractDungeon.player.hand.refreshHandLayout();
           AbstractDungeon.player.hand.applyPowers();

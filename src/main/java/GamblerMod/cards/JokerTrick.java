@@ -33,7 +33,7 @@ public class JokerTrick extends BaseCard{
     public void upgrade() {
         if (!upgraded) {
             super.upgrade();
-            this.exhaust = false;
+            upgradeBaseCost(0);
         }
     }
 
