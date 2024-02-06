@@ -281,5 +281,10 @@
   "${modID}:FullHouse": {
     "NAME": "Full House",
     "DESCRIPTION": "Deal !D! damage for each card type in your hand."
+  },
+  "${modID}:JokerTrick": {
+    "NAME": "Joker Trick",
+    "DESCRIPTION": "Choose a card type. NL Add a random card of that type from your draw pile to your hand. NL It costs 0 this turn. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Choose a card type. NL Draw a random card of that type from your draw pile. NL It costs 0 this turn."
   }
 }
