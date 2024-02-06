@@ -9,16 +9,6 @@
       "Blizzard is a good example for this."
     ]
   },
-  "${modID}:LuckyStrike": {
-    "NAME": "Lucky Strike",
-    "DESCRIPTION": "Deal [E] [E]  damage.",
-    "UPGRADE_DESCRIPTION": "Deal [E] [E] +3 damage."
-  },
-  "${modID}:LuckyDefend": {
-    "NAME": "Lucky Defend",
-    "DESCRIPTION": "Gain [E]  Block.",
-    "UPGRADE_DESCRIPTION": "Gain [E] +3 Block."
-  },
   "${modID}:StrikeGambler": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
@@ -128,12 +118,11 @@
   },
   "${modID}:LuckyBreak": {
     "NAME": "Lucky Break",
-    "DESCRIPTION": "Draw 2 Cards. NL If they have the same cost, gan !M! Dexterity."
+    "DESCRIPTION": "Draw 2 Cards. NL If they have the same cost, gain !M! Dexterity."
   },
   "${modID}:DoubleDown": {
     "NAME": "Double Down",
-    "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less block, apply !M! Vulnerable to ALL enemies.",
-    "DESCRIPTIONS": ["hi"]
+    "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less block, apply !M! Vulnerable to ALL enemies."
   },
   "${modID}:ChaosOne": {
     "NAME": "Chaos Die",
