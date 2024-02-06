@@ -13,7 +13,7 @@ import GamblerMod.util.CardStats;
 
 public class FullHouse extends BaseCard{
     private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 9;
+    private static final int UPG_DAMAGE = 3;
 
     public static final String ID = makeID(FullHouse.class.getSimpleName());
     private static final CardStats info = new CardStats(

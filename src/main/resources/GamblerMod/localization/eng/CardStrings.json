@@ -280,7 +280,7 @@
   },
   "${modID}:FullHouse": {
     "NAME": "Full House",
-    "DESCRIPTION": "Deal !D! damage for each card type in your hand."
+    "DESCRIPTION": "Deal !D! damage for each card type in your hand. NL (Including this one)"
   },
   "${modID}:JokerTrick": {
     "NAME": "Joker Trick",
