@@ -286,5 +286,17 @@
     "NAME": "Joker Trick",
     "DESCRIPTION": "Choose a card type. NL Add a random card of that type from your draw pile to your hand. NL It costs 0 this turn. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Choose a card type. NL Draw a random card of that type from your draw pile. NL It costs 0 this turn."
+  },
+  "${modID}:attackFromDeck": {
+    "NAME": "Attack",
+    "DESCRIPTION": "Put a random Attack from your draw pile into your hand. NL It costs 0 this turn."
+  },
+  "${modID}:skillFromDeck": {
+    "NAME": "Skill",
+    "DESCRIPTION": "Put a random Skill from your draw pile into your hand. NL It costs 0 this turn."
+  },
+  "${modID}:powerFromDeck": {
+    "NAME": "Power",
+    "DESCRIPTION": "Put a random Power from your draw pile into your hand. NL It costs 0 this turn."
   }
 }
