@@ -13,10 +13,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import basemod.BaseMod;
 
-    public class addTypeToHandAction extends AbstractGameAction{
+    public class AddTypeToHandAction extends AbstractGameAction{
         private CardType type;
 
-    public addTypeToHandAction(CardType type) {
+    public AddTypeToHandAction(CardType type) {
         super();
         this.type = type;
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
@@ -49,7 +49,7 @@ import basemod.BaseMod;
           cardToDraw.targetDrawScale = 0.75F;
           cardToDraw.current_x = CardGroup.DRAW_PILE_X;
           cardToDraw.current_y = CardGroup.DRAW_PILE_Y;
-          cardToDraw.costForTurn = 0;
+          cardToDraw.setCostForTurn(0);
           p.drawPile.removeCard(cardToDraw);
           AbstractDungeon.player.hand.addToTop(cardToDraw);
           AbstractDungeon.player.hand.refreshHandLayout();

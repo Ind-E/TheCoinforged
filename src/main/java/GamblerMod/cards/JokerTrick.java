@@ -6,9 +6,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import GamblerMod.cards.optionCards.attackFromDeck;
-import GamblerMod.cards.optionCards.powerFromDeck;
-import GamblerMod.cards.optionCards.skillFromDeck;
+import GamblerMod.cards.optionCards.AttackFromDeck;
+import GamblerMod.cards.optionCards.PowerFromDeck;
+import GamblerMod.cards.optionCards.SkillFromDeck;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
@@ -40,9 +40,9 @@ public class JokerTrick extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> cardChoices = new ArrayList<>();
-        cardChoices.add(new attackFromDeck());
-        cardChoices.add(new skillFromDeck());
-        cardChoices.add(new powerFromDeck());
+        cardChoices.add(new AttackFromDeck());
+        cardChoices.add(new SkillFromDeck());
+        cardChoices.add(new PowerFromDeck());
         addToBot(new ChooseOneAction(cardChoices));
     }
 

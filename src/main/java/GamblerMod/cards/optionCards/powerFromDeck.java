@@ -3,14 +3,14 @@ package GamblerMod.cards.optionCards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import GamblerMod.actions.addTypeToHandAction;
+import GamblerMod.actions.AddTypeToHandAction;
 import GamblerMod.cards.BaseCard;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class powerFromDeck extends BaseCard{
+public class PowerFromDeck extends BaseCard{
 
-    public static final String ID = makeID(powerFromDeck.class.getSimpleName());
+    public static final String ID = makeID(PowerFromDeck.class.getSimpleName());
     private static final CardStats info = new CardStats(
         Gambler.Enums.CARD_COLOR, 
         CardType.POWER,
@@ -19,7 +19,7 @@ public class powerFromDeck extends BaseCard{
         -2
     );
 
-    public powerFromDeck() {
+    public PowerFromDeck() {
         super(ID, info);
     }
 
@@ -30,6 +30,6 @@ public class powerFromDeck extends BaseCard{
 
     @Override
     public void onChoseThisOption() {
-        addToBot(new addTypeToHandAction(this.type));
+        addToBot(new AddTypeToHandAction(this.type));
     }
 }

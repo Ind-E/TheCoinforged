@@ -286,16 +286,20 @@
     "NAME": "Joker Trick",
     "DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs 0 this turn. NL Exhaust"
   },
-  "${modID}:attackFromDeck": {
+  "${modID}:AttackFromDeck": {
     "NAME": "Attack",
     "DESCRIPTION": "Put a random Attack from your draw pile into your hand. NL It costs 0 this turn."
   },
-  "${modID}:skillFromDeck": {
+  "${modID}:SkillFromDeck": {
     "NAME": "Skill",
     "DESCRIPTION": "Put a random Skill from your draw pile into your hand. NL It costs 0 this turn."
   },
-  "${modID}:powerFromDeck": {
+  "${modID}:PpowerFromDeck": {
     "NAME": "Power",
     "DESCRIPTION": "Put a random Power from your draw pile into your hand. NL It costs 0 this turn."
+  },
+  "${modID}:CheatersLuck": {
+    "NAME": "Cheater's Luck",
+    "DESCRIPTION": "Duplicate a random card in your hand. NL It costs 0 this turn. NL Exhaust."
   }
 }
