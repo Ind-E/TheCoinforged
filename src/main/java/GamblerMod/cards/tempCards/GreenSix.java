@@ -8,4 +8,8 @@ public class GreenSix extends BlueDieBase{
     public GreenSix() {
         super(ID, MAGIC);
     }
+
+    public GreenSix(int magic) {
+        super(ID, magic);
+    }
 }
