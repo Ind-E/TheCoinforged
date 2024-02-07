@@ -18,8 +18,7 @@ public abstract class RollBaseAction extends AbstractGameAction{
     public AbstractPlayer player;
 
     public RollBaseAction(AbstractCreature owner, int magic) {
-        this.player = AbstractDungeon.player;
-        this.magic = magic;
+        this(owner, magic, 1, 6);
     }
     public RollBaseAction(AbstractCreature owner, int magic, int minroll, int maxroll) {
         this.player = AbstractDungeon.player;

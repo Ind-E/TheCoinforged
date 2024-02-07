@@ -294,7 +294,7 @@
     "NAME": "Skill",
     "DESCRIPTION": "Put a random Skill from your draw pile into your hand. NL It costs 0 this turn."
   },
-  "${modID}:PpowerFromDeck": {
+  "${modID}:PowerFromDeck": {
     "NAME": "Power",
     "DESCRIPTION": "Put a random Power from your draw pile into your hand. NL It costs 0 this turn."
   },
@@ -302,5 +302,14 @@
     "NAME": "Cheater's Luck",
     "DESCRIPTION": "Duplicate a random card in your hand. NL It costs 0 this turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Duplicate 2 random cards in your hand. NL They cost 0 this turn. NL Exhaust."
+  },
+  "${modID}:HighCard": {
+    "NAME": "High Card",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card."
+  },
+  "${modID}:Upswing": {
+    "NAME": "Upswing",
+    "DESCRIPTION": "Deal !D! damage. NL Roll !M! *Blue *Die.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Roll !M! *Blue *Die."
   }
 }
