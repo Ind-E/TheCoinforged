@@ -34,7 +34,7 @@ public class CheatersLuck extends BaseCard{
             return;
 
         AbstractCard randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeCopy();
-        while (randomCardInHand.name == this.name) {
+        while (randomCardInHand.originalName == this.originalName) {
             randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeCopy();
         }
         randomCardInHand.setCostForTurn(0);

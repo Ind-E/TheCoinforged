@@ -300,6 +300,7 @@
   },
   "${modID}:CheatersLuck": {
     "NAME": "Cheater's Luck",
-    "DESCRIPTION": "Duplicate a random card in your hand. NL It costs 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Duplicate a random card in your hand. NL It costs 0 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Duplicate 2 random cards in your hand. NL They cost 0 this turn. NL Exhaust."
   }
 }
