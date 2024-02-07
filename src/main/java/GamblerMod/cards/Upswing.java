@@ -14,7 +14,7 @@ public class Upswing extends BaseCard{
     private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 2;
     private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(Upswing.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -34,6 +34,6 @@ public class Upswing extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL), AttackEffect.NONE));
-        addToBot(new RollBlueAction(p, 1));
+        addToBot(new RollBlueAction(p, this.magicNumber));
     }
 }

@@ -1,0 +1,11 @@
+package GamblerMod.cards.tempCards;
+
+public class GreenFive extends BlueDieBase{
+    private static final int MAGIC = 5;
+
+    public static final String ID = makeID(GreenFive.class.getSimpleName());
+
+    public GreenFive() {
+        super(ID, MAGIC);
+    }
+}

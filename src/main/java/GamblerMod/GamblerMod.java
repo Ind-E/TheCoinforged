@@ -66,20 +66,12 @@ public class GamblerMod implements
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
     private static final String resourcesFolder = "GamblerMod";
 
-    @SpireEnum 
-    public static AbstractCard.CardTags DIE;
-
-    @SpireEnum 
-    public static AbstractCard.CardTags BLUE_DIE;
-
-    @SpireEnum 
-    public static AbstractCard.CardTags RED_DIE;
-
-    @SpireEnum 
-    public static AbstractCard.CardTags MAGIC_DIE;
-
-    @SpireEnum 
-    public static AbstractCard.CardTags RIGGED;
+    @SpireEnum public static AbstractCard.CardTags DIE;
+    @SpireEnum public static AbstractCard.CardTags BLUE_DIE;
+    @SpireEnum public static AbstractCard.CardTags RED_DIE;
+    @SpireEnum public static AbstractCard.CardTags GREEN_DIE;
+    @SpireEnum public static AbstractCard.CardTags MAGIC_DIE;
+    @SpireEnum public static AbstractCard.CardTags RIGGED;
 
     private static final String BG_ATTACK = characterPath("cardback/bg_attack.png");
     private static final String BG_ATTACK_P = characterPath("cardback/bg_attack_p.png");
