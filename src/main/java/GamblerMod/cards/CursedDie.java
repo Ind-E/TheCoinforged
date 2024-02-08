@@ -14,7 +14,7 @@ public class CursedDie extends BaseCard{
     private static final CardStats info = new CardStats(
             Gambler.Enums.CARD_COLOR, 
             CardType.CURSE, 
-            CardRarity.SPECIAL, 
+            CardRarity.CURSE, 
             CardTarget.NONE, 
             1 
     );

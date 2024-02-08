@@ -369,5 +369,10 @@
     "NAME": "Sly Shot",
     "DESCRIPTION": "Deal !D! damage to the lowest health enemy twice.",
     "UPGRADE_DESCRIPTION":  "Deal !D! damage to the lowest health enemy !M! times."
+  },
+  "${modID}:PocketPair": {
+    "NAME": "Pocket Pair",
+    "DESCRIPTION": "Roll !M! *Green *Dice NL Exhaust",
+    "UPGRADE_DESCRIPTION":  "Roll !M! *Green *Dice. NL Give them Retain. NL Exhaust"
   }
 }

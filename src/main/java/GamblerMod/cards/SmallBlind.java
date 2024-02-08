@@ -8,7 +8,7 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class SmallBlind extends BaseCard{
-    private static final int BLOCK = 14;
+    private static final int BLOCK = 13;
     private static final int UPG_BLOCK = 4;
     private static final int MAGIC = 5;
 
