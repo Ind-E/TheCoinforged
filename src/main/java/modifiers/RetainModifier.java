@@ -9,7 +9,7 @@ public class RetainModifier extends AbstractCardModifier{
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + " NL Retain.";
+        return "Retain. NL " + rawDescription;
     }
 
     @Override
