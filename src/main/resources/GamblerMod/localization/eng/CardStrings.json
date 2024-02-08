@@ -97,7 +97,7 @@
   },
   "${modID}:RedKing": {
     "NAME": "Red King",
-    "DESCRIPTION": "*Red *Dice now damage ALL enemies. NL Add !M! *Red *Dice to your hand."
+    "DESCRIPTION": "*Red *Dice now damage ALL enemies. NL Roll !M! *Red *Dice."
   },
   "${modID}:Desperation": {
     "NAME": "Desperation",
@@ -181,7 +181,7 @@
   "${modID}:Bluff": {
     "NAME": "Bluff",
     "DESCRIPTION": "Deal !D! damage. If you have no debuffs, gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you have 1 or less debuffs, gain !B! Block."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you have 1 debuff or less, gain !B! Block."
   },
   "${modID}:FoolsFortune": {
     "NAME": "Fool's Fortune",
@@ -310,7 +310,7 @@
   "${modID}:Upswing": {
     "NAME": "Upswing",
     "DESCRIPTION": "Deal !D! damage. NL Roll !M! *Blue *Die.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Roll !M! *Blue *Die."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Roll !M! *Blue *Dice."
   },
   "${modID}:GreenOne": {
     "NAME": "Green Die",
@@ -362,6 +362,7 @@
   },
   "${modID}:PrismaticRoll": {
     "NAME": "Prismatic Roll",
-    "DESCRIPTION": "Roll !M! *Red *Die. NL Roll !M! *Blue *Die. NL Roll !M! *Green *Die. NL Roll !M! *Purple *Die."
+    "DESCRIPTION": "Roll !M! *Red *Die. NL Roll !M! *Blue *Die. NL Roll !M! *Green *Die. NL Roll !M! *Purple *Die. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Roll !M! *Red *Die. NL Roll !M! *Blue *Die. NL Roll !M! *Green *Die. NL Roll !M! *Purple *Die."
   }
 }

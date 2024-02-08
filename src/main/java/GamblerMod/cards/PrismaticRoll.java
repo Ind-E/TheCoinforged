@@ -25,13 +25,14 @@ public class PrismaticRoll extends BaseCard{
     public PrismaticRoll() {
         super(ID, info);
         setMagic(MAGIC);
+        this.exhaust = true;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             super.upgrade();
-            upgradeBaseCost(1);
+            this.exhaust = false;
         }
     }
 
