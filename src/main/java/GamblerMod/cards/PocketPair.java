@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.actions.RollGreenAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
+import basemod.helpers.CardModifierManager;
+import modifiers.RetainModifier;
 
 public class PocketPair extends BaseCard{
     private static final int MAGIC = 2;
@@ -31,12 +33,12 @@ public class PocketPair extends BaseCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         RollGreenAction green = new RollGreenAction(p, 1);
         AbstractCard c1 = green.roll(), c2 = green.roll();
+        addToBot(new MakeTempCardInHandAction(c1, true, true));
+        addToBot(new MakeTempCardInHandAction(c2, true, true));
         if (upgraded) {
-            c1.selfRetain = true;
-            c2.selfRetain = true;
+            CardModifierManager.addModifier(c1, new RetainModifier());
+            CardModifierManager.addModifier(c2, new RetainModifier());
         }
-        addToBot(new MakeTempCardInHandAction(c1));
-        addToBot(new MakeTempCardInHandAction(c2));
         
     }
 }

@@ -372,7 +372,7 @@
   },
   "${modID}:PocketPair": {
     "NAME": "Pocket Pair",
-    "DESCRIPTION": "Roll !M! *Green *Dice NL Exhaust",
-    "UPGRADE_DESCRIPTION":  "Roll !M! *Green *Dice. NL Give them Retain. NL Exhaust"
+    "DESCRIPTION": "Roll !M! *Green *Dice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Roll !M! *Green *Dice. NL Give them Retain. NL Exhaust"
   }
 }
