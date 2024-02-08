@@ -364,5 +364,10 @@
     "NAME": "Prismatic Roll",
     "DESCRIPTION": "Roll !M! *Red *Die. NL Roll !M! *Blue *Die. NL Roll !M! *Green *Die. NL Roll !M! *Purple *Die. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Roll !M! *Red *Die. NL Roll !M! *Blue *Die. NL Roll !M! *Green *Die. NL Roll !M! *Purple *Die."
+  },
+  "${modID}:SlyShot": {
+    "NAME": "Sly Shot",
+    "DESCRIPTION": "Deal !D! damage to the lowest health enemy twice.",
+    "UPGRADE_DESCRIPTION":  "Deal !D! damage to the lowest health enemy !M! times."
   }
 }
