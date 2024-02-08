@@ -55,7 +55,6 @@ public class CardShark extends BaseCard{
 
     public void triggerOnGlowCheck() {
         p = AbstractDungeon.player;
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (p.hand.getBottomCard().uuid == this.uuid) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
             this.costForTurn = 0;
