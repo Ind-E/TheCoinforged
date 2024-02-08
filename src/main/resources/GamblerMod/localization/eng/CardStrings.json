@@ -335,5 +335,33 @@
   "${modID}:GreenSix": {
     "NAME": "Green Die",
     "DESCRIPTION": "All enemies lose !M! Strength this turn. NL Exhaust."
+  },
+  "${modID}:PurpleOne": {
+    "NAME": "Purple Die",
+    "DESCRIPTION": "Gain !M! Vigor. NL Exhaust."
+  },
+  "${modID}:PurpleTwo": {
+    "NAME": "Purple Die",
+    "DESCRIPTION": "Gain !M! Vigor. NL Exhaust."
+  },
+  "${modID}:PurpleThree": {
+    "NAME": "Purple Die",
+    "DESCRIPTION": "Gain !M! Vigor. NL Exhaust."
+  },
+  "${modID}:PurpleFour": {
+    "NAME": "Purple Die",
+    "DESCRIPTION": "Gain !M! Vigor. NL Exhaust."
+  },
+  "${modID}:PurpleFive": {
+    "NAME": "Purple Die",
+    "DESCRIPTION": "Gain !M! Vigor. NL Exhaust."
+  },
+  "${modID}:PurpleSix": {
+    "NAME": "Purple Die",
+    "DESCRIPTION": "Gain !M! Vigor. NL Exhaust."
+  },
+  "${modID}:PrismaticRoll": {
+    "NAME": "Prismatic Roll",
+    "DESCRIPTION": "Roll !M! *Red *Die. NL Roll !M! *Blue *Die. NL Roll !M! *Green *Die. NL Roll !M! *Purple *Die."
   }
 }

@@ -1,6 +1,6 @@
 package GamblerMod.cards.tempCards;
 
-public class GreenSix extends BlueDieBase{
+public class GreenSix extends GreenDieBase{
     private static final int MAGIC = 6;
 
     public static final String ID = makeID(GreenSix.class.getSimpleName());
