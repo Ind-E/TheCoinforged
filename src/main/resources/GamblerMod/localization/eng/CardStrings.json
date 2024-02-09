@@ -379,5 +379,13 @@
   "${modID}:Sandbag": {
     "NAME": "Sandbag",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Weak. NL Whenever you play an Attack, increase this card's cost by 1 this turn."
+  },
+  "${modID}:Underdog": {
+    "NAME": "Underdog",
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage for each Curse in your deck."
+  },
+  "${modID}:InvigoratingRiffle": {
+    "NAME": "InvigoratingRiffle",
+    "DESCRIPTION": "Whenever you Exhaust a card, gain !M! Vigor."
   }
 }
