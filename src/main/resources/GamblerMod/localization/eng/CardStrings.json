@@ -382,7 +382,8 @@
   },
   "${modID}:Underdog": {
     "NAME": "Underdog",
-    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage for each Curse in your deck."
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage for each Curse in your deck. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Deal !D! damage for each Curse in your deck."
   },
   "${modID}:InvigoratingRiffle": {
     "NAME": "InvigoratingRiffle",

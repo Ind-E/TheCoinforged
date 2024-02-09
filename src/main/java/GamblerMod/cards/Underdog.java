@@ -27,6 +27,13 @@ public class Underdog extends BaseCard{
         this.exhaust = true;
     }
 
+    public void upgrade() {
+        if (!upgraded) {
+            super.upgrade();
+            this.exhaust = false;
+        }
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL), AttackEffect.NONE));
