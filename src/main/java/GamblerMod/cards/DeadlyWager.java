@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import GamblerMod.character.Gambler;
 import GamblerMod.powers.DeadlyWagerPower;
+import GamblerMod.powers.StrengthOnlyBuffPower;
 import GamblerMod.util.CardStats;
 
 public class DeadlyWager extends BaseCard{
@@ -30,10 +31,14 @@ public class DeadlyWager extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        if (upgraded) {
+            for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) 
+                addToBot(new ApplyPowerAction(mo, p, new StrengthOnlyBuffPower(mo, -this.magicNumber), -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        } else {
+            for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) 
+                addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
-        addToBot(new ApplyPowerAction(p, p, new DeadlyWagerPower(p, 3)));
+        addToBot(new ApplyPowerAction(p, p, new DeadlyWagerPower(p, 2)));
     }
 
 }

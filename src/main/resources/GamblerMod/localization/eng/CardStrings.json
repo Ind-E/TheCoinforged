@@ -189,7 +189,8 @@
   },
   "${modID}:DeadlyWager": {
     "NAME": "Deadly Wager",
-    "DESCRIPTION": "ALL enemies lose !M! Strength. At the start of your turn, lose 3 HP"
+    "DESCRIPTION": "ALL enemies lose !M! Strength. At the start of your turn, lose 3 HP",
+    "UPGRADE_DESCRIPTION": "ALL enemies lose !M! Strength NL (bypasses Artifact). NL At the start of your turn, lose 3 HP"
   },
   "${modID}:StrategistsShield": {
     "NAME": "Strategist's Shield",
