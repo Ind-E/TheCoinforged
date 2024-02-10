@@ -126,5 +126,12 @@
       "Whenever you Exhaust a card, gain #b",
       " Vigor."
   ]
+  },
+  "${modID}:ReducedHandSizePower": {
+    "NAME": "Reduced Hand Size",
+    "DESCRIPTIONS": [
+      "Your max hand size is reduced by #b",
+      " (minimum 1 card)."
+  ]
   }
 }

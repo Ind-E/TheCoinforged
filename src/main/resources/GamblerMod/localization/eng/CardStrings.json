@@ -386,7 +386,7 @@
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Deal !D! damage for each Curse in your deck."
   },
   "${modID}:InvigoratingRiffle": {
-    "NAME": "InvigoratingRiffle",
+    "NAME": "Invigorating Riffle",
     "DESCRIPTION": "Whenever you Exhaust a card, gain !M! Vigor."
   }
 }

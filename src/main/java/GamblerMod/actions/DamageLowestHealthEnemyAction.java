@@ -18,9 +18,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
     }
     
     public void update() {
-        AbstractCreature target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+        AbstractCreature target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if (mo.currentHealth < target.currentHealth) {
+            if (mo.currentHealth > 0 && mo.currentHealth < target.currentHealth && target.currentHealth > 0) {
                 target = mo;
             }
         }
