@@ -9,8 +9,8 @@ import GamblerMod.util.CardStats;
 
 public class SlyShot extends BaseCard{
     private static final int DAMAGE = 5;
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 1;
+    private static final int TIMES_TO_DEAL_DAMAGE = 2;
+    private static final int UPG_TIMES_TO_DEAL_DAMAGE = 1;
 
     public static final String ID = makeID(SlyShot.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -24,7 +24,7 @@ public class SlyShot extends BaseCard{
     public SlyShot() {
         super(ID, info);
         setDamage(DAMAGE); 
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(TIMES_TO_DEAL_DAMAGE, UPG_TIMES_TO_DEAL_DAMAGE);
     }
 
     @Override

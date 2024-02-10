@@ -11,7 +11,7 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class PrismaticRoll extends BaseCard{
-    private static final int MAGIC = 1;
+    private static final int DICE_TO_ROLL = 1;
 
     public static final String ID = makeID(PrismaticRoll.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -24,7 +24,7 @@ public class PrismaticRoll extends BaseCard{
 
     public PrismaticRoll() {
         super(ID, info);
-        setMagic(MAGIC);
+        setMagic(DICE_TO_ROLL);
         this.exhaust = true;
     }
 

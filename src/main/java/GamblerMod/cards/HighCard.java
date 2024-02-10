@@ -12,7 +12,7 @@ import GamblerMod.util.CardStats;
 public class HighCard extends BaseCard{
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 6;
-    private static final int MAGIC = 1;
+    private static final int CARD_DRAW = 1;
 
     public static final String ID = makeID(HighCard.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -26,7 +26,7 @@ public class HighCard extends BaseCard{
     public HighCard() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE); 
-        setMagic(MAGIC);
+        setMagic(CARD_DRAW);
     }
 
     @Override

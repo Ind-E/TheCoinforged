@@ -19,14 +19,14 @@ public class Call extends BaseCard {
             CardType.SKILL, 
             CardRarity.UNCOMMON, 
             CardTarget.NONE, 
-            1);
+            1
+        );
 
     public Call() {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.discard = 2;
-        this.baseDiscard = 2;
+        this.baseDiscard = this.discard = 2;
     }
 
     public void upgrade() {

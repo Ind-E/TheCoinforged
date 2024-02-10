@@ -10,6 +10,7 @@ import GamblerMod.util.CardStats;
 public class FoolsFortune extends BaseCard{
     private static final int MAGIC = 6;
     private static final int UPG_MAGIC = 2;
+    private static final int ENERGY_NEXT_TURN = 1;
     
     public static final String ID = makeID(FoolsFortune.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,7 +28,7 @@ public class FoolsFortune extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new FoolsFortunePower(p, 1, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new FoolsFortunePower(p, ENERGY_NEXT_TURN, this.magicNumber)));
     }
 
 }

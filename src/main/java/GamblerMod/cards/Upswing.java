@@ -13,8 +13,8 @@ import GamblerMod.util.CardStats;
 public class Upswing extends BaseCard{
     private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 2;
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
+    private static final int DICE_TO_ROLL = 1;
+    private static final int UPG_DICE_TO_ROLL = 1;
 
     public static final String ID = makeID(Upswing.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -28,7 +28,7 @@ public class Upswing extends BaseCard{
     public Upswing() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE); 
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(DICE_TO_ROLL, UPG_DICE_TO_ROLL);
     }
 
     @Override

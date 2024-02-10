@@ -12,7 +12,6 @@ import GamblerMod.cards.optionCards.SkillFromDeck;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-// Effect: Choose a card type (Attack, Skill, Power) and play a random card of that type from your draw pile for free.
 public class JokerTrick extends BaseCard{
     public static final String ID = makeID(JokerTrick.class.getSimpleName());
 

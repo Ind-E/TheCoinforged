@@ -18,11 +18,11 @@ public class Bluff extends BaseCard{
 
     public static final String ID = makeID(Bluff.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.ATTACK, 
-            CardRarity.UNCOMMON, 
-            CardTarget.ENEMY, 
-            2 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.ATTACK, 
+        CardRarity.UNCOMMON, 
+        CardTarget.ENEMY, 
+        2 
     );
 
     public Bluff() {

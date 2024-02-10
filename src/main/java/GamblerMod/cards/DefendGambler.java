@@ -12,15 +12,15 @@ public class DefendGambler extends BaseCard{
 
     public static final String ID = makeID(DefendGambler.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.BASIC, 
-            CardTarget.SELF, 
-            1 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.BASIC, 
+        CardTarget.SELF, 
+        1 
     );
 
     public DefendGambler() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
         tags.add(CardTags.STARTER_DEFEND);
     }

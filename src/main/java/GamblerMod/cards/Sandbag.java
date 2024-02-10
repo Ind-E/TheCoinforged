@@ -14,7 +14,7 @@ import GamblerMod.util.CardStats;
 public class Sandbag extends BaseCard{
     private static final int BLOCK = 16;
     private static final int UPG_BLOCK = 6;
-    private static final int MAGIC = 2;
+    private static final int WEAK = 2;
 
     public static final String ID = makeID(Sandbag.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -28,7 +28,7 @@ public class Sandbag extends BaseCard{
     public Sandbag() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC);
+        setMagic(WEAK);
     }
 
     @Override

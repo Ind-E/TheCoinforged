@@ -12,15 +12,15 @@ public class CursedDie extends BaseCard{
 
     public static final String ID = makeID(CursedDie.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.CURSE, 
-            CardRarity.CURSE, 
-            CardTarget.NONE, 
-            1 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.CURSE, 
+        CardRarity.CURSE, 
+        CardTarget.NONE, 
+        1 
     );
 
     public CursedDie() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         this.exhaust = true;
     }
 

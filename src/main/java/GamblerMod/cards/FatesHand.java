@@ -9,8 +9,10 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class FatesHand extends BaseCard {
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
+    private static final int STRENGTH = 1;
+    private static final int UPG_STRENGTH = 1;
+    private static final int CARD_DRAW = 3;
+    private static final int DISCARD = 2;
 
     public static final String ID = makeID(FatesHand.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -18,17 +20,18 @@ public class FatesHand extends BaseCard {
         CardType.SKILL, 
         CardRarity.UNCOMMON, 
         CardTarget.NONE, 
-        1);
+        1
+        );
 
     public FatesHand() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(STRENGTH, UPG_STRENGTH);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(3));
-        addToBot(new DiscardAction(p, p, 2, false));
+        addToBot(new DrawCardAction(CARD_DRAW));
+        addToBot(new DiscardAction(p, p, DISCARD, false));
         addToBot(new FatesHandAction(this.magicNumber));
     }
 

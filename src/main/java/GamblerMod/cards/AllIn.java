@@ -16,22 +16,22 @@ public class AllIn extends BaseCard{
 
     public static final String ID = makeID(AllIn.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.ATTACK, 
-        CardRarity.BASIC, 
-        CardTarget.ENEMY, 
-        2 
+        Gambler.Enums.CARD_COLOR,
+        CardType.ATTACK,
+        CardRarity.BASIC,
+        CardTarget.ENEMY,
+        2
     );
 
     public AllIn() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE); 
+        setDamage(DAMAGE, UPG_DAMAGE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(p, p, new AllInPower(p)));        
+        addToBot(new ApplyPowerAction(p, p, new AllInPower(p)));
     }
 
 }

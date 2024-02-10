@@ -12,8 +12,9 @@ import GamblerMod.powers.StrengthOnlyBuffPower;
 import GamblerMod.util.CardStats;
 
 public class DeadlyWager extends BaseCard{
-    private static final int MAGIC = 6;
-    private static final int UPG_MAGIC = 2;
+    private static final int ENEMY_STRENGTH_LOSS = 6;
+    private static final int UPG_ENEMY_STRENGTH_LOSS = 2;
+    private static final int PLAYER_HP_LOSS = 2;
 
     public static final String ID = makeID(DeadlyWager.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -26,7 +27,7 @@ public class DeadlyWager extends BaseCard{
 
     public DeadlyWager() {
         super(ID, info); 
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(ENEMY_STRENGTH_LOSS, UPG_ENEMY_STRENGTH_LOSS);
     }
 
     @Override
@@ -38,7 +39,7 @@ public class DeadlyWager extends BaseCard{
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) 
                 addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
-        addToBot(new ApplyPowerAction(p, p, new DeadlyWagerPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new DeadlyWagerPower(p, PLAYER_HP_LOSS)));
     }
 
 }

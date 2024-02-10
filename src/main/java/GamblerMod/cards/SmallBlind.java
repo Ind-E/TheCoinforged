@@ -10,7 +10,7 @@ import GamblerMod.util.CardStats;
 public class SmallBlind extends BaseCard{
     private static final int BLOCK = 13;
     private static final int UPG_BLOCK = 4;
-    private static final int MAGIC = 5;
+    private static final int GOLD_LOSS = 5;
 
     public static final String ID = makeID(SmallBlind.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -24,7 +24,7 @@ public class SmallBlind extends BaseCard{
     public SmallBlind() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC);
+        setMagic(GOLD_LOSS);
     }
 
     @Override

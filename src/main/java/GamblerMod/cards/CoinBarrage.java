@@ -12,8 +12,8 @@ import GamblerMod.util.CardStats;
 
 public class CoinBarrage extends BaseCard{
     private static final int DAMAGE = 1;
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = -1;
+    private static final int HAND_SIZE_REDUCTION = 2;
+    private static final int UPG_HAND_SIZE_REDUCTION = -1;
 
     public static final String ID = makeID(CoinBarrage.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,7 +27,7 @@ public class CoinBarrage extends BaseCard{
     public CoinBarrage() {
         super(ID, info);
         setDamage(DAMAGE); 
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(HAND_SIZE_REDUCTION, UPG_HAND_SIZE_REDUCTION);
     }
 
     @Override

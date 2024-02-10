@@ -8,8 +8,8 @@ import GamblerMod.powers.InvigoratingRifflePower;
 import GamblerMod.util.CardStats;
 
 public class InvigoratingRiffle extends BaseCard{
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 1;
+    private static final int VIGOR = 2;
+    private static final int UPG_VIGOR = 1;
 
     public static final String ID = makeID(InvigoratingRiffle.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -22,7 +22,7 @@ public class InvigoratingRiffle extends BaseCard{
 
     public InvigoratingRiffle() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(VIGOR, UPG_VIGOR);
     }
 
     @Override

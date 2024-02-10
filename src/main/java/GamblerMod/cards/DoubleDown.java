@@ -11,7 +11,7 @@ import GamblerMod.util.CardStats;
 public class DoubleDown extends BaseCard{
     private static final int BLOCK = 9;
     private static final int UPG_BLOCK = 3;
-    private static final int MAGIC = 2;
+    private static final int VULNERABLE = 2;
 
     public static final String ID = makeID(DoubleDown.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -25,7 +25,7 @@ public class DoubleDown extends BaseCard{
     public DoubleDown() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC);
+        setMagic(VULNERABLE);
     }
 
     @Override

@@ -8,8 +8,8 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class Jackpot extends BaseCard{
-    private static final int MAGIC = 5;
-    private static final int UPG_MAGIC = 5;
+    private static final int CARD_DRAW = 5;
+    private static final int UPG_CARD_DRAW = 5;
     public static final String ID = makeID(Jackpot.class.getSimpleName());
     private static final CardStats info = new CardStats(
         Gambler.Enums.CARD_COLOR, 
@@ -21,7 +21,7 @@ public class Jackpot extends BaseCard{
 
     public Jackpot() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(CARD_DRAW, UPG_CARD_DRAW);
         this.exhaust = true;
         this.selfRetain = true;
     }

@@ -8,9 +8,8 @@ import GamblerMod.actions.DesperationAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-//draw 4(5) cards, increase the cost of cards in your hand by 1
 public class Desperation extends BaseCard{
-    private static final int MAGIC = 4;
+    private static final int CARD_DRAW = 4;
 
     public static final String ID = makeID(Desperation.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -23,7 +22,7 @@ public class Desperation extends BaseCard{
 
     public Desperation() {
         super(ID, info);
-        setMagic(MAGIC);
+        setMagic(CARD_DRAW);
     }
 
     @Override

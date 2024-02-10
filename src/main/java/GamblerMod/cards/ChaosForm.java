@@ -22,11 +22,11 @@ public class ChaosForm extends BaseCard{
 
     public static final String ID = makeID(ChaosForm.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.POWER, 
-            CardRarity.RARE, 
-            CardTarget.SELF, 
-            3 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.POWER, 
+        CardRarity.RARE, 
+        CardTarget.SELF, 
+        3 
     );
 
     public ChaosForm() {

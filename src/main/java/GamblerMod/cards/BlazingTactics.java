@@ -11,23 +11,22 @@ import GamblerMod.actions.BlazingTacticsAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-// gain 1 energy. If you have more energy than cards in hand, draw 3 cards. Otherwise, exhaust.
 public class BlazingTactics extends BaseCard{
-    private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 1;
+    private static final int CARD_DRAW = 3;
+    private static final int UPG_CARD_DRAW = 1;
 
     public static final String ID = makeID(BlazingTactics.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.UNCOMMON, 
-            CardTarget.NONE, 
-            0 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.UNCOMMON, 
+        CardTarget.NONE, 
+        0 
     );
 
     public BlazingTactics() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(CARD_DRAW, UPG_CARD_DRAW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

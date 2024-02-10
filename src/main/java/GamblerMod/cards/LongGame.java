@@ -15,8 +15,9 @@ import GamblerMod.util.CardStats;
 public class LongGame extends BaseCard{
     private static final int DAMAGE = 35;
     private static final int UPG_DAMAGE = 5;
-    private static final int MAGIC = 6;
-    private static final int UPG_MAGIC = -1;
+    private static final int TURNS_UNTIL_PLAYABLE = 6;
+    private static final int UPG_TURNS_UNTIL_PLAYABLE = -1;
+    private static final int STRENGTH = 3;
 
     public static final String ID = makeID(LongGame.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -30,7 +31,7 @@ public class LongGame extends BaseCard{
     public LongGame() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE); 
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(TURNS_UNTIL_PLAYABLE, UPG_TURNS_UNTIL_PLAYABLE);
         this.isMultiDamage = true;
         this.exhaust = true;
         this.selfRetain = true;
@@ -39,7 +40,7 @@ public class LongGame extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH)));
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

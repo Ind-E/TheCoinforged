@@ -10,8 +10,8 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class CheatersLuck extends BaseCard{
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
+    private static final int CARDS_TO_DUPE = 1;
+    private static final int UPG_CARDS_TO_DUPE = 1;
 
     public static final String ID = makeID(CheatersLuck.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -24,7 +24,7 @@ public class CheatersLuck extends BaseCard{
 
     public CheatersLuck() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(CARDS_TO_DUPE, UPG_CARDS_TO_DUPE);
         this.exhaust = true;
     }
 

@@ -8,8 +8,9 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class LuckyBreak extends BaseCard {
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
+    private static final int DEXTERITY = 1;
+    private static final int UPG_DEXTERITY = 1;
+    private static final int CARD_DRAW = 2;
 
     public static final String ID = makeID(LuckyBreak.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -21,12 +22,12 @@ public class LuckyBreak extends BaseCard {
 
     public LuckyBreak() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(DEXTERITY, UPG_DEXTERITY);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(2));
+        addToBot(new DrawCardAction(CARD_DRAW));
         addToBot(new LuckyBreakAction(this.magicNumber));
     }
 

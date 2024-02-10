@@ -11,11 +11,11 @@ public class StackedDeck extends BaseCard{
 
     public static final String ID = makeID(StackedDeck.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.POWER, 
-        CardRarity.UNCOMMON, 
-        CardTarget.SELF, 
-        1 
+        Gambler.Enums.CARD_COLOR,
+        CardType.POWER,
+        CardRarity.UNCOMMON,
+        CardTarget.SELF,
+        1
     );
 
     public StackedDeck() {
@@ -26,7 +26,7 @@ public class StackedDeck extends BaseCard{
         if (!this.upgraded) {
             super.upgrade();
             this.isInnate = true;
-        } 
+        }
     }
 
     @Override

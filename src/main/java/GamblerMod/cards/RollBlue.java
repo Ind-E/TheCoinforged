@@ -13,10 +13,8 @@ import GamblerMod.util.CardStats;
 import GamblerMod.GamblerMod;
 
 public class RollBlue extends BaseCard{
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 1;
-    private static final int minroll = 1;
-    private static final int maxroll = 6;
+    private static final int DICE_TO_ROLL = 2;
+    private static final int UPG_DICE_TO_ROLL = 1;
 
     private float rotationTimer;
     private int previewIndex;
@@ -33,12 +31,12 @@ public class RollBlue extends BaseCard{
 
     public RollBlue() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(DICE_TO_ROLL, UPG_DICE_TO_ROLL);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RollBlueAction(p, this.magicNumber, minroll, maxroll));
+        addToBot(new RollBlueAction(p, this.magicNumber));
     }
     
     private ArrayList<AbstractCard> getList() {

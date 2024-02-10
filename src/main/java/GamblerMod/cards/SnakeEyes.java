@@ -9,7 +9,7 @@ import GamblerMod.powers.SnakeEyesPower;
 import GamblerMod.util.CardStats;
 
 public class SnakeEyes extends BaseCard{
-    private static final int MAGIC = 2;
+    private static final int POWER_DURATION = 2;
 
     public static final String ID = makeID(SnakeEyes.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -22,7 +22,7 @@ public class SnakeEyes extends BaseCard{
 
     public SnakeEyes() {
         super(ID, info);
-        setMagic(MAGIC);
+        setMagic(POWER_DURATION);
         this.isEthereal = true;
     }
 

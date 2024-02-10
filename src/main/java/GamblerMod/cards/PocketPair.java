@@ -12,7 +12,6 @@ import basemod.helpers.CardModifierManager;
 import modifiers.RetainModifier;
 
 public class PocketPair extends BaseCard{
-    private static final int MAGIC = 2;
 
     public static final String ID = makeID(PocketPair.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -25,7 +24,6 @@ public class PocketPair extends BaseCard{
 
     public PocketPair() {
         super(ID, info);
-        setMagic(MAGIC);
         this.exhaust = true;
     }
 

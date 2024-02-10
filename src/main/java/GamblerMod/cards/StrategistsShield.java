@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
+// TODO: this card sucks. needs rebalance
 public class StrategistsShield extends BaseCard{
     private static final int BLOCK = 6;
 

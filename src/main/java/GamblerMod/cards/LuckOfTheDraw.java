@@ -9,7 +9,8 @@ import GamblerMod.powers.LuckOfTheDrawPower;
 import GamblerMod.util.CardStats;
 
 public class LuckOfTheDraw extends BaseCard{
-    private static final int MAGIC = 1;
+    private static final int DAMAGE_ON_DRAW_CARD = 1;
+    private static final int BLOCK_ON_DRAW_CARD = 1;
 
     public static final String ID = makeID(LuckOfTheDraw.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -22,7 +23,7 @@ public class LuckOfTheDraw extends BaseCard{
 
     public LuckOfTheDraw() {
         super(ID, info); 
-        setMagic(MAGIC);
+        setMagic(DAMAGE_ON_DRAW_CARD);
     }
 
     public void upgrade() {
@@ -34,7 +35,7 @@ public class LuckOfTheDraw extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new LuckOfTheDrawPower(p, this.magicNumber, 1)));
+        addToBot(new ApplyPowerAction(p, p, new LuckOfTheDrawPower(p, this.magicNumber, BLOCK_ON_DRAW_CARD)));
     }
 
 }

@@ -13,8 +13,8 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class TrickstersMark extends BaseCard{
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 1;
+    private static final int WEAK_AND_VULN = 2;
+    private static final int UPG_WEAK_AND_VULN = 1;
 
     public static final String ID = makeID(TrickstersMark.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,7 +27,7 @@ public class TrickstersMark extends BaseCard{
 
     public TrickstersMark() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(WEAK_AND_VULN, UPG_WEAK_AND_VULN);
     }
 
     @Override

@@ -11,19 +11,19 @@ import GamblerMod.powers.RigPower;
 import GamblerMod.util.CardStats;
 
 public class Rig extends BaseCard{
-    private static final int MAGIC = 1;
+    private static final int CARD_DRAW = 1;
     public static final String ID = makeID(Rig.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.RARE, 
-            CardTarget.NONE, 
-            2
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.RARE, 
+        CardTarget.NONE, 
+        2
     );
 
     public Rig() {
         super(ID, info);
-        setMagic(MAGIC);
+        setMagic(CARD_DRAW);
         this.exhaust = true;
     }
 
@@ -38,7 +38,7 @@ public class Rig extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new RigAction());
-        addToBot(new DrawCardAction(p, MAGIC));
+        addToBot(new DrawCardAction(p, this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new RigPower(p)));
     }
 

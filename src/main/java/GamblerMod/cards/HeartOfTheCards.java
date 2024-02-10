@@ -14,13 +14,14 @@ import GamblerMod.util.CardStats;
 public class HeartOfTheCards extends BaseCard{
     private static final int MAGIC = -1;
     private static final int UPG_MAGIC = 1;
+    private static final int X_COST = -1;
     public static final String ID = makeID(HeartOfTheCards.class.getSimpleName());
     private static final CardStats info = new CardStats(
         Gambler.Enums.CARD_COLOR, 
         CardType.SKILL, 
         CardRarity.RARE, 
         CardTarget.NONE, 
-        -1 
+        X_COST
     );
 
     public HeartOfTheCards() {
