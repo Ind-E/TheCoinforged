@@ -25,7 +25,7 @@
     "NAME": "All In",
     "DESCRIPTION": "Deal !D! damage. NL You cannot gain Block from cards next turn."
   },
-  "${modID}:Gamble": {
+  "${modID}:RiskyInvestment": {
     "NAME": "Risky Investment",
     "DESCRIPTION": "Lose 10 Gold. NL If you win next turn, gain !M! Gold."
   },

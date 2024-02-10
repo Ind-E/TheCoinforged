@@ -8,11 +8,11 @@ import GamblerMod.character.Gambler;
 import GamblerMod.powers.GamblePower;
 import GamblerMod.util.CardStats;
 
-public class Gamble extends BaseCard{
+public class RiskyInvestment extends BaseCard{
     private static final int MAGIC = 50;
     private static final int UPG_MAGIC = 10;
 
-    public static final String ID = makeID(Gamble.class.getSimpleName());
+    public static final String ID = makeID(RiskyInvestment.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Gambler.Enums.CARD_COLOR, 
             CardType.SKILL, 
@@ -21,7 +21,7 @@ public class Gamble extends BaseCard{
             1 
     );
 
-    public Gamble() {
+    public RiskyInvestment() {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
     }
