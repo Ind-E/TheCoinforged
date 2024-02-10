@@ -16,15 +16,15 @@ public class AllIn extends BaseCard{
 
     public static final String ID = makeID(AllIn.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.ATTACK, 
-            CardRarity.BASIC, 
-            CardTarget.ENEMY, 
-            2 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.ATTACK, 
+        CardRarity.BASIC, 
+        CardTarget.ENEMY, 
+        2 
     );
 
     public AllIn() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE); 
     }
 

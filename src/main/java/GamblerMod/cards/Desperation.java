@@ -14,15 +14,15 @@ public class Desperation extends BaseCard{
 
     public static final String ID = makeID(Desperation.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.UNCOMMON, 
-            CardTarget.NONE, 
-            0 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.UNCOMMON, 
+        CardTarget.NONE, 
+        0 
     );
 
     public Desperation() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setMagic(MAGIC);
     }
 

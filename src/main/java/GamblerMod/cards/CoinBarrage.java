@@ -17,11 +17,11 @@ public class CoinBarrage extends BaseCard{
 
     public static final String ID = makeID(CoinBarrage.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.ATTACK, 
-            CardRarity.RARE, 
-            CardTarget.ENEMY, 
-            1 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.ATTACK, 
+        CardRarity.RARE, 
+        CardTarget.ENEMY, 
+        1 
     );
 
     public CoinBarrage() {
@@ -32,7 +32,7 @@ public class CoinBarrage extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 11; i++) {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
         }
         addToBot(new ApplyPowerAction(p, p, new ReducedHandSizePower(p, -this.magicNumber)));

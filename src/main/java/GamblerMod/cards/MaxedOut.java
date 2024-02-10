@@ -9,16 +9,16 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class MaxedOut extends BaseCard{
-    private static final int DAMAGE = 60;
+    private static final int DAMAGE = 50;
     private static final int UPG_DAMAGE = 15;
 
     public static final String ID = makeID(MaxedOut.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.ATTACK, 
-            CardRarity.UNCOMMON, 
-            CardTarget.ENEMY, 
-            99 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.ATTACK, 
+        CardRarity.UNCOMMON, 
+        CardTarget.ENEMY, 
+        9 
     );
 
     public MaxedOut() {

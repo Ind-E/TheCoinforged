@@ -15,11 +15,11 @@ public class Fold extends BaseCard{
 
     public static final String ID = makeID(Fold.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.UNCOMMON, 
-            CardTarget.SELF, 
-            1 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.UNCOMMON, 
+        CardTarget.SELF, 
+        1 
     );
 
     public Fold() {

@@ -15,15 +15,15 @@ public class Advantage extends BaseCard{
 
     public static final String ID = makeID(Advantage.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.POWER, 
-            CardRarity.UNCOMMON, 
-            CardTarget.SELF, 
-            0 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.POWER, 
+        CardRarity.UNCOMMON, 
+        CardTarget.SELF, 
+        0 
     );
 
     public Advantage() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setMagic(MAGIC);
     }
 
@@ -37,7 +37,7 @@ public class Advantage extends BaseCard{
         int diceInHand = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.hasTag(GamblerMod.DIE)) {
-                ++diceInHand;
+                diceInHand++;
             } 
         }
         if (diceInHand > 0)

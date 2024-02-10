@@ -12,16 +12,16 @@ import GamblerMod.powers.StrengthOnlyBuffPower;
 import GamblerMod.util.CardStats;
 
 public class DeadlyWager extends BaseCard{
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 6;
     private static final int UPG_MAGIC = 2;
 
     public static final String ID = makeID(DeadlyWager.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.POWER, 
-            CardRarity.UNCOMMON, 
-            CardTarget.ALL_ENEMY, 
-            2 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.POWER, 
+        CardRarity.UNCOMMON, 
+        CardTarget.ALL_ENEMY, 
+        2 
     );
 
     public DeadlyWager() {

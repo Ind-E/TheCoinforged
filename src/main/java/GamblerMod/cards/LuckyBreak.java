@@ -13,11 +13,11 @@ public class LuckyBreak extends BaseCard {
 
     public static final String ID = makeID(LuckyBreak.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR,
-            CardType.SKILL,
-            CardRarity.UNCOMMON,
-            CardTarget.NONE,
-            1);
+        Gambler.Enums.CARD_COLOR,
+        CardType.SKILL,
+        CardRarity.UNCOMMON,
+        CardTarget.NONE,
+        1);
 
     public LuckyBreak() {
         super(ID, info);

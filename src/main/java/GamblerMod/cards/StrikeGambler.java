@@ -14,15 +14,15 @@ public class StrikeGambler extends BaseCard{
 
     public static final String ID = makeID(StrikeGambler.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.ATTACK, 
-            CardRarity.BASIC, 
-            CardTarget.ENEMY, 
-            1 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.ATTACK, 
+        CardRarity.BASIC, 
+        CardTarget.ENEMY, 
+        1 
     );
 
     public StrikeGambler() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE); 
         tags.add(CardTags.STARTER_STRIKE);
         tags.add(CardTags.STRIKE);

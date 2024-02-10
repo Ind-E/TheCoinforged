@@ -12,7 +12,6 @@ public class RedKing extends BaseCard{
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 2;
     
-
     public static final String ID = makeID(RedKing.class.getSimpleName());
     private static final CardStats info = new CardStats(
         Gambler.Enums.CARD_COLOR, 

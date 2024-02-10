@@ -13,15 +13,15 @@ public class SnakeEyes extends BaseCard{
 
     public static final String ID = makeID(SnakeEyes.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.UNCOMMON, 
-            CardTarget.SELF, 
-            2 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.UNCOMMON, 
+        CardTarget.SELF, 
+        2 
     );
 
     public SnakeEyes() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setMagic(MAGIC);
         this.isEthereal = true;
     }

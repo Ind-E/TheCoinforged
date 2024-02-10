@@ -11,7 +11,6 @@ public class FoolsFortune extends BaseCard{
     private static final int MAGIC = 6;
     private static final int UPG_MAGIC = 2;
     
-
     public static final String ID = makeID(FoolsFortune.class.getSimpleName());
     private static final CardStats info = new CardStats(
         Gambler.Enums.CARD_COLOR, 

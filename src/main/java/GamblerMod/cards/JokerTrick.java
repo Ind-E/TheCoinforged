@@ -46,5 +46,4 @@ public class JokerTrick extends BaseCard{
         addToBot(new ChooseOneAction(cardChoices));
     }
 
-    
 }

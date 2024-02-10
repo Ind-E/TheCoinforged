@@ -17,17 +17,17 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class CardShark extends BaseCard{
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 4;
     private AbstractPlayer p = AbstractDungeon.player;
 
     public static final String ID = makeID(CardShark.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.ATTACK, 
-            CardRarity.COMMON, 
-            CardTarget.ENEMY, 
-            2 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.ATTACK, 
+        CardRarity.COMMON, 
+        CardTarget.ENEMY, 
+        2 
     );
 
     public CardShark() {

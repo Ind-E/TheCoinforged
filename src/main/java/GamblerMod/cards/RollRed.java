@@ -24,15 +24,15 @@ public class RollRed extends BaseCard{
 
     public static final String ID = makeID(RollRed.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.BASIC, 
-            CardTarget.NONE, 
-            1 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.BASIC, 
+        CardTarget.NONE, 
+        1 
     );
 
     public RollRed() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
     }
 

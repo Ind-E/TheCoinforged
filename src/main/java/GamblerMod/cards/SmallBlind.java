@@ -14,15 +14,15 @@ public class SmallBlind extends BaseCard{
 
     public static final String ID = makeID(SmallBlind.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.COMMON, 
-            CardTarget.SELF, 
-            1 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.COMMON, 
+        CardTarget.SELF, 
+        1 
     );
 
     public SmallBlind() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
         setMagic(MAGIC);
     }

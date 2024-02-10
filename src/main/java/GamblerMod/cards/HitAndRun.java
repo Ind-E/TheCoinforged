@@ -11,15 +11,15 @@ public class HitAndRun extends BaseCard{
 
     public static final String ID = makeID(HitAndRun.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.POWER, 
-            CardRarity.RARE, 
-            CardTarget.SELF, 
-            2
+        Gambler.Enums.CARD_COLOR, 
+        CardType.POWER, 
+        CardRarity.RARE, 
+        CardTarget.SELF, 
+        2
     );
 
     public HitAndRun() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
     }
 
     public void upgrade() {
@@ -27,7 +27,6 @@ public class HitAndRun extends BaseCard{
             super.upgrade();
             upgradeBaseCost(1);
         }
-        
     }
 
     @Override

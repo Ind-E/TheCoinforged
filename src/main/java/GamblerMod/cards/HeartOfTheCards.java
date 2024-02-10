@@ -10,6 +10,7 @@ import GamblerMod.actions.HeartOfTheCardsAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
+//TODO: rework/balance
 public class HeartOfTheCards extends BaseCard{
     private static final int MAGIC = -1;
     private static final int UPG_MAGIC = 1;

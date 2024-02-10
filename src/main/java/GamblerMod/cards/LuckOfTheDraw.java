@@ -13,11 +13,11 @@ public class LuckOfTheDraw extends BaseCard{
 
     public static final String ID = makeID(LuckOfTheDraw.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.POWER, 
-            CardRarity.RARE, 
-            CardTarget.SELF, 
-            2 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.POWER, 
+        CardRarity.RARE, 
+        CardTarget.SELF, 
+        2 
     );
 
     public LuckOfTheDraw() {

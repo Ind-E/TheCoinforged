@@ -18,11 +18,11 @@ public class TrickstersMark extends BaseCard{
 
     public static final String ID = makeID(TrickstersMark.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.COMMON, 
-            CardTarget.ALL_ENEMY, 
-            1 
+        Gambler.Enums.CARD_COLOR, 
+        CardType.SKILL, 
+        CardRarity.COMMON, 
+        CardTarget.ALL_ENEMY, 
+        1 
     );
 
     public TrickstersMark() {
