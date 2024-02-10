@@ -9,7 +9,7 @@ import static GamblerMod.GamblerMod.makeID;
 
 public class DeadlyWagerPower extends BasePower{
     public static final String POWER_ID = makeID("DeadlyWagerPower");
-    private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
+    private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
     private AbstractPlayer p = AbstractDungeon.player;
 

@@ -10,7 +10,7 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class Underdog extends BaseCard{
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 9;
 
     public static final String ID = makeID(Underdog.class.getSimpleName());
     private static final CardStats info = new CardStats(

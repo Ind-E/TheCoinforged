@@ -10,7 +10,6 @@ import GamblerMod.character.Gambler;
 import GamblerMod.powers.RigPower;
 import GamblerMod.util.CardStats;
 
-//TODO: check to make sure the card drawn has 0 cost.
 public class Rig extends BaseCard{
     private static final int MAGIC = 1;
     public static final String ID = makeID(Rig.class.getSimpleName());
