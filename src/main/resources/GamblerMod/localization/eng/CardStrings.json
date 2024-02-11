@@ -217,7 +217,8 @@
   },
   "${modID}:HitAndRun": {
     "NAME": "Hit and Run",
-    "DESCRIPTION": "Your Attacks deal double damage. Whenever you play an Attack, Exhaust it."
+    "DESCRIPTION": "Ethereal. NL Your Attacks deal double damage. Whenever you play an Attack, Exhaust it.",
+    "UPGRADE_DESCRIPTION": "Your Attacks deal double damage. Whenever you play an Attack, Exhaust it."
   },
   "${modID}:MaxedOut": {
     "NAME": "Maxed Out",

@@ -14,6 +14,7 @@ public class CoinBarrage extends BaseCard{
     private static final int DAMAGE = 1;
     private static final int HAND_SIZE_REDUCTION = 2;
     private static final int UPG_HAND_SIZE_REDUCTION = -1;
+    private static final int TIMES_TO_DEAL_DAMAGE = 11;
 
     public static final String ID = makeID(CoinBarrage.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -32,7 +33,7 @@ public class CoinBarrage extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < TIMES_TO_DEAL_DAMAGE; i++) {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
         }
         addToBot(new ApplyPowerAction(p, p, new ReducedHandSizePower(p, -this.magicNumber)));

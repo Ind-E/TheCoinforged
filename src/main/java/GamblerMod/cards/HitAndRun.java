@@ -20,12 +20,13 @@ public class HitAndRun extends BaseCard{
 
     public HitAndRun() {
         super(ID, info);
+        this.isEthereal = true;
     }
 
     public void upgrade() {
         if (!upgraded) {
             super.upgrade();
-            upgradeBaseCost(1);
+            this.isEthereal = false;
         }
     }
 
