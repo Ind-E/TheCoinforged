@@ -36,7 +36,7 @@
       "blue_die",
       "blue_dice"
     ],
-    "DESCRIPTION": "Blue Dice gain 1-6 block and Exhaust."
+    "DESCRIPTION": "Blue Dice gain 1-6 #yBlock and #yExhaust."
   },
   {
     "PROPER_NAME": "Green Dice",
@@ -45,7 +45,7 @@
       "green_die",
       "green_dice"
     ],
-    "DESCRIPTION": "Green dice make ALL enemies lose 1-6 Strength this turn and Exhaust."
+    "DESCRIPTION": "Green dice make ALL enemies lose 1-6 #yStrength this turn and #yExhaust."
   },
   {
     "PROPER_NAME": "Purple Dice",
@@ -54,6 +54,6 @@
       "purple_die",
       "purple_dice"
     ],
-    "DESCRIPTION": "Purple dice gain 1-6 Vigor and Exhaust."
+    "DESCRIPTION": "Purple dice gain 1-6 #yVigor and #yExhaust."
   }
 ]
