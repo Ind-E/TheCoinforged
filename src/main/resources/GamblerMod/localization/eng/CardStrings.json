@@ -71,7 +71,7 @@
   },
   "${modID}:RollRed": {
     "NAME": "Roll Red",
-    "DESCRIPTION": "Roll !M! *Red *Dice."
+    "DESCRIPTION": "Roll !M! ${modID}:Red_Dice."
   },
   "${modID}:Advantage": {
     "NAME": "Gain Advantage",
@@ -97,7 +97,7 @@
   },
   "${modID}:RedKing": {
     "NAME": "Red King",
-    "DESCRIPTION": "*Red *Dice now damage ALL enemies. NL Roll !M! *Red *Dice."
+    "DESCRIPTION": "${modID}:red_dice now damage ALL enemies. NL Roll !M! ${modID}:Red_Dice."
   },
   "${modID}:Desperation": {
     "NAME": "Desperation",
@@ -259,7 +259,7 @@
   },
   "${modID}:RollBlue": {
     "NAME": "Roll Blue",
-    "DESCRIPTION": "Roll !M! *Blue *Dice."
+    "DESCRIPTION": "Roll !M! ${modID}:Blue_Dice."
   },
   "${modID}:Misplay": {
     "NAME": "Misplay",
@@ -316,8 +316,8 @@
   },
   "${modID}:Upswing": {
     "NAME": "Upswing",
-    "DESCRIPTION": "Deal !D! damage. NL Roll !M! *Blue *Die.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Roll !M! *Blue *Dice."
+    "DESCRIPTION": "Deal !D! damage. NL Roll !M! ${modID}:Blue_Die.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Roll !M! ${modID}:Blue_Dice."
   },
   "${modID}:GreenOne": {
     "NAME": "Green Die",
@@ -369,8 +369,8 @@
   },
   "${modID}:PrismaticRoll": {
     "NAME": "Prismatic Roll",
-    "DESCRIPTION": "Roll !M! *Red *Die. NL Roll !M! *Blue *Die. NL Roll !M! *Green *Die. NL Roll !M! *Purple *Die. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Roll !M! *Red *Die. NL Roll !M! *Blue *Die. NL Roll !M! *Green *Die. NL Roll !M! *Purple *Die."
+    "DESCRIPTION": "Roll !M! ${modID}:Red_Die. NL Roll !M! ${modID}:Blue_Die. NL Roll !M! ${modID}:Green_Die. NL Roll !M! ${modID}:Purple_Die. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Red_Die. NL Roll !M! ${modID}:Blue_Die. NL Roll !M! ${modID}:Green_Die. NL Roll !M! ${modID}:Purple_Die."
   },
   "${modID}:SlyShot": {
     "NAME": "Sly Shot",
@@ -379,8 +379,8 @@
   },
   "${modID}:PocketPair": {
     "NAME": "Pocket Pair",
-    "DESCRIPTION": "Roll !M! *Green *Dice. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Roll !M! *Green *Dice. NL Give them Retain. NL Exhaust"
+    "DESCRIPTION": "Roll !M! ${modID}:Green_Dice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Green_Dice. NL Give them Retain. NL Exhaust"
   },
   "${modID}:Sandbag": {
     "NAME": "Sandbag",
