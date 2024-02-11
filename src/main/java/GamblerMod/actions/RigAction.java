@@ -15,12 +15,16 @@ public class RigAction extends AbstractGameAction{
     
     public void update() {
         for (AbstractCard c : p.drawPile.group) {
-            c.freeToPlayOnce = true;
-            c.tags.add(GamblerMod.RIGGED);
+            if (!c.freeToPlayOnce) {
+                c.freeToPlayOnce = true;
+                c.tags.add(GamblerMod.RIGGED);
+            }
         }
         for (AbstractCard c : p.discardPile.group) {
-            c.freeToPlayOnce = true;
-            c.tags.add(GamblerMod.RIGGED);
+            if (!c.freeToPlayOnce) {
+                c.freeToPlayOnce = true;
+                c.tags.add(GamblerMod.RIGGED);
+            }
         }
         this.isDone = true;
     }

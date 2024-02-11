@@ -22,6 +22,7 @@ public class AceInTheHole extends BaseCard{
 
     public AceInTheHole() {
         super(ID, info);
+        this.purgeOnUse = true;
     }
 
     @Override

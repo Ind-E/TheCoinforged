@@ -15,7 +15,7 @@ import GamblerMod.util.CardStats;
 public class LongGame extends BaseCard{
     private static final int DAMAGE = 35;
     private static final int UPG_DAMAGE = 5;
-    private static final int TURNS_UNTIL_PLAYABLE = 6;
+    private static final int TURNS_UNTIL_PLAYABLE = 5;
     private static final int UPG_TURNS_UNTIL_PLAYABLE = -1;
     private static final int STRENGTH = 3;
 

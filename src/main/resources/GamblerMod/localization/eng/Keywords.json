@@ -59,9 +59,7 @@
   {
     "PROPER_NAME": "Advantage",
     "NAMES": [
-      "purple die",
-      "purple_die",
-      "purple_dice"
+      "advantage"
     ],
     "DESCRIPTION": "Whenever you roll #yDice, roll #b extra times and take the highest roll."
   }

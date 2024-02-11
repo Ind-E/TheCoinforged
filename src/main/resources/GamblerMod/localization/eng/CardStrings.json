@@ -284,7 +284,7 @@
     "NAME": "Full House",
     "DESCRIPTION": "Deal !D! damage for each card type in your hand.",
     "EXTENDED_DESCRIPTION": [
-      "NL ( ",
+      " NL ( ",
       " type in hand.)",
       " types in hand.)"
     ]
@@ -397,8 +397,8 @@
   },
   "${modID}:AceInTheHole": {
     "NAME": "Ace In The Hole",
-    "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or discard pile into your hand. It costs 0 this turn."
+    "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn. PurgeField.purge",
+    "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or exhaust pile into your hand. It costs 0 this turn. PurgeField.purge"
   },
   "${modID}:ShuffleStrike": {
     "NAME": "Shuffle Strike",
