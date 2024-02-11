@@ -97,7 +97,7 @@
   },
   "${modID}:RedKing": {
     "NAME": "Red King",
-    "DESCRIPTION": "${modID}:red_dice now damage ALL enemies. NL Roll !M! ${modID}:Red_Dice."
+    "DESCRIPTION": "${modID}:Red_Dice now damage ALL enemies. NL Roll !M! ${modID}:Red_Dice."
   },
   "${modID}:Desperation": {
     "NAME": "Desperation",
@@ -122,7 +122,7 @@
   },
   "${modID}:DoubleDown": {
     "NAME": "Double Down",
-    "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less block, apply !M! Vulnerable to ALL enemies."
+    "DESCRIPTION": "Gain !B! Block. If you end your turn with !B! or less Block, apply !M! Vulnerable to ALL enemies."
   },
   "${modID}:ChaosOne": {
     "NAME": "Chaos Die",

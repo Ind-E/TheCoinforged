@@ -55,5 +55,14 @@
       "purple_dice"
     ],
     "DESCRIPTION": "Purple dice gain 1-6 #yVigor and #yExhaust."
+  },
+  {
+    "PROPER_NAME": "Advantage",
+    "NAMES": [
+      "purple die",
+      "purple_die",
+      "purple_dice"
+    ],
+    "DESCRIPTION": "Whenever you roll #yDice, roll #b extra times and take the highest roll."
   }
 ]
