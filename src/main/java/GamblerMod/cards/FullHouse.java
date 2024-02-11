@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
@@ -31,14 +32,31 @@ public class FullHouse extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int count = getTypes();
+        for (int i = 0; i < count; i++) {
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage), AbstractGameAction.AttackEffect.NONE));
+        }
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        int count = getTypes();
+        if (count == 1) {
+            this.rawDescription = this.description + cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.EXTENDED_DESCRIPTION[1];
+        } else {
+            this.rawDescription = this.description + cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.EXTENDED_DESCRIPTION[2];
+        } 
+        initializeDescription();
+    }
+
+    public int getTypes() {
+        AbstractPlayer p = AbstractDungeon.player;
         ArrayList<String> types = new ArrayList<String>();
         for (AbstractCard c : p.hand.group) {
             if (!types.contains(c.type.toString())) {
                 types.add(c.type.toString());
             }
         }
-        for (int i = 0; i < types.size(); i++) {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage), AbstractGameAction.AttackEffect.NONE));
-        }
+        return types.size();
     }
 }

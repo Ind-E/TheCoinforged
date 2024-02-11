@@ -32,6 +32,7 @@ public class ChaosForm extends BaseCard{
     public ChaosForm() {
         super(ID, info);
         setMagic(MAGIC);
+        this.isEthereal = true;
     }
 
     public void upgrade() {

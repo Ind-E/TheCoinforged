@@ -44,6 +44,10 @@ public class DoubleDealingAction extends AbstractGameAction{
 
                 card1.cost = card1.costForTurn = card2.costForTurn;
                 card2.cost = card2.costForTurn = temp;
+                if (card1.freeToPlayOnce || card2.freeToPlayOnce) {
+                    card1.freeToPlayOnce = !card1.freeToPlayOnce;
+                    card2.freeToPlayOnce = !card2.freeToPlayOnce;
+                } 
                 
                 card1.unhover();
                 card1.lighten(true);

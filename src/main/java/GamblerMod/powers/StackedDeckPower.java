@@ -50,9 +50,10 @@ public class StackedDeckPower extends BasePower{
         if (possible)
             findAndModifyCard(); 
     }
+
     private void findAndModifyCard() {
         AbstractCard c = this.p.drawPile.getRandomCard(AbstractDungeon.cardRandomRng);
-        if (c.cost > 0) {
+        if (c.cost > 0 && c.freeToPlayOnce == false) {
             c.freeToPlayOnce = true;
         } else {
             findAndModifyCard();

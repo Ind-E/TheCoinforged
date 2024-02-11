@@ -150,7 +150,7 @@
   },
   "${modID}:ChaosForm": {
     "NAME": "Chaos Form",
-    "DESCRIPTION": "At the start of your turn, roll a *Chaos *Die."
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, roll a *Chaos *Die."
   },
   "${modID}:Fold": {
     "NAME": "Fold",
@@ -281,7 +281,12 @@
   },
   "${modID}:FullHouse": {
     "NAME": "Full House",
-    "DESCRIPTION": "Deal !D! damage for each card type in your hand. NL (Including this one)"
+    "DESCRIPTION": "Deal !D! damage for each card type in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "NL ( ",
+      " type in hand.)",
+      " types in hand.)"
+    ]
   },
   "${modID}:JokerTrick": {
     "NAME": "Joker Trick",
@@ -388,5 +393,10 @@
   "${modID}:InvigoratingRiffle": {
     "NAME": "Invigorating Riffle",
     "DESCRIPTION": "Whenever you Exhaust a card, gain !M! Vigor."
+  },
+  "${modID}:AceInTheHole": {
+    "NAME": "Ace In The Hole",
+    "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or discard pile into your hand. It costs 0 this turn."
   }
 }
