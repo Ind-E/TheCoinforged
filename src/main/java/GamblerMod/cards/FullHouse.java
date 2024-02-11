@@ -1,7 +1,5 @@
 package GamblerMod.cards;
 
-import static com.megacrit.cardcrawl.powers.AbstractPower.DESCRIPTIONS;
-
 import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

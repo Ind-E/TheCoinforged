@@ -399,5 +399,9 @@
     "NAME": "Ace In The Hole",
     "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn.",
     "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or discard pile into your hand. It costs 0 this turn."
+  },
+  "${modID}:ShuffleStrike": {
+    "NAME": "Shuffle Strike",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies X times. Draw X cards. Discard X cards. Gain [E]."
   }
 }
