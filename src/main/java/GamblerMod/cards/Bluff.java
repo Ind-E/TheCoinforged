@@ -17,6 +17,8 @@ public class Bluff extends BaseCard{
     private static final int UPG_DAMAGE = 2;
     private static final int BLOCK = 6;
     private static final int UPG_BLOCK = 2;
+    private static final int MAGIC = 0;
+    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(Bluff.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -31,6 +33,7 @@ public class Bluff extends BaseCard{
         super(ID, info); 
         setDamage(DAMAGE, UPG_DAMAGE);
         setBlock(BLOCK, UPG_BLOCK);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
@@ -38,7 +41,7 @@ public class Bluff extends BaseCard{
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
         int debuffCount = countDebuffs();
         
-        if (!upgraded && debuffCount == 0 || upgraded && debuffCount <= 1) {
+        if (debuffCount <= this.magicNumber) {
             addToBot(new GainBlockAction(p, this.block));
         }
     }
@@ -56,7 +59,7 @@ public class Bluff extends BaseCard{
     @Override
     public void triggerOnGlowCheck() {
         int debuffCount = countDebuffs();
-        if (!upgraded && debuffCount == 0 || upgraded && debuffCount <= 1) {
+        if (debuffCount <= this.magicNumber) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

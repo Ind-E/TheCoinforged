@@ -1,5 +1,7 @@
 package GamblerMod.cards;
 
+import static com.megacrit.cardcrawl.powers.AbstractPower.DESCRIPTIONS;
+
 import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -42,9 +44,9 @@ public class FullHouse extends BaseCard{
         super.applyPowers();
         int count = getTypes();
         if (count == 1) {
-            this.rawDescription = this.description + cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.EXTENDED_DESCRIPTION[1];
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + count + cardStrings.EXTENDED_DESCRIPTION[1];
         } else {
-            this.rawDescription = this.description + cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.EXTENDED_DESCRIPTION[2];
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + count + cardStrings.EXTENDED_DESCRIPTION[2];
         } 
         initializeDescription();
     }

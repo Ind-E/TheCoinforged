@@ -180,8 +180,8 @@
   },
   "${modID}:Bluff": {
     "NAME": "Bluff",
-    "DESCRIPTION": "Deal !D! damage. If you have no debuffs, gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you have 1 debuff or less, gain !B! Block."
+    "DESCRIPTION": "Deal !D! damage. If you have !M! debuffs, gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you have !M! debuff or less, gain !B! Block."
   },
   "${modID}:FoolsFortune": {
     "NAME": "Fool's Fortune",
@@ -321,27 +321,27 @@
   },
   "${modID}:GreenOne": {
     "NAME": "Green Die",
-    "DESCRIPTION": "All enemies lose !M! Strength this turn. NL Exhaust."
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Exhaust."
   },
   "${modID}:GreenTwo": {
     "NAME": "Green Die",
-    "DESCRIPTION": "All enemies lose !M! Strength this turn. NL Exhaust."
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Exhaust."
   },
   "${modID}:GreenThree": {
     "NAME": "Green Die",
-    "DESCRIPTION": "All enemies lose !M! Strength this turn. NL Exhaust."
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Exhaust."
   },
   "${modID}:GreenFour": {
     "NAME": "Green Die",
-    "DESCRIPTION": "All enemies lose !M! Strength this turn. NL Exhaust."
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Exhaust."
   },
   "${modID}:GreenFive": {
     "NAME": "Green Die",
-    "DESCRIPTION": "All enemies lose !M! Strength this turn. NL Exhaust."
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Exhaust."
   },
   "${modID}:GreenSix": {
     "NAME": "Green Die",
-    "DESCRIPTION": "All enemies lose !M! Strength this turn. NL Exhaust."
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn. NL Exhaust."
   },
   "${modID}:PurpleOne": {
     "NAME": "Purple Die",

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
+//TODO: generated cards aren't exact copies
 public class CheatersLuck extends BaseCard{
     private static final int CARDS_TO_DUPE = 1;
     private static final int UPG_CARDS_TO_DUPE = 1;
@@ -38,7 +39,14 @@ public class CheatersLuck extends BaseCard{
             randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeCopy();
         }
         randomCardInHand.setCostForTurn(0);
-        for (int i = 0; i < this.magicNumber; i++)
+        addToBot(new MakeTempCardInHandAction(randomCardInHand));
+        if (upgraded) {
+            randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeCopy();
+            while (randomCardInHand.originalName == this.originalName) {
+                randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeCopy();
+            }
+            randomCardInHand.setCostForTurn(0);
             addToBot(new MakeTempCardInHandAction(randomCardInHand));
+        }
     }
 }

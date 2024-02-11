@@ -34,7 +34,7 @@ public abstract class PurpleDieBase extends BaseCard{
         setMagic(MAGIC, UPG_MAGIC);
         this.exhaust = true; 
         tags.add(GamblerMod.DIE); 
-        tags.add(GamblerMod.GREEN_DIE);  
+        tags.add(GamblerMod.PURPLE_DIE);  
     }
 
     @Override

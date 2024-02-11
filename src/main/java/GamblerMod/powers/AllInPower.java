@@ -14,7 +14,7 @@ public class AllInPower extends BasePower{
     private static final boolean TURN_BASED = true;
 
     public AllInPower(AbstractCreature owner) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, 1);
+        super(POWER_ID, TYPE, TURN_BASED, owner, -1);
     }
 
     public void updateDescription() {
