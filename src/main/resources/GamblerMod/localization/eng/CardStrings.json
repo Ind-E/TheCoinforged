@@ -403,5 +403,14 @@
   "${modID}:ShuffleStrike": {
     "NAME": "Shuffle Strike",
     "DESCRIPTION": "Deal !D! damage to ALL enemies X times. Draw X cards. Discard X cards. Gain [E]."
+  },
+  "${modID}:WaveOfGreed": {
+    "NAME": "Wave of Greed",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Discard a card for each enemy hit."
+  },
+  "${modID}:Roulette": {
+    "NAME": "Roulette",
+    "DESCRIPTION": "Deal !D! damage. Add a random Status card into your hand. Add a random card into your hand. It costs 1 less this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a random Status card into your hand. Add a random card into your hand. It costs 0 this turn."
   }
 }
