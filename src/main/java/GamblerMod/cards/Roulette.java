@@ -40,7 +40,7 @@ public class Roulette extends BaseCard {
 
         AbstractCard randomStatusCard = generateRandomStatusCard();
         if (randomStatusCard != null) {
-            addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(randomStatusCard));
+            addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction(randomStatusCard, 1));
         }
 
         AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
