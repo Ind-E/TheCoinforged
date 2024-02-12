@@ -136,11 +136,14 @@ public class GamblerMod implements
                 null);
         registerPotions();
         CustomTargeting.registerCustomTargeting(SelfOrEnemyTargeting.SELF_OR_ENEMY, new SelfOrEnemyTargeting());
-        countCards();
+
+        if (System.getProperty("user.name").equals("sacha")) {
+            countCards();
+        }
     }
 
     public static void countCards() {
-        String filePath = SensitiveData.cardDataFilePath;
+        String filePath = "C:\\Users\\sacha\\Documents\\GitHub\\GamblerMod\\card_data.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             // Write header to the CSV file
