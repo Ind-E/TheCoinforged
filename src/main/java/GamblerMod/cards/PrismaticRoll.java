@@ -1,5 +1,6 @@
 package GamblerMod.cards;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -10,17 +11,16 @@ import GamblerMod.actions.RollPurpleAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class PrismaticRoll extends BaseCard{
+public class PrismaticRoll extends BaseCard {
     private static final int DICE_TO_ROLL = 1;
 
     public static final String ID = makeID(PrismaticRoll.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL,
-        CardRarity.COMMON,
-        CardTarget.NONE,
-        2
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.COMMON,
+            CardTarget.NONE,
+            2);
 
     public PrismaticRoll() {
         super(ID, info);
@@ -42,5 +42,10 @@ public class PrismaticRoll extends BaseCard{
         addToBot(new RollBlueAction(p, this.magicNumber));
         addToBot(new RollGreenAction(p, this.magicNumber));
         addToBot(new RollPurpleAction(p, this.magicNumber));
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new PrismaticRoll();
     }
 }

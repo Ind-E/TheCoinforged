@@ -16,23 +16,22 @@ import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class CardShark extends BaseCard{
+public class CardShark extends BaseCard {
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 4;
     private AbstractPlayer p = AbstractDungeon.player;
 
     public static final String ID = makeID(CardShark.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.ATTACK, 
-        CardRarity.COMMON, 
-        CardTarget.ENEMY, 
-        2 
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.COMMON,
+            CardTarget.ENEMY,
+            2);
 
     public CardShark() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE); 
+        setDamage(DAMAGE, UPG_DAMAGE);
     }
 
     @Override
@@ -41,15 +40,17 @@ public class CardShark extends BaseCard{
             if (Settings.FAST_MODE) {
                 addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.GREEN)));
                 for (int i = 0; i < 5; i++)
-                    addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY))); 
+                    addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
             } else {
                 addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.GREEN), 0.4F));
                 for (int i = 0; i < 5; i++)
-                    addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY))); 
-            } 
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage * 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+                    addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
+            }
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage * 2, DamageInfo.DamageType.NORMAL),
+                    AbstractGameAction.AttackEffect.NONE));
         } else {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+                    AbstractGameAction.AttackEffect.NONE));
         }
     }
 
@@ -60,7 +61,11 @@ public class CardShark extends BaseCard{
             this.costForTurn = 0;
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        } 
+        }
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new CardShark();
+    }
 }

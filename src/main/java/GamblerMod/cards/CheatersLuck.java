@@ -10,18 +10,17 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 //TODO: generated cards aren't exact copies
-public class CheatersLuck extends BaseCard{
+public class CheatersLuck extends BaseCard {
     private static final int CARDS_TO_DUPE = 1;
     private static final int UPG_CARDS_TO_DUPE = 1;
 
     public static final String ID = makeID(CheatersLuck.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL,
-        CardRarity.RARE,
-        CardTarget.NONE,
-        1
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.RARE,
+            CardTarget.NONE,
+            1);
 
     public CheatersLuck() {
         super(ID, info);
@@ -34,7 +33,8 @@ public class CheatersLuck extends BaseCard{
         if (p.hand.size() <= 1)
             return;
 
-        AbstractCard randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeCopy();
+        AbstractCard randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size()))
+                .makeCopy();
         while (randomCardInHand.originalName == this.originalName) {
             randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeCopy();
         }
@@ -48,5 +48,10 @@ public class CheatersLuck extends BaseCard{
             randomCardInHand.setCostForTurn(0);
             addToBot(new MakeTempCardInHandAction(randomCardInHand));
         }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new CheatersLuck();
     }
 }

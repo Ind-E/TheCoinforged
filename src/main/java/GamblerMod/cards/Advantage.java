@@ -43,5 +43,9 @@ public class Advantage extends BaseCard{
         if (diceInHand > 0)
             addToBot(new ApplyPowerAction(p, p, new AdvantagePower(p, diceInHand)));
     }
+    public AbstractCard makeCopy() {
+        return new Advantage();
+    }
+    
 
 }

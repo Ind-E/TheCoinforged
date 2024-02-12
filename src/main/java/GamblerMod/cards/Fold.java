@@ -1,6 +1,7 @@
 package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -9,21 +10,20 @@ import GamblerMod.actions.FoldAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class Fold extends BaseCard{
+public class Fold extends BaseCard {
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(Fold.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL, 
-        CardRarity.UNCOMMON, 
-        CardTarget.SELF, 
-        1 
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
+            1);
 
     public Fold() {
-        super(ID, info); 
+        super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
     }
 
@@ -42,13 +42,17 @@ public class Fold extends BaseCard{
             this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
         } else {
             this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2];
-        } 
+        }
         initializeDescription();
     }
-  
+
     public void onMoveToDiscard() {
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new Fold();
+    }
 }

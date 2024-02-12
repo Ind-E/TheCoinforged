@@ -12,17 +12,16 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 // TODO: this card sucks. needs rebalance
-public class StrategistsShield extends BaseCard{
+public class StrategistsShield extends BaseCard {
     private static final int BLOCK = 6;
 
     public static final String ID = makeID(StrategistsShield.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL, 
-        CardRarity.UNCOMMON, 
-        CardTarget.SELF, 
-        1 
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
+            1);
 
     public StrategistsShield() {
         super(ID, info);
@@ -36,10 +35,14 @@ public class StrategistsShield extends BaseCard{
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.type == AbstractCard.CardType.POWER || upgraded && c.type == AbstractCard.CardType.STATUS) {
                 powers++;
-            } 
+            }
         }
         if (powers > 0)
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, powers)));
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new StrategistsShield();
+    }
 }

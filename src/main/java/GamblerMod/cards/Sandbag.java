@@ -11,19 +11,18 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class Sandbag extends BaseCard{
+public class Sandbag extends BaseCard {
     private static final int BLOCK = 16;
     private static final int UPG_BLOCK = 6;
     private static final int WEAK = 2;
 
     public static final String ID = makeID(Sandbag.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL,
-        CardRarity.COMMON,
-        CardTarget.SELF,
-        1
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.COMMON,
+            CardTarget.SELF,
+            1);
 
     public Sandbag() {
         super(ID, info);
@@ -45,4 +44,8 @@ public class Sandbag extends BaseCard{
         addToBot(new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false)));
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new Sandbag();
+    }
 }

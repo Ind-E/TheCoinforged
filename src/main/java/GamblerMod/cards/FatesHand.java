@@ -2,6 +2,7 @@ package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.actions.FatesHandAction;
@@ -16,12 +17,11 @@ public class FatesHand extends BaseCard {
 
     public static final String ID = makeID(FatesHand.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL, 
-        CardRarity.UNCOMMON, 
-        CardTarget.NONE, 
-        1
-        );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.NONE,
+            1);
 
     public FatesHand() {
         super(ID, info);
@@ -35,4 +35,8 @@ public class FatesHand extends BaseCard {
         addToBot(new FatesHandAction(this.magicNumber));
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new FatesHand();
+    }
 }

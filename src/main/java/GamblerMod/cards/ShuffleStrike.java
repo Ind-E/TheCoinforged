@@ -1,5 +1,6 @@
 package GamblerMod.cards;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -31,5 +32,9 @@ public class ShuffleStrike extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ShuffleStrikeAction(p, this.multiDamage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse));
+    }
+
+    public AbstractCard makeCopy() {
+        return new ShuffleStrike();
     }
 }

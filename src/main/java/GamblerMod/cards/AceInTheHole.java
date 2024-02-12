@@ -1,6 +1,7 @@
 package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -31,5 +32,10 @@ public class AceInTheHole extends BaseCard{
         addToTop(new AceInTheHoleAction(CARDS_TO_SEEK, upgraded));
         addToTop(new HeartOfTheCardsAction());
         addToTop(new DiscardAction(p, p, p.hand.size(), false));
+    }
+    
+    @Override
+    public AbstractCard makeCopy() {
+        return new AceInTheHole();
     }
 }

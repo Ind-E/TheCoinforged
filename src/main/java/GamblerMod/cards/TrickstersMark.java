@@ -1,6 +1,7 @@
 package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,18 +13,17 @@ import GamblerMod.character.Gambler;
 
 import GamblerMod.util.CardStats;
 
-public class TrickstersMark extends BaseCard{
+public class TrickstersMark extends BaseCard {
     private static final int WEAK_AND_VULN = 2;
     private static final int UPG_WEAK_AND_VULN = 1;
 
     public static final String ID = makeID(TrickstersMark.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL, 
-        CardRarity.UNCOMMON, 
-        CardTarget.ALL_ENEMY, 
-        1 
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.ALL_ENEMY,
+            1);
 
     public TrickstersMark() {
         super(ID, info);
@@ -32,11 +32,16 @@ public class TrickstersMark extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCreature r = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+        AbstractCreature r = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true,
+                AbstractDungeon.cardRandomRng);
         if (r != null) {
             addToBot(new ApplyPowerAction(r, p, new VulnerablePower(p, this.magicNumber, false)));
             addToBot(new ApplyPowerAction(r, p, new WeakPower(p, this.magicNumber, false)));
         }
+    }
+
+    public AbstractCard makeCopy() {
+        return new TrickstersMark();
     }
 
 }

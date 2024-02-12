@@ -1,22 +1,22 @@
 package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
 import GamblerMod.powers.HighRollerPower;
 import GamblerMod.util.CardStats;
 
-public class HighRoller extends BaseCard{
+public class HighRoller extends BaseCard {
 
     public static final String ID = makeID(HighRoller.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.POWER,
-        CardRarity.UNCOMMON,
-        CardTarget.SELF,
-        1
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.POWER,
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
+            1);
 
     public HighRoller() {
         super(ID, info);
@@ -32,6 +32,11 @@ public class HighRoller extends BaseCard{
         if (!upgraded) {
             super.upgrade();
             upgradeBaseCost(0);
-        } 
+        }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new HighRoller();
     }
 }

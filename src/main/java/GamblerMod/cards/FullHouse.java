@@ -12,22 +12,21 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class FullHouse extends BaseCard{
+public class FullHouse extends BaseCard {
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
 
     public static final String ID = makeID(FullHouse.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.ATTACK,
-        CardRarity.COMMON,
-        CardTarget.ENEMY,
-        1
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.COMMON,
+            CardTarget.ENEMY,
+            1);
 
     public FullHouse() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE); 
+        setDamage(DAMAGE, UPG_DAMAGE);
     }
 
     @Override
@@ -42,10 +41,12 @@ public class FullHouse extends BaseCard{
         super.applyPowers();
         int count = getTypes();
         if (count == 1) {
-            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + count + cardStrings.EXTENDED_DESCRIPTION[1];
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + count
+                    + cardStrings.EXTENDED_DESCRIPTION[1];
         } else {
-            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + count + cardStrings.EXTENDED_DESCRIPTION[2];
-        } 
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + count
+                    + cardStrings.EXTENDED_DESCRIPTION[2];
+        }
         initializeDescription();
     }
 
@@ -58,5 +59,10 @@ public class FullHouse extends BaseCard{
             }
         }
         return types.size();
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new FullHouse();
     }
 }

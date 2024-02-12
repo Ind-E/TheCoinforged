@@ -1,22 +1,22 @@
 package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
 import GamblerMod.powers.HitAndRunPower;
 import GamblerMod.util.CardStats;
 
-public class HitAndRun extends BaseCard{
+public class HitAndRun extends BaseCard {
 
     public static final String ID = makeID(HitAndRun.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.POWER, 
-        CardRarity.RARE, 
-        CardTarget.SELF, 
-        2
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.POWER,
+            CardRarity.RARE,
+            CardTarget.SELF,
+            2);
 
     public HitAndRun() {
         super(ID, info);
@@ -37,4 +37,8 @@ public class HitAndRun extends BaseCard{
         }
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new HitAndRun();
+    }
 }

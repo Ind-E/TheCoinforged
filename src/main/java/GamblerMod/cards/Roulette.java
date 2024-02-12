@@ -33,14 +33,19 @@ public class Roulette extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
-        AbstractCard randomStatusCard = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.STATUS).makeCopy();
+        AbstractCard randomStatusCard = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.STATUS).makeCopy();
         if (randomStatusCard != null) {
             addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(randomStatusCard));
         }
         AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
         if (c != null) {
-            c.setCostForTurn(this.upgraded ? 0 : c.cost - 1);
+            int costForTurn = this.upgraded ? 0 : Math.max(0, c.cost - 1);
+            c.setCostForTurn(costForTurn);
             addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(c));
         }
+    }
+
+    public AbstractCard makeCopy() {
+        return new Roulette();
     }
 }

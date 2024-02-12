@@ -13,7 +13,7 @@ import GamblerMod.powers.ChaosFormPower;
 import GamblerMod.util.CardStats;
 import GamblerMod.GamblerMod;
 
-public class ChaosForm extends BaseCard{
+public class ChaosForm extends BaseCard {
     private static final int MAGIC = 1;
 
     private float rotationTimer;
@@ -22,12 +22,11 @@ public class ChaosForm extends BaseCard{
 
     public static final String ID = makeID(ChaosForm.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.POWER, 
-        CardRarity.RARE, 
-        CardTarget.SELF, 
-        3 
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.POWER,
+            CardRarity.RARE,
+            CardTarget.SELF,
+            3);
 
     public ChaosForm() {
         super(ID, info);
@@ -39,7 +38,7 @@ public class ChaosForm extends BaseCard{
         if (!this.upgraded) {
             super.upgrade();
             upgradeBaseCost(2);
-        } 
+        }
     }
 
     @Override
@@ -53,31 +52,35 @@ public class ChaosForm extends BaseCard{
             if (q.hasTag(GamblerMod.MAGIC_DIE) && q.damage <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
-            } 
-        } 
+            }
+        }
         return myList;
     }
 
     public void update() {
         super.update();
         if (this.dupeListForPrev.isEmpty())
-            this.dupeListForPrev.addAll(getList()); 
+            this.dupeListForPrev.addAll(getList());
         if (this.hb.hovered)
             if (this.rotationTimer <= 0.0F) {
                 this.rotationTimer = 2F;
                 if (this.dupeListForPrev.size() == 0) {
-                this.cardsToPreview = (AbstractCard)CardLibrary.cards.get("Madness");
+                    this.cardsToPreview = (AbstractCard) CardLibrary.cards.get("Madness");
                 } else {
-                this.cardsToPreview = this.dupeListForPrev.get(this.previewIndex);
-                } 
+                    this.cardsToPreview = this.dupeListForPrev.get(this.previewIndex);
+                }
                 if (this.previewIndex == this.dupeListForPrev.size() - 1) {
-                this.previewIndex = 0;
+                    this.previewIndex = 0;
                 } else {
-                this.previewIndex++;
-                } 
+                    this.previewIndex++;
+                }
             } else {
                 this.rotationTimer -= Gdx.graphics.getDeltaTime();
-            }  
+            }
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new ChaosForm();
+    }
 }

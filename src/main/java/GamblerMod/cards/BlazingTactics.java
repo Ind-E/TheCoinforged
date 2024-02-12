@@ -11,18 +11,17 @@ import GamblerMod.actions.BlazingTacticsAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class BlazingTactics extends BaseCard{
+public class BlazingTactics extends BaseCard {
     private static final int CARD_DRAW = 3;
     private static final int UPG_CARD_DRAW = 1;
 
     public static final String ID = makeID(BlazingTactics.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL, 
-        CardRarity.UNCOMMON, 
-        CardTarget.NONE, 
-        0 
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.NONE,
+            0);
 
     public BlazingTactics() {
         super(ID, info);
@@ -39,6 +38,11 @@ public class BlazingTactics extends BaseCard{
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        } 
+        }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new BlazingTactics();
     }
 }

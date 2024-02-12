@@ -1,6 +1,7 @@
 package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.actions.CallAction;
@@ -15,12 +16,11 @@ public class Call extends BaseCard {
 
     public static final String ID = makeID(Call.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            Gambler.Enums.CARD_COLOR, 
-            CardType.SKILL, 
-            CardRarity.UNCOMMON, 
-            CardTarget.NONE, 
-            1
-        );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.NONE,
+            1);
 
     public Call() {
         super(ID, info);
@@ -43,4 +43,8 @@ public class Call extends BaseCard {
         addToBot(new CallAction(this, this.damage, this.magicNumber, this.discard));
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new Call();
+    }
 }

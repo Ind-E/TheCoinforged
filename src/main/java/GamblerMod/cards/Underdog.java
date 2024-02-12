@@ -9,17 +9,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
-public class Underdog extends BaseCard{
+public class Underdog extends BaseCard {
     private static final int DAMAGE = 9;
 
     public static final String ID = makeID(Underdog.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.ATTACK,
-        CardRarity.COMMON,
-        CardTarget.ENEMY,
-        0
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.COMMON,
+            CardTarget.ENEMY,
+            0);
 
     public Underdog() {
         super(ID, info);
@@ -36,11 +35,19 @@ public class Underdog extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL), AttackEffect.NONE));
+        addToBot(new DamageAction(m,
+                new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL),
+                AttackEffect.NONE));
         for (AbstractCard c : p.masterDeck.group) {
             if (c.type == CardType.CURSE || c.rarity == CardRarity.CURSE || c.color == CardColor.CURSE) {
-                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL), AttackEffect.NONE));
+                addToBot(new DamageAction(m,
+                        new DamageInfo(p, this.damage, com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL),
+                        AttackEffect.NONE));
             }
         }
+    }
+
+    public AbstractCard makeCopy() {
+        return new Underdog();
     }
 }

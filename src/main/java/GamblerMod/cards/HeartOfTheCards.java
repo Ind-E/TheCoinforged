@@ -1,5 +1,6 @@
 package GamblerMod.cards;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -11,18 +12,17 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 //TODO: rework/balance
-public class HeartOfTheCards extends BaseCard{
+public class HeartOfTheCards extends BaseCard {
     private static final int MAGIC = -1;
     private static final int UPG_MAGIC = 1;
     private static final int X_COST = -1;
     public static final String ID = makeID(HeartOfTheCards.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.SKILL, 
-        CardRarity.RARE, 
-        CardTarget.NONE, 
-        X_COST
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.RARE,
+            CardTarget.NONE,
+            X_COST);
 
     public HeartOfTheCards() {
         super(ID, info);
@@ -37,8 +37,12 @@ public class HeartOfTheCards extends BaseCard{
             addToTop(new DiscardDrawAction(this.magicNumber));
             addToBot(new HeartOfTheCardsAction());
             if (!this.freeToPlayOnce)
-                p.energy.use(EnergyPanel.totalCount); 
-        } 
+                p.energy.use(EnergyPanel.totalCount);
+        }
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new HeartOfTheCards();
+    }
 }
