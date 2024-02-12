@@ -4,9 +4,11 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -28,7 +30,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
@@ -61,18 +65,27 @@ public class GamblerMod implements
         PostInitializeSubscriber,
         EditCharactersSubscriber {
     public static ModInfo info;
-    public static String modID; //Edit your pom.xml to change this
-    static { loadModInfo(); }
-    public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
+    public static String modID; // Edit your pom.xml to change this
+    static {
+        loadModInfo();
+    }
+    public static final Logger logger = LogManager.getLogger(modID); // Used to output to the console.
     private static final String resourcesFolder = "GamblerMod";
 
-    @SpireEnum public static AbstractCard.CardTags DIE;
-    @SpireEnum public static AbstractCard.CardTags BLUE_DIE;
-    @SpireEnum public static AbstractCard.CardTags RED_DIE;
-    @SpireEnum public static AbstractCard.CardTags GREEN_DIE;
-    @SpireEnum public static AbstractCard.CardTags PURPLE_DIE;
-    @SpireEnum public static AbstractCard.CardTags MAGIC_DIE;
-    @SpireEnum public static AbstractCard.CardTags RIGGED;
+    @SpireEnum
+    public static AbstractCard.CardTags DIE;
+    @SpireEnum
+    public static AbstractCard.CardTags BLUE_DIE;
+    @SpireEnum
+    public static AbstractCard.CardTags RED_DIE;
+    @SpireEnum
+    public static AbstractCard.CardTags GREEN_DIE;
+    @SpireEnum
+    public static AbstractCard.CardTags PURPLE_DIE;
+    @SpireEnum
+    public static AbstractCard.CardTags MAGIC_DIE;
+    @SpireEnum
+    public static AbstractCard.CardTags RIGGED;
 
     private static final String BG_ATTACK = characterPath("cardback/bg_attack.png");
     private static final String BG_ATTACK_P = characterPath("cardback/bg_attack_p.png");
@@ -87,37 +100,40 @@ public class GamblerMod implements
     private static final String CHAR_SELECT_BUTTON = characterPath("select/button.png");
     private static final String CHAR_SELECT_PORTRAIT = characterPath("select/portrait.png");
 
-    private static final Color cardColor = new Color(214f/255f, 214f/255f, 84f/255f, 1f);
-    //red, green, blue, alpha. alpha is transparency, which should just be 1.
+    private static final Color cardColor = new Color(214f / 255f, 214f / 255f, 84f / 255f, 1f);
+    // red, green, blue, alpha. alpha is transparency, which should just be 1.
 
-    //This is used to prefix the IDs of various objects like cards and relics,
-    //to avoid conflicts between different mods using the same name for things.
+    // This is used to prefix the IDs of various objects like cards and relics,
+    // to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
         return modID + ":" + id;
     }
 
-    //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
+    // This will be called by ModTheSpire because of the @SpireInitializer
+    // annotation at the top of the class.
     public static void initialize() {
         new GamblerMod();
 
-        BaseMod.addColor(Gambler.Enums.CARD_COLOR, cardColor, 
-        BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB, 
-        BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
-        SMALL_ORB);
+        BaseMod.addColor(Gambler.Enums.CARD_COLOR, cardColor,
+                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
+                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
+                SMALL_ORB);
     }
 
     public GamblerMod() {
-        BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
+        BaseMod.subscribe(this); // This will make BaseMod trigger all the subscribers at their appropriate
+                                 // times.
         logger.info(modID + " subscribed to BaseMod.");
     }
 
     @Override
     public void receivePostInitialize() {
-        //This loads the image used as an icon in the in-game mods menu.
+        // This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
-        //Set up the mod information displayed in the in-game mods menu.
-        //The information used is taken from your pom.xml file.
-        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+        // Set up the mod information displayed in the in-game mods menu.
+        // The information used is taken from your pom.xml file.
+        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description,
+                null);
         registerPotions();
         CustomTargeting.registerCustomTargeting(SelfOrEnemyTargeting.SELF_OR_ENEMY, new SelfOrEnemyTargeting());
         countCards();
@@ -138,7 +154,7 @@ public class GamblerMod implements
                 int cardCost = c.cost;
 
                 // Write card information to the CSV file
-                writer.write(String.format("%s,%s,%s,%s\n", cardName, cardCost,cardType, cardRarity));
+                writer.write(String.format("%s,%s,%s,%s\n", cardName, cardCost, cardType, cardRarity));
             }
 
             System.out.println("Card data exported to " + filePath);
@@ -148,24 +164,27 @@ public class GamblerMod implements
     }
 
     public static void registerPotions() {
-        new AutoAdd(modID) //Loads files from this mod
-            .packageFilter(BasePotion.class) //In the same package as this class
-            .any(BasePotion.class, (info, potion) -> { //Run this code for any classes that extend this class
-                //These three null parameters are colors.
-                //If they're not null, they'll overwrite whatever color is set in the potions themselves.
-                //This is an old feature added before having potions determine their own color was possible.
-                BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
-                //playerClass will make a potion character-specific. By default, it's null and will do nothing.
-            });
+        new AutoAdd(modID) // Loads files from this mod
+                .packageFilter(BasePotion.class) // In the same package as this class
+                .any(BasePotion.class, (info, potion) -> { // Run this code for any classes that extend this class
+                    // These three null parameters are colors.
+                    // If they're not null, they'll overwrite whatever color is set in the potions
+                    // themselves.
+                    // This is an old feature added before having potions determine their own color
+                    // was possible.
+                    BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
+                    // playerClass will make a potion character-specific. By default, it's null and
+                    // will do nothing.
+                });
     }
 
     /*----------Localization----------*/
 
-    //This is used to load the appropriate localization files based on language.
-    private static String getLangString()
-    {
+    // This is used to load the appropriate localization files based on language.
+    private static String getLangString() {
         return Settings.language.name().toLowerCase();
     }
+
     private static final String defaultLanguage = "eng";
 
     public static final Map<String, KeywordInfo> keywords = new HashMap<>();
@@ -173,25 +192,28 @@ public class GamblerMod implements
     @Override
     public void receiveEditStrings() {
         /*
-            First, load the default localization.
-            Then, if the current language is different, attempt to load localization for that language.
-            This results in the default localization being used for anything that might be missing.
-            The same process is used to load keywords slightly below.
-        */
-        loadLocalization(defaultLanguage); //no exception catching for default localization; you better have at least one that works.
+         * First, load the default localization.
+         * Then, if the current language is different, attempt to load localization for
+         * that language.
+         * This results in the default localization being used for anything that might
+         * be missing.
+         * The same process is used to load keywords slightly below.
+         */
+        loadLocalization(defaultLanguage); // no exception catching for default localization; you better have at least
+                                           // one that works.
         if (!defaultLanguage.equals(getLangString())) {
             try {
                 loadLocalization(getLangString());
-            }
-            catch (GdxRuntimeException e) {
+            } catch (GdxRuntimeException e) {
                 e.printStackTrace();
             }
         }
     }
 
     private void loadLocalization(String lang) {
-        //While this does load every type of localization, most of these files are just outlines so that you can see how they're formatted.
-        //Feel free to comment out/delete any that you don't end up using.
+        // While this does load every type of localization, most of these files are just
+        // outlines so that you can see how they're formatted.
+        // Feel free to comment out/delete any that you don't end up using.
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 localizationPath(lang, "CardStrings.json"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
@@ -211,10 +233,10 @@ public class GamblerMod implements
     }
 
     @Override
-    public void receiveEditKeywords()
-    {
+    public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal(localizationPath(defaultLanguage, "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(localizationPath(defaultLanguage, "Keywords.json"))
+                .readString(String.valueOf(StandardCharsets.UTF_8));
         KeywordInfo[] keywords = gson.fromJson(json, KeywordInfo[].class);
         for (KeywordInfo keyword : keywords) {
             keyword.prep();
@@ -222,17 +244,15 @@ public class GamblerMod implements
         }
 
         if (!defaultLanguage.equals(getLangString())) {
-            try
-            {
-                json = Gdx.files.internal(localizationPath(getLangString(), "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
+            try {
+                json = Gdx.files.internal(localizationPath(getLangString(), "Keywords.json"))
+                        .readString(String.valueOf(StandardCharsets.UTF_8));
                 keywords = gson.fromJson(json, KeywordInfo[].class);
                 for (KeywordInfo keyword : keywords) {
                     keyword.prep();
                     registerKeyword(keyword);
                 }
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 logger.warn(modID + " does not support " + getLangString() + " keywords.");
             }
         }
@@ -240,13 +260,13 @@ public class GamblerMod implements
 
     private void registerKeyword(KeywordInfo info) {
         BaseMod.addKeyword(modID.toLowerCase(), info.PROPER_NAME, info.NAMES, info.DESCRIPTION);
-        if (!info.ID.isEmpty())
-        {
+        if (!info.ID.isEmpty()) {
             keywords.put(info.ID, info);
         }
     }
 
-    //These methods are used to generate the correct filepaths to various parts of the resources folder.
+    // These methods are used to generate the correct filepaths to various parts of
+    // the resources folder.
     public static String localizationPath(String lang, String file) {
         return resourcesFolder + "/localization/" + lang + "/" + file;
     }
@@ -254,46 +274,65 @@ public class GamblerMod implements
     public static String imagePath(String file) {
         return resourcesFolder + "/images/" + file;
     }
+
     public static String characterPath(String file) {
         return resourcesFolder + "/images/character/" + file;
     }
+
     public static String powerPath(String file) {
         return resourcesFolder + "/images/powers/" + file;
     }
+
     public static String relicPath(String file) {
         return resourcesFolder + "/images/relics/" + file;
     }
 
-
-    //This determines the mod's ID based on information stored by ModTheSpire.
+    // This determines the mod's ID based on information stored by ModTheSpire.
     private static void loadModInfo() {
-        Optional<ModInfo> infos = Arrays.stream(Loader.MODINFOS).filter((modInfo)->{
+        Optional<ModInfo> infos = Arrays.stream(Loader.MODINFOS).filter((modInfo) -> {
             AnnotationDB annotationDB = Patcher.annotationDBMap.get(modInfo.jarURL);
             if (annotationDB == null)
                 return false;
-            Set<String> initializers = annotationDB.getAnnotationIndex().getOrDefault(SpireInitializer.class.getName(), Collections.emptySet());
+            Set<String> initializers = annotationDB.getAnnotationIndex().getOrDefault(SpireInitializer.class.getName(),
+                    Collections.emptySet());
             return initializers.contains(GamblerMod.class.getName());
         }).findFirst();
         if (infos.isPresent()) {
             info = infos.get();
             modID = info.ID;
-        }
-        else {
+        } else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
     }
 
     @Override
     public void receiveEditCards() {
-        new AutoAdd(modID) //Loads files from this mod
-        .packageFilter(BaseCard.class) //In the same package as this class
-        .setDefaultSeen(true) //And marks them as seen in the compendium
-        .cards(); //Adds the cards
+        new AutoAdd(modID) // Loads files from this mod
+                .packageFilter(BaseCard.class) // In the same package as this class
+                .setDefaultSeen(true) // And marks them as seen in the compendium
+                .cards(); // Adds the cards
     }
 
     @Override
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new Gambler(),
                 CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, Gambler.Enums.GAMBLER);
+    }
+
+    public static AbstractCard generateRandomStatusCard() {
+        List<AbstractCard> statusCards = new ArrayList<>();
+
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.type == CardType.STATUS) {
+                statusCards.add(card);
+            }
+        }
+
+        if (!statusCards.isEmpty()) {
+            AbstractCard randomStatusCard = statusCards
+                    .get(AbstractDungeon.cardRandomRng.random(statusCards.size() - 1)).makeCopy();
+            return randomStatusCard;
+        }
+        throw new RuntimeException("No Status cards found");
     }
 }

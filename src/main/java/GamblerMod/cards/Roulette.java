@@ -1,5 +1,7 @@
 package GamblerMod.cards;
 
+import static GamblerMod.GamblerMod.generateRandomStatusCard;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
+import GamblerMod.GamblerMod;
 
 public class Roulette extends BaseCard {
     private static final int DAMAGE = 14;
@@ -17,12 +20,11 @@ public class Roulette extends BaseCard {
 
     public static final String ID = makeID(Roulette.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Gambler.Enums.CARD_COLOR, 
-        CardType.ATTACK,
-        CardRarity.UNCOMMON,
-        CardTarget.ENEMY,
-        2
-    );
+            Gambler.Enums.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.UNCOMMON,
+            CardTarget.ENEMY,
+            2);
 
     public Roulette() {
         super(ID, info);
@@ -31,9 +33,10 @@ public class Roulette extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
-        AbstractCard randomStatusCard = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.STATUS).makeCopy();
+        AbstractCard randomStatusCard = generateRandomStatusCard();
         if (randomStatusCard != null) {
             addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(randomStatusCard));
         }
