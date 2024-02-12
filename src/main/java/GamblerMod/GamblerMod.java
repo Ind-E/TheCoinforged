@@ -140,7 +140,7 @@ public class GamblerMod implements
     }
 
     public static void countCards() {
-        String filePath = "C:\\Users\\sacha\\Documents\\GitHub\\GamblerMod\\card_data.csv";
+        String filePath = SensitiveData.cardDataFilePath;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             // Write header to the CSV file

@@ -1,4 +1,4 @@
-package modifiers;
+package GamblerMod.modifiers;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

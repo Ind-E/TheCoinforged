@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import GamblerMod.character.Gambler;
+import GamblerMod.modifiers.ExhaustModifier;
 import GamblerMod.util.CardStats;
 import basemod.helpers.CardModifierManager;
-import modifiers.ExhaustModifier;
 import GamblerMod.GamblerMod;
 
 public class Roulette extends BaseCard {

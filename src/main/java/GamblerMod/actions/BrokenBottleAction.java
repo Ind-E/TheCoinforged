@@ -1,10 +1,8 @@
 package GamblerMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class BrokenBottleAction extends AbstractGameAction {
     private boolean freeToPlayOnce = false;
@@ -42,10 +39,8 @@ public class BrokenBottleAction extends AbstractGameAction {
         }
         if (effect > 0) {
             for (int i = 0; i < effect; i++) {
-                addToBot(new SFXAction("ATTACK_HEAVY"));
-                addToBot(new VFXAction(this.p, new CleaveEffect(), 0.0F));
                 addToBot(new DamageAction(target, new DamageInfo(this.p, this.damage, this.damageType),
-                        AbstractGameAction.AttackEffect.NONE, true));
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true));
             }
             if (!this.freeToPlayOnce)
                 this.p.energy.use(EnergyPanel.totalCount);

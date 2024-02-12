@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import GamblerMod.actions.RollGreenAction;
 import GamblerMod.character.Gambler;
+import GamblerMod.modifiers.RetainModifier;
 import GamblerMod.util.CardStats;
 import basemod.helpers.CardModifierManager;
-import modifiers.RetainModifier;
 import GamblerMod.GamblerMod;
 
 public class PocketPair extends BaseCard {
