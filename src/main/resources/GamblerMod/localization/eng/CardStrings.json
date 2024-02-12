@@ -217,8 +217,8 @@
   },
   "${modID}:HitAndRun": {
     "NAME": "Hit and Run",
-    "DESCRIPTION": "Ethereal. NL Your Attacks deal double damage. Whenever you play an Attack, Exhaust it.",
-    "UPGRADE_DESCRIPTION": "Your Attacks deal double damage. Whenever you play an Attack, Exhaust it."
+    "DESCRIPTION": "Ethereal. NL Your Attacks deal 75% more damage. Whenever you play an Attack, Exhaust it.",
+    "UPGRADE_DESCRIPTION": "Your Attacks deal 75% more damage. Whenever you play an Attack, Exhaust it."
   },
   "${modID}:MaxedOut": {
     "NAME": "Maxed Out",
@@ -397,8 +397,8 @@
   },
   "${modID}:AceInTheHole": {
     "NAME": "Ace In The Hole",
-    "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn. PurgeField.purge",
-    "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or exhaust pile into your hand. It costs 0 this turn. PurgeField.purge"
+    "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn. NL Purge.",
+    "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or exhaust pile into your hand. It costs 0 this turn. NL Purge."
   },
   "${modID}:ShuffleStrike": {
     "NAME": "Shuffle Strike",

@@ -7,19 +7,17 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class DiscardDrawAction extends AbstractGameAction{
-    private float startingDuration;
    private int modifier;
 
    public DiscardDrawAction(int modifier) {
       this.target = AbstractDungeon.player;
       this.actionType = ActionType.WAIT;
-      this.startingDuration = Settings.ACTION_DUR_FAST;
       this.duration = Settings.ACTION_DUR_FAST;
       this.modifier = modifier;
    }
 
    public void update() {
-      if (this.duration == this.startingDuration) {
+      if (this.duration == Settings.ACTION_DUR_FAST) {
          int count = AbstractDungeon.player.hand.size();
          if (count + modifier > 0) {
             this.addToTop(new DrawCardAction(this.target, count - 1));

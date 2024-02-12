@@ -25,7 +25,7 @@ public class HitAndRunPower extends BasePower{
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL)
-            return damage * 2.0F; 
+            return damage * 1.75F; 
         return damage;
     }
 
