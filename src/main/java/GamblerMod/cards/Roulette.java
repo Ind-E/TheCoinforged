@@ -15,7 +15,7 @@ public class Roulette extends BaseCard {
     private static final int DAMAGE = 14;
     private static final int UPG_DAMAGE = 4;
 
-    public static final String ID = makeID(ShuffleStrike.class.getSimpleName());
+    public static final String ID = makeID(Roulette.class.getSimpleName());
     private static final CardStats info = new CardStats(
         Gambler.Enums.CARD_COLOR, 
         CardType.ATTACK,

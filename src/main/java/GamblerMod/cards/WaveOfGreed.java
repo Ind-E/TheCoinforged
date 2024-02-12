@@ -16,7 +16,7 @@ public class WaveOfGreed extends BaseCard {
     private static final int DAMAGE = 35;
     private static final int UPG_DAMAGE = 10;
 
-    public static final String ID = makeID(ShuffleStrike.class.getSimpleName());
+    public static final String ID = makeID(WaveOfGreed.class.getSimpleName());
     private static final CardStats info = new CardStats(
         Gambler.Enums.CARD_COLOR, 
         CardType.ATTACK,
