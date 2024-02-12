@@ -12,7 +12,7 @@ import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
 public class DrunkenStrike extends BaseCard {
-    private static final int DAMAGE = 13;
+    private static final int DAMAGE = 16;
     private static final int UPG_DAMAGE = 5;
 
     public static final String ID = makeID(DrunkenStrike.class.getSimpleName());
@@ -20,8 +20,8 @@ public class DrunkenStrike extends BaseCard {
             Gambler.Enums.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
-            CardTarget.ENEMY,
-            -2);
+            CardTarget.ALL_ENEMY,
+            2);
 
     public DrunkenStrike() {
         super(ID, info);
@@ -31,7 +31,7 @@ public class DrunkenStrike extends BaseCard {
 
     @Override
     public void triggerWhenDrawn() {
-        this.cost = getRandomCost();
+        this.costForTurn = getRandomCost();
     }
 
     private int getRandomCost() {

@@ -31,7 +31,7 @@ public class LuckySeven extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 6) {
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 7) {
             for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!monster.isDeadOrEscaped()) {
                     addToBot(new LoseHPAction(monster, p, this.magicNumber));
