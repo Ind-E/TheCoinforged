@@ -18,7 +18,6 @@ public class SetTopNCardsFromTopToCostAction extends AbstractGameAction {
     public void update() {
         AbstractCard c;
         for (int i = 0; i < amount; i++) {
-            System.out.println("i: " + i + " group.size: " + group.size());
             if (i < group.size()) {
                 c = group.getNCardFromTop(i);
                 c.setCostForTurn(cost);

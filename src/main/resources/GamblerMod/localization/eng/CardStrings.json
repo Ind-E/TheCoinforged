@@ -429,6 +429,10 @@
   "${modID}:LuckyNine": {
     "NAME": "Lucky Nine",
     "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL If this is the 9th card you've played this turn, gain 9 Strength. NL Exhaust."
+  },
+  "${modID}:BrokenBottle": {
+    "NAME": "Broken Bottle",
+    "DESCRIPTION": "Deal !D! damage X times. Apply X Vulnerable."
   }
 
 }
