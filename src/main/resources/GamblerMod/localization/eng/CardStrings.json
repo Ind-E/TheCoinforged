@@ -207,8 +207,8 @@
   },
   "${modID}:HeartOfTheCards": {
     "NAME": "Heart Of The Cards",
-    "DESCRIPTION": "Discard your hand. Draw that many cards minus one and set their cost to 0 this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Discard your hand. Draw that many cards and set their cost to 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Draw X cards and set their cost to 0 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw X+1 cards and set their cost to 0 this turn. NL Exhaust."
   },
   "${modID}:StackedDeck": {
     "NAME": "Stacked Deck",
