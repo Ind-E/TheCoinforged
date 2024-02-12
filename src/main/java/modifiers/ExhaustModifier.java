@@ -4,28 +4,25 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import basemod.abstracts.AbstractCardModifier;
 
-public class RetainModifier extends AbstractCardModifier{
-
+public class ExhaustModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (!card.selfRetain) {
-            return "Retain. NL " + rawDescription;
+        if (!card.exhaust) {
+            return rawDescription + " NL Exhaust.";
         }
         return rawDescription;
     }
 
-    @Override
-    public AbstractCardModifier makeCopy() {
-        return new RetainModifier();
+    public ExhaustModifier makeCopy() {
+        return new ExhaustModifier();
     }
 
     @Override
     public void onInitialApplication(AbstractCard card) {
-        if (!card.selfRetain) {
-            card.selfRetain = true;
-            card.retain = true;
+        if (!card.exhaust) {
+            card.exhaust = true;
         }
     }
-    
+
 }

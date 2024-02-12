@@ -410,7 +410,7 @@
   },
   "${modID}:Roulette": {
     "NAME": "Roulette",
-    "DESCRIPTION": "Deal !D! damage. Add a random Status card into your hand. Add a random card into your hand. It costs 1 less this turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a random Status card into your hand. Add a random card into your hand. It costs 0 this turn."
+    "DESCRIPTION": "Deal !D! damage. Add a random Status card into your hand. Add a random card into your hand. It costs 1 less this turn and exhausts.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a random Status card into your hand. Add a random card into your hand. It costs 0 this turn and exhausts."
   }
 }

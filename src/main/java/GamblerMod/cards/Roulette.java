@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
+import basemod.helpers.CardModifierManager;
+import modifiers.ExhaustModifier;
 import GamblerMod.GamblerMod;
 
 public class Roulette extends BaseCard {
@@ -40,8 +42,16 @@ public class Roulette extends BaseCard {
         if (randomStatusCard != null) {
             addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(randomStatusCard));
         }
+
         AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
+        if (!upgraded) {
+            while (c.cost > 3) {
+                c = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
+            }
+        }
+
         if (c != null) {
+            CardModifierManager.addModifier(c, new ExhaustModifier());
             int costForTurn = this.upgraded ? 0 : Math.max(0, c.cost - 1);
             c.setCostForTurn(costForTurn);
             addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(c));
