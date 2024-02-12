@@ -420,5 +420,15 @@
   "${modID}:LuckySeven": {
     "NAME": "Lucky Seven",
     "DESCRIPTION": "Deal !D! damage. NL If this is the 7th card you've played this turn, ALL enemies lose 7 HP."
+  },
+  "${modID}:LuckyEight": {
+    "NAME": "Lucky Eight",
+    "DESCRIPTION": "Gain !B! Block. NL If this is the 8th card you've played this turn, draw 8 cards and gain [E] [E].",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL If this is the 8th card you've played this turn, draw 8 cards and gain [E] [E] [E]."
+  },
+  "${modID}:LuckyNine": {
+    "NAME": "Lucky Nine",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL If this is the 9th card you've played this turn, gain 9 Strength. NL Exhaust."
   }
+
 }
