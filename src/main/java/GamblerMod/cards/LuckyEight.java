@@ -1,6 +1,8 @@
 package GamblerMod.cards;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,8 +33,8 @@ public class LuckyEight extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
         if (cardsPlayedThisTurn == 8) {
-            p.draw(cardsPlayedThisTurn);
-            p.gainEnergy(magicNumber);
+            addToBot(new DrawCardAction(8));
+            addToBot(new GainEnergyAction(this.magicNumber));
         }
         addToBot(new GainBlockAction(p, this.block));
     }
@@ -42,6 +44,15 @@ public class LuckyEight extends BaseCard {
         if (!this.upgraded) {
             super.upgrade();
             this.upgradeBaseCost(0);
+        }
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 7) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
     }
 

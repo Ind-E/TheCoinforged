@@ -1,6 +1,7 @@
 package GamblerMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,7 +19,7 @@ public class LuckyNine extends BaseCard {
             Gambler.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
-            CardTarget.ENEMY,
+            CardTarget.ALL_ENEMY,
             1);
 
     public LuckyNine() {
@@ -34,6 +35,15 @@ public class LuckyNine extends BaseCard {
         }
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 9) {
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 9), 9));
+        }
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 8) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
     }
 
