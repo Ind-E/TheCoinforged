@@ -39,6 +39,14 @@ public class LuckyNine extends BaseCard {
     }
 
     @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            super.upgrade();
+            this.upgradeBaseCost(0);
+        }
+    }
+
+    @Override
     public void triggerOnGlowCheck() {
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 8) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;

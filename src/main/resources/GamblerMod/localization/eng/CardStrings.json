@@ -432,7 +432,7 @@
   },
   "${modID}:BrokenBottle": {
     "NAME": "Broken Bottle",
-    "DESCRIPTION": "Deal !D! damage X times. Apply X Vulnerable."
+    "DESCRIPTION": "Deal !D! damage X times. Apply X+1 Vulnerable."
   }
 
 }

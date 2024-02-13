@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import GamblerMod.actions.SetTopNCardsFromTopToCostAction;
+import GamblerMod.actions.HeartOfTheCardsFollowUpAction;
 import GamblerMod.character.Gambler;
 import GamblerMod.util.CardStats;
 
@@ -28,8 +28,7 @@ public class HeartOfTheCards extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int effect = upgraded ? this.energyOnUse + 1 : this.energyOnUse;
-        addToBot(new DrawCardAction(p, effect));
-        addToBot(new SetTopNCardsFromTopToCostAction(p.hand, effect, 0));
+        addToBot(new DrawCardAction(effect, new HeartOfTheCardsFollowUpAction()));
         
         if (!this.freeToPlayOnce)
             p.energy.use(EnergyPanel.totalCount);

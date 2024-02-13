@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
-public class ShuffleStrikeAction extends AbstractGameAction {
+public class CycleStrikeAction extends AbstractGameAction {
     public int[] multiDamage;
 
     private boolean freeToPlayOnce = false;
@@ -23,7 +23,7 @@ public class ShuffleStrikeAction extends AbstractGameAction {
     private AbstractPlayer p;
     private int energyOnUse = -1;
 
-    public ShuffleStrikeAction(AbstractPlayer p, int[] multiDamage, DamageInfo.DamageType damageType,
+    public CycleStrikeAction(AbstractPlayer p, int[] multiDamage, DamageInfo.DamageType damageType,
             boolean freeToPlayOnce, int energyOnUse) {
         this.multiDamage = multiDamage;
         this.damageType = damageType;
