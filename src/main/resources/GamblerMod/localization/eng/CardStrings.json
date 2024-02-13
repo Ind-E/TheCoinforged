@@ -433,6 +433,18 @@
   "${modID}:BrokenBottle": {
     "NAME": "Broken Bottle",
     "DESCRIPTION": "Deal !D! damage X times. Apply X+1 Vulnerable."
+  },
+  "${modID}:LoadedDice": {
+    "NAME": "Loaded Dice",
+    "DESCRIPTION": "Increase *Dice effectiveness by !M!."
+  },
+  "${modID}:UnleashedStrategy": {
+    "NAME": "Unleashed Strategy",
+    "DESCRIPTION": "Increase your max hand size by !M!. Draw !M! cards. Gain 1 Strength for every 2 cards in hand. NL Exhaust."
+  },
+  "${modID}:GameChanger": {
+    "NAME": "Game Changer",
+    "DESCRIPTION": "Deal damage to ALL enemies equal to their intent to attack. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Deal damage to ALL enemies equal to their intent to attack. NL Exhaust."
   }
-
 }

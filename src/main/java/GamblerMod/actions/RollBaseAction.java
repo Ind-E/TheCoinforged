@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import GamblerMod.powers.HighRollerPower;
+import GamblerMod.powers.LoadedDicePower;
 
 
 public abstract class RollBaseAction extends AbstractGameAction{
@@ -34,6 +35,16 @@ public abstract class RollBaseAction extends AbstractGameAction{
     public void update() {
         for (int i = 0; i < magic; i++) {
             AbstractCard rolledCard = roll();
+            if (player.hasPower(LoadedDicePower.POWER_ID)) {
+                int amount = player.getPower(LoadedDicePower.POWER_ID).amount;
+                rolledCard.magicNumber += amount;
+                rolledCard.baseMagicNumber += amount;
+                rolledCard.baseDamage += amount;
+                rolledCard.damage += amount;
+                rolledCard.block += amount;
+                rolledCard.baseBlock += amount;
+                rolledCard.initializeDescription();
+            }
             addToBot(new MakeTempCardInHandAction(rolledCard, 1));
             if (player.hasPower(HighRollerPower.POWER_ID) && rolledCard.cardID.endsWith("Six")) {
                 addToBot(new DrawCardAction(player, player.getPower(HighRollerPower.POWER_ID).amount));

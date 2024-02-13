@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import GamblerMod.character.Gambler;
-import GamblerMod.powers.ReducedHandSizePower;
+import GamblerMod.powers.ModifiedHandSizePower;
 import GamblerMod.util.CardStats;
 
 public class CoinBarrage extends BaseCard {
@@ -37,7 +37,7 @@ public class CoinBarrage extends BaseCard {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                     AbstractGameAction.AttackEffect.NONE));
         }
-        addToBot(new ApplyPowerAction(p, p, new ReducedHandSizePower(p, -this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new ModifiedHandSizePower(p, -this.magicNumber), -this.magicNumber));
     }
 
     @Override
