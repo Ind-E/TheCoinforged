@@ -42,10 +42,12 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import GamblerMod.cards.BaseCard;
 import GamblerMod.character.Gambler;
 import GamblerMod.potions.BasePotion;
+import GamblerMod.relics.BaseRelic;
 import GamblerMod.util.GeneralUtils;
 import GamblerMod.util.KeywordInfo;
 import GamblerMod.util.TextureLoader;
@@ -54,6 +56,7 @@ import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 
@@ -62,6 +65,7 @@ public class GamblerMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCardsSubscriber,
+        EditRelicsSubscriber,
         PostInitializeSubscriber,
         EditCharactersSubscriber {
     public static ModInfo info;
@@ -179,6 +183,23 @@ public class GamblerMod implements
                     // playerClass will make a potion character-specific. By default, it's null and
                     // will do nothing.
                 });
+    }
+
+    @Override
+    public void receiveEditRelics() { //somewhere in the class
+        new AutoAdd(modID) //Loads files from this mod
+            .packageFilter(BaseRelic.class) //In the same package as this class
+            .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class
+                if (relic.pool != null)
+                    BaseMod.addRelicToCustomPool(relic, relic.pool); //Register a custom character specific relic
+                else
+                    BaseMod.addRelic(relic, relic.relicType); //Register a shared or base game character specific relic
+
+                //If the class is annotated with @AutoAdd.Seen, it will be marked as seen, making it visible in the relic library.
+                //If you want all your relics to be visible by default, just remove this if statement.
+                if (info.seen) 
+                    UnlockTracker.markRelicAsSeen(relic.relicId);
+            });
     }
 
     /*----------Localization----------*/
