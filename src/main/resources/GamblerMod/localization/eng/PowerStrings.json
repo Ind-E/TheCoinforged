@@ -141,5 +141,25 @@
     "DESCRIPTIONS": [
       "Increase #yDice effectiveness by #b"
     ]
+  },
+  "${modID}:SharksEmbracePower": {
+    "NAME": "Shark's Embrace",
+    "DESCRIPTIONS": [
+      "Whenever a card is Exhausted, discard #b",
+      " card, then draw #b",
+      "  card.",
+      " cards, then draw #b",
+      " cards."
+    ]
+  },
+  "${modID}:SharksEmbracePowerUpgraded": {
+    "NAME": "Shark's Embrace+",
+    "DESCRIPTIONS": [
+      "Whenever a card is Exhausted, draw #b",
+      " card, then discard #b",
+      "  card.",
+      " cards, then discard #b",
+      " cards."
+    ]
   }
 }

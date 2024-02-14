@@ -11,20 +11,16 @@ public class RabbitsFoot extends BaseRelic {
     private static final RelicTier TIER = RelicTier.STARTER;
     private static final LandingSound sfx = LandingSound.SOLID;
 
-    public int chance = 100;
+    public int chance = 99;
 
     public RabbitsFoot() {
         super(ID, NAME, Gambler.Enums.CARD_COLOR, TIER, sfx);
+        getUpdatedDescription();
     }
 
     @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0] + this.chance + this.DESCRIPTIONS[1];
-    }
-
-    @Override
-    public void onVictory() {
-        flash();
     }
 
     public int getChance() {
