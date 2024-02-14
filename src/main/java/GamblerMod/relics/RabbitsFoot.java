@@ -7,11 +7,11 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import GamblerMod.character.Gambler;
 
 public class RabbitsFoot extends BaseRelic {
-    private static final int STARTING_CHANCE = 50;
+    private static final int STARTING_CHANCE = 10;
     private static final String NAME = "RabbitsFoot";
     public static final String ID = makeID(NAME);
-    private static final RelicTier TIER = RelicTier.STARTER;
-    private static final LandingSound sfx = LandingSound.SOLID;
+    private static final RelicTier TIER = RelicTier.UNCOMMON;
+    private static final LandingSound sfx = LandingSound.FLAT;
     private int chance;
 
     public RabbitsFoot() {
