@@ -62,5 +62,13 @@
       "advantage"
     ],
     "DESCRIPTION": "Whenever you roll #yDice, roll #b extra times and take the highest roll."
+  },
+  {
+    "PROPER_NAME": "Marked",
+    "NAMES": [
+      "marked",
+      "Marked"
+    ],
+    "DESCRIPTION": "Whenever you play a #yMarked card, draw 1 card and gain [E]."
   }
 ]

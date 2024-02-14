@@ -75,8 +75,8 @@
   },
   "${modID}:Advantage": {
     "NAME": "Gain Advantage",
-    "DESCRIPTION": "Gain 1 *Advantage for each *Die in your hand.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain 1 *Advantage for each *Die in your hand."
+    "DESCRIPTION": "Gain 1 ${modID}:Advantage for each *Die in your hand.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain 1 ${modID}:Advantage for each *Die in your hand."
   },
   "${modID}:SmallBlind": {
     "NAME": "Small Blind",

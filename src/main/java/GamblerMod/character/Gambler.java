@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import GamblerMod.cards.RollRed;
+import GamblerMod.relics.CasinoCatalyst;
 import GamblerMod.relics.RabbitsFoot;
 
 import static GamblerMod.GamblerMod.characterPath;
@@ -98,6 +99,7 @@ public class Gambler extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
+        retVal.add(CasinoCatalyst.ID);
         retVal.add(RabbitsFoot.ID);
 
         return retVal;
