@@ -445,11 +445,10 @@
   "${modID}:GameChanger": {
     "NAME": "Game Changer",
     "DESCRIPTION": "Deal damage to ALL enemies equal to their intent to attack. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Deal damage to ALL enemies equal to their intent to attack. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Deal damage to ALL enemies equal to their intent to attack."
   },
   "${modID}:SharksEmbrace": {
     "NAME": "Shark's Embrace",
-    "DESCRIPTION": "Whenever a card is Exhausted, discard a card, then draw a card.",
-    "UPGRADE_DESCRIPTION": "Whenever a card is Exhausted, draw a card, then discard a card."
+    "DESCRIPTION": "Whenever a card is Exhausted, discard the leftmost card in your hand, then draw a card."
   }
 }

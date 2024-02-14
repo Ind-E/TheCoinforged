@@ -1,7 +1,8 @@
 package GamblerMod.powers;
 
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -24,12 +25,15 @@ public class SharksEmbracePower extends BasePower {
         }
     }
 
-    public void onExhaust() {
+    @Override
+    public void onExhaust(AbstractCard card) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             flash();
-            addToBot(new DiscardAction(this.owner, this.owner, this.amount, false));
+            if (!AbstractDungeon.player.hand.isEmpty()) {
+                AbstractCard leftmostCard = AbstractDungeon.player.hand.getBottomCard();
+                addToBot(new DiscardSpecificCardAction(leftmostCard, AbstractDungeon.player.hand));
+            }
             addToBot(new DrawCardAction(this.owner, this.amount));
-
         }
     }
 }

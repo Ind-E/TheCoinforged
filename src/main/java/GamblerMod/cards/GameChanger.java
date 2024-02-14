@@ -18,10 +18,11 @@ public class GameChanger extends BaseCard {
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ALL_ENEMY,
-            0);
+            1);
 
     public GameChanger() {
         super(ID, info);
+        this.exhaust = true;
     }
 
     @Override
@@ -41,7 +42,7 @@ public class GameChanger extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             super.upgrade();
-            this.selfRetain = true;
+            this.exhaust = false;
         }
     }
 }
