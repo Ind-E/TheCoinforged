@@ -2,6 +2,7 @@ package GamblerMod.relics;
 
 import static GamblerMod.GamblerMod.makeID;
 
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import GamblerMod.character.Gambler;
 
@@ -13,16 +14,9 @@ public class RabbitsFoot extends BaseRelic {
     private static final LandingSound sfx = LandingSound.SOLID;
     private int chance;
 
-    {
-        setChance(STARTING_CHANCE);
-    }
-
-    
-
     public RabbitsFoot() {
         super(ID, NAME, Gambler.Enums.CARD_COLOR, TIER, sfx);
         setChance(STARTING_CHANCE);
-        this.description = getUpdatedDescription();
     }
 
     @Override
@@ -37,10 +31,14 @@ public class RabbitsFoot extends BaseRelic {
     public void setChance(int chance) {
         this.chance = chance;
         this.description = getUpdatedDescription();
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
     }
 
     @Override
     public AbstractRelic makeCopy() {
         return new RabbitsFoot();
     }
+
 }
