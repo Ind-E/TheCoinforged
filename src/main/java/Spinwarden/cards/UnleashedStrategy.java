@@ -20,7 +20,7 @@ public class UnleashedStrategy extends BaseCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            2);
+            1);
 
     public UnleashedStrategy() {
         super(ID, info);

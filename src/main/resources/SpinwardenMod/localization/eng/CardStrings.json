@@ -226,7 +226,7 @@
   },
   "${modID}:CoinBarrage": {
     "NAME": "Coin Barrage",
-    "DESCRIPTION": "Deal !D! damage 12 times. NL Reduce your max hand size by !M!."
+    "DESCRIPTION": "Deal !D! damage 11 times. NL Reduce your max hand size by !M!."
   },
   "${modID}:PokerFace": {
     "NAME": "Poker Face",
@@ -400,8 +400,8 @@
     "DESCRIPTION": "Discard your hand. Put a card from your draw pile into your hand. It costs 0 this turn. NL Purge.",
     "UPGRADE_DESCRIPTION": "Discard your hand. Put a card from your draw or exhaust pile into your hand. It costs 0 this turn. NL Purge."
   },
-  "${modID}:ShuffleStrike": {
-    "NAME": "Shuffle Strike",
+  "${modID}:CycleStrike": {
+    "NAME": "Cycle Strike",
     "DESCRIPTION": "Deal !D! damage to ALL enemies X times. Draw X cards. Discard X cards. Gain [E]."
   },
   "${modID}:WaveOfGreed": {
