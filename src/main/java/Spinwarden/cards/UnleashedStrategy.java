@@ -4,15 +4,14 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-
+import Spinwarden.actions.UnleashedStrategyAction;
 import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.powers.ModifiedHandSizePower;
 import Spinwarden.util.CardStats;
 
 public class UnleashedStrategy extends BaseCard {
-    private static final int MAGIC = 4;
-    private static final int UPG_MAGIC = 2;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 3;
 
     public static final String ID = makeID(UnleashedStrategy.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -20,7 +19,7 @@ public class UnleashedStrategy extends BaseCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            1);
+            0);
 
     public UnleashedStrategy() {
         super(ID, info);
@@ -32,7 +31,6 @@ public class UnleashedStrategy extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ModifiedHandSizePower(p, this.magicNumber), this.magicNumber));
         addToBot(new DrawCardAction(p, this.magicNumber));
-        int str = p.hand.size() / 2;
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, str), str));
+        addToBot(new UnleashedStrategyAction());
     }
 }

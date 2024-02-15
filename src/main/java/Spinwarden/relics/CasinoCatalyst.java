@@ -17,7 +17,7 @@ public class CasinoCatalyst extends BaseRelic {
     public static final String ID = makeID(NAME);
     private static final RelicTier TIER = RelicTier.STARTER;
     private static final LandingSound sfx = LandingSound.HEAVY;
-    private boolean markedCardPlayed = false;
+    private boolean markedCardPlayedThisCombat = false;
 
     public CasinoCatalyst() {
         super(ID, NAME, SpinwardenCharacter.Enums.CARD_COLOR, TIER, sfx);
@@ -34,7 +34,6 @@ public class CasinoCatalyst extends BaseRelic {
             beginPulse();
             this.pulse = true;
         }
-        markedCardPlayed = false;
     }
 
     @Override
@@ -42,24 +41,25 @@ public class CasinoCatalyst extends BaseRelic {
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         addToBot(new CasinoCatalystAction());
+        this.markedCardPlayedThisCombat = false;
     }
 
     @Override
     public void onVictory() {
         this.pulse = false;
-        if (!markedCardPlayed && AbstractDungeon.player.hasRelic(LuckRelic.ID)) {
-            LuckRelic rabbitsFoot = (LuckRelic) AbstractDungeon.player.getRelic(LuckRelic.ID);
-            if (rabbitsFoot != null) {
-                rabbitsFoot.flash();
-                rabbitsFoot.setChance(rabbitsFoot.getChance() + 1);
+        if (!markedCardPlayedThisCombat && AbstractDungeon.player.hasRelic(LuckRelic.ID)) {
+            LuckRelic luckRelic = (LuckRelic) AbstractDungeon.player.getRelic(LuckRelic.ID);
+            if (luckRelic != null) {
+                luckRelic.flash();
+                luckRelic.setChance(luckRelic.getChance() + 1);
             }
         }
     }
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if (markedCardPlayed == false && c.hasTag(SpinwardenMain.MARKED)) {
-            markedCardPlayed = true;
+        if (markedCardPlayedThisCombat == false && c.hasTag(SpinwardenMain.MARKED)) {
+            markedCardPlayedThisCombat = true;
             this.pulse = false;
             stopPulse();
         }

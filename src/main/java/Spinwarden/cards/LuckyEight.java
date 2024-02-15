@@ -1,12 +1,12 @@
 package Spinwarden.cards;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.util.CardStats;
@@ -34,8 +34,7 @@ public class LuckyEight extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
         if (cardsPlayedThisTurn == 8) {
-            addToBot(new DrawCardAction(8));
-            addToBot(new GainEnergyAction(this.magicNumber));
+            addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, 8)));
         }
         addToBot(new GainBlockAction(p, this.block));
     }
@@ -55,6 +54,19 @@ public class LuckyEight extends BaseCard {
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
+        int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + count;
+        if (count == 1) {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
+        } else {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2];
+        }
+        initializeDescription();
     }
 
     @Override

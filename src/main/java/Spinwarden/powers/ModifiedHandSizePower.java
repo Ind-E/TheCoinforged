@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import basemod.BaseMod;
 
 public class ModifiedHandSizePower extends BasePower {
-    public static final String POWER_ID = makeID("ReducedHandSizePower");
+    public static final String POWER_ID = makeID("ModifiedHandSizePower");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
     private int hand_size;
@@ -35,18 +35,9 @@ public class ModifiedHandSizePower extends BasePower {
     public void onInitialApplication() {
         this.hand_size = BaseMod.MAX_HAND_SIZE;
         if (this.amount < 0) {
-            if (this.hand_size + this.amount >= 1)
-                BaseMod.MAX_HAND_SIZE = this.hand_size + this.amount;
-            else {
-                BaseMod.MAX_HAND_SIZE = 1;
-            }
+            BaseMod.MAX_HAND_SIZE = Math.max(this.hand_size + this.amount, 1);
         } else if (this.amount > 0) {
-            if (this.hand_size + this.amount <= 20) {
-                BaseMod.MAX_HAND_SIZE = this.hand_size + this.amount;
-            } else {
-                BaseMod.MAX_HAND_SIZE = 20;
-            }
-            BaseMod.MAX_HAND_SIZE = this.hand_size + this.amount;
+            BaseMod.MAX_HAND_SIZE = Math.min(this.hand_size + this.amount, 15);
         }
     }
 
@@ -54,20 +45,9 @@ public class ModifiedHandSizePower extends BasePower {
     public void stackPower(int stackAmount) {
         this.amount += stackAmount;
         if (this.amount < 0) {
-            this.hand_size = BaseMod.MAX_HAND_SIZE;
-            if (this.hand_size + this.amount >= 1)
-                BaseMod.MAX_HAND_SIZE = this.hand_size + this.amount;
-            else {
-                BaseMod.MAX_HAND_SIZE = 1;
-            }
+            BaseMod.MAX_HAND_SIZE = Math.max(this.hand_size + this.amount, 1);
         } else if (this.amount > 0) {
-            this.hand_size = BaseMod.MAX_HAND_SIZE;
-            if (this.hand_size + this.amount <= 20) {
-                BaseMod.MAX_HAND_SIZE = this.hand_size + this.amount;
-            } else {
-                BaseMod.MAX_HAND_SIZE = 20;
-            }
-            BaseMod.MAX_HAND_SIZE = this.hand_size + this.amount;
+            BaseMod.MAX_HAND_SIZE = Math.min(this.hand_size + this.amount, 15);
         }
     }
 

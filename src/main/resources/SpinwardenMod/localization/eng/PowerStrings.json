@@ -133,7 +133,7 @@
       "Your max hand size is reduced by #b",
       " (minimum 1 card).",
       "Your hand size is increased by #b",
-      " (maximum 20 cards)."
+      " (maximum 15 cards)."
     ]
   },
   "${modID}:LoadedDicePower": {

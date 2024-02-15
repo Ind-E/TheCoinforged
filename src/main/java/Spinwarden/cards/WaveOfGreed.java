@@ -30,6 +30,7 @@ public class WaveOfGreed extends BaseCard {
     public WaveOfGreed() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(GOLD);
         this.isMultiDamage = true;
         this.exhaust = true;
     }
@@ -43,9 +44,10 @@ public class WaveOfGreed extends BaseCard {
                 .filter(monster -> !monster.isDeadOrEscaped() && !monster.halfDead);
 
         damagedEnemiesStream.forEach(monster -> {
-            p.gainGold(GOLD);
-            AbstractDungeon.effectList
-                    .add(new GainPennyEffect(p, monster.hb.cX, monster.hb.cY, p.hb.cX, p.hb.cY, true));
+            p.gainGold(this.magicNumber);
+            for (int i = 0; i < this.magicNumber; i++)
+                AbstractDungeon.effectList
+                        .add(new GainPennyEffect(p, monster.hb.cX, monster.hb.cY, p.hb.cX, p.hb.cY, true));
         });
     }
 

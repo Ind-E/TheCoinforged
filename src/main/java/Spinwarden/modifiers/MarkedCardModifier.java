@@ -1,5 +1,6 @@
 package Spinwarden.modifiers;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -35,6 +36,10 @@ public class MarkedCardModifier extends AbstractCardModifier {
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         addToBot(new GainEnergyAction(1));
         addToBot(new DrawCardAction(1));
+    }
+
+    public Color getGlow(AbstractCard card) {
+        return Color.MAGENTA.cpy();
     }
 
 }

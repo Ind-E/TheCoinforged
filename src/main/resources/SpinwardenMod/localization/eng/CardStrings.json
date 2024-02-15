@@ -154,9 +154,9 @@
   },
   "${modID}:Fold": {
     "NAME": "Fold",
-    "DESCRIPTION": "Gain !M! Block for each card played this turn. NL End your turn. NL ",
+    "DESCRIPTION": "Gain !M! Block for each card played this turn. NL End your turn.",
     "EXTENDED_DESCRIPTION": [
-      "(",
+      " NL (",
       " card played.)",
       " cards played.)"
     ]
@@ -284,7 +284,7 @@
     "NAME": "Full House",
     "DESCRIPTION": "Deal !D! damage for each card type in your hand.",
     "EXTENDED_DESCRIPTION": [
-      " NL ( ",
+      " NL (",
       " type in hand.)",
       " types in hand.)"
     ]
@@ -419,16 +419,30 @@
   },
   "${modID}:LuckySeven": {
     "NAME": "Lucky Seven",
-    "DESCRIPTION": "Deal !D! damage. NL If this is the 7th card you've played this turn, ALL enemies lose 7 HP."
+    "DESCRIPTION": "Deal !D! damage. NL If this is the 7th card you've played this turn, ALL enemies lose 7 HP.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " card played.)",
+      " cards played.)"
+    ]
   },
   "${modID}:LuckyEight": {
     "NAME": "Lucky Eight",
-    "DESCRIPTION": "Gain !B! Block. NL If this is the 8th card you've played this turn, draw 8 cards and gain [E] [E].",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL If this is the 8th card you've played this turn, draw 8 cards and gain [E] [E] [E]."
+    "DESCRIPTION": "Gain !B! Block. NL If this is the 8th card you've played this turn, gain 8 Thorns.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " card played.)",
+      " cards played.)"
+    ]
   },
   "${modID}:LuckyNine": {
     "NAME": "Lucky Nine",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL If this is the 9th card you've played this turn, gain 9 Strength. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL If this is the 9th card you've played this turn, gain 9 Strength. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " card played.)",
+      " cards played.)"
+    ]
   },
   "${modID}:BrokenBottle": {
     "NAME": "Broken Bottle",

@@ -55,6 +55,19 @@ public class LuckyNine extends BaseCard {
         }
     }
 
+    public void applyPowers() {
+        super.applyPowers();
+        int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + count;
+        if (count == 1) {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
+        } else {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2];
+        }
+        initializeDescription();
+    }
+
     @Override
     public LuckyNine makeCopy() {
         return new LuckyNine();
