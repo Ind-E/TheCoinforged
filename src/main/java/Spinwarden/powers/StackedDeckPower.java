@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import Spinwarden.SpinwardenMain;
-
 public class StackedDeckPower extends BasePower {
     public static final String POWER_ID = makeID("StackedDeckPower");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
