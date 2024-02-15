@@ -21,6 +21,7 @@ public class StackedDeckPower extends BasePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
+        flash();
         for (int i = 0; i < this.amount; i++) {
             stack();
         }

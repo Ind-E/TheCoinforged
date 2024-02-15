@@ -406,7 +406,7 @@
   },
   "${modID}:WaveOfGreed": {
     "NAME": "Wave of Greed",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Discard a card for each enemy hit."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! gold for each enemy hit. NL Exhaust."
   },
   "${modID}:Roulette": {
     "NAME": "Roulette",
@@ -444,8 +444,8 @@
   },
   "${modID}:GameChanger": {
     "NAME": "Game Changer",
-    "DESCRIPTION": "Deal damage to ALL enemies equal to their intent to attack. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal damage to ALL enemies equal to their intent to attack."
+    "DESCRIPTION": "Deal damage to each enemy equal to its intent to attack. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal damage to each enemy equal to its intent to attack."
   },
   "${modID}:SharksEmbrace": {
     "NAME": "Shark's Embrace",

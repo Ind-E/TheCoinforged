@@ -28,9 +28,9 @@ public class AceInTheHole extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToTop(new AceInTheHoleAction(CARDS_TO_SEEK, upgraded));
-        addToTop(new HandCostsZeroAction());
         addToTop(new DiscardAction(p, p, p.hand.size(), false));
+        addToBot(new AceInTheHoleAction(CARDS_TO_SEEK, upgraded));
+        addToBot(new HandCostsZeroAction());
     }
 
     @Override

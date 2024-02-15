@@ -12,7 +12,7 @@ import Spinwarden.util.CardStats;
 
 public class RiskyInvestment extends BaseCard {
     private static final int GOLD_GAIN = 50;
-    private static final int UPG_GOLD_GAIN = 10;
+    private static final int UPG_GOLD_GAIN = 15;
 
     public static final String ID = makeID(RiskyInvestment.class.getSimpleName());
     private static final CardStats info = new CardStats(

@@ -34,6 +34,7 @@ public class CasinoCatalyst extends BaseRelic {
             beginPulse();
             this.pulse = true;
         }
+        markedCardPlayed = false;
     }
 
     @Override
@@ -60,6 +61,7 @@ public class CasinoCatalyst extends BaseRelic {
         if (markedCardPlayed == false && c.hasTag(SpinwardenMain.MARKED)) {
             markedCardPlayed = true;
             this.pulse = false;
+            stopPulse();
         }
     }
 

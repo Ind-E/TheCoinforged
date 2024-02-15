@@ -12,7 +12,7 @@ import Spinwarden.util.CardStats;
 
 public class UnleashedStrategy extends BaseCard {
     private static final int MAGIC = 4;
-    private static final int UPG_MAGIC = 5;
+    private static final int UPG_MAGIC = 2;
 
     public static final String ID = makeID(UnleashedStrategy.class.getSimpleName());
     private static final CardStats info = new CardStats(

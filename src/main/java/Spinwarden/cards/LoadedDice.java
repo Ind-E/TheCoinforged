@@ -9,8 +9,8 @@ import Spinwarden.powers.LoadedDicePower;
 import Spinwarden.util.CardStats;
 
 public class LoadedDice extends BaseCard {
-    private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 2;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(LoadedDice.class.getSimpleName());
     private static final CardStats info = new CardStats(
