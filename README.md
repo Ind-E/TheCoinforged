@@ -1,3 +1,3 @@
 # Gambler Mod
 
-hi kevin.
+Work in Progress
