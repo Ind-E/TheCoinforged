@@ -1,0 +1,24 @@
+{
+  "${modID}:RelicID": {
+    "NAME": "Good Relic",
+    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. [E] is an energy icon."
+    ]
+  },
+  "${modID}:LuckRelic": {
+    "NAME": "Luck",
+    "FLAVOR": "When it comes to luck, make your own.",
+    "DESCRIPTIONS": [
+      "#b",
+      "% chance to double rewards from combat."
+    ]
+  },
+  "${modID}:CasinoCatalyst": {
+    "NAME": "Casino Catalyst",
+    "FLAVOR": "A mysterious catalyst containing enormous power. Stolen from the Casino.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #y${modID}:Mark a card in hand. If you win without playing the #y${modID}:Marked card, increase your #yLuck."
+    ]
+  }
+}
