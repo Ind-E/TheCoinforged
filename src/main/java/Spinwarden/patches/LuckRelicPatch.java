@@ -10,6 +10,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import Spinwarden.relics.LuckRelic;
 import javassist.CtBehavior;
@@ -23,7 +24,7 @@ public class LuckRelicPatch {
             if (AbstractDungeon.player.hasRelic(LuckRelic.ID)) {
                 LuckRelic rabbitsFoot = (LuckRelic) AbstractDungeon.player.getRelic(LuckRelic.ID);
                 if (rabbitsFoot != null
-                        && AbstractDungeon.cardRandomRng.randomBoolean(rabbitsFoot.getChance() / 100f)) {
+                        && AbstractDungeon.cardRandomRng.randomBoolean(rabbitsFoot.getCounter() / 100f)) {
                     ArrayList<RewardItem> toAdd = new ArrayList<>();
                     for (RewardItem item : __instance.rewards) {
                         if (item.type == RewardItem.RewardType.GOLD) {
@@ -31,7 +32,12 @@ public class LuckRelicPatch {
                         } else if (item.type == RewardItem.RewardType.CARD) {
                             toAdd.add(new RewardItem());
                         } else if (item.type == RewardItem.RewardType.RELIC) {
-                            toAdd.add(new RewardItem(AbstractDungeon.returnRandomRelic(item.relic.tier)));
+                            if (item.relic.tier == AbstractRelic.RelicTier.SPECIAL) {
+                                toAdd.add(new RewardItem(AbstractDungeon.returnRandomRelic(
+                                        AbstractRelic.RelicTier.COMMON)));
+                            } else {
+                                toAdd.add(new RewardItem(AbstractDungeon.returnRandomRelic(item.relic.tier)));
+                            }
                         } else if (item.type == RewardItem.RewardType.POTION) {
                             toAdd.add(new RewardItem(AbstractDungeon.returnRandomPotion()));
                         }

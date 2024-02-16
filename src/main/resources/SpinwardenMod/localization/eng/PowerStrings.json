@@ -145,7 +145,7 @@
   "${modID}:SharksEmbracePower": {
     "NAME": "Shark's Embrace",
     "DESCRIPTIONS": [
-      "Whenever a card is Exhausted, discard #b",
+      "Whenever a card is Exhausted, discard the leftmost #b",
       " card, then draw #b",
       "  card.",
       " cards, then draw #b",

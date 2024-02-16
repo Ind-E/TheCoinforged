@@ -51,7 +51,7 @@ public class CasinoCatalyst extends BaseRelic {
             LuckRelic luckRelic = (LuckRelic) AbstractDungeon.player.getRelic(LuckRelic.ID);
             if (luckRelic != null) {
                 luckRelic.flash();
-                luckRelic.setChance(luckRelic.getChance() + 1);
+                luckRelic.setCounter(luckRelic.getCounter() + 1);
             }
         }
     }

@@ -21,7 +21,7 @@ public abstract class PurpleDieBase extends BaseCard {
             CardColor.COLORLESS,
             CardType.SKILL,
             CardRarity.SPECIAL,
-            CardTarget.ALL_ENEMY,
+            CardTarget.SELF,
             0);
 
     public PurpleDieBase(String ID, int MAGIC) {

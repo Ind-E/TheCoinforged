@@ -8,29 +8,28 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import Spinwarden.character.SpinwardenCharacter;
 
 public class LuckRelic extends BaseRelic {
-    private static final int STARTING_CHANCE = 1;
+    private static final int STARTING_COUNTER = 1;
     private static final String NAME = "LuckRelic";
     public static final String ID = makeID(NAME);
     private static final RelicTier TIER = RelicTier.STARTER;
     private static final LandingSound sfx = LandingSound.FLAT;
-    private int chance;
 
     public LuckRelic() {
         super(ID, NAME, SpinwardenCharacter.Enums.CARD_COLOR, TIER, sfx);
-        setChance(STARTING_CHANCE);
+        setCounter(STARTING_COUNTER);
     }
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + this.chance + this.DESCRIPTIONS[1];
+        return this.DESCRIPTIONS[0] + this.counter + this.DESCRIPTIONS[1];
     }
 
-    public int getChance() {
-        return this.chance;
+    public int getCounter() {
+        return this.counter;
     }
 
-    public void setChance(int chance) {
-        this.chance = chance;
+    public void setCounter(int counter) {
+        this.counter = counter;
         this.description = getUpdatedDescription();
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
