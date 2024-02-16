@@ -1,3 +1,3 @@
-# Gambler Mod
+# The Spinwarden
 
 Work in Progress
