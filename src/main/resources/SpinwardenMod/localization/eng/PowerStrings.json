@@ -123,7 +123,7 @@
   "${modID}:InvigoratingRifflePower": {
     "NAME": "Invigorating Riffle",
     "DESCRIPTIONS": [
-      "Whenever you Exhaust a card, gain #b",
+      "Whenever a Skill is Exhausted, gain #b",
       " Vigor."
     ]
   },

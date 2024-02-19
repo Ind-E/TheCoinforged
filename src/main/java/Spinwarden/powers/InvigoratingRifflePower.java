@@ -23,6 +23,8 @@ public class InvigoratingRifflePower extends BasePower {
 
     @Override
     public void onExhaust(AbstractCard card) {
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount)));
+        if (card.type == AbstractCard.CardType.SKILL) {
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount)));
+        }
     }
 }

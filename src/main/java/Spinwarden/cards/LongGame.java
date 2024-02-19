@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.util.CardStats;
 
-//TODO: add orb or power to return card to hand after x turns
 public class LongGame extends BaseCard {
     private static final int DAMAGE = 35;
     private static final int UPG_DAMAGE = 5;

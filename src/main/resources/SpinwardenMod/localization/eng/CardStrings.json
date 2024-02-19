@@ -389,7 +389,7 @@
   },
   "${modID}:InvigoratingRiffle": {
     "NAME": "Invigorating Riffle",
-    "DESCRIPTION": "Whenever you Exhaust a card, gain !M! Vigor."
+    "DESCRIPTION": "Whenever a Skill is Exhausted, gain !M! Vigor."
   },
   "${modID}:AceInTheHole": {
     "NAME": "Ace In The Hole",
