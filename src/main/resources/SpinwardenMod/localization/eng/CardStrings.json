@@ -267,13 +267,9 @@
   },
   "${modID}:LongGame": {
     "NAME": "Long Game",
-    "DESCRIPTION": "Unplayable until turn !M!. NL Retain. NL Deal !D! damage to ALL enemies. Gain 3 Strength. NL Exhaust.",
+    "DESCRIPTION": "Doesn't shuffle into your deck at the start of combat. Added to hand on turn !M!. NL Deal !D! damage to ALL enemies. Gain 3 Strength. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Playable next turn. NL ",
-      "Playable in ",
-      " turns. NL ",
-      "Retain. NL Deal !D! damage to ALL enemies. Gain 3 Strength. NL Exhaust.",
-      "It is not yet turn "
+      "Deal !D! damage to ALL enemies. Gain 3 Strength. NL Exhaust."
     ]
   },
   "${modID}:HighRoller": {

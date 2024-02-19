@@ -4,15 +4,16 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import Spinwarden.actions.RemoveCardFromDeckAction;
 import Spinwarden.character.SpinwardenCharacter;
+import Spinwarden.powers.LongGamePower;
 import Spinwarden.util.CardStats;
 
 //TODO: add orb or power to return card to hand after x turns
@@ -49,30 +50,16 @@ public class LongGame extends BaseCard {
 
     public void applyPowers() {
         super.applyPowers();
-        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
     @Override
     public void atTurnStart() {
+        AbstractPlayer p = AbstractDungeon.player;
         if (GameActionManager.turn <= 1) {
             addToBot(new RemoveCardFromDeckAction(this));
-        }
-        System.out.println("Turn: " + GameActionManager.turn + " Magic: " + this.magicNumber);
-        if (GameActionManager.turn == this.magicNumber - 1) {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
-            initializeDescription();
-            addToBot(new MakeTempCardInHandAction(this));
-        }
-    }
-
-    @Override
-    public void atTurnStartPreDraw() {
-        System.out.println("TurnPreDraw: " + GameActionManager.turn + " Magic: " + this.magicNumber);
-        if (GameActionManager.turn == this.magicNumber - 1) {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
-            initializeDescription();
-            addToBot(new MakeTempCardInHandAction(this));
+            addToBot(new ApplyPowerAction(p, p, new LongGamePower(p, this.magicNumber - 1, this)));
         }
     }
 

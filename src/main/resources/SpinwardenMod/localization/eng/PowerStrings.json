@@ -152,14 +152,11 @@
       " cards."
     ]
   },
-  "${modID}:SharksEmbracePowerUpgraded": {
-    "NAME": "Shark's Embrace+",
+  "${modID}:LongGamePower": {
+    "NAME": "Long Game",
     "DESCRIPTIONS": [
-      "Whenever a card is Exhausted, draw #b",
-      " card, then discard #b",
-      "  card.",
-      " cards, then discard #b",
-      " cards."
+      "In #b",
+      " turns, add #yLong #yGame to your hand."
     ]
   }
 }
