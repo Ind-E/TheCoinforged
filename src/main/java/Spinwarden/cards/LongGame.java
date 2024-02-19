@@ -1,19 +1,15 @@
 package Spinwarden.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import Spinwarden.actions.RemoveCardFromDeckAction;
 import Spinwarden.character.SpinwardenCharacter;
-import Spinwarden.powers.LongGamePower;
 import Spinwarden.util.CardStats;
 
 //TODO: add orb or power to return card to hand after x turns
@@ -52,15 +48,6 @@ public class LongGame extends BaseCard {
         super.applyPowers();
         this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
-    }
-
-    @Override
-    public void atTurnStart() {
-        AbstractPlayer p = AbstractDungeon.player;
-        if (GameActionManager.turn <= 1) {
-            addToBot(new RemoveCardFromDeckAction(this));
-            addToBot(new ApplyPowerAction(p, p, new LongGamePower(p, this.magicNumber - 1, this)));
-        }
     }
 
     @Override

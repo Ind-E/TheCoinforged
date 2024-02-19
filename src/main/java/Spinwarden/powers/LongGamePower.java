@@ -19,7 +19,7 @@ public class LongGamePower extends BasePower implements NonStackablePower {
 
     public LongGamePower(AbstractCreature owner, int amount, AbstractCard card) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-        this.card = card.makeCopy();
+        this.card = card;
         updateDescription();
     }
 
