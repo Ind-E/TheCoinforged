@@ -4,15 +4,18 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
+import Spinwarden.actions.RemoveCardFromDeckAction;
 import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.util.CardStats;
 
+//TODO: add orb or power to return card to hand after x turns
 public class LongGame extends BaseCard {
     private static final int DAMAGE = 35;
     private static final int UPG_DAMAGE = 5;
@@ -44,29 +47,33 @@ public class LongGame extends BaseCard {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH)));
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse)
-            return false;
-        if (GameActionManager.turn < this.magicNumber) {
-            canUse = false;
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[4] + this.magicNumber + ".";
-        }
-        return canUse;
-    }
-
     public void applyPowers() {
         super.applyPowers();
-        int count = this.magicNumber - GameActionManager.turn;
-        if (count <= 0) {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
-        } else if (count == 1) {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.EXTENDED_DESCRIPTION[3];
-        } else {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + count + cardStrings.EXTENDED_DESCRIPTION[2]
-                    + cardStrings.EXTENDED_DESCRIPTION[3];
-        }
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
         initializeDescription();
+    }
+
+    @Override
+    public void atTurnStart() {
+        if (GameActionManager.turn <= 1) {
+            addToBot(new RemoveCardFromDeckAction(this));
+        }
+        System.out.println("Turn: " + GameActionManager.turn + " Magic: " + this.magicNumber);
+        if (GameActionManager.turn == this.magicNumber - 1) {
+            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
+            initializeDescription();
+            addToBot(new MakeTempCardInHandAction(this));
+        }
+    }
+
+    @Override
+    public void atTurnStartPreDraw() {
+        System.out.println("TurnPreDraw: " + GameActionManager.turn + " Magic: " + this.magicNumber);
+        if (GameActionManager.turn == this.magicNumber - 1) {
+            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[3];
+            initializeDescription();
+            addToBot(new MakeTempCardInHandAction(this));
+        }
     }
 
     @Override

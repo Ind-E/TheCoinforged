@@ -14,7 +14,6 @@ public class CasinoCatalystAction extends AbstractGameAction {
         if (randomCard != null) {
             CardModifierManager.addModifier(randomCard, new MarkedCardModifier());
             this.isDone = true;
-            System.out.println("Marked card: " + randomCard.name);
         }
     }
 }
