@@ -308,7 +308,7 @@
   },
   "${modID}:HighCard": {
     "NAME": "High Card",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card."
+    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat. This card does nothing the next time it's played this combat"
   },
   "${modID}:Upswing": {
     "NAME": "Upswing",
