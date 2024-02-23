@@ -259,7 +259,8 @@
   },
   "${modID}:RollBlue": {
     "NAME": "Roll Blue",
-    "DESCRIPTION": "Roll !M! ${modID}:Blue_Dice."
+    "DESCRIPTION": "Roll !M! ${modID}:Blue_Die.",
+    "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Blue_Dice."
   },
   "${modID}:Misplay": {
     "NAME": "Misplay",
