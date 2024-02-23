@@ -13,8 +13,8 @@ import Spinwarden.util.CardStats;
 
 public class HighCard extends BaseCard {
     private static final int DAMAGE = 12;
-    private static final int MAGIC = 12;
-    private static final int UPG_MAGIC = 6;
+    private static final int MAGIC = 6;
+    private static final int UPG_MAGIC = 3;
     private int counter = 0;
 
     public static final String ID = makeID(HighCard.class.getSimpleName());
@@ -33,11 +33,9 @@ public class HighCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (counter % 2 == 0) {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                    AttackEffect.NONE));
-            addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
-        }
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+                AttackEffect.NONE));
+        addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
         counter++;
     }
 
@@ -45,8 +43,10 @@ public class HighCard extends BaseCard {
     public void triggerOnGlowCheck() {
         if (counter % 2 == 0) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            this.damage = this.baseDamage;
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            this.damage = 0;
         }
     }
 

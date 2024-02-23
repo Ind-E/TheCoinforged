@@ -13,6 +13,7 @@ import Spinwarden.SpinwardenMain;
 import Spinwarden.actions.RollGreenAction;
 import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.modifiers.RetainModifier;
+import Spinwarden.powers.LoadedDicePower;
 import Spinwarden.util.CardStats;
 import basemod.helpers.CardModifierManager;
 
@@ -42,7 +43,7 @@ public class PocketPair extends BaseCard {
         RollGreenAction green = new RollGreenAction(p, 1);
         AbstractCard c1 = green.roll(), c2 = green.roll();
         if (p.hasPower(LoadedDice.ID)) {
-            int amt = p.getPower(LoadedDice.ID).amount;
+            int amt = p.getPower(LoadedDicePower.POWER_ID).amount;
             c1.baseMagicNumber += amt;
             c2.baseMagicNumber += amt;
             c1.magicNumber = c1.baseMagicNumber;

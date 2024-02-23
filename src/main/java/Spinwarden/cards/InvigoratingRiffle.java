@@ -10,7 +10,7 @@ import Spinwarden.powers.InvigoratingRifflePower;
 import Spinwarden.util.CardStats;
 
 public class InvigoratingRiffle extends BaseCard {
-    private static final int VIGOR = 3;
+    private static final int VIGOR = 4;
     private static final int UPG_VIGOR = 2;
 
     public static final String ID = makeID(InvigoratingRiffle.class.getSimpleName());
@@ -19,7 +19,7 @@ public class InvigoratingRiffle extends BaseCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1);
+            2);
 
     public InvigoratingRiffle() {
         super(ID, info);

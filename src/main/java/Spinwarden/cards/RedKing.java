@@ -15,6 +15,7 @@ import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.powers.RedKingPower;
 import Spinwarden.util.CardStats;
 
+//TODO: modify all existing cards in hand, draw, discard
 public class RedKing extends BaseCard {
     private static final int DICE_TO_ROLL = 2;
     private static final int UPG_DICE_TO_ROLL = 2;

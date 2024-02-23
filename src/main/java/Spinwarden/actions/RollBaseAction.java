@@ -45,9 +45,11 @@ public abstract class RollBaseAction extends AbstractGameAction {
                 rolledCard.initializeDescription();
             }
             addToBot(new MakeTempCardInHandAction(rolledCard, 1));
-            if (player.hasPower(HighRollerPower.POWER_ID) && rolledCard.cardID.endsWith("Six")) {
-                addToBot(new DrawCardAction(player, player.getPower(HighRollerPower.POWER_ID).amount));
-            }
+            // if (player.hasPower(HighRollerPower.POWER_ID) &&
+            // rolledCard.cardID.endsWith("Six")) {
+            // addToBot(new DrawCardAction(player,
+            // player.getPower(HighRollerPower.POWER_ID).amount));
+            // }
         }
         this.isDone = true;
     }

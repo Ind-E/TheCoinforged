@@ -275,7 +275,7 @@
   },
   "${modID}:HighRoller": {
     "NAME": "High Roller",
-    "DESCRIPTION": "Whenever you roll a *Six, draw a card."
+    "DESCRIPTION": "Whenever you play a *Six, draw a card."
   },
   "${modID}:FullHouse": {
     "NAME": "Full House",
@@ -309,7 +309,7 @@
   },
   "${modID}:HighCard": {
     "NAME": "High Card",
-    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat. This card does nothing the next time it's played this combat"
+    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat. This card does no damage the next time it's played."
   },
   "${modID}:Upswing": {
     "NAME": "Upswing",

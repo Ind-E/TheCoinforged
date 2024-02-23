@@ -20,7 +20,7 @@ public class SuddenWindfall extends BasePotion {
     private static final Color SPOTS_COLOR = null;
 
     public SuddenWindfall() {
-        super(ID, 0, PotionRarity.RARE, PotionSize.SPHERE, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 0, PotionRarity.COMMON, PotionSize.SPHERE, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
     }
 
     private static int missingHealth() {
