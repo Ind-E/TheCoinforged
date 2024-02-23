@@ -17,9 +17,9 @@ public class RollRed extends BaseCard {
     private static final int DICE_TO_ROLL = 2;
     private static final int UPG_DICE_TO_ROLL = 1;
 
-    private float rotationTimer;
-    private int previewIndex;
-    private ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
+    public float rotationTimer;
+    public int previewIndex;
+    public ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
 
     public static final String ID = makeID(RollRed.class.getSimpleName());
     private static final CardStats info = new CardStats(

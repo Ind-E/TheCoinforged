@@ -14,12 +14,12 @@ import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.util.CardStats;
 
 public class RollBlue extends BaseCard {
-    private static final int DICE_TO_ROLL = 2;
+    private static final int DICE_TO_ROLL = 1;
     private static final int UPG_DICE_TO_ROLL = 1;
 
-    private float rotationTimer;
-    private int previewIndex;
-    private ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
+    public float rotationTimer;
+    public int previewIndex;
+    public ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
 
     public static final String ID = makeID(RollBlue.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,7 +27,7 @@ public class RollBlue extends BaseCard {
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.NONE,
-            1);
+            0);
 
     public RollBlue() {
         super(ID, info);
@@ -50,6 +50,7 @@ public class RollBlue extends BaseCard {
         return myList;
     }
 
+    @Override
     public void update() {
         super.update();
         if (this.dupeListForPrev.isEmpty())

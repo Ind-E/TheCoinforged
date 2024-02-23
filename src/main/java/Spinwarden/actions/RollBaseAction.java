@@ -28,21 +28,20 @@ public abstract class RollBaseAction extends AbstractGameAction {
         this.maxroll = maxroll;
     }
 
-    public AbstractCard roll() {
-        return null;
-    }
+    public abstract AbstractCard roll();
 
     public void update() {
         for (int i = 0; i < magic; i++) {
             AbstractCard rolledCard = roll();
             if (player.hasPower(LoadedDicePower.POWER_ID)) {
                 int amount = player.getPower(LoadedDicePower.POWER_ID).amount;
-                rolledCard.magicNumber += amount;
                 rolledCard.baseMagicNumber += amount;
+                rolledCard.magicNumber = rolledCard.baseMagicNumber;
                 rolledCard.baseDamage += amount;
-                rolledCard.damage += amount;
-                rolledCard.block += amount;
+                rolledCard.damage = rolledCard.baseDamage;
                 rolledCard.baseBlock += amount;
+                rolledCard.block = rolledCard.baseBlock;
+
                 rolledCard.initializeDescription();
             }
             addToBot(new MakeTempCardInHandAction(rolledCard, 1));

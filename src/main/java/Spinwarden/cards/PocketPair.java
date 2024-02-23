@@ -41,6 +41,15 @@ public class PocketPair extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         RollGreenAction green = new RollGreenAction(p, 1);
         AbstractCard c1 = green.roll(), c2 = green.roll();
+        if (p.hasPower(LoadedDice.ID)) {
+            int amt = p.getPower(LoadedDice.ID).amount;
+            c1.baseMagicNumber += amt;
+            c2.baseMagicNumber += amt;
+            c1.magicNumber = c1.baseMagicNumber;
+            c2.magicNumber = c2.baseMagicNumber;
+            c1.initializeDescription();
+            c2.initializeDescription();
+        }
         addToBot(new MakeTempCardInHandAction(c1, true, true));
         addToBot(new MakeTempCardInHandAction(c2, true, true));
         if (upgraded) {
