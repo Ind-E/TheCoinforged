@@ -92,6 +92,8 @@ public class SpinwardenMain implements
     public static AbstractCard.CardTags RIGGED;
     @SpireEnum
     public static AbstractCard.CardTags MARKED;
+    @SpireEnum
+    public static AbstractCard.CardTags POKER_CHIP;
 
     private static final String BG_ATTACK = characterPath("cardback/bg_attack.png");
     private static final String BG_ATTACK_P = characterPath("cardback/bg_attack_p.png");

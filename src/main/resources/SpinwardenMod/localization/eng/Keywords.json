@@ -70,5 +70,20 @@
       "mark"
     ],
     "DESCRIPTION": "Whenever you play a #yMarked card, draw 1 card and gain [E] ."
+  },
+  {
+    "PROPER_NAME": "Crippling Debt",
+    "NAMES": [
+      "crippling debt",
+      "crippling_debt"
+    ],
+    "DESCRIPTION": "When an enemy's HP is less than or equal to its Crippling Debt, it deals damage to ALL enemies equal to its Crippling Debt."
+  },
+  {
+    "PROPER_NAME": "Chip",
+    "NAMES": [
+      "chip"
+    ],
+    "DESCRIPTION": "If you have a certain number of #yPoker #yChips in hand, discard them for an extra effect."
   }
 ]

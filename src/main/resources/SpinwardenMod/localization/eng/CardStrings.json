@@ -461,5 +461,14 @@
   "${modID}:SharksEmbrace": {
     "NAME": "Shark's Embrace",
     "DESCRIPTION": "Whenever a card is Exhausted, discard the leftmost card in your hand, then draw a card."
+  },
+  "${modID}:PokerChip": {
+    "NAME": "Poker Chip",
+    "DESCRIPTION": "Unplayable. NL Whenever you draw this, draw a card.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Unplayable. NL Whenever you draw this, draw a card."
+  },
+  "${modID}:DoubleCherry": {
+    "NAME": "Double Cherry",
+    "DESCRIPTION": "Gain !B! Block. ${modID}:Chip 2: Gain !B! Block."
   }
 }

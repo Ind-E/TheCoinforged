@@ -1,5 +1,10 @@
 package Spinwarden.util;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import Spinwarden.SpinwardenMain;
+
 public class GeneralUtils {
     public static String arrToString(Object[] arr) {
         if (arr == null)
@@ -17,5 +22,15 @@ public class GeneralUtils {
 
     public static String removePrefix(String ID) {
         return ID.substring(ID.indexOf(":") + 1);
+    }
+
+    public static int getNumChips() {
+        int chips = 0;
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (c.hasTag(SpinwardenMain.POKER_CHIP)) {
+                chips++;
+            }
+        }
+        return chips;
     }
 }
