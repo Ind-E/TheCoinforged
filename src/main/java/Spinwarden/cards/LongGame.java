@@ -33,7 +33,6 @@ public class LongGame extends BaseCard {
         setMagic(TURNS_UNTIL_PLAYABLE, UPG_TURNS_UNTIL_PLAYABLE);
         this.isMultiDamage = true;
         this.exhaust = true;
-        this.selfRetain = true;
     }
 
     @Override
@@ -43,6 +42,7 @@ public class LongGame extends BaseCard {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH)));
     }
 
+    @Override
     public void applyPowers() {
         super.applyPowers();
         this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];

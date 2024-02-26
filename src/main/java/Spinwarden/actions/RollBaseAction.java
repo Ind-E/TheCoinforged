@@ -1,14 +1,12 @@
 package Spinwarden.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import Spinwarden.powers.HighRollerPower;
 import Spinwarden.powers.LoadedDicePower;
 
 public abstract class RollBaseAction extends AbstractGameAction {
@@ -45,11 +43,6 @@ public abstract class RollBaseAction extends AbstractGameAction {
                 rolledCard.initializeDescription();
             }
             addToBot(new MakeTempCardInHandAction(rolledCard, 1));
-            // if (player.hasPower(HighRollerPower.POWER_ID) &&
-            // rolledCard.cardID.endsWith("Six")) {
-            // addToBot(new DrawCardAction(player,
-            // player.getPower(HighRollerPower.POWER_ID).amount));
-            // }
         }
         this.isDone = true;
     }

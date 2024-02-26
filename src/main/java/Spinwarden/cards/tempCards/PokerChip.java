@@ -3,13 +3,10 @@ package Spinwarden.cards.tempCards;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-// import static Spinwarden.SpinwardenMain.makeID;
-
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.SpinwardenMain;
 import Spinwarden.cards.BaseCard;
 import Spinwarden.util.CardStats;

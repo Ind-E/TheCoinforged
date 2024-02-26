@@ -22,8 +22,8 @@ public class LongGamePatch {
         for (Iterator<AbstractCard> i = __instance.group.iterator(); i.hasNext();) {
             AbstractCard card = i.next();
             if (card instanceof LongGame) {
-                AbstractDungeon.actionManager
-                        .addToBottom(new ApplyPowerAction(p, p, new LongGamePower(p, card.magicNumber, card)));
+                AbstractDungeon.actionManager.addToBottom(
+                        new ApplyPowerAction(p, p, new LongGamePower(p, card.magicNumber, card)));
                 i.remove();
             }
         }

@@ -29,6 +29,6 @@ public class DoubleCherry extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new IfChipsAction(CHIPS, new GainBlockAction(p, this.block)));
+        addToBot(new IfChipsAction(CHIPS, new GainBlockAction(p, this.block * 2)));
     }
 }
