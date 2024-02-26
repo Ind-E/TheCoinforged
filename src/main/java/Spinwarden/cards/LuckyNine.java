@@ -20,7 +20,7 @@ public class LuckyNine extends BaseCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.ALL_ENEMY,
-            1);
+            2);
 
     public LuckyNine() {
         super(ID, info);
@@ -42,7 +42,7 @@ public class LuckyNine extends BaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             super.upgrade();
-            this.upgradeBaseCost(0);
+            this.upgradeBaseCost(1);
         }
     }
 

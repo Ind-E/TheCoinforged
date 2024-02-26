@@ -10,7 +10,7 @@ import Spinwarden.character.SpinwardenCharacter;
 
 public class DoubleCherry extends BaseCard {
     private static final int BLOCK = 6;
-    private static final int UPG_BLOCK = 9;
+    private static final int UPG_BLOCK = 3;
     private static final int CHIPS = 2;
 
     public static final String ID = makeID(DoubleCherry.class.getSimpleName());

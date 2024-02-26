@@ -101,7 +101,7 @@
   "${modID}:HitAndRunPower": {
     "NAME": "Hit and Run",
     "DESCRIPTIONS": [
-      "Your Attacks deal double damage. Whenever you play an Attack, #yExhaust it."
+      "Your Attacks deal #b75% more damage. Whenever you play an Attack, #yExhaust it."
     ]
   },
   "${modID}:PokerFacePower": {
@@ -156,6 +156,7 @@
     "NAME": "Long Game",
     "DESCRIPTIONS": [
       "In #b",
+      " turn, add #yLong #yGame to your hand.",
       " turns, add #yLong #yGame to your hand."
     ]
   }

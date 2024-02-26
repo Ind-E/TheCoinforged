@@ -8,10 +8,7 @@ public class RetainModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (!card.selfRetain) {
-            return "Retain. NL " + rawDescription;
-        }
-        return rawDescription;
+        return "Retain. NL " + rawDescription;
     }
 
     @Override
@@ -23,7 +20,6 @@ public class RetainModifier extends AbstractCardModifier {
     public void onInitialApplication(AbstractCard card) {
         if (!card.selfRetain) {
             card.selfRetain = true;
-            card.retain = true;
         }
     }
 

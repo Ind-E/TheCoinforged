@@ -11,14 +11,14 @@
     "FLAVOR": "When it comes to luck, make your own.",
     "DESCRIPTIONS": [
       "#b",
-      "% chance to double rewards from combat."
+      "% chance to double rewards from combat or chests."
     ]
   },
   "${modID}:CasinoCatalyst": {
     "NAME": "Casino Catalyst",
     "FLAVOR": "A mysterious catalyst containing enormous power. Stolen from the Casino.",
     "DESCRIPTIONS": [
-      "At the start of each combat, #y${modID}:Mark a card in hand. If you win a combat without ever playing the #y${modID}:Marked card, increase your #yLuck."
+      "At the start of each combat, #y${modID}:Mark a card in hand. If you win a combat without ever playing a #y${modID}:Marked card, increase your #yLuck."
     ]
   }
 }

@@ -305,11 +305,14 @@
   "${modID}:CheatersLuck": {
     "NAME": "Cheater's Luck",
     "DESCRIPTION": "Duplicate a random card in your hand. NL It costs 0 this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Duplicate 2 random cards in your hand. NL They cost 0 this turn. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Duplicate a random cards in your hand twice. NL They cost 0 this turn. NL Exhaust."
   },
   "${modID}:HighCard": {
     "NAME": "High Card",
-    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat. This card does no damage the next time it's played."
+    "DESCRIPTION": "Deal !D! damage. NL The next time this card is played, increase its damage by !M! this combat.",
+    "EXTENDED_DESCRIPTION": [
+      "Increase this card's damage by !M! this combat. NL The next time this card is played, deal !D! damage."
+    ]
   },
   "${modID}:Upswing": {
     "NAME": "Upswing",
@@ -465,10 +468,20 @@
   "${modID}:PokerChip": {
     "NAME": "Poker Chip",
     "DESCRIPTION": "Unplayable. NL Whenever you draw this, draw a card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Unplayable. NL Whenever you draw this, draw a card."
+    "UPGRADE_DESCRIPTION": "Retain. NL Whenever you draw this, draw a card."
   },
   "${modID}:DoubleCherry": {
     "NAME": "Double Cherry",
-    "DESCRIPTION": "Gain !B! Block. ${modID}:Chip 2: Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Chip 2: Gain !B! Block."
+  },
+  "${modID}:Frenzy": {
+    "NAME": "Frenzy",
+    "DESCRIPTION": "${modID}:Chip 2: This turn, your next card is played twice.",
+    "UPGRADE_DESCRIPTION": "Retain. NL ${modID}:Chip 2: This turn, your next card is played twice."
+  },
+  "${modID}:GlassShield": {
+    "NAME": "Glass Shield",
+    "DESCRIPTION": "${modID}:Chip 1: Gain !M! Buffer.",
+    "UPGRADE_DESCRIPTION": "${modID}:Chip 1: Gain !M! Buffer. NL Add 1 Poker Chip to hand."
   }
 }

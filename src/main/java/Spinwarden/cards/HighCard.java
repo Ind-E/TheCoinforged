@@ -1,5 +1,8 @@
 package Spinwarden.cards;
 
+import static Spinwarden.util.GeneralUtils.removePrefix;
+import static Spinwarden.util.TextureLoader.getCardTextureString;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
@@ -13,8 +16,8 @@ import Spinwarden.util.CardStats;
 
 public class HighCard extends BaseCard {
     private static final int DAMAGE = 12;
-    private static final int MAGIC = 6;
-    private static final int UPG_MAGIC = 3;
+    private static final int MAGIC = 12;
+    private static final int UPG_MAGIC = 6;
     private int counter = 0;
 
     public static final String ID = makeID(HighCard.class.getSimpleName());
@@ -33,21 +36,31 @@ public class HighCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                AttackEffect.NONE));
-        addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
-        counter++;
-    }
-
-    @Override
-    public void triggerOnGlowCheck() {
         if (counter % 2 == 0) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-            this.damage = this.baseDamage;
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+                    AttackEffect.NONE));
         } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-            this.damage = 0;
+            addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
         }
+        counter++;
+        if (counter % 2 == 0) {
+            this.rawDescription = cardStrings.DESCRIPTION;
+            this.type = CardType.ATTACK;
+            this.target = CardTarget.ENEMY;
+            String img = getCardTextureString(removePrefix(ID), type);
+            if (img != null) {
+                this.loadCardImage(img);
+            }
+        } else {
+            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
+            this.type = CardType.SKILL;
+            this.target = CardTarget.NONE;
+            String img = getCardTextureString(removePrefix(ID), type);
+            if (img != null) {
+                this.loadCardImage(img);
+            }
+        }
+        initializeDescription();
     }
 
     @Override

@@ -93,6 +93,7 @@ public class AceInTheHoleAction extends SeekAction {
                             this.p.drawPile.removeCard(card);
                         else if (this.p.exhaustPile.contains(card))
                             this.p.exhaustPile.removeCard(card);
+                        card.setCostForTurn(0);
                         AbstractDungeon.player.hand.addToTop(card);
                         AbstractDungeon.player.hand.refreshHandLayout();
                         AbstractDungeon.player.hand.applyPowers();
@@ -124,6 +125,7 @@ public class AceInTheHoleAction extends SeekAction {
                             this.p.drawPile.removeCard(card1);
                         else if (this.p.exhaustPile.contains(card1))
                             this.p.exhaustPile.removeCard(card1);
+                        card1.setCostForTurn(0);
                         this.p.hand.addToTop(card1);
                     }
 

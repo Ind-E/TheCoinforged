@@ -18,7 +18,7 @@ public class PokerChip extends BaseCard {
 
     public static final String ID = makeID(PokerChip.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            SpinwardenCharacter.Enums.CARD_COLOR,
+            CardColor.COLORLESS,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -36,7 +36,7 @@ public class PokerChip extends BaseCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return false;
+        return upgraded;
     }
 
     @Override

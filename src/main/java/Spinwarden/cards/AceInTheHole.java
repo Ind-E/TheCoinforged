@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import Spinwarden.actions.AceInTheHoleAction;
-import Spinwarden.actions.HandCostsZeroAction;
 import Spinwarden.character.SpinwardenCharacter;
 import Spinwarden.util.CardStats;
 
@@ -17,7 +16,7 @@ public class AceInTheHole extends BaseCard {
     private static final CardStats info = new CardStats(
             SpinwardenCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.NONE,
             0);
 
@@ -30,7 +29,6 @@ public class AceInTheHole extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToTop(new DiscardAction(p, p, p.hand.size(), false));
         addToBot(new AceInTheHoleAction(CARDS_TO_SEEK, upgraded));
-        addToBot(new HandCostsZeroAction());
     }
 
     @Override

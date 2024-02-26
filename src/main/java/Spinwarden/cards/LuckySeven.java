@@ -2,7 +2,7 @@ package Spinwarden.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -28,19 +28,17 @@ public class LuckySeven extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE);
         setMagic(MAGIC);
+        this.isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 7) {
-            for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (!monster.isDeadOrEscaped()) {
-                    addToBot(new LoseHPAction(monster, p, this.magicNumber));
-                }
-            }
-        }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 7) {
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, this.damageTypeForTurn,
+                    AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        }
     }
 
     @Override

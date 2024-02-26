@@ -10,7 +10,7 @@ import Spinwarden.util.CardStats;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
 public class BrokenBottle extends BaseCard {
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
     private static final int X_COST = -1;
 

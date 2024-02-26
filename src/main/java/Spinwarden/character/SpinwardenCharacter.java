@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.daily.mods.ColorlessCards;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -95,7 +96,8 @@ public class SpinwardenCharacter extends CustomPlayer {
         retVal.add(Spinwarden.cards.DefendSpinwarden.ID);
         retVal.add(Spinwarden.cards.RollBlue.ID);
         retVal.add(Spinwarden.cards.Advance.ID);
-        retVal.add(Spinwarden.cards.AllIn.ID);
+        retVal.add(Spinwarden.cards.DoubleCherry.ID);
+        retVal.add(Spinwarden.cards.tempCards.PokerChip.ID);
 
         return retVal;
     }
