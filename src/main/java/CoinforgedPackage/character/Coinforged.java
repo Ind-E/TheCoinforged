@@ -58,7 +58,7 @@ public class Coinforged extends CustomPlayer {
         @SpireEnum(name = "COINFORGED_COLOR") // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
         @SpireEnum(name = "COINFORGED_COLOR")
-        @SuppressWarnings("unused")
+        // @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 

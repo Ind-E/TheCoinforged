@@ -153,5 +153,13 @@
       " turn, add #yLong #yGame to your hand.",
       " turns, add #yLong #yGame to your hand."
     ]
+  },
+  "${modID}:CripplingDebtPower": {
+    "NAME": "Crippling Debt",
+    "DESCRIPTIONS": [
+      "Whenever this creature's HP drops below #b",
+      ", deal #b",
+      " damage to ALL enemies. Increases by 1 at the start of each turn"
+    ]
   }
 }

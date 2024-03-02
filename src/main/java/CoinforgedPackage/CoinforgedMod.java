@@ -74,7 +74,7 @@ public class CoinforgedMod implements
         loadModInfo();
     }
     public static final Logger logger = LogManager.getLogger(modID); // Used to output to the console.
-    private static final String resourcesFolder = "SpinwardenMod";
+    private static final String resourcesFolder = "CoinforgedMod";
 
     @SpireEnum
     public static AbstractCard.CardTags DIE;

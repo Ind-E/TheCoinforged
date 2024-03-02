@@ -473,5 +473,9 @@
     "NAME": "Glass Shield",
     "DESCRIPTION": "${modID}:Chip 1: Gain !M! Buffer.",
     "UPGRADE_DESCRIPTION": "${modID}:Chip 1: Gain !M! Buffer. NL Add 1 Poker Chip to hand."
+  },
+  "${modID}:Cripple": {
+    "NAME": "Cripple",
+    "DESCRIPTION": "Apply !M! ${modID}:Crippling_Debt."
   }
 }
