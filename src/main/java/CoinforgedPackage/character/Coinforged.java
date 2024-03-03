@@ -95,7 +95,7 @@ public class Coinforged extends CustomPlayer {
         retVal.add(CoinforgedPackage.cards.DefendSpinwarden.ID);
         retVal.add(CoinforgedPackage.cards.RollBlue.ID);
         retVal.add(CoinforgedPackage.cards.Advance.ID);
-        retVal.add(CoinforgedPackage.cards.DoubleCherry.ID);
+        retVal.add(CoinforgedPackage.cards.LowStakes.ID);
         retVal.add(CoinforgedPackage.cards.tempCards.PokerChip.ID);
 
         return retVal;

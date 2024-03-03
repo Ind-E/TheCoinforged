@@ -13,7 +13,7 @@
   },
   "${modID}:AllIn": {
     "NAME": "All In",
-    "DESCRIPTION": "Deal !D! damage. NL You cannot gain Block from cards next turn."
+    "DESCRIPTION": "${modID}:Chip !M!: Deal !D! damage to ALL enemies. If you can't afford the chip cost, exhaust all poker chips in hand and reduce it by that much."
   },
   "${modID}:RiskyInvestment": {
     "NAME": "Risky Investment",
@@ -477,5 +477,18 @@
   "${modID}:Cripple": {
     "NAME": "Cripple",
     "DESCRIPTION": "Apply !M! ${modID}:Crippling_Debt."
+  },
+  "${modID}:BagOfChips": {
+    "NAME": "Bag of Chips",
+    "DESCRIPTION": "Discard any number of cards then add that many Poker Chips to your hand."
+  },
+  "${modID}:Stash": {
+    "NAME": "Stash",
+    "DESCRIPTION": "Gain !B! Block. Add a Poker Chip to your hand.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Add a Poker Chip to your hand and deck."
+  },
+  "${modID}:LowStakes": {
+    "NAME": "Low Stakes",
+    "DESCRIPTION": "Deal !D! damage. ${modID}:Chip 1: Gain !B! Block."
   }
 }
