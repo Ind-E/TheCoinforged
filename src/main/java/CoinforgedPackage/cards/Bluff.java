@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rebalance
 public class Bluff extends BaseCard {
     private static final int DAMAGE = 16;
     private static final int UPG_DAMAGE = 2;

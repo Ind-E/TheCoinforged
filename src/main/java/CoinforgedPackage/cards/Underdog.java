@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rework or remove
 public class Underdog extends BaseCard {
     private static final int DAMAGE = 9;
 

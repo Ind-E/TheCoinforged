@@ -11,6 +11,7 @@ import CoinforgedPackage.actions.BlazingTacticsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rework or remove
 public class BlazingTactics extends BaseCard {
     private static final int CARD_DRAW = 3;
     private static final int UPG_CARD_DRAW = 1;

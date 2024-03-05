@@ -12,6 +12,7 @@ import CoinforgedPackage.util.CardStats;
 
 public class Frenzy extends BaseCard {
     private static final int CHIPS = 2;
+    private static final int UPG_CHIPS = -1;
 
     public static final String ID = makeID(Frenzy.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -23,19 +24,12 @@ public class Frenzy extends BaseCard {
 
     public Frenzy() {
         super(ID, info);
+        setMagic(CHIPS, UPG_CHIPS);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new IfChipsAction(CHIPS, new ApplyPowerAction(p, p, new EchoPower(p, 1))));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!upgraded) {
-            super.upgrade();
-            this.selfRetain = true;
-        }
+        addToBot(new IfChipsAction(this.magicNumber, new ApplyPowerAction(p, p, new EchoPower(p, 1))));
     }
 
     @Override

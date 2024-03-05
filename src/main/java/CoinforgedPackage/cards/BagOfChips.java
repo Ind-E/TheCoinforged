@@ -6,6 +6,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.BagOfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 
+//TODO: needs testing
 public class BagOfChips extends BaseCard{
 
     public static final String ID = makeID(BagOfChips.class.getSimpleName());

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rework or remove
 public class Sandbag extends BaseCard {
     private static final int BLOCK = 16;
     private static final int UPG_BLOCK = 6;

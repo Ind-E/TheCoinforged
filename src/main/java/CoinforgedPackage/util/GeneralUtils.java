@@ -1,5 +1,6 @@
 package CoinforgedPackage.util;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -32,5 +33,13 @@ public class GeneralUtils {
             }
         }
         return chips;
+    }
+
+    public static Color glowForChip(int chips) {
+        if (getNumChips() > chips) {
+            return Color.GOLD.cpy();
+        } else {
+            return new Color(0.2F, 0.9F, 1.0F, 0.25F);
+        }
     }
 }

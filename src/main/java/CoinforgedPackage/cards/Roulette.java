@@ -15,6 +15,7 @@ import CoinforgedPackage.modifiers.ExhaustModifier;
 import CoinforgedPackage.util.CardStats;
 import basemod.helpers.CardModifierManager;
 
+//TODO: rework or remove
 public class Roulette extends BaseCard {
     private static final int DAMAGE = 14;
     private static final int UPG_DAMAGE = 4;

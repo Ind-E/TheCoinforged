@@ -17,6 +17,7 @@ import CoinforgedPackage.actions.RollRedAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: Should this be common?
 public class PrismaticRoll extends BaseCard {
     private static final int DICE_TO_ROLL = 1;
 

@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: 2 damage isn't calculated as damage (unaffected by vuln, strength, etc.)
+//TODO: 2 damage isn't calculated as damage (unaffected by vuln, strength, etc.). rework or remove
 public class Misplay extends BaseCard {
     private static final int DAMAGE = 30;
     private static final int UPG_DAMAGE = 7;

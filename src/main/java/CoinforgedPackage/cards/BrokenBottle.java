@@ -9,6 +9,7 @@ import CoinforgedPackage.util.CardStats;
 
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
+//TODO: seems weak
 public class BrokenBottle extends BaseCard {
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;

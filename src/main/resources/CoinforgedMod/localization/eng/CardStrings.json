@@ -364,8 +364,7 @@
   },
   "${modID}:SlyShot": {
     "NAME": "Sly Shot",
-    "DESCRIPTION": "Deal !D! damage to the lowest health enemy twice.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to the lowest health enemy !M! times."
+    "DESCRIPTION": "Deal !D! damage to the highest health enemy !M! times."
   },
   "${modID}:PocketPair": {
     "NAME": "Pocket Pair",
@@ -409,7 +408,7 @@
   },
   "${modID}:LuckySeven": {
     "NAME": "Lucky Seven",
-    "DESCRIPTION": "Deal !D! damage. NL If this is the 7th card you've played this turn, ALL enemies lose 7 HP.",
+    "DESCRIPTION": "Deal !D! damage. NL If this is the 7th card you've played this turn, deal 7 damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       " NL (",
       " card played.)",
@@ -489,6 +488,10 @@
   },
   "${modID}:LowStakes": {
     "NAME": "Low Stakes",
-    "DESCRIPTION": "Deal !D! damage. ${modID}:Chip 1: Gain !B! Block."
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Chip 1: Gain !B! Block."
+  },
+  "${modID}:Outrage": {
+    "NAME": "Outrage",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${modID}:Chip 1: Apply !M! Vulnerable to ALL enemeis."
   }
 }

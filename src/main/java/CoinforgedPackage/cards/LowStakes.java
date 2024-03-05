@@ -1,5 +1,7 @@
 package CoinforgedPackage.cards;
 
+import static CoinforgedPackage.util.GeneralUtils.glowForChip;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -38,5 +40,10 @@ public class LowStakes extends BaseCard{
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
         addToBot(new IfChipsAction(this.magicNumber, new GainBlockAction(p, this.block)));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = glowForChip(this.magicNumber);
     }
 }

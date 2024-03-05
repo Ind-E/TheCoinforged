@@ -11,6 +11,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.AdvantagePower;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rework
 public class Advantage extends BaseCard {
     private static final int MAGIC = 1;
 

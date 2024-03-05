@@ -8,6 +8,7 @@ import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rework or remove
 public class DoubleCherry extends BaseCard {
     private static final int BLOCK = 6;
     private static final int UPG_BLOCK = 3;

@@ -151,21 +151,22 @@ public class CoinforgedMod implements
     }
 
     public static void countCards() {
-        String filePath = "C:\\Users\\sacha\\Documents\\GitHub\\SpinwardenMod\\card_data.csv";
+        String filePath = "C:\\Users\\sacha\\Desktop\\VSCode\\CoinforgedMod\\card_data.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             // Write header to the CSV file
-            writer.write("Name,Cost,Type,Rarity\n");
+            writer.write("Name,Cost,Type,Rarity,Description\n");
 
             // Loop through the card list and write data to the CSV file
-            for (AbstractCard c : CardLibrary.getCardList(CardLibrary.LibraryType.valueOf("SPINWARDEN_COLOR"))) {
+            for (AbstractCard c : CardLibrary.getCardList(CardLibrary.LibraryType.valueOf("COINFORGED_COLOR"))) {
                 String cardName = c.name;
                 String cardType = c.type.toString();
                 String cardRarity = c.rarity.toString();
                 int cardCost = c.cost;
+                String cardDescription = "\"" + c.rawDescription + "\"";
 
                 // Write card information to the CSV file
-                writer.write(String.format("%s,%s,%s,%s\n", cardName, cardCost, cardType, cardRarity));
+                writer.write(String.format("%s,%s,%s,%s,%s\n", cardName, cardCost, cardType, cardRarity, cardDescription));
             }
 
             System.out.println("Card data exported to " + filePath);
