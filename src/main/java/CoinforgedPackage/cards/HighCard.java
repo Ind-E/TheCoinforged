@@ -1,8 +1,5 @@
 package CoinforgedPackage.cards;
 
-import static CoinforgedPackage.util.GeneralUtils.removePrefix;
-import static CoinforgedPackage.util.TextureLoader.getCardTextureString;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
@@ -11,10 +8,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import CoinforgedPackage.actions.HighCardAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: counts as SKILL when played (triggers hex)
 public class HighCard extends BaseCard {
     private static final int DAMAGE = 12;
     private static final int MAGIC = 12;
@@ -44,24 +41,7 @@ public class HighCard extends BaseCard {
             addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
         }
         counter++;
-        if (counter % 2 == 0) {
-            this.rawDescription = cardStrings.DESCRIPTION;
-            this.type = CardType.ATTACK;
-            this.target = CardTarget.ENEMY;
-            String img = getCardTextureString(removePrefix(ID), type);
-            if (img != null) {
-                this.loadCardImage(img);
-            }
-        } else {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
-            this.type = CardType.SKILL;
-            this.target = CardTarget.NONE;
-            String img = getCardTextureString(removePrefix(ID), type);
-            if (img != null) {
-                this.loadCardImage(img);
-            }
-        }
-        initializeDescription();
+        addToBot(new HighCardAction(this, cardStrings, counter));
     }
 
     @Override

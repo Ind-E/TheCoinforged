@@ -1,20 +1,21 @@
 package CoinforgedPackage.cards;
 
+import static CoinforgedPackage.util.GeneralUtils.getNumChips;
+
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-
-import CoinforgedPackage.actions.BlazingTacticsAction;
+import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: rework or remove
 public class BlazingTactics extends BaseCard {
     private static final int CARD_DRAW = 3;
     private static final int UPG_CARD_DRAW = 1;
+    private static final int CHIPS = 1;
+    private static final int ENERGY_GAIN = 1;
 
     public static final String ID = makeID(BlazingTactics.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -30,12 +31,12 @@ public class BlazingTactics extends BaseCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainEnergyAction(1));
-        addToBot(new BlazingTacticsAction(this, this.magicNumber));
+        addToBot(new GainEnergyAction(ENERGY_GAIN));
+        addToBot(new IfChipsAction(CHIPS, new DrawCardAction(p, this.magicNumber)));
     }
 
     public void triggerOnGlowCheck() {
-        if (EnergyPanel.totalCount + 1 > AbstractDungeon.player.hand.size() - 1) {
+        if (getNumChips() > CHIPS) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

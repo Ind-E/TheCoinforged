@@ -5,15 +5,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.actions.DesperationAction;
+import CoinforgedPackage.actions.BigHandsFollowUpAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: rework or remove
-public class Desperation extends BaseCard {
-    private static final int CARD_DRAW = 4;
+public class BigHands extends BaseCard {
+    private static final int CARD_DRAW = 5;
+    private static final int UPG_CARD_DRAW = 2;
 
-    public static final String ID = makeID(Desperation.class.getSimpleName());
+    public static final String ID = makeID(BigHands.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
@@ -21,19 +21,18 @@ public class Desperation extends BaseCard {
             CardTarget.NONE,
             0);
 
-    public Desperation() {
+    public BigHands() {
         super(ID, info);
-        setMagic(CARD_DRAW);
+        setMagic(CARD_DRAW, UPG_CARD_DRAW);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(p, this.magicNumber));
-        addToBot(new DesperationAction(this.upgraded));
+        addToBot(new DrawCardAction(this.magicNumber, new BigHandsFollowUpAction()));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Desperation();
+        return new BigHands();
     }
 }

@@ -17,7 +17,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
 public class CardShark extends BaseCard {
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 14;
     private static final int UPG_DAMAGE = 4;
     private AbstractPlayer p = AbstractDungeon.player;
 
@@ -46,12 +46,9 @@ public class CardShark extends BaseCard {
                 for (int i = 0; i < 5; i++)
                     addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
             }
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage * 2, DamageInfo.DamageType.NORMAL),
-                    AbstractGameAction.AttackEffect.NONE));
-        } else {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                    AbstractGameAction.AttackEffect.NONE));
         }
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+                AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

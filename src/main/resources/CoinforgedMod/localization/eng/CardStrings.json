@@ -65,8 +65,7 @@
   },
   "${modID}:Advantage": {
     "NAME": "Gain Advantage",
-    "DESCRIPTION": "Gain 1 ${modID}:Advantage for each *Die in your hand.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain 1 ${modID}:Advantage for each *Die in your hand."
+    "DESCRIPTION": "Gain !M! ${modID}:Advantage."
   },
   "${modID}:SmallBlind": {
     "NAME": "Small Blind",
@@ -88,11 +87,6 @@
   "${modID}:RedKing": {
     "NAME": "Red King",
     "DESCRIPTION": "${modID}:Red_Dice now damage ALL enemies. NL Roll !M! ${modID}:Red_Dice."
-  },
-  "${modID}:Desperation": {
-    "NAME": "Desperation",
-    "DESCRIPTION": "Draw !M! Cards. NL Increase the cost of ALL cards in hand by 1 this turn.",
-    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Increase the cost of ALL cards in hand by 1 this turn. (Up to 2)."
   },
   "${modID}:DoubleDealing": {
     "NAME": "Double-Dealing",
@@ -157,11 +151,11 @@
   },
   "${modID}:CardShark": {
     "NAME": "Card Shark",
-    "DESCRIPTION": "Deal !D! damage. If this is the leftmost card in your hand, it costs 0 and deals double damage."
+    "DESCRIPTION": "Deal !D! damage. If this is the leftmost card in your hand, it costs 0."
   },
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
-    "DESCRIPTION": "Gain [E] . If you have more energy than cards in hand, draw !M! cards. Otherwise, Exhaust."
+    "DESCRIPTION": "Gain [E] . ${modID}:Chip 1: draw !M! cards."
   },
   "${modID}:Call": {
     "NAME": "Call",
@@ -493,5 +487,9 @@
   "${modID}:Outrage": {
     "NAME": "Outrage",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${modID}:Chip 1: Apply !M! Vulnerable to ALL enemeis."
+  },
+  "${modID}:BigHands": {
+    "NAME": "Big Hands",
+    "DESCRIPTION": "Draw !M! cards. NL Discard all cards drawn this way that cost less than 2."
   }
 }
