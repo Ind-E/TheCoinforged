@@ -4,11 +4,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.actions.DamageHighestHealthEnemyAction;
+import CoinforgedPackage.actions.DamageHighestHealthEnemyMultipleTimesAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: attacks always target the same enemy
 public class SlyShot extends BaseCard {
     private static final int DAMAGE = 5;
     private static final int TIMES_TO_DEAL_DAMAGE = 3;
@@ -30,9 +29,8 @@ public class SlyShot extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < this.magicNumber; i++) {
-            addToTop(new DamageHighestHealthEnemyAction(this.damage));
-        }
+            addToTop(new DamageHighestHealthEnemyMultipleTimesAction(this.damage, this.magicNumber));
+
     }
 
     @Override

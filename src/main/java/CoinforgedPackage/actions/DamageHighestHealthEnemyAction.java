@@ -25,7 +25,7 @@ public class DamageHighestHealthEnemyAction extends AbstractGameAction {
                 target = mo;
             }
         }
-        addToBot(new DamageAction(target, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+        addToTop(new DamageAction(target, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
         this.isDone = true;
     }
