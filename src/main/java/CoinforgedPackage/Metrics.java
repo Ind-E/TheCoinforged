@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -12,7 +14,7 @@ public class Metrics {
     private static String DB_URL = System.getenv("COINFORGED_DB_URL");
     private static String USER = System.getenv("COINFORGED_DB_USER");
     private static String PASS = System.getenv("COINFORGED_DB_PASS");
-    private static final Set<String> VALID_COLUMNS = Set.of("wins", "games", "picks", "offers");
+    private static final Set<String> VALID_COLUMNS = new HashSet<>(Arrays.asList("wins", "games", "picks", "offers"));
     private static final Map<String, Map<String, Integer>> localMetrics = new HashMap<>();
 
     public static void incrementCardWins(String cardId) {

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: counts as SKILL when played (triggers hex)
 public class HighCard extends BaseCard {
     private static final int DAMAGE = 12;
     private static final int MAGIC = 12;

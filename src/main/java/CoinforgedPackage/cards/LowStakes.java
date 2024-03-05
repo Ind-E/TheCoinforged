@@ -1,7 +1,6 @@
 package CoinforgedPackage.cards;
 
-import static CoinforgedPackage.util.GeneralUtils.glowForChip;
-
+import static CoinforgedPackage.util.GeneralUtils.getNumChips;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -44,6 +43,10 @@ public class LowStakes extends BaseCard{
 
     @Override
     public void triggerOnGlowCheck() {
-        this.glowColor = glowForChip(this.magicNumber);
+        if (getNumChips() >= this.magicNumber) {
+            this.glowColor = GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 }

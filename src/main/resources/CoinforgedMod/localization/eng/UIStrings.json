@@ -1,7 +1,12 @@
 {
-  "${modID}:TEXT": {
+  "${modID}:DataCollection": {
     "TEXT": [
       "Allow Data Collection?"
+    ]
+  },
+  "${modID}:BagOfChips": {
+    "TEXT": [
+      "Discard (Bag of Chips)"
     ]
   }
 }

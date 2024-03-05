@@ -8,6 +8,7 @@ import CoinforgedPackage.actions.DamageHighestHealthEnemyAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: attacks always target the same enemy
 public class SlyShot extends BaseCard {
     private static final int DAMAGE = 5;
     private static final int TIMES_TO_DEAL_DAMAGE = 3;

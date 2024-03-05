@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <modID>Coinforged</modID>
+        <modID>coinforged</modID>
         <author>Ind_E</author>
 
         <!-- Change the path for your system to match your Steam installation. -->

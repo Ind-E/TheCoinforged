@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.shrines.WeMeetAgain;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 
+//TODO: Doesn't work when out of combat
 public class SuddenWindfall extends BasePotion {
     public static final String ID = makeID("SuddenWindfall");
 

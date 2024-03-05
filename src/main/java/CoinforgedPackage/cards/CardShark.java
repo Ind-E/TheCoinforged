@@ -54,6 +54,7 @@ public class CardShark extends BaseCard {
         }
     }
 
+    @Override
     public void triggerOnGlowCheck() {
         p = AbstractDungeon.player;
         if (p.hand.getBottomCard().uuid == this.uuid) {

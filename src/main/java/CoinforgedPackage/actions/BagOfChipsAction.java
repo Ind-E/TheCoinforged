@@ -1,5 +1,7 @@
 package CoinforgedPackage.actions;
 
+import static CoinforgedPackage.CoinforgedMod.makeID;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -11,7 +13,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class BagOfChipsAction extends AbstractGameAction {
 
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("GamblingChipAction");
+    private static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("BagOfChips"));
 
     public static final String[] TEXT = uiStrings.TEXT;
 
