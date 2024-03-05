@@ -1,8 +1,13 @@
 package CoinforgedPackage.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 import CoinforgedPackage.CoinforgedMod;
 
@@ -41,5 +46,22 @@ public class GeneralUtils {
         } else {
             return new Color(0.2F, 0.9F, 1.0F, 0.25F);
         }
+    }
+
+    public static AbstractCard generateRandomStatusCard() {
+        List<AbstractCard> statusCards = new ArrayList<>();
+
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.type == CardType.STATUS) {
+                statusCards.add(card);
+            }
+        }
+
+        if (!statusCards.isEmpty()) {
+            AbstractCard randomStatusCard = statusCards
+                    .get(AbstractDungeon.cardRandomRng.random(statusCards.size() - 1)).makeCopy();
+            return randomStatusCard;
+        }
+        throw new RuntimeException("No Status cards found");
     }
 }

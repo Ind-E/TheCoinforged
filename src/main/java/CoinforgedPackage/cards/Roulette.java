@@ -1,7 +1,5 @@
 package CoinforgedPackage.cards;
 
-import static CoinforgedPackage.CoinforgedMod.generateRandomStatusCard;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.modifiers.ExhaustModifier;
 import CoinforgedPackage.util.CardStats;
+import static CoinforgedPackage.util.GeneralUtils.generateRandomStatusCard;
 import basemod.helpers.CardModifierManager;
 
 //TODO: rework or remove

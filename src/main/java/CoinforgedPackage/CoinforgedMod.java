@@ -4,11 +4,9 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -30,14 +28,10 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -109,16 +103,11 @@ public class CoinforgedMod implements
     private static final String CHAR_SELECT_PORTRAIT = characterPath("select/portrait.png");
 
     private static final Color cardColor = new Color(214f / 255f, 214f / 255f, 84f / 255f, 1f);
-    // red, green, blue, alpha. alpha is transparency, which should just be 1.
 
-    // This is used to prefix the IDs of various objects like cards and relics,
-    // to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
         return modID + ":" + id;
     }
 
-    // This will be called by ModTheSpire because of the @SpireInitializer
-    // annotation at the top of the class.
     public static void initialize() {
         new CoinforgedMod();
 
@@ -129,35 +118,24 @@ public class CoinforgedMod implements
     }
 
     public CoinforgedMod() {
-        BaseMod.subscribe(this); // This will make BaseMod trigger all the subscribers at their appropriate
-                                 // times.
+        BaseMod.subscribe(this);
         logger.info(modID + " subscribed to BaseMod.");
     }
 
     @Override
     public void receivePostInitialize() {
-        // This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
-        // Set up the mod information displayed in the in-game mods menu.
-        // The information used is taken from your pom.xml file.
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description,
                 null);
         registerPotions();
         CustomTargeting.registerCustomTargeting(SelfOrEnemyTargeting.SELF_OR_ENEMY, new SelfOrEnemyTargeting());
-
-        if (System.getProperty("user.name").equals("sacha")) {
-            countCards();
-        }
     }
 
     public static void countCards() {
         String filePath = "C:\\Users\\sacha\\Desktop\\VSCode\\CoinforgedMod\\card_data.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            // Write header to the CSV file
             writer.write("Name,Cost,Type,Rarity,Description\n");
-
-            // Loop through the card list and write data to the CSV file
             for (AbstractCard c : CardLibrary.getCardList(CardLibrary.LibraryType.valueOf("COINFORGED_COLOR"))) {
                 String cardName = c.name;
                 String cardType = c.type.toString();
@@ -165,8 +143,8 @@ public class CoinforgedMod implements
                 int cardCost = c.cost;
                 String cardDescription = "\"" + c.rawDescription + "\"";
 
-                // Write card information to the CSV file
-                writer.write(String.format("%s,%s,%s,%s,%s\n", cardName, cardCost, cardType, cardRarity, cardDescription));
+                writer.write(
+                        String.format("%s,%s,%s,%s,%s\n", cardName, cardCost, cardType, cardRarity, cardDescription));
             }
 
             System.out.println("Card data exported to " + filePath);
@@ -176,25 +154,18 @@ public class CoinforgedMod implements
     }
 
     public static void registerPotions() {
-        new AutoAdd(modID) // Loads files from this mod
-                .packageFilter(BasePotion.class) // In the same package as this class
-                .any(BasePotion.class, (info, potion) -> { // Run this code for any classes that extend this class
-                    // These three null parameters are colors.
-                    // If they're not null, they'll overwrite whatever color is set in the potions
-                    // themselves.
-                    // This is an old feature added before having potions determine their own color
-                    // was possible.
+        new AutoAdd(modID)
+                .packageFilter(BasePotion.class)
+                .any(BasePotion.class, (info, potion) -> {
                     BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
-                    // playerClass will make a potion character-specific. By default, it's null and
-                    // will do nothing.
                 });
     }
 
     @Override
-    public void receiveEditRelics() { // somewhere in the class
-        new AutoAdd(modID) // Loads files from this mod
-                .packageFilter(BaseRelic.class) // In the same package as this class
-                .any(BaseRelic.class, (info, relic) -> { // Run this code for any classes that extend this class
+    public void receiveEditRelics() {
+        new AutoAdd(modID)
+                .packageFilter(BaseRelic.class)
+                .any(BaseRelic.class, (info, relic) -> {
                     if (relic.pool != null)
                         BaseMod.addRelicToCustomPool(relic, relic.pool); // Register a custom character specific relic
                     else
@@ -231,8 +202,7 @@ public class CoinforgedMod implements
          * be missing.
          * The same process is used to load keywords slightly below.
          */
-        loadLocalization(defaultLanguage); // no exception catching for default localization; you better have at least
-                                           // one that works.
+        loadLocalization(defaultLanguage);
         if (!defaultLanguage.equals(getLangString())) {
             try {
                 loadLocalization(getLangString());
@@ -250,10 +220,10 @@ public class CoinforgedMod implements
                 localizationPath(lang, "CardStrings.json"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 localizationPath(lang, "CharacterStrings.json"));
-        BaseMod.loadCustomStringsFile(EventStrings.class,
-                localizationPath(lang, "EventStrings.json"));
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                localizationPath(lang, "OrbStrings.json"));
+        // BaseMod.loadCustomStringsFile(EventStrings.class,
+        //         localizationPath(lang, "EventStrings.json"));
+        // BaseMod.loadCustomStringsFile(OrbStrings.class,
+        //         localizationPath(lang, "OrbStrings.json"));
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 localizationPath(lang, "PotionStrings.json"));
         BaseMod.loadCustomStringsFile(PowerStrings.class,
@@ -297,8 +267,6 @@ public class CoinforgedMod implements
         }
     }
 
-    // These methods are used to generate the correct filepaths to various parts of
-    // the resources folder.
     public static String localizationPath(String lang, String file) {
         return resourcesFolder + "/localization/" + lang + "/" + file;
     }
@@ -339,32 +307,15 @@ public class CoinforgedMod implements
 
     @Override
     public void receiveEditCards() {
-        new AutoAdd(modID) // Loads files from this mod
-                .packageFilter(BaseCard.class) // In the same package as this class
-                .setDefaultSeen(true) // And marks them as seen in the compendium
-                .cards(); // Adds the cards
+        new AutoAdd(modID)
+                .packageFilter(BaseCard.class)
+                .setDefaultSeen(true)
+                .cards();
     }
 
     @Override
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new Coinforged(),
                 CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, Coinforged.Enums.Coinforged);
-    }
-
-    public static AbstractCard generateRandomStatusCard() {
-        List<AbstractCard> statusCards = new ArrayList<>();
-
-        for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.type == CardType.STATUS) {
-                statusCards.add(card);
-            }
-        }
-
-        if (!statusCards.isEmpty()) {
-            AbstractCard randomStatusCard = statusCards
-                    .get(AbstractDungeon.cardRandomRng.random(statusCards.size() - 1)).makeCopy();
-            return randomStatusCard;
-        }
-        throw new RuntimeException("No Status cards found");
     }
 }
