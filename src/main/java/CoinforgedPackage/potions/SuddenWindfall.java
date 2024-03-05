@@ -3,14 +3,12 @@ package CoinforgedPackage.potions;
 import static CoinforgedPackage.CoinforgedMod.makeID;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.shrines.WeMeetAgain;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 
-//TODO: Doesn't work when out of combat
 public class SuddenWindfall extends BasePotion {
     public static final String ID = makeID("SuddenWindfall");
 
@@ -40,7 +38,7 @@ public class SuddenWindfall extends BasePotion {
 
     @Override
     public void use(AbstractCreature target) {
-        addToBot(new GainGoldAction(missingHealth()));
+        AbstractDungeon.player.gainGold(missingHealth());
     }
 
     @Override

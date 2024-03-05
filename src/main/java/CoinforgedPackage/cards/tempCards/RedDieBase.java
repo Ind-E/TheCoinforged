@@ -9,8 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.modifiers.RedKingModifier;
 import CoinforgedPackage.powers.RedKingPower;
 import CoinforgedPackage.util.CardStats;
+import basemod.helpers.CardModifierManager;
 
 public abstract class RedDieBase extends BaseCard {
     private static final int DAMAGE = 99;
@@ -49,11 +51,17 @@ public abstract class RedDieBase extends BaseCard {
 
     public RedDieBase(String ID, CardStats info, int DAMAGE, int UPG_DAMAGE, boolean redKingActive) {
         this(ID, info, DAMAGE, UPG_DAMAGE);
-        this.isMultiDamage = true;
+        if (redKingActive == true) {
+            CardModifierManager.addModifier(this, new RedKingModifier());
+        }
     }
 
     public RedDieBase() {
         this(ID, info, DAMAGE, UPG_DAMAGE);
+    }
+
+    public void setMultiDamage(boolean m) {
+        this.isMultiDamage = m;
     }
 
     @Override

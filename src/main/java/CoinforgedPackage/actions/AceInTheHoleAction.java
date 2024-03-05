@@ -24,10 +24,6 @@ public class AceInTheHoleAction extends SeekAction {
     }
 
     public void update() {
-        if (!upgraded) {
-            super.update();
-            return;
-        }
         AbstractCard card1;
         if (this.duration == Settings.ACTION_DUR_MED) {
             if (AbstractDungeon.player.hand.size() == 10) {
@@ -36,17 +32,19 @@ public class AceInTheHoleAction extends SeekAction {
                 return;
             }
             CardGroup tmp = new CardGroup(CardGroupType.UNSPECIFIED);
-            Iterator<AbstractCard> drawPileIterator = this.p.drawPile.group.iterator();
-            Iterator<AbstractCard> exhaustPileIterator = this.p.exhaustPile.group.iterator();
-
             AbstractCard card;
+
+            Iterator<AbstractCard> drawPileIterator = this.p.drawPile.group.iterator();
             while (drawPileIterator.hasNext()) {
                 card = drawPileIterator.next();
                 tmp.addToRandomSpot(card);
             }
-            while (exhaustPileIterator.hasNext()) {
-                card = exhaustPileIterator.next();
-                tmp.addToRandomSpot(card);
+            if (upgraded) {
+                Iterator<AbstractCard> exhaustPileIterator = this.p.exhaustPile.group.iterator();
+                while (exhaustPileIterator.hasNext()) {
+                    card = exhaustPileIterator.next();
+                    tmp.addToRandomSpot(card);
+                }
             }
 
             if (tmp.size() == 0) {
@@ -69,6 +67,7 @@ public class AceInTheHoleAction extends SeekAction {
                     else if (this.p.exhaustPile.contains(card))
                         this.p.exhaustPile.removeCard(card);
 
+                    card.setCostForTurn(0);
                     AbstractDungeon.player.hand.addToTop(card);
                     AbstractDungeon.player.hand.refreshHandLayout();
                     AbstractDungeon.player.hand.applyPowers();

@@ -12,10 +12,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.actions.RollRedAction;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.modifiers.RedKingModifier;
 import CoinforgedPackage.powers.RedKingPower;
 import CoinforgedPackage.util.CardStats;
+import basemod.helpers.CardModifierManager;
 
-//TODO: modify all existing cards in hand, draw, discard
 public class RedKing extends BaseCard {
     private static final int DICE_TO_ROLL = 2;
     private static final int UPG_DICE_TO_ROLL = 2;
@@ -42,6 +43,29 @@ public class RedKing extends BaseCard {
         if (!p.hasPower(RedKing.ID))
             addToBot(new ApplyPowerAction(p, p, new RedKingPower(p)));
         addToBot(new RollRedAction(p, this.magicNumber));
+        for (AbstractCard card : p.hand.group) {
+            if (card.hasTag(CoinforgedMod.RED_DIE)) {
+                CardModifierManager.addModifier(card, new RedKingModifier());
+            }
+        }
+
+        for (AbstractCard card : p.drawPile.group) {
+            if (card.hasTag(CoinforgedMod.RED_DIE)) {
+                CardModifierManager.addModifier(card, new RedKingModifier());
+            }
+        }
+
+        for (AbstractCard card : p.discardPile.group) {
+            if (card.hasTag(CoinforgedMod.RED_DIE)) {
+                CardModifierManager.addModifier(card, new RedKingModifier());
+            }
+        }
+
+        for (AbstractCard card : p.exhaustPile.group) {
+            if (card.hasTag(CoinforgedMod.RED_DIE)) {
+                CardModifierManager.addModifier(card, new RedKingModifier());
+            }
+        }
     }
 
     private ArrayList<AbstractCard> getList() {

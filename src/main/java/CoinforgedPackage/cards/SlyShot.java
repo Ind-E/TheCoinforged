@@ -31,7 +31,7 @@ public class SlyShot extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < this.magicNumber; i++) {
-            addToBot(new DamageHighestHealthEnemyAction(this.damage));
+            addToTop(new DamageHighestHealthEnemyAction(this.damage));
         }
     }
 

@@ -9,7 +9,6 @@ import CoinforgedPackage.actions.AceInTheHoleAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: doesn't set cost to 0
 public class AceInTheHole extends BaseCard {
     private static final int CARDS_TO_SEEK = 1;
 
