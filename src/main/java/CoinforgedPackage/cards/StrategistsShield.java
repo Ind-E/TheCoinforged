@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-// TODO: this card sucks. needs rebalance
 public class StrategistsShield extends BaseCard {
     private static final int BLOCK = 6;
+    private static final int UPG_BLOCK = 3;
 
     public static final String ID = makeID(StrategistsShield.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -25,7 +25,8 @@ public class StrategistsShield extends BaseCard {
 
     public StrategistsShield() {
         super(ID, info);
-        setBlock(BLOCK);
+        setBlock(BLOCK, UPG_BLOCK);
+        setSelfRetain(true);
     }
 
     @Override
@@ -33,7 +34,7 @@ public class StrategistsShield extends BaseCard {
         addToBot(new GainBlockAction(p, this.block));
         int powers = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.type == AbstractCard.CardType.POWER || upgraded && c.type == AbstractCard.CardType.STATUS) {
+            if (c.type == AbstractCard.CardType.POWER || upgraded && (c.type != AbstractCard.CardType.ATTACK && c.type != AbstractCard.CardType.SKILL)) {
                 powers++;
             }
         }

@@ -47,7 +47,7 @@ public class CheatersLuck extends BaseCard {
             randomCardInHand = p.hand.group.get(ThreadLocalRandom.current().nextInt(0, p.hand.size())).makeCopy();
         }
         randomCardInHand.setCostForTurn(0);
-        addToBot(new MakeTempCardInHandAction(randomCardInHand, true, true));
+        addToBot(new MakeTempCardInHandAction(randomCardInHand));
     }
 
     @Override

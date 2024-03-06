@@ -178,8 +178,7 @@
   },
   "${modID}:StrategistsShield": {
     "NAME": "Strategist's Shield",
-    "DESCRIPTION": "Gain !B! Block. Gain 1 Strength for each Power in hand.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Gain 1 Strength for each Power and Status in hand."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. Gain 1 Strength for each Power in hand."
   },
   "${modID}:Rig": {
     "NAME": "Rig",
@@ -245,10 +244,6 @@
     "NAME": "Roll Blue",
     "DESCRIPTION": "Roll !M! ${modID}:Blue_Die.",
     "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Blue_Dice."
-  },
-  "${modID}:Misplay": {
-    "NAME": "Misplay",
-    "DESCRIPTION": "Deal 2 damage. NL Deal !D! damage to a random other character."
   },
   "${modID}:LongGame": {
     "NAME": "Long Game",
@@ -365,10 +360,6 @@
     "DESCRIPTION": "Roll !M! ${modID}:Green_Dice. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Roll !M! ${modID}:Green_Dice. NL Give them Retain. NL Exhaust"
   },
-  "${modID}:Sandbag": {
-    "NAME": "Sandbag",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Weak. NL Whenever you play an Attack, increase this card's cost by 1 this turn."
-  },
   "${modID}:Underdog": {
     "NAME": "Underdog",
     "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage for each Curse in your deck. NL Exhaust.",
@@ -390,11 +381,6 @@
   "${modID}:WaveOfGreed": {
     "NAME": "Wave of Greed",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! gold for each enemy hit. NL Exhaust."
-  },
-  "${modID}:Roulette": {
-    "NAME": "Roulette",
-    "DESCRIPTION": "Deal !D! damage. Add a random Status card into your discard pile. Add a random card into your hand. It costs 1 less this turn and exhausts.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a random Status card into your discard pile. Add a random card into your hand. It costs 0 this turn and exhausts."
   },
   "${modID}:DrunkenStrike": {
     "NAME": "Drunken Strike",
@@ -452,10 +438,6 @@
     "NAME": "Poker Chip",
     "DESCRIPTION": "Unplayable. NL Whenever you draw this, draw a card.",
     "UPGRADE_DESCRIPTION": "Retain. NL Whenever you draw this, draw a card."
-  },
-  "${modID}:DoubleCherry": {
-    "NAME": "Double Cherry",
-    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Chip 2: Gain !B! Block."
   },
   "${modID}:Frenzy": {
     "NAME": "Frenzy",

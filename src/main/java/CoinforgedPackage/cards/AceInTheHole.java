@@ -1,5 +1,6 @@
 package CoinforgedPackage.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.PurgeField;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,7 +23,7 @@ public class AceInTheHole extends BaseCard {
 
     public AceInTheHole() {
         super(ID, info);
-        this.purgeOnUse = true;
+        PurgeField.purge.set(this, true);
     }
 
     @Override

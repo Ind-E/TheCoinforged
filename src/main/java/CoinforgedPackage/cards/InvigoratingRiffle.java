@@ -9,10 +9,9 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.InvigoratingRifflePower;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: rework or remove
 public class InvigoratingRiffle extends BaseCard {
-    private static final int VIGOR = 4;
-    private static final int UPG_VIGOR = 2;
+    private static final int VIGOR = 2;
+    private static final int UPG_VIGOR = 1;
 
     public static final String ID = makeID(InvigoratingRiffle.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -20,7 +19,7 @@ public class InvigoratingRiffle extends BaseCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            2);
+            1);
 
     public InvigoratingRiffle() {
         super(ID, info);
