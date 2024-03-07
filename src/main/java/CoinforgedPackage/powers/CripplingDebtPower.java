@@ -4,15 +4,13 @@ import static CoinforgedPackage.CoinforgedMod.makeID;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-//TODO: damage to all affected by weak on player, onAttacked happens before monster loses health
 public class CripplingDebtPower extends BasePower implements HealthBarRenderPower {
     public static final String POWER_ID = makeID("CripplingDebtPower");
 
@@ -30,14 +28,6 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
     @Override
     public int onLoseHp(int damageAmount) {
         checkExplode();
-        return damageAmount;
-    }
-
-    @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.owner != null && info.owner != this.owner && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS) {
-            checkExplode();
-        }
         return damageAmount;
     }
 
@@ -61,8 +51,8 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
 
     public void checkExplode() {
         if (this.owner.currentHealth > 0 && this.owner.currentHealth <= this.amount) {
-            addToBot(new DamageAllEnemiesAction(null, this.amount, DamageType.THORNS,
-                    AttackEffect.FIRE));
+            addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true),
+                    DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, CripplingDebtPower.POWER_ID));
         }
     }

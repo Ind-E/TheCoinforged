@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import javassist.CtBehavior;
 
@@ -18,7 +17,7 @@ public class BigHandPatch {
     @SpireInsertPatch(locator = Locator.class)
     public static void Insert(CardGroup __instance) {
         switch (__instance.group.size()) {
-            case 11: // this one works pretty well, adjust other cases to be similar
+            case 11:
                 for (int i = 2; i < 9; i++) {
                     (__instance.group.get(i)).target_y += 30.0F * Settings.scale;
                 }
@@ -48,10 +47,8 @@ public class BigHandPatch {
                 (__instance.group.get(1)).target_y -= 5.0F * Settings.scale;
                 (__instance.group.get(1)).targetAngle += 2.5F;
                 
-                // (__instance.group.get(2)).target_y += 7.5F * Settings.scale;
                 (__instance.group.get(3)).target_y += 5.0F * Settings.scale;
                 (__instance.group.get(9)).target_y -= 5.0F * Settings.scale;
-                // (__instance.group.get(9)).target_y -= 5.0F * Settings.scale;
 
                 (__instance.group.get(10)).target_y -= 5.0F * Settings.scale;
                 (__instance.group.get(10)).targetAngle -= 2.5F;

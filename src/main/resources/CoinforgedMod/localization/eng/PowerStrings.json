@@ -157,9 +157,9 @@
   "${modID}:CripplingDebtPower": {
     "NAME": "Crippling Debt",
     "DESCRIPTIONS": [
-      "Whenever this creature's HP drops below #b",
+      "Whenever its HP drops below #b",
       ", deal #b",
-      " damage to ALL enemies. Increases by 1 at the start of each turn"
+      " damage to ALL enemies. Increases by #b1 at the start of each turn"
     ]
   }
 }
