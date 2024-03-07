@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.BagOfChipsAction;
+import CoinforgedPackage.cards.tempCards.PokerChip;
 import CoinforgedPackage.character.Coinforged;
 
 public class BagOfChips extends BaseCard{
@@ -14,11 +15,13 @@ public class BagOfChips extends BaseCard{
         CardType.SKILL,
         CardRarity.UNCOMMON,
         CardTarget.NONE,
-        0
+        1
     );
 
     public BagOfChips() {
         super(ID, info);
+        this.cardsToPreview = new PokerChip();
+        setCostUpgrade(0);
     }
 
     @Override

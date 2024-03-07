@@ -441,8 +441,7 @@
   },
   "${modID}:Frenzy": {
     "NAME": "Frenzy",
-    "DESCRIPTION": "${modID}:Chip 2: This turn, your next card is played twice.",
-    "UPGRADE_DESCRIPTION": "Retain. NL ${modID}:Chip 2: This turn, your next card is played twice."
+    "DESCRIPTION": "${modID}:Chip !M!: This turn, your next card is played twice."
   },
   "${modID}:GlassShield": {
     "NAME": "Glass Shield",
@@ -455,7 +454,7 @@
   },
   "${modID}:BagOfChips": {
     "NAME": "Bag of Chips",
-    "DESCRIPTION": "Discard any number of cards then add that many Poker Chips to your hand."
+    "DESCRIPTION": "Discard any number of cards then add that many #yPoker #yChips to your hand."
   },
   "${modID}:Stash": {
     "NAME": "Stash",
