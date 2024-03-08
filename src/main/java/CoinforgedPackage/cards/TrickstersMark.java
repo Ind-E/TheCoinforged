@@ -3,7 +3,6 @@ package CoinforgedPackage.cards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -31,11 +30,10 @@ public class TrickstersMark extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCreature r = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true,
-                AbstractDungeon.cardRandomRng);
+        AbstractMonster r = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         if (r != null) {
-            addToBot(new ApplyPowerAction(r, p, new VulnerablePower(p, this.magicNumber, false)));
-            addToBot(new ApplyPowerAction(r, p, new WeakPower(p, this.magicNumber, false)));
+            addToBot(new ApplyPowerAction(r, p, new VulnerablePower(r, this.magicNumber, false), this.magicNumber));
+            addToBot(new ApplyPowerAction(r, p, new WeakPower(r, this.magicNumber, false), this.magicNumber));
         }
     }
 

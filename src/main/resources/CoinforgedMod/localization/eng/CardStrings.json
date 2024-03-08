@@ -178,7 +178,8 @@
   },
   "${modID}:StrategistsShield": {
     "NAME": "Strategist's Shield",
-    "DESCRIPTION": "Retain. NL Gain !B! Block. Gain 1 Strength for each Power in hand."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. Gain 1 Strength for each Power in hand.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. Gain 1 Strength for each non-Attack, non-Skill in hand."
   },
   "${modID}:Rig": {
     "NAME": "Rig",
@@ -406,7 +407,7 @@
   },
   "${modID}:LuckyNine": {
     "NAME": "Lucky Nine",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL If this is the 9th card you've played this turn, gain 9 Strength. NL Exhaust.",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. If this is the 9th card you've played this turn, gain 9 Strength. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL (",
       " card played.)",
@@ -415,7 +416,8 @@
   },
   "${modID}:BrokenBottle": {
     "NAME": "Broken Bottle",
-    "DESCRIPTION": "Deal !D! damage X times. Apply X+1 Vulnerable."
+    "DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shard into your hand.",
+    "UPDRADE_DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shards into your hand."
   },
   "${modID}:LoadedDice": {
     "NAME": "Loaded Dice",
@@ -445,8 +447,8 @@
   },
   "${modID}:GlassShield": {
     "NAME": "Glass Shield",
-    "DESCRIPTION": "${modID}:Chip 1: Gain !M! Buffer.",
-    "UPGRADE_DESCRIPTION": "${modID}:Chip 1: Gain !M! Buffer. NL Add 1 Poker Chip to hand."
+    "DESCRIPTION": "Ethereal. NL ${modID}:Chip 1: Gain !M! Buffer.",
+    "UPGRADE_DESCRIPTION": "${modID}:Chip 1: Gain !M! Buffer."
   },
   "${modID}:Cripple": {
     "NAME": "Cripple",
@@ -454,7 +456,7 @@
   },
   "${modID}:BagOfChips": {
     "NAME": "Bag of Chips",
-    "DESCRIPTION": "Discard any number of cards then add that many #yPoker #yChips to your hand."
+    "DESCRIPTION": "Discard any number of cards then add that many *Poker *Chips to your hand."
   },
   "${modID}:Stash": {
     "NAME": "Stash",
@@ -472,5 +474,9 @@
   "${modID}:BigHands": {
     "NAME": "Big Hands",
     "DESCRIPTION": "Draw !M! cards. NL Discard all cards drawn this way that cost less than 2."
+  },
+  "${modID}:GlassShard": {
+    "NAME": "Glass Shard",
+    "DESCRIPTION": "Retain. NL Apply !M! Vulnerable."
   }
 }

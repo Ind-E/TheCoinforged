@@ -13,9 +13,9 @@ import CoinforgedPackage.character.Coinforged;
 
 public class LowStakes extends BaseCard{
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 3;
+    private static final int UPG_DAMAGE = 2;
     private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 3;
+    private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 1;
 
     public static final String ID = makeID(LowStakes.class.getSimpleName());

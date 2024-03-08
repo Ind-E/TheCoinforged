@@ -6,14 +6,16 @@ import CoinforgedPackage.cards.tempCards.PokerChip;
 
 public class MakeChipsInDeckAction extends AbstractGameAction {
     private int chipsToMake;
+    private boolean shuffleInto;
 
-    public MakeChipsInDeckAction(int chipsToMake) {
+    public MakeChipsInDeckAction(int chipsToMake, boolean shuffleInto) {
         super();
         this.chipsToMake = chipsToMake;
+        this.shuffleInto = shuffleInto;
     }
 
     public void update() {
-        addToBot(new MakeTempCardInDrawPileAction(new PokerChip(), chipsToMake, false, true));
+        addToBot(new MakeTempCardInDrawPileAction(new PokerChip(), chipsToMake, shuffleInto, true));
         this.isDone = true;
     }
 }

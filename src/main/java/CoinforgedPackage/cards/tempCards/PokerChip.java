@@ -9,13 +9,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
 public class PokerChip extends BaseCard {
 
     public static final String ID = makeID(PokerChip.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS,
+            Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -24,6 +25,7 @@ public class PokerChip extends BaseCard {
     public PokerChip() {
         super(ID, info);
         tags.add(CoinforgedMod.POKER_CHIP);
+        setSelfRetain(false, true);
     }
 
     @Override
@@ -34,14 +36,6 @@ public class PokerChip extends BaseCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return upgraded;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!upgraded) {
-            super.upgrade();
-            this.selfRetain = true;
-        }
     }
 
     @Override

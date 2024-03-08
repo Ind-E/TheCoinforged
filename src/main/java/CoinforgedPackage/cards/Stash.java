@@ -33,7 +33,7 @@ public class Stash extends BaseCard{
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new MakeChipsInHandAction(1));
         if (upgraded) {
-            addToBot(new MakeChipsInDeckAction(1));
+            addToBot(new MakeChipsInDeckAction(1, true));
         }
     }
 }

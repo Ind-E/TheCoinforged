@@ -50,9 +50,9 @@
   "${modID}:ChaosEchoPower": {
     "NAME": "Echo",
     "DESCRIPTIONS": [
-      "Your next card is played twice this turn.",
-      "Your next #b",
-      " cards are played twice this turn."
+      "The next card you play this turn is played twice.",
+      "The next #b",
+      " cards you play this turn are played twice."
     ]
   },
   "${modID}:ChaosFormPower": {
