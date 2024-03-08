@@ -6,9 +6,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DuplicationPower;
+
 import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.powers.ChaosEchoPower;
 import CoinforgedPackage.util.CardStats;
 
 public class Frenzy extends BaseCard {
@@ -30,7 +31,7 @@ public class Frenzy extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new IfChipsAction(this.magicNumber, new ApplyPowerAction(p, p, new ChaosEchoPower(p, 1))));
+        addToBot(new IfChipsAction(this.magicNumber, new ApplyPowerAction(p, p, new DuplicationPower(p, 1))));
     }
 
     @Override

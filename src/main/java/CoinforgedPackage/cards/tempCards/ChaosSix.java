@@ -3,10 +3,10 @@ package CoinforgedPackage.cards.tempCards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DuplicationPower;
 
 import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
-import CoinforgedPackage.powers.ChaosEchoPower;
 import CoinforgedPackage.util.CardStats;
 
 public class ChaosSix extends BaseCard {
@@ -30,7 +30,7 @@ public class ChaosSix extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ChaosEchoPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DuplicationPower(p, this.magicNumber)));
     }
 
 }
