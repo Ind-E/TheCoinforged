@@ -417,7 +417,7 @@
   "${modID}:BrokenBottle": {
     "NAME": "Broken Bottle",
     "DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shard into your hand.",
-    "UPDRADE_DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shards into your hand."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shards into your hand."
   },
   "${modID}:LoadedDice": {
     "NAME": "Loaded Dice",
@@ -429,8 +429,8 @@
   },
   "${modID}:GameChanger": {
     "NAME": "Game Changer",
-    "DESCRIPTION": "Deal damage to each enemy equal to its intent to attack. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal damage to each enemy equal to its intent to attack."
+    "DESCRIPTION": "Each enemy takes damage equal to its intent to attack. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Each enemy takes damage equal to its intent to attack."
   },
   "${modID}:SharksEmbrace": {
     "NAME": "Shark's Embrace",

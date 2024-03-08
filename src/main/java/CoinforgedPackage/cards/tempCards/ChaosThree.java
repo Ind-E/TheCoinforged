@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
 import CoinforgedPackage.util.CardStats;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
+@NoCompendium
 public class ChaosThree extends BaseCard {
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;

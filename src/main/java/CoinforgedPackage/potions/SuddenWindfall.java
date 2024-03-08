@@ -19,7 +19,7 @@ public class SuddenWindfall extends BasePotion {
     private static final Color SPOTS_COLOR = null;
 
     public SuddenWindfall() {
-        super(ID, 0, PotionRarity.COMMON, PotionSize.SPHERE, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 0, PotionRarity.UNCOMMON, PotionSize.SPHERE, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
     }
 
     private static int missingHealth() {
@@ -33,12 +33,12 @@ public class SuddenWindfall extends BasePotion {
 
     @Override
     public String getDescription() {
-        return potionStrings.DESCRIPTIONS[0];
+        return potionStrings.DESCRIPTIONS[0] + missingHealth() * 2 + potionStrings.DESCRIPTIONS[1];
     }
 
     @Override
     public void use(AbstractCreature target) {
-        AbstractDungeon.player.gainGold(missingHealth());
+        AbstractDungeon.player.gainGold(missingHealth() * 2);
     }
 
     @Override

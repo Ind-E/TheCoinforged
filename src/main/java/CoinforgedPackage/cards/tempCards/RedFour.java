@@ -1,5 +1,8 @@
 package CoinforgedPackage.cards.tempCards;
 
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
+
+@NoCompendium
 public class RedFour extends RedDieBase {
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 3;

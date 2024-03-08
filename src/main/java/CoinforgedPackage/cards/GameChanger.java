@@ -18,7 +18,7 @@ public class GameChanger extends BaseCard {
     public static final String ID = makeID(GameChanger.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.RARE,
             CardTarget.ALL_ENEMY,
             1);
@@ -44,8 +44,8 @@ public class GameChanger extends BaseCard {
                 }
 
                 for (int i = 0; i < multiplier; i++) {
-                    addToBot(new DamageAction(mo, new DamageInfo(p, mo.getIntentDmg(), DamageType.NORMAL),
-                            AbstractGameAction.AttackEffect.NONE));
+                    addToBot(new DamageAction(mo, new DamageInfo(p, mo.getIntentDmg(), DamageType.THORNS),
+                            AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                 }
             }
         }

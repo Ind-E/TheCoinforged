@@ -7,7 +7,9 @@ import CoinforgedPackage.actions.AddTypeToHandAction;
 import CoinforgedPackage.cards.BaseCard;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
+@NoCompendium
 public class PowerFromDeck extends BaseCard {
 
     public static final String ID = makeID(PowerFromDeck.class.getSimpleName());

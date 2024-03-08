@@ -2,7 +2,8 @@
   "${modID}:SuddenWindfall": {
     "NAME": "Sudden Windfall Potion",
     "DESCRIPTIONS": [
-      "Gain gold equal to your missing health."
+      "Gain gold equal to twice your missing health (#b",
+      " Gold)."
     ]
   }
 }

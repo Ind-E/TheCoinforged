@@ -9,9 +9,9 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
 public class SlyShot extends BaseCard {
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 4;
+    private static final int UPG_DAMAGE = 2;
     private static final int TIMES_TO_DEAL_DAMAGE = 3;
-    private static final int UPG_TIMES_TO_DEAL_DAMAGE = 1;
 
     public static final String ID = makeID(SlyShot.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -23,8 +23,8 @@ public class SlyShot extends BaseCard {
 
     public SlyShot() {
         super(ID, info);
-        setDamage(DAMAGE);
-        setMagic(TIMES_TO_DEAL_DAMAGE, UPG_TIMES_TO_DEAL_DAMAGE);
+        setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(TIMES_TO_DEAL_DAMAGE);
     }
 
     @Override
