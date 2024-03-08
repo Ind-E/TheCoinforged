@@ -478,5 +478,9 @@
   "${modID}:GlassShard": {
     "NAME": "Glass Shard",
     "DESCRIPTION": "Retain. NL Apply !M! Vulnerable."
+  },
+  "${modID}:ChippedBlade": {
+    "NAME": "Chipped Blade",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt. Add a *Poker *Chip into your hand for each unique debuff on the target."
   }
 }

@@ -129,6 +129,11 @@ public class CoinforgedMod implements
                 null);
         registerPotions();
         CustomTargeting.registerCustomTargeting(SelfOrEnemyTargeting.SELF_OR_ENEMY, new SelfOrEnemyTargeting());
+
+        String runCountCards = System.getenv("COINFORGED_COUNT_CARDS");
+        if (runCountCards != null && runCountCards.equals("true")) {
+            countCards();
+        }
     }
 
     public static void countCards() {
@@ -221,9 +226,9 @@ public class CoinforgedMod implements
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 localizationPath(lang, "CharacterStrings.json"));
         // BaseMod.loadCustomStringsFile(EventStrings.class,
-        //         localizationPath(lang, "EventStrings.json"));
+        // localizationPath(lang, "EventStrings.json"));
         // BaseMod.loadCustomStringsFile(OrbStrings.class,
-        //         localizationPath(lang, "OrbStrings.json"));
+        // localizationPath(lang, "OrbStrings.json"));
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 localizationPath(lang, "PotionStrings.json"));
         BaseMod.loadCustomStringsFile(PowerStrings.class,
