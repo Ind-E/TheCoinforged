@@ -14,7 +14,7 @@ public class MakeChipsInHandAction extends AbstractGameAction {
     }
 
     public void update() {
-        addToBot(new MakeTempCardInHandAction(new PokerChip(), chipsToMake));
+        addToTop(new MakeTempCardInHandAction(new PokerChip(), chipsToMake));
         this.isDone = true;
     }
 }

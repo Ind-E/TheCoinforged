@@ -482,5 +482,9 @@
   "${modID}:ChippedBlade": {
     "NAME": "Chipped Blade",
     "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt. Add a *Poker *Chip into your hand for each unique debuff on the target."
+  },
+  "${modID}:BuyIn": {
+    "NAME": "Buy In",
+    "DESCRIPTION": "Add !M! *Poker *Chips into your hand. NL Gain [E] for each *Poker *Chip in your hand."
   }
 }
