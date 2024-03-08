@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class LoadedDicePower extends BasePower {
-    public static final String POWER_ID = makeID("LoadedDicePower");
+    public static final String POWER_ID = makeID(LoadedDicePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 

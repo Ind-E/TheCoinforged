@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class InsurancePower extends BasePower implements OnPlayerDeathPower {
-    public static final String POWER_ID = makeID("InsurancePower");
+    public static final String POWER_ID = makeID(InsurancePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 

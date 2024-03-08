@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class SnakeEyesPower extends BasePower {
-    public static final String POWER_ID = makeID("SnakeEyesPower");
+    public static final String POWER_ID = makeID(SnakeEyesPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
     private static final boolean TURN_BASED = true;
 

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class DeadlyWagerPower extends BasePower {
-    public static final String POWER_ID = makeID("DeadlyWagerPower");
+    public static final String POWER_ID = makeID(DeadlyWagerPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
     private AbstractPlayer p = AbstractDungeon.player;

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
 
 public class AllInPower extends BasePower {
-    public static final String POWER_ID = makeID("AllInPower");
+    public static final String POWER_ID = makeID(AllInPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
     private static final boolean TURN_BASED = true;
 

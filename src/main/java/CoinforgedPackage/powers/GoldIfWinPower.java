@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
 public class GoldIfWinPower extends BasePower {
-    public static final String POWER_ID = makeID("GoldIfWinPower");
+    public static final String POWER_ID = makeID(GoldIfWinPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = true;
 

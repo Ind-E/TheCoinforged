@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class SharksEmbracePower extends BasePower {
-    public static final String POWER_ID = makeID("SharksEmbracePower");
+    public static final String POWER_ID = makeID(SharksEmbracePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 

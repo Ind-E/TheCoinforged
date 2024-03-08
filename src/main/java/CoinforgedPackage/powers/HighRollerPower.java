@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import CoinforgedPackage.CoinforgedMod;
 
 public class HighRollerPower extends BasePower {
-    public static final String POWER_ID = makeID("HighRollerPower");
+    public static final String POWER_ID = makeID(HighRollerPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 

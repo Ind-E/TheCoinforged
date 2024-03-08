@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import basemod.BaseMod;
 
 public class ModifiedHandSizePower extends BasePower {
-    public static final String POWER_ID = makeID("ModifiedHandSizePower");
+    public static final String POWER_ID = makeID(ModifiedHandSizePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
     private int hand_size;

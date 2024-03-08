@@ -15,7 +15,7 @@ import static CoinforgedPackage.CoinforgedMod.makeID;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class LuckOfTheDrawPower extends BasePower {
-    public static final String POWER_ID = makeID("LuckOfTheDrawPower");
+    public static final String POWER_ID = makeID(LuckOfTheDrawPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 

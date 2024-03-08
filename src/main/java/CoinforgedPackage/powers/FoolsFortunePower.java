@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class FoolsFortunePower extends BasePower {
-    public static final String POWER_ID = makeID("FoolsFortunePower");
+    public static final String POWER_ID = makeID(FoolsFortunePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
     private int magic;

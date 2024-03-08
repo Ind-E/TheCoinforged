@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import CoinforgedPackage.CoinforgedMod;
 
 public class RigPower extends BasePower implements InvisiblePower {
-    public static final String POWER_ID = makeID("RigPower");
+    public static final String POWER_ID = makeID(RigPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 

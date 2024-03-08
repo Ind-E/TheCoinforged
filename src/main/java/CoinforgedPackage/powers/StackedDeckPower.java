@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class StackedDeckPower extends BasePower {
-    public static final String POWER_ID = makeID("StackedDeckPower");
+    public static final String POWER_ID = makeID(StackedDeckPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 

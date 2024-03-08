@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class InvigoratingRifflePower extends BasePower {
-    public static final String POWER_ID = makeID("InvigoratingRifflePower");
+    public static final String POWER_ID = makeID(InvigoratingRifflePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 

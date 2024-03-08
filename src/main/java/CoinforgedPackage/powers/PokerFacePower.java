@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class PokerFacePower extends BasePower {
-    public static final String POWER_ID = makeID("PokerFacePower");
+    public static final String POWER_ID = makeID(PokerFacePower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
     private static final boolean TURN_BASED = true;
     private int hp;
