@@ -9,4 +9,4 @@ Planned Content:
 - 4-5 new relics
 - 3 new potions
 
-(Workshop link goes here)
+[Workshop Link](https://steamcommunity.com/sharedfiles/filedetails/?id=3175417827) (currently private)
