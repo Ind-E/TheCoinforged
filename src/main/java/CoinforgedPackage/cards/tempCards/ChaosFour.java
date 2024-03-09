@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
@@ -30,7 +30,7 @@ public class ChaosFour extends BaseCard {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
         this.exhaust = true;
-        tags.add(CoinforgedMod.MAGIC_DIE);
+        tags.add(CustomTags.MAGIC_DIE);
     }
 
     @Override

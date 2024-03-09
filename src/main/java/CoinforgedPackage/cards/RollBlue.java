@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.actions.RollBlueAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
@@ -42,7 +41,7 @@ public class RollBlue extends BaseCard {
     private ArrayList<AbstractCard> getList() {
         ArrayList<AbstractCard> myList = new ArrayList<>();
         for (AbstractCard q : CardLibrary.getAllCards()) {
-            if (q.hasTag(CoinforgedMod.BLUE_DIE) && q.block <= 6) {
+            if (q.hasTag(CustomTags.BLUE_DIE) && q.block <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
             }

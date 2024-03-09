@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
 
 public abstract class PurpleDieBase extends BaseCard {
@@ -32,8 +32,8 @@ public abstract class PurpleDieBase extends BaseCard {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
         this.exhaust = true;
-        tags.add(CoinforgedMod.DIE);
-        tags.add(CoinforgedMod.PURPLE_DIE);
+        tags.add(CustomTags.DIE);
+        tags.add(CustomTags.PURPLE_DIE);
     }
 
     @Override

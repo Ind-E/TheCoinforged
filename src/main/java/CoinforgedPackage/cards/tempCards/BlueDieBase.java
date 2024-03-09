@@ -4,8 +4,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
@@ -29,8 +29,8 @@ public abstract class BlueDieBase extends BaseCard {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
         this.exhaust = true;
-        tags.add(CoinforgedMod.DIE);
-        tags.add(CoinforgedMod.BLUE_DIE);
+        tags.add(CustomTags.DIE);
+        tags.add(CustomTags.BLUE_DIE);
     }
 
     @Override

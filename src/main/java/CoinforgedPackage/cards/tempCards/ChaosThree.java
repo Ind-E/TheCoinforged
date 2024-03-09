@@ -4,8 +4,8 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
@@ -26,7 +26,7 @@ public class ChaosThree extends BaseCard {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
         this.exhaust = true;
-        tags.add(CoinforgedMod.MAGIC_DIE);
+        tags.add(CustomTags.MAGIC_DIE);
     }
 
     @Override

@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
@@ -24,7 +24,7 @@ public class PokerChip extends BaseCard {
 
     public PokerChip() {
         super(ID, info);
-        tags.add(CoinforgedMod.POKER_CHIP);
+        tags.add(CustomTags.POKER_CHIP);
         setSelfRetain(false, true);
     }
 

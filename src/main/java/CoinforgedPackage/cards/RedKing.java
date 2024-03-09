@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.actions.RollRedAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.modifiers.RedKingModifier;
@@ -44,25 +43,25 @@ public class RedKing extends BaseCard {
             addToBot(new ApplyPowerAction(p, p, new RedKingPower(p)));
         addToBot(new RollRedAction(p, this.magicNumber));
         for (AbstractCard card : p.hand.group) {
-            if (card.hasTag(CoinforgedMod.RED_DIE)) {
+            if (card.hasTag(CustomTags.RED_DIE)) {
                 CardModifierManager.addModifier(card, new RedKingModifier());
             }
         }
 
         for (AbstractCard card : p.drawPile.group) {
-            if (card.hasTag(CoinforgedMod.RED_DIE)) {
+            if (card.hasTag(CustomTags.RED_DIE)) {
                 CardModifierManager.addModifier(card, new RedKingModifier());
             }
         }
 
         for (AbstractCard card : p.discardPile.group) {
-            if (card.hasTag(CoinforgedMod.RED_DIE)) {
+            if (card.hasTag(CustomTags.RED_DIE)) {
                 CardModifierManager.addModifier(card, new RedKingModifier());
             }
         }
 
         for (AbstractCard card : p.exhaustPile.group) {
-            if (card.hasTag(CoinforgedMod.RED_DIE)) {
+            if (card.hasTag(CustomTags.RED_DIE)) {
                 CardModifierManager.addModifier(card, new RedKingModifier());
             }
         }
@@ -71,7 +70,7 @@ public class RedKing extends BaseCard {
     private ArrayList<AbstractCard> getList() {
         ArrayList<AbstractCard> myList = new ArrayList<>();
         for (AbstractCard q : CardLibrary.getAllCards()) {
-            if (q.hasTag(CoinforgedMod.RED_DIE) && q.damage <= 6) {
+            if (q.hasTag(CustomTags.RED_DIE) && q.damage <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
             }

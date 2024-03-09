@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import CoinforgedPackage.CoinforgedMod;
+import CoinforgedPackage.cards.CustomTags;
 
 public class SpendChipsAction extends AbstractGameAction {
     private int chips;
@@ -28,7 +28,7 @@ public class SpendChipsAction extends AbstractGameAction {
         int chipsSpent = 0;
         if (getNumChips() >= chips) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.hasTag(CoinforgedMod.POKER_CHIP)) {
+                if (c.hasTag(CustomTags.POKER_CHIP)) {
                     if (exhaust) {
                         addToBot(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
                     } else {

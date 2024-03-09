@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import CoinforgedPackage.CoinforgedMod;
+import CoinforgedPackage.cards.CustomTags;
 import basemod.abstracts.AbstractCardModifier;
 
 public class MarkedCardModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (!card.hasTag(CoinforgedMod.MARKED)) {
+        if (!card.hasTag(CustomTags.MARKED)) {
             return rawDescription;
         }
         return CoinforgedMod.modID + ":Marked. NL " + rawDescription;
@@ -27,8 +28,8 @@ public class MarkedCardModifier extends AbstractCardModifier {
 
     @Override
     public void onInitialApplication(AbstractCard card) {
-        if (!card.hasTag(CoinforgedMod.MARKED)) {
-            card.tags.add(CoinforgedMod.MARKED);
+        if (!card.hasTag(CustomTags.MARKED)) {
+            card.tags.add(CustomTags.MARKED);
         }
     }
 

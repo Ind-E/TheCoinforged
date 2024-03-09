@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.actions.CasinoCatalystAction;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.character.Coinforged;
 
 public class CasinoCatalyst extends BaseRelic {
@@ -58,7 +58,7 @@ public class CasinoCatalyst extends BaseRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if (markedCardPlayedThisCombat == false && c.hasTag(CoinforgedMod.MARKED)) {
+        if (markedCardPlayedThisCombat == false && c.hasTag(CustomTags.MARKED)) {
             markedCardPlayedThisCombat = true;
             this.pulse = false;
             stopPulse();

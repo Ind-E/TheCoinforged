@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.modifiers.RedKingModifier;
 import CoinforgedPackage.powers.RedKingPower;
 import CoinforgedPackage.util.CardStats;
@@ -44,8 +44,8 @@ public abstract class RedDieBase extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.exhaust = true;
-        tags.add(CoinforgedMod.DIE);
-        tags.add(CoinforgedMod.RED_DIE);
+        tags.add(CustomTags.DIE);
+        tags.add(CustomTags.RED_DIE);
 
     }
 

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.ChaosFormPower;
 import CoinforgedPackage.util.CardStats;
@@ -50,7 +49,7 @@ public class ChaosForm extends BaseCard {
     private ArrayList<AbstractCard> getList() {
         ArrayList<AbstractCard> myList = new ArrayList<>();
         for (AbstractCard q : CardLibrary.getAllCards()) {
-            if (q.hasTag(CoinforgedMod.MAGIC_DIE) && q.damage <= 6) {
+            if (q.hasTag(CustomTags.MAGIC_DIE) && q.damage <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
             }

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import CoinforgedPackage.CoinforgedMod;
+import CoinforgedPackage.cards.CustomTags;
 
 public class RigPower extends BasePower implements InvisiblePower {
     public static final String POWER_ID = makeID(RigPower.class.getSimpleName());
@@ -25,17 +25,17 @@ public class RigPower extends BasePower implements InvisiblePower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         for (AbstractCard c : p.drawPile.group) {
-            if (c.hasTag(CoinforgedMod.RIGGED)) {
+            if (c.hasTag(CustomTags.RIGGED)) {
                 c.freeToPlayOnce = false;
             }
         }
         for (AbstractCard c : p.discardPile.group) {
-            if (c.hasTag(CoinforgedMod.RIGGED)) {
+            if (c.hasTag(CustomTags.RIGGED)) {
                 c.freeToPlayOnce = false;
             }
         }
         for (AbstractCard c : p.hand.group) {
-            if (c.hasTag(CoinforgedMod.RIGGED)) {
+            if (c.hasTag(CustomTags.RIGGED)) {
                 c.freeToPlayOnce = false;
             }
         }

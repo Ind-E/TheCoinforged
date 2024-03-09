@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.actions.RollBlueAction;
 import CoinforgedPackage.actions.RollGreenAction;
 import CoinforgedPackage.actions.RollPurpleAction;
@@ -57,16 +56,16 @@ public class PrismaticRoll extends BaseCard {
     private ArrayList<AbstractCard> getList() {
         ArrayList<AbstractCard> myList = new ArrayList<>();
         for (AbstractCard q : CardLibrary.getAllCards()) {
-            if (q.hasTag(CoinforgedMod.RED_DIE) && q.damage <= 6) {
+            if (q.hasTag(CustomTags.RED_DIE) && q.damage <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
-            } else if (q.hasTag(CoinforgedMod.BLUE_DIE) && q.block <= 6) {
+            } else if (q.hasTag(CustomTags.BLUE_DIE) && q.block <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
-            } else if (q.hasTag(CoinforgedMod.GREEN_DIE) && q.magicNumber <= 6) {
+            } else if (q.hasTag(CustomTags.GREEN_DIE) && q.magicNumber <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
-            } else if (q.hasTag(CoinforgedMod.PURPLE_DIE) && q.magicNumber <= 6) {
+            } else if (q.hasTag(CustomTags.PURPLE_DIE) && q.magicNumber <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
             }

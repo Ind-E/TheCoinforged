@@ -15,8 +15,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect.ShockWaveType;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
 
 public abstract class GreenDieBase extends BaseCard {
@@ -38,8 +38,8 @@ public abstract class GreenDieBase extends BaseCard {
       super(ID, info);
       setMagic(MAGIC, UPG_MAGIC);
       this.exhaust = true;
-      tags.add(CoinforgedMod.DIE);
-      tags.add(CoinforgedMod.GREEN_DIE);
+      tags.add(CustomTags.DIE);
+      tags.add(CustomTags.GREEN_DIE);
    }
 
    @Override

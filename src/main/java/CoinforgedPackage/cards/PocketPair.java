@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
 import CoinforgedPackage.actions.RollGreenAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.modifiers.RetainModifier;
@@ -62,7 +61,7 @@ public class PocketPair extends BaseCard {
     private ArrayList<AbstractCard> getList() {
         ArrayList<AbstractCard> myList = new ArrayList<>();
         for (AbstractCard q : CardLibrary.getAllCards()) {
-            if (q.hasTag(CoinforgedMod.GREEN_DIE) && q.damage <= 6) {
+            if (q.hasTag(CustomTags.GREEN_DIE) && q.damage <= 6) {
                 AbstractCard r = q.makeCopy();
                 myList.add(r);
             }

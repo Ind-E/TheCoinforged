@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
-import CoinforgedPackage.CoinforgedMod;
+import CoinforgedPackage.cards.CustomTags;
 
 public class GeneralUtils {
     public static String arrToString(Object[] arr) {
@@ -33,7 +33,7 @@ public class GeneralUtils {
     public static int getNumChips() {
         int chips = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.hasTag(CoinforgedMod.POKER_CHIP)) {
+            if (c.hasTag(CustomTags.POKER_CHIP)) {
                 chips++;
             }
         }
