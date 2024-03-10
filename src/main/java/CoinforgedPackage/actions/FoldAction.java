@@ -1,5 +1,6 @@
 package CoinforgedPackage.actions;
 
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +13,7 @@ public class FoldAction extends AbstractGameAction {
     public FoldAction(int magic) {
         super();
         this.magic = magic;
+        this.duration = this.startDuration = Settings.ACTION_DUR_XFAST;
     }
 
     public void update() {

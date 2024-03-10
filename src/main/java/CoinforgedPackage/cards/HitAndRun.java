@@ -34,7 +34,7 @@ public class HitAndRun extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.hasPower(HitAndRunPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(p, p, new HitAndRunPower(p)));
+            addToBot(new ApplyPowerAction(p, p, new HitAndRunPower(p, 1)));
         }
     }
 

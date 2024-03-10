@@ -17,7 +17,7 @@
   },
   "${modID}:RiskyInvestment": {
     "NAME": "Risky Investment",
-    "DESCRIPTION": "Lose 10 Gold. NL If you win next turn, gain !M! Gold."
+    "DESCRIPTION": "Lose 10 Gold. NL If you win next turn, gain !M! Gold. NL Exhaust."
   },
   "${modID}:RedOne": {
     "NAME": "Red Die",
@@ -155,7 +155,7 @@
   },
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
-    "DESCRIPTION": "Gain [E] . ${modID}:Chip 1: draw !M! cards."
+    "DESCRIPTION": "Gain [E] . NL ${modID}:Chip 1: draw !M! cards."
   },
   "${modID}:Call": {
     "NAME": "Call",
@@ -485,6 +485,6 @@
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",
-    "DESCRIPTION": "Add !M! *Poker *Chips into your hand. NL Gain [E] for each *Poker *Chip in your hand."
+    "DESCRIPTION": "Add !M! *Poker *Chips into your hand. NL Gain  [E] for each *Poker *Chip in your hand."
   }
 }

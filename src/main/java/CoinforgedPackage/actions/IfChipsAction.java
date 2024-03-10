@@ -16,8 +16,8 @@ public class IfChipsAction extends AbstractGameAction {
 
     public void update() {
         if (getNumChips() >= chips) {
-            addToBot(action);
-            addToBot(new SpendChipsAction(chips));
+            addToTop(action);
+            addToTop(new SpendChipsAction(chips));
         }
         this.isDone = true;
     }

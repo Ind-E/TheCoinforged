@@ -36,7 +36,7 @@ public class BlazingTactics extends BaseCard {
     }
 
     public void triggerOnGlowCheck() {
-        if (getNumChips() > CHIPS) {
+        if (getNumChips() >= CHIPS) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

@@ -2,6 +2,7 @@ package CoinforgedPackage.relics;
 
 import static CoinforgedPackage.CoinforgedMod.makeID;
 
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,11 +38,14 @@ public class CasinoCatalyst extends BaseRelic {
     }
 
     @Override
-    public void atBattleStart() {
-        flash();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new CasinoCatalystAction());
-        this.markedCardPlayedThisCombat = false;
+    public void atTurnStartPostDraw() {
+        if (GameActionManager.turn == 1) {
+            flash();
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new CasinoCatalystAction());
+            this.markedCardPlayedThisCombat = false;
+        }
+
     }
 
     @Override

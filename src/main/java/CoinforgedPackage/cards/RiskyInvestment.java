@@ -25,6 +25,7 @@ public class RiskyInvestment extends BaseCard {
     public RiskyInvestment() {
         super(ID, info);
         setMagic(GOLD_GAIN, UPG_GOLD_GAIN);
+        setExhaust(true);
     }
 
     @Override

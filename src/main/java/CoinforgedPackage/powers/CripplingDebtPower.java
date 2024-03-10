@@ -49,6 +49,12 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
         checkExplode();
     }
 
+    @Override
+    public void onDeath() {
+        addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true),
+                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+    }
+
     public void checkExplode() {
         if (this.owner.currentHealth > 0 && this.owner.currentHealth <= this.amount) {
             addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true),
