@@ -86,9 +86,9 @@ public class Coinforged extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         // List of IDs of cards for your starting deck.
         // If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(CoinforgedPackage.cards.StrikeSpinwarden.ID);
-        retVal.add(CoinforgedPackage.cards.StrikeSpinwarden.ID);
-        retVal.add(CoinforgedPackage.cards.StrikeSpinwarden.ID);
+        retVal.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
+        retVal.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
+        retVal.add(CoinforgedPackage.cards.StrikeCoinforged.ID);
         retVal.add(CoinforgedPackage.cards.RollRed.ID);
         retVal.add(CoinforgedPackage.cards.DefendSpinwarden.ID);
         retVal.add(CoinforgedPackage.cards.DefendSpinwarden.ID);

@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class StrikeSpinwarden extends BaseCard {
+public class StrikeCoinforged extends BaseCard {
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
 
-    public static final String ID = makeID(StrikeSpinwarden.class.getSimpleName());
+    public static final String ID = makeID(StrikeCoinforged.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.ATTACK,
@@ -22,7 +22,7 @@ public class StrikeSpinwarden extends BaseCard {
             CardTarget.ENEMY,
             1);
 
-    public StrikeSpinwarden() {
+    public StrikeCoinforged() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         tags.add(CardTags.STARTER_STRIKE);
@@ -36,6 +36,6 @@ public class StrikeSpinwarden extends BaseCard {
     }
 
     public AbstractCard makeCopy() {
-        return new StrikeSpinwarden();
+        return new StrikeCoinforged();
     }
 }
