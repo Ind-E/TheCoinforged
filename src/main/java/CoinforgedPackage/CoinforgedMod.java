@@ -82,7 +82,7 @@ public class CoinforgedMod implements
     private static final String CHAR_SELECT_BUTTON = characterPath("select/button.png");
     private static final String CHAR_SELECT_PORTRAIT = characterPath("select/portrait.png");
 
-    private static final Color cardColor = new Color(214f / 255f, 214f / 255f, 84f / 255f, 1f);
+    private static final Color cardColor = new Color(165f / 255f, 8f / 255f, 19f / 255f, 1f); // red red
 
     public static String makeID(String id) {
         return modID + ":" + id;

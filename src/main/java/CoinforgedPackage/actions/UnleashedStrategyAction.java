@@ -1,10 +1,9 @@
 package CoinforgedPackage.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class UnleashedStrategyAction extends AbstractGameAction {
     public UnleashedStrategyAction() {
@@ -13,8 +12,7 @@ public class UnleashedStrategyAction extends AbstractGameAction {
 
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        int str = p.hand.size() / 2;
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, str), str));
+        addToBot(new GainEnergyAction(p.hand.size() / 3));
         this.isDone = true;
     }
 }

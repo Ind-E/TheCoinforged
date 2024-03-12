@@ -135,11 +135,10 @@ public class Coinforged extends CustomPlayer {
         };
     }
 
-    private final Color cardRenderColor = Color.LIGHT_GRAY.cpy(); // Used for some vfx on moving cards (sometimes)
-                                                                  // (maybe)
-    private final Color cardTrailColor = Color.LIGHT_GRAY.cpy(); // Used for card trail vfx during gameplay.
-    private final Color slashAttackColor = Color.LIGHT_GRAY.cpy(); // Used for a screen tint effect when you attack the
-                                                                   // heart.
+    private final Color cardRenderColor = Color.GOLDENROD.cpy(); // Used for some vfx on moving cards (sometimes)
+    // (yellow to match lights)
+    private final Color cardTrailColor = new Color(242f / 255f, 224f / 255f, 127f / 255f, 1f);; // Used for card trail vfx during gameplay.
+    private final Color slashAttackColor = Color.LIGHT_GRAY.cpy(); // Used for a screen tint effect when you attack the heart.
 
     @Override
     public Color getCardRenderColor() {
