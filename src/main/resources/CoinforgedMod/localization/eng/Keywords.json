@@ -64,5 +64,12 @@
       "chip"
     ],
     "DESCRIPTION": "If you have a certain number of #yPoker #yChips in hand, discard them for an extra effect."
+  },
+  {
+    "PROPER_NAME": "Drawback",
+    "NAMES": [
+      "drawback"
+    ],
+    "DESCRIPTION": "When attacked, draw cards and reduce by #b1."
   }
 ]

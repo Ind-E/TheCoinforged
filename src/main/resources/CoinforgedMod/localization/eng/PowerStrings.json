@@ -162,5 +162,11 @@
       ", deal #b",
       " damage to ALL enemies and remove #yCrippling #yDebt. Increases by #b1 at the start of each turn"
     ]
+  },
+  "${modID}:DrawbackPower": {
+    "NAME": "Drawback",
+    "DESCRIPTIONS": [
+      "When attacked, draw a card and reduce this by #b1."
+    ]
   }
 }

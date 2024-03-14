@@ -10,7 +10,7 @@ import CoinforgedPackage.util.CardStats;
 
 public class SlyShot extends BaseCard {
     private static final int DAMAGE = 4;
-    private static final int UPG_DAMAGE = 2;
+    private static final int UPG_DAMAGE = 1;
     private static final int TIMES_TO_DEAL_DAMAGE = 3;
 
     public static final String ID = makeID(SlyShot.class.getSimpleName());

@@ -490,5 +490,17 @@
   "${modID}:DiceShaker": {
     "NAME": "Dice Shaker",
     "DESCRIPTION": "Roll 1 ${modID}:Red_Die. NL Apply !M! Vulnerable. NL Next turn, draw 1 additional card."
+  },
+  "${modID}:Grapes": {
+    "NAME": "Grapes",
+    "DESCRIPTION": "Ethereal. NL Increase a card's Block and damage by !M! this combat. Add a copy of this card into your hand that costs 1 more. NL Exhaust."
+  },
+  "${modID}:Lemon": {
+    "NAME": "Lemon",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Drawback."
+  },
+  "${modID}:Melon": {
+    "NAME": "Melon",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${modID}:Drawback to EVERYONE."
   }
 }
