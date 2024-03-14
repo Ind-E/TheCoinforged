@@ -1,5 +1,7 @@
 package CoinforgedPackage.cards;
 
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,7 +12,7 @@ import CoinforgedPackage.actions.RollRedAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class DiceShaker extends BaseCard {
+public class DiceShaker extends AbstractMultiPreviewCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
@@ -25,6 +27,12 @@ public class DiceShaker extends BaseCard {
     public DiceShaker() {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
+    }
+
+    public ArrayList<CardTags> getTags() {
+        ArrayList<CardTags> tags = new ArrayList<>();
+        tags.add(CustomTags.RED_DIE);
+        return tags;
     }
 
     @Override

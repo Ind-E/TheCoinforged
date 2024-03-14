@@ -6,7 +6,7 @@
       "red_die",
       "red_dice"
     ],
-    "DESCRIPTION": "Red Dice deal 1-6 damage and #yExhaust."
+    "DESCRIPTION": "Red Dice deal #b1-6 damage and #yExhaust."
   },
   {
     "PROPER_NAME": "Blue Dice",
@@ -15,7 +15,7 @@
       "blue_die",
       "blue_dice"
     ],
-    "DESCRIPTION": "Blue Dice gain 1-6 #yBlock and #yExhaust."
+    "DESCRIPTION": "Blue Dice gain #b1-6 #yBlock and #yExhaust."
   },
   {
     "PROPER_NAME": "Green Dice",
@@ -24,7 +24,7 @@
       "green_die",
       "green_dice"
     ],
-    "DESCRIPTION": "Green dice make ALL enemies lose 1-6 #yStrength this turn and #yExhaust."
+    "DESCRIPTION": "Green dice make ALL enemies lose #b1-6 #yStrength this turn and #yExhaust."
   },
   {
     "PROPER_NAME": "Purple Dice",
@@ -33,14 +33,14 @@
       "purple_die",
       "purple_dice"
     ],
-    "DESCRIPTION": "Purple dice gain 1-6 #yVigor and #yExhaust."
+    "DESCRIPTION": "Purple dice gain #b1-6 #yVigor and #yExhaust."
   },
   {
     "PROPER_NAME": "Advantage",
     "NAMES": [
       "advantage"
     ],
-    "DESCRIPTION": "Whenever you roll #yDice, roll #b extra times and take the highest roll."
+    "DESCRIPTION": "Whenever you roll #yDice, roll extra times and take the highest roll."
   },
   {
     "PROPER_NAME": "Marked",
@@ -48,7 +48,7 @@
       "marked",
       "mark"
     ],
-    "DESCRIPTION": "Whenever you play a #yMarked card, draw 1 card and gain [E] ."
+    "DESCRIPTION": "Whenever you play a #yMarked card, draw a card and gain [E] ."
   },
   {
     "PROPER_NAME": "Crippling Debt",

@@ -6,9 +6,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import CoinforgedPackage.util.CardStats;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import CoinforgedPackage.cards.BaseCard;
 import CoinforgedPackage.character.Coinforged;
 
+@NoCompendium
 public class GlassShard extends BaseCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;

@@ -2,11 +2,9 @@ package CoinforgedPackage.cards;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.actions.RollGreenAction;
@@ -16,12 +14,8 @@ import CoinforgedPackage.powers.LoadedDicePower;
 import CoinforgedPackage.util.CardStats;
 import basemod.helpers.CardModifierManager;
 
-public class PocketPair extends BaseCard {
+public class PocketPair extends AbstractMultiPreviewCard {
     private static final int DICE_TO_ROLL = 2;
-
-    private float rotationTimer;
-    private int previewIndex;
-    private ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
 
     public static final String ID = makeID(PocketPair.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -58,37 +52,10 @@ public class PocketPair extends BaseCard {
         }
     }
 
-    private ArrayList<AbstractCard> getList() {
-        ArrayList<AbstractCard> myList = new ArrayList<>();
-        for (AbstractCard q : CardLibrary.getAllCards()) {
-            if (q.hasTag(CustomTags.GREEN_DIE) && q.damage <= 6) {
-                AbstractCard r = q.makeCopy();
-                myList.add(r);
-            }
-        }
-        return myList;
-    }
-
-    public void update() {
-        super.update();
-        if (this.dupeListForPrev.isEmpty())
-            this.dupeListForPrev.addAll(getList());
-        if (this.hb.hovered)
-            if (this.rotationTimer <= 0.0F) {
-                this.rotationTimer = 1.5F;
-                if (this.dupeListForPrev.size() == 0) {
-                    this.cardsToPreview = (AbstractCard) CardLibrary.cards.get("Madness");
-                } else {
-                    this.cardsToPreview = this.dupeListForPrev.get(this.previewIndex);
-                }
-                if (this.previewIndex == this.dupeListForPrev.size() - 1) {
-                    this.previewIndex = 0;
-                } else {
-                    this.previewIndex++;
-                }
-            } else {
-                this.rotationTimer -= Gdx.graphics.getDeltaTime();
-            }
+    public ArrayList<CardTags> getTags() {
+        ArrayList<CardTags> tags = new ArrayList<>();
+        tags.add(CustomTags.GREEN_DIE);
+        return tags;
     }
 
     @Override
