@@ -14,10 +14,6 @@ public class RollBlue extends AbstractMultiPreviewCard {
     private static final int DICE_TO_ROLL = 1;
     private static final int UPG_DICE_TO_ROLL = 1;
 
-    public float rotationTimer;
-    public int previewIndex;
-    public ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
-
     public static final String ID = makeID(RollBlue.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,

@@ -21,6 +21,7 @@ public abstract class AbstractMultiPreviewCard extends BaseCard{
     public AbstractMultiPreviewCard(String id, CardStats info) {
         super(id, info);
         this.tagsToPreview = getTags();
+        this.cardsToPreview = CardLibrary.cards.get("Madness"); // idk why but it doesn't work without this line
     }
 
     public ArrayList<AbstractCard> getList() {
@@ -42,21 +43,7 @@ public abstract class AbstractMultiPreviewCard extends BaseCard{
         if (this.dupeListForPrev.isEmpty()) {
             this.dupeListForPrev.addAll(getList());
         }
-        if (this.rotationTimer <= 0.0F) {
-            this.rotationTimer = 1.5F;
-            if (this.dupeListForPrev.size() == 0) {
-                this.cardsToPreview = (AbstractCard) CardLibrary.cards.get("Madness");
-            } else {
-                this.cardsToPreview = this.dupeListForPrev.get(this.previewIndex);
-            }
-            if (this.previewIndex == this.dupeListForPrev.size() - 1) {
-                this.previewIndex = 0;
-            } else {
-                this.previewIndex++;
-            }
-        } else {
-            this.rotationTimer -= Gdx.graphics.getDeltaTime();
-        }
+        updatePreview();
         super.renderCardPreviewInSingleView(sb);
     }
 
@@ -67,21 +54,21 @@ public abstract class AbstractMultiPreviewCard extends BaseCard{
             this.dupeListForPrev.addAll(getList());
         }
         if (this.hb.hovered) {
-            if (this.rotationTimer <= 0.0F) {
-                this.rotationTimer = 1.5F;
-                if (this.dupeListForPrev.size() == 0) {
-                    this.cardsToPreview = (AbstractCard) CardLibrary.cards.get("Madness");
-                } else {
-                    this.cardsToPreview = this.dupeListForPrev.get(this.previewIndex);
-                }
-                if (this.previewIndex == this.dupeListForPrev.size() - 1) {
-                    this.previewIndex = 0;
-                } else {
-                    this.previewIndex++;
-                }
+            updatePreview();
+        }
+    }
+
+    public void updatePreview() {
+        if (this.rotationTimer <= 0.0F) {
+            this.rotationTimer = 1.5F;
+            if (this.dupeListForPrev.isEmpty()) {
+                this.cardsToPreview = CardLibrary.cards.get("Madness");
             } else {
-                this.rotationTimer -= Gdx.graphics.getDeltaTime();
+                this.cardsToPreview = this.dupeListForPrev.get(this.previewIndex);
             }
+            this.previewIndex = (this.previewIndex + 1) % this.dupeListForPrev.size();
+        } else {
+            this.rotationTimer -= Gdx.graphics.getDeltaTime();
         }
     }
 }
