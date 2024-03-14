@@ -439,7 +439,7 @@
   "${modID}:PokerChip": {
     "NAME": "Poker Chip",
     "DESCRIPTION": "Unplayable. NL Whenever you draw this, draw a card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Whenever you draw this, draw a card."
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever you draw this, draw !M! cards."
   },
   "${modID}:Frenzy": {
     "NAME": "Frenzy",
@@ -502,5 +502,10 @@
   "${modID}:Melon": {
     "NAME": "Melon",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${modID}:Drawback to EVERYONE."
+  },
+  "${modID}:CoinFlick": {
+    "NAME": "Coin Flick",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Drawback. Shuffle a copy of this card into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Drawback. Put a copy of this card on top of your draw pile. NL Exhaust."
   }
 }

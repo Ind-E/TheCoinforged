@@ -13,6 +13,8 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
 public class PokerChip extends BaseCard {
+public static final int DRAW = 1;
+public static final int UPG_DRAW = 1;
 
     public static final String ID = makeID(PokerChip.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -25,7 +27,7 @@ public class PokerChip extends BaseCard {
     public PokerChip() {
         super(ID, info);
         tags.add(CustomTags.POKER_CHIP);
-        setSelfRetain(false, true);
+        setMagic(DRAW, UPG_DRAW);
     }
 
     @Override
@@ -34,13 +36,8 @@ public class PokerChip extends BaseCard {
     }
 
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return upgraded;
-    }
-
-    @Override
     public void triggerWhenDrawn() {
-        addToBot(new DrawCardAction(AbstractDungeon.player, 1));
+        addToBot(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
     }
 
     @Override

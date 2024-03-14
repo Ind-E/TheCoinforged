@@ -23,7 +23,7 @@ public class DrawbackPower extends BasePower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        addToBot(new DrawCardAction(1));
+        addToTop(new DrawCardAction(1));
         addToTop(new ReducePowerAction(this.owner, this.owner, DrawbackPower.POWER_ID, 1));
         return damageAmount;
     }

@@ -70,6 +70,6 @@
     "NAMES": [
       "drawback"
     ],
-    "DESCRIPTION": "When attacked, draw cards and reduce by #b1."
+    "DESCRIPTION": "When attacked, draw a card and reduce this by #b1."
   }
 ]
