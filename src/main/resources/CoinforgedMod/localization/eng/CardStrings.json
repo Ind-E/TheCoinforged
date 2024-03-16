@@ -507,5 +507,21 @@
     "NAME": "Coin Flick",
     "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Drawback. Shuffle a copy of this card into your draw pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Drawback. Put a copy of this card on top of your draw pile. NL Exhaust."
+  },
+  "${modID}:Cherry": {
+    "NAME": "Cherry",
+    "DESCRIPTION": "Deal damage equal to !M! times your cards in hand.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals ",
+      " damage.)"
+    ]
+  },
+  "${modID}:Orange": {
+    "NAME": "Orange",
+    "DESCRIPTION": "Deal !D! damage twice. Doesn't consume ${modID}:Drawback."
+  },
+  "${modID}:Blitz": {
+    "NAME": "Blitz",
+    "DESCRIPTION": "Whenever you attack this turn, gain [E]. NL Drawing cards is forbidden this turn."
   }
 }

@@ -36,6 +36,11 @@ public static final int UPG_DRAW = 1;
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return false;
+    }
+
+    @Override
     public void triggerWhenDrawn() {
         addToBot(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
     }

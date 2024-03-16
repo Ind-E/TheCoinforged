@@ -151,22 +151,28 @@
     "NAME": "Long Game",
     "DESCRIPTIONS": [
       "In #b",
-      " turn, add #yLong #yGame to your hand.",
-      " turns, add #yLong #yGame to your hand."
+      " turn, add ",
+      " turns, add ",
+    " to your hand."
     ]
   },
   "${modID}:CripplingDebtPower": {
     "NAME": "Crippling Debt",
     "DESCRIPTIONS": [
-      "Whenever its HP drops below #b",
-      ", deal #b",
-      " damage to ALL enemies and remove #yCrippling #yDebt. Increases by #b1 at the start of each turn"
+      "Dies when its HP drops below #b",
+      ". Increases by #b25% at the start of each turn"
     ]
   },
   "${modID}:DrawbackPower": {
     "NAME": "Drawback",
     "DESCRIPTIONS": [
       "When attacked, draw a card and reduce this by #b1."
+    ]
+  },
+  "${modID}:BlitzPower": {
+    "NAME": "Blitz",
+    "DESCRIPTIONS": [
+      "Whenever you attack, gain [E] ."
     ]
   }
 }

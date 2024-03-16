@@ -13,7 +13,7 @@ public class CripplingDebtPatch {
         if (!__instance.isDying && !__instance.isEscaping && !__instance.isDead && !__instance.halfDead) {
             if (__instance.hasPower(CripplingDebtPower.POWER_ID)) {
                 CripplingDebtPower power = (CripplingDebtPower) __instance.getPower(CripplingDebtPower.POWER_ID);
-                power.checkExplode();
+                power.checkInstantKill();
             }
         }
     }

@@ -56,7 +56,7 @@
       "crippling debt",
       "crippling_debt"
     ],
-    "DESCRIPTION": "When an enemy has less HP than Crippling Debt, deal damage to ALL enemies equal to the amount and remove Crippling Debt. Increases by #b1 at the start of each turn."
+    "DESCRIPTION": "When an enemy has more Crippling Debt than HP, it dies. Increases by #b25% at the start of each turn."
   },
   {
     "PROPER_NAME": "Chip",

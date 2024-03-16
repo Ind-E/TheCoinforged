@@ -1,22 +1,19 @@
 package CoinforgedPackage.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.powers.DrawbackPower;
 
-public class Lemon extends BaseCard{
-    private static final int DAMAGE = 7;
+public class Orange extends BaseCard{
+    private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 2;
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 3;
+    private static final int TIMES_TO_DEAL_DAMAGE = 2;
 
-    public static final String ID = makeID(Lemon.class.getSimpleName());
+    public static final String ID = makeID(Orange.class.getSimpleName());
     private static final CardStats info = new CardStats(
         Coinforged.Enums.CARD_COLOR, 
         CardType.ATTACK,
@@ -25,15 +22,17 @@ public class Lemon extends BaseCard{
         1
     );
 
-    public Lemon() {
+    public Orange() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE); 
-        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new ApplyPowerAction(m, p, new DrawbackPower(m, this.magicNumber), this.magicNumber));
+        DamageInfo dmgInfo = new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL);
+        dmgInfo.name = "Coinforged_Orange";
+        for (int i = 0; i < TIMES_TO_DEAL_DAMAGE; i++) {
+            addToBot(new DamageAction(m, dmgInfo, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        }
     }
 }

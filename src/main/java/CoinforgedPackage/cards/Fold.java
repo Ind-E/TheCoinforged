@@ -33,6 +33,7 @@ public class Fold extends BaseCard {
         addToBot(new PressEndTurnButtonAction());
     }
 
+    @Override
     public void applyPowers() {
         super.applyPowers();
         int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
@@ -46,6 +47,7 @@ public class Fold extends BaseCard {
         initializeDescription();
     }
 
+    @Override
     public void onMoveToDiscard() {
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();

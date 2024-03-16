@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 
 public class LongGamePower extends BasePower implements NonStackablePower {
     public static final String POWER_ID = makeID(LongGamePower.class.getSimpleName());
@@ -23,11 +24,13 @@ public class LongGamePower extends BasePower implements NonStackablePower {
     }
 
     public void updateDescription() {
+        this.description = DESCRIPTIONS[0] + this.amount;
         if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+            this.description += DESCRIPTIONS[1];
         } else {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+            this.description += DESCRIPTIONS[2];
         }
+        this.description += FontHelper.colorString(card.name, "y") + DESCRIPTIONS[3];
     }
 
     @Override

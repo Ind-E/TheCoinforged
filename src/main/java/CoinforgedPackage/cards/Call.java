@@ -14,6 +14,8 @@ public class Call extends BaseCard {
     private static final int UPG_MAGIC = 1;
     private static final int DAMAGE = 10;
     private static final int UPG_DAMAGE = 4;
+    private static final int ENERGY = 2;
+    public static final int UPG_ENERGY = 1;
 
     public static final String ID = makeID(Call.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,13 +29,13 @@ public class Call extends BaseCard {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.baseDiscard = this.discard = 2;
+        this.baseDiscard = this.discard = ENERGY;
     }
 
     public void upgrade() {
         if (!upgraded) {
             super.upgrade();
-            this.baseDiscard += 1;
+            this.baseDiscard += UPG_ENERGY;
             this.discard = this.baseDiscard;
         }
     }
