@@ -174,5 +174,12 @@
     "DESCRIPTIONS": [
       "Whenever you attack, gain [E] ."
     ]
+  },
+  "${modID}:CardCascadePower": {
+    "NAME": "Card Cascade",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card, deal #b",
+      " damage to a random enemy."
+    ]
   }
 }

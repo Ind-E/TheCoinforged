@@ -452,7 +452,7 @@
   },
   "${modID}:Cripple": {
     "NAME": "Cripple",
-    "DESCRIPTION": "Apply !M! ${modID}:Crippling_Debt."
+    "DESCRIPTION": "Apply !M! ${modID}:Crippling_Debt to ALL enemies."
   },
   "${modID}:BagOfChips": {
     "NAME": "Bag of Chips",
@@ -536,5 +536,9 @@
   "${modID}:FinalBet": {
     "NAME": "Final Bet",
     "DESCRIPTION": "Exhaust all *Poker *Chips in your hand. NL Deal !D! damage for each one exhausted. NL Exhaust."
+  },
+  "${modID}:CardCascade": {
+    "NAME": "Card Cascade",
+    "DESCRIPTION": "Whenever you draw a card this turn, deal !M! damage to a random enemy."
   }
 }

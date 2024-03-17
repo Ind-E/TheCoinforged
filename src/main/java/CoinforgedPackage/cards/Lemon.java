@@ -14,7 +14,7 @@ public class Lemon extends BaseCard{
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 2;
     private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 3;
+    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(Lemon.class.getSimpleName());
     private static final CardStats info = new CardStats(

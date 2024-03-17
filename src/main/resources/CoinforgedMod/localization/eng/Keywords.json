@@ -56,7 +56,7 @@
       "crippling debt",
       "crippling_debt"
     ],
-    "DESCRIPTION": "When an enemy has more Crippling Debt than HP, it dies. Increases by #b25% at the start of each turn."
+    "DESCRIPTION": "When an enemy has more #yCrippling #yDebt than HP, it dies. Increases by #b25% at the start of each turn."
   },
   {
     "PROPER_NAME": "Chip",
