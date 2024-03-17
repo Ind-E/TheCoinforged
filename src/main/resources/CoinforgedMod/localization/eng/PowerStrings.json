@@ -66,9 +66,8 @@
   "${modID}:LuckOfTheDrawPower": {
     "NAME": "Lucky Draw",
     "DESCRIPTIONS": [
-      "Whenever you draw a card, randomly gain #b",
-      " #yBlock or deal #b",
-      " damage to a random enemy."
+      "Whenever you draw a card, gain #b",
+      " #yBlock."
     ]
   },
   "${modID}:FoolsFortunePower": {
