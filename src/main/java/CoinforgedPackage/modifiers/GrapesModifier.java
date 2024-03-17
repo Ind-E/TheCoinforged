@@ -17,8 +17,6 @@ public class GrapesModifier extends AbstractCardModifier {
         card.baseBlock += this.amount;
         card.damage = card.baseDamage;
         card.block = card.baseBlock;
-        card.isDamageModified = true;
-        card.isBlockModified = true;
         card.applyPowers();
     }
 

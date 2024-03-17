@@ -389,7 +389,7 @@
   },
   "${modID}:LuckySeven": {
     "NAME": "Lucky Seven",
-    "DESCRIPTION": "Deal !D! damage. NL If this is the 7th card you've played this turn, deal 7 damage to ALL enemies.",
+    "DESCRIPTION": "Deal !D! damage. NL If this is the 7th card you've played this turn, deal !D! damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       " NL (",
       " card played.)",
