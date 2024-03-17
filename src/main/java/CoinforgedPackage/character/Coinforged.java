@@ -65,9 +65,9 @@ public class Coinforged extends CustomPlayer {
     public Coinforged() {
         super(NAMES[0], Enums.Coinforged,
                 new CustomEnergyOrb(null, null, null), // Energy Orb
-                new SpriterAnimation(characterPath("animation/default.scml"))); // Animation
+                new NoAnimation()); // Animation
 
-        initializeClass(null,
+        initializeClass(characterPath("character.png"),
                 SHOULDER_2,
                 SHOULDER_1,
                 CORPSE,

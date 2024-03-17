@@ -18,12 +18,12 @@ public class LuckOfTheDraw extends BaseCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            2);
+            3);
 
     public LuckOfTheDraw() {
         super(ID, info);
         setMagic(MAGIC);
-        setCostUpgrade(1);
+        setCostUpgrade(2);
     }
 
     @Override

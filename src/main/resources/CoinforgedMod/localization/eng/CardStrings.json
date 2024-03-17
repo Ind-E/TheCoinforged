@@ -147,7 +147,7 @@
   },
   "${modID}:LuckOfTheDraw": {
     "NAME": "Luck of the Draw",
-    "DESCRIPTION": "Whenever you draw a card, randomly gain 1 Block or deal !M! damage to a random enemy."
+    "DESCRIPTION": "Whenever you draw a card, gain !B! Block."
   },
   "${modID}:CardShark": {
     "NAME": "Card Shark",
