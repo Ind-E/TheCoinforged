@@ -40,8 +40,6 @@ public class SpendChipsAction extends AbstractGameAction {
                     }
                 }
             }
-        } else {
-            throw (new IndexOutOfBoundsException("not enough chips"));
         }
         this.isDone = true;
     }

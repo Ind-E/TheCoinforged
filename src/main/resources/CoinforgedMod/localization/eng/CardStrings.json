@@ -523,5 +523,18 @@
   "${modID}:Blitz": {
     "NAME": "Blitz",
     "DESCRIPTION": "Whenever you attack this turn, gain [E]. NL Drawing cards is forbidden this turn."
+  },
+  "${modID}:Anticipate": {
+    "NAME": "Anticipate",
+    "DESCRIPTION": "Roll !M! ${modID}:Purple_Die. NL Next turn, gain !B! Block."
+  },
+  "${modID}:ChipShuffle": {
+    "NAME": "Chip Shuffle",
+    "DESCRIPTION": "Shuffle all *Poker *Chips in your hand into your draw pile. Draw a card for each one shuffled.",
+    "UPGRADE_DESCRIPTION": "Shuffle all *Poker *Chips in your hand into your draw pile. Draw a card and gain !B! block for each one shuffled. "
+  },
+  "${modID}:FinalBet": {
+    "NAME": "Final Bet",
+    "DESCRIPTION": "Exhaust all *Poker *Chips in your hand. NL Deal !D! damage for each one exhausted. NL Exhaust."
   }
 }

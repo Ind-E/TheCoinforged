@@ -9,11 +9,11 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.RollPurpleAction;
 import CoinforgedPackage.character.Coinforged;
 
-//roll a purple die. Next turn, gain 10 block.
 // card art idea: laying caltrops in front of sleeping lagavulin
 public class Anticipate extends BaseCard{
     private static final int BLOCK = 10;
-    private static final int UPG_BLOCK = 4;
+    private static final int UPG_BLOCK = 5;
+    private static final int MAGIC = 1;
 
     public static final String ID = makeID(Anticipate.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,11 +27,12 @@ public class Anticipate extends BaseCard{
     public Anticipate() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
+        setMagic(MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RollPurpleAction(p, 1));
+        addToBot(new RollPurpleAction(p, this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), 1));
     }
 }

@@ -4,11 +4,8 @@ import static CoinforgedPackage.CoinforgedMod.makeID;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -48,12 +45,6 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
     @Override
     public void onInitialApplication() {
         checkInstantKill();
-    }
-
-    @Override
-    public void onDeath() {
-        addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true),
-                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
     }
 
     public void checkInstantKill() {

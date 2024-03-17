@@ -159,8 +159,8 @@
   "${modID}:CripplingDebtPower": {
     "NAME": "Crippling Debt",
     "DESCRIPTIONS": [
-      "Dies when its HP drops below #b",
-      ". Increases by #b25% at the start of each turn"
+      "When its HP drops to #b",
+      " or below, it dies. Increases by #b25% at the start of each turn"
     ]
   },
   "${modID}:DrawbackPower": {
