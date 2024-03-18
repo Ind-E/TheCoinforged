@@ -21,7 +21,7 @@ public class LuckOfTheDrawPower extends BasePower {
 
     @Override
     public void onCardDraw(AbstractCard card) {
-        addToBot(new GainBlockAction(owner, owner, this.amount));
+        addToBot(new GainBlockAction(owner, owner, this.amount, true));
     }
 
 }

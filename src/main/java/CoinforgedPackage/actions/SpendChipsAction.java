@@ -30,9 +30,9 @@ public class SpendChipsAction extends AbstractGameAction {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c.hasTag(CustomTags.POKER_CHIP)) {
                     if (exhaust) {
-                        addToBot(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+                        addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
                     } else {
-                        addToBot(new DiscardSpecificCardAction(c, AbstractDungeon.player.hand));
+                        addToTop(new DiscardSpecificCardAction(c, AbstractDungeon.player.hand));
                     }
                     chipsSpent++;
                     if (chipsSpent >= chips) {

@@ -10,13 +10,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
+import CoinforgedPackage.powers.DrawbackPlayerPower;
 import CoinforgedPackage.powers.DrawbackPower;
 
 public class Melon extends BaseCard {
     private static final int BLOCK = 13;
-    private static final int UPG_BLOCK = 2;
+    private static final int UPG_BLOCK = 4;
     private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(Melon.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -29,13 +29,13 @@ public class Melon extends BaseCard {
     public Melon() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ApplyPowerAction(p, p, new DrawbackPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new DrawbackPlayerPower(p, this.magicNumber), this.magicNumber));
 
         Iterator<AbstractMonster> monstIterator = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
         while (monstIterator.hasNext()) {

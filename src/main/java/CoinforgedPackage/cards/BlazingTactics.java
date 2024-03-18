@@ -31,8 +31,8 @@ public class BlazingTactics extends BaseCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainEnergyAction(ENERGY_GAIN));
         addToBot(new IfChipsAction(CHIPS, new DrawCardAction(p, this.magicNumber)));
+        addToBot(new GainEnergyAction(ENERGY_GAIN));
     }
 
     public void triggerOnGlowCheck() {

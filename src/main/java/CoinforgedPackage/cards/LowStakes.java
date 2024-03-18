@@ -36,9 +36,9 @@ public class LowStakes extends BaseCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new IfChipsAction(this.magicNumber, new GainBlockAction(p, this.block)));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
-        addToBot(new IfChipsAction(this.magicNumber, new GainBlockAction(p, this.block)));
     }
 
     @Override

@@ -13,7 +13,7 @@ import CoinforgedPackage.powers.DrawbackPower;
 
 public class CoinFlick extends BaseCard{
     private static final int DAMAGE = 2;
-    private static final int UPG_DAMAGE = 1;
+    private static final int UPG_DAMAGE = 2;
     private static final int MAGIC = 1;
 
     public static final String ID = makeID(CoinFlick.class.getSimpleName());
@@ -36,6 +36,6 @@ public class CoinFlick extends BaseCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
         addToBot(new ApplyPowerAction(m, p, new DrawbackPower(m, this.magicNumber), this.magicNumber));
-        addToBot(new MakeTempCardInDrawPileAction(this, 1, !upgraded, true));
+        addToBot(new MakeTempCardInDrawPileAction(this, 1, false, true));
     }
 }

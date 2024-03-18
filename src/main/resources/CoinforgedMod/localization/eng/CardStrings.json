@@ -148,7 +148,7 @@
   "${modID}:LuckOfTheDraw": {
     "NAME": "Luck of the Draw",
     "DESCRIPTION": "Whenever you draw a card, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Whenever you draw a card, gain !B! Block. NL Draw 3 cards"
+    "UPGRADE_DESCRIPTION": "Whenever you draw a card, gain !M! Block. NL Draw 3 cards"
   },
   "${modID}:CardShark": {
     "NAME": "Card Shark",
@@ -506,8 +506,7 @@
   },
   "${modID}:CoinFlick": {
     "NAME": "Coin Flick",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Drawback. Shuffle a copy of this card into your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Drawback. Put a copy of this card on top of your draw pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Drawback. Shuffle a copy of this card into your draw pile. NL Exhaust."
   },
   "${modID}:Cherry": {
     "NAME": "Cherry",

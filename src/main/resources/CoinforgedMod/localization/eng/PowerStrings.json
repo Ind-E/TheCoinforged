@@ -180,5 +180,11 @@
       "Whenever you draw a card, deal #b",
       " damage to a random enemy."
     ]
+  },
+  "${modID}:DrawbackPlayerPower": {
+    "NAME": "Drawback",
+    "DESCRIPTIONS": [
+      "When attacked, draw a card and reduce this by #b1."
+    ]
   }
 }
