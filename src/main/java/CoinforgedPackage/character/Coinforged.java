@@ -22,8 +22,8 @@ import CoinforgedPackage.cards.RollRed;
 import CoinforgedPackage.relics.CasinoCatalyst;
 import CoinforgedPackage.relics.LuckRelic;
 
-import static CoinforgedPackage.CoinforgedMod.characterPath;
-import static CoinforgedPackage.CoinforgedMod.makeID;
+import static CoinforgedPackage.CoinforgedMain.characterPath;
+import static CoinforgedPackage.CoinforgedMain.makeID;
 
 import java.util.ArrayList;
 

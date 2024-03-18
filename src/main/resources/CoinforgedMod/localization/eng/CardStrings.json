@@ -147,7 +147,8 @@
   },
   "${modID}:LuckOfTheDraw": {
     "NAME": "Luck of the Draw",
-    "DESCRIPTION": "Whenever you draw a card, gain !B! Block."
+    "DESCRIPTION": "Whenever you draw a card, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Whenever you draw a card, gain !B! Block. NL Draw 3 cards"
   },
   "${modID}:CardShark": {
     "NAME": "Card Shark",

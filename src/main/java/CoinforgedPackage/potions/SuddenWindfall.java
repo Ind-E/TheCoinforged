@@ -1,6 +1,6 @@
 package CoinforgedPackage.potions;
 
-import static CoinforgedPackage.CoinforgedMod.makeID;
+import static CoinforgedPackage.CoinforgedMain.makeID;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

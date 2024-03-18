@@ -1,6 +1,6 @@
 package CoinforgedPackage.relics;
 
-import static CoinforgedPackage.CoinforgedMod.makeID;
+import static CoinforgedPackage.CoinforgedMain.makeID;
 
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;

@@ -1,6 +1,6 @@
 package CoinforgedPackage.powers;
 
-import static CoinforgedPackage.CoinforgedMod.makeID;
+import static CoinforgedPackage.CoinforgedMain.makeID;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;

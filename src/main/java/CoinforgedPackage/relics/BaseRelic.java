@@ -3,7 +3,7 @@ package CoinforgedPackage.relics;
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
 
-import static CoinforgedPackage.CoinforgedMod.relicPath;
+import static CoinforgedPackage.CoinforgedMain.relicPath;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.ImageMaster;

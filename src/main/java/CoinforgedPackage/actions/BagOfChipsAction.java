@@ -1,6 +1,6 @@
 package CoinforgedPackage.actions;
 
-import static CoinforgedPackage.CoinforgedMod.makeID;
+import static CoinforgedPackage.CoinforgedMain.makeID;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;

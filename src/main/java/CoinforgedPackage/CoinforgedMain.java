@@ -54,7 +54,7 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 
 @SpireInitializer
-public class CoinforgedMod implements
+public class CoinforgedMain implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCardsSubscriber,
@@ -89,7 +89,7 @@ public class CoinforgedMod implements
     }
 
     public static void initialize() {
-        new CoinforgedMod();
+        new CoinforgedMain();
 
         BaseMod.addColor(Coinforged.Enums.CARD_COLOR, cardColor,
                 BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
@@ -97,7 +97,7 @@ public class CoinforgedMod implements
                 SMALL_ORB);
     }
 
-    public CoinforgedMod() {
+    public CoinforgedMain() {
         BaseMod.subscribe(this);
         logger.info(modID + " subscribed to BaseMod.");
     }
@@ -280,7 +280,7 @@ public class CoinforgedMod implements
                 return false;
             Set<String> initializers = annotationDB.getAnnotationIndex().getOrDefault(SpireInitializer.class.getName(),
                     Collections.emptySet());
-            return initializers.contains(CoinforgedMod.class.getName());
+            return initializers.contains(CoinforgedMain.class.getName());
         }).findFirst();
         if (infos.isPresent()) {
             info = infos.get();

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.CoinforgedMod;
+import CoinforgedPackage.CoinforgedMain;
 import CoinforgedPackage.util.CardStats;
 
 import static CoinforgedPackage.util.GeneralUtils.removePrefix;
@@ -27,7 +27,7 @@ public abstract class BaseCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
 
     protected static String makeID(String name) {
-        return CoinforgedMod.makeID(name);
+        return CoinforgedMain.makeID(name);
     }
 
     protected CardStrings cardStrings;
@@ -480,7 +480,7 @@ public abstract class BaseCard extends CustomCard {
 
             if (this.upgradesDescription) {
                 if (cardStrings.UPGRADE_DESCRIPTION == null) {
-                    CoinforgedMod.logger
+                    CoinforgedMain.logger
                             .error("Card " + cardID + " upgrades description and has null upgrade description.");
                 } else {
                     this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;

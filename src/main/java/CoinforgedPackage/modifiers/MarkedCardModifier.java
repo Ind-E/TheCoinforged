@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-import CoinforgedPackage.CoinforgedMod;
+import CoinforgedPackage.CoinforgedMain;
 import CoinforgedPackage.cards.CustomTags;
 import basemod.abstracts.AbstractCardModifier;
 
@@ -18,7 +18,7 @@ public class MarkedCardModifier extends AbstractCardModifier {
         if (!card.hasTag(CustomTags.MARKED)) {
             return rawDescription;
         }
-        return CoinforgedMod.modID + ":Marked. NL " + rawDescription;
+        return CoinforgedMain.modID + ":Marked. NL " + rawDescription;
     }
 
     @Override
