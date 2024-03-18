@@ -1,7 +1,5 @@
 package CoinforgedPackage.powers;
 
-import static CoinforgedPackage.CoinforgedMain.makeID;
-
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

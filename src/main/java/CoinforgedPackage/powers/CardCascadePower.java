@@ -1,7 +1,5 @@
 package CoinforgedPackage.powers;
 
-import static CoinforgedPackage.CoinforgedMain.makeID;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;

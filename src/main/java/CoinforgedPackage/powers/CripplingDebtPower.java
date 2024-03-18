@@ -1,7 +1,5 @@
 package CoinforgedPackage.powers;
 
-import static CoinforgedPackage.CoinforgedMain.makeID;
-
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;

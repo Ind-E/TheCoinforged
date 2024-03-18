@@ -1,7 +1,5 @@
 package CoinforgedPackage.powers;
 
-import static CoinforgedPackage.CoinforgedMain.makeID;
-
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnPlayerDeathPower;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

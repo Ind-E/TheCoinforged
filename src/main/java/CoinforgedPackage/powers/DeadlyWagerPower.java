@@ -1,7 +1,5 @@
 package CoinforgedPackage.powers;
 
-import static CoinforgedPackage.CoinforgedMain.makeID;
-
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;

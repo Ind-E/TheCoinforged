@@ -1,7 +1,5 @@
 package CoinforgedPackage.powers;
 
-import static CoinforgedPackage.CoinforgedMain.makeID;
-
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,12 +34,6 @@ public class PokerFacePower extends BasePower {
         if (this.amount == 1) {
             p.currentHealth = hp;
             p.healthBarUpdatedEvent();
-            // int hpToHeal = hp - p.currentHealth;
-            // if (hpToHeal > 0)
-            // p.heal(hpToHeal);
-            // else if (hpToHeal < 0)
-            // addToBot(new DamageAction(p, new DamageInfo(p, -hpToHeal,
-            // DamageType.HP_LOSS)));
         }
         addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
 

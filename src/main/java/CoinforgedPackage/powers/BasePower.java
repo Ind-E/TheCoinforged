@@ -7,12 +7,17 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import CoinforgedPackage.CoinforgedMain;
 import CoinforgedPackage.util.GeneralUtils;
 import CoinforgedPackage.util.TextureLoader;
 
 public abstract class BasePower extends AbstractPower {
     private static PowerStrings getPowerStrings(String ID) {
         return CardCrawlGame.languagePack.getPowerStrings(ID);
+    }
+
+    protected static String makeID(String name) {
+        return CoinforgedMain.makeID(name);
     }
 
     protected AbstractCreature source;

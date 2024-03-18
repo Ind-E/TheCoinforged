@@ -5,8 +5,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static CoinforgedPackage.CoinforgedMain.makeID;
-
 public class LuckOfTheDrawPower extends BasePower {
     public static final String POWER_ID = makeID(LuckOfTheDrawPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
