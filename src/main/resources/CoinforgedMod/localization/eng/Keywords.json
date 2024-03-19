@@ -63,7 +63,7 @@
     "NAMES": [
       "chip"
     ],
-    "DESCRIPTION": "If you have a certain number of #yPoker #yChips in hand, discard them for an extra effect."
+    "DESCRIPTION": "If you have a certain number of #yPoker #yChips in hand, discard them for an extra effect. Chips are spent from left to right."
   },
   {
     "PROPER_NAME": "Drawback",

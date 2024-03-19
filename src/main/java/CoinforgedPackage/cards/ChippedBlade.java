@@ -8,7 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.util.CardStats;
-import CoinforgedPackage.actions.ChippedBladeAction;
+import CoinforgedPackage.actions.MakeChipsInHandAction;
+import CoinforgedPackage.cards.tempCards.PokerChip;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
 
@@ -30,6 +31,7 @@ public class ChippedBlade extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(MAGIC, UPG_MAGIC);
+        this.cardsToPreview = new PokerChip();
     }
 
     @Override
@@ -37,6 +39,7 @@ public class ChippedBlade extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
         addToBot(new ApplyPowerAction(m, p, new CripplingDebtPower(m, this.magicNumber)));
-        addToBot(new ChippedBladeAction(m));
+        // addToBot(new ChippedBladeAction(m));
+        addToBot(new MakeChipsInHandAction(1));
     }
 }
