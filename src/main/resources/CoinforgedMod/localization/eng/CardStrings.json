@@ -13,7 +13,7 @@
   },
   "${modID}:AllIn": {
     "NAME": "All In",
-    "DESCRIPTION": "${modID}:Chip !M!: Deal !D! damage to ALL enemies. If you can't afford the chip cost, exhaust all *Poker *Chips in hand and reduce it by that much."
+    "DESCRIPTION": "${modID}:Chip !M!: Deal !D! damage to ALL enemies. If you can't afford the chip cost, exhaust all ${modID}:Poker_Chips in hand and reduce it by that much."
   },
   "${modID}:RiskyInvestment": {
     "NAME": "Risky Investment",
@@ -437,10 +437,9 @@
     "NAME": "Shark's Embrace",
     "DESCRIPTION": "Whenever a card is Exhausted, discard the leftmost card in your hand, then draw a card."
   },
-  "${modID}:PokerChip": {
-    "NAME": "Poker Chip",
-    "DESCRIPTION": "Unplayable. NL Whenever you draw this, draw a card.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever you draw this, draw !M! cards."
+  "${modID}:WhiteChip": {
+    "NAME": "White Chip",
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Unplayable."
   },
   "${modID}:Frenzy": {
     "NAME": "Frenzy",
@@ -457,12 +456,12 @@
   },
   "${modID}:BagOfChips": {
     "NAME": "Bag of Chips",
-    "DESCRIPTION": "Discard any number of cards then add that many *Poker *Chips into your hand."
+    "DESCRIPTION": "Discard any number of cards then add that many ${modID}:Poker_Chips into your hand."
   },
   "${modID}:Stash": {
     "NAME": "Stash",
-    "DESCRIPTION": "Gain !B! Block. Add a *Poker *Chip into your hand.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Add a *Poker *Chip into your hand and deck."
+    "DESCRIPTION": "Gain !B! Block. Add a ${modID}:Poker_Chip into your hand.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Add a ${modID}:Poker_Chip into your hand and deck."
   },
   "${modID}:LowStakes": {
     "NAME": "Low Stakes",
@@ -482,11 +481,11 @@
   },
   "${modID}:ChippedBlade": {
     "NAME": "Chipped Blade",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt. Add a *Poker *Chip into your hand."
+    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt. Add a ${modID}:Poker_Chip into your hand."
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",
-    "DESCRIPTION": "Add !M! *Poker *Chips into your hand. NL Gain [E] for each *Poker *Chip in your hand."
+    "DESCRIPTION": "Add !M! ${modID}:Poker_Chips into your hand. NL Gain [E] for each ${modID}:Poker_Chip in your hand."
   },
   "${modID}:DiceShaker": {
     "NAME": "Dice Shaker",
@@ -530,15 +529,47 @@
   },
   "${modID}:ChipShuffle": {
     "NAME": "Chip Shuffle",
-    "DESCRIPTION": "Shuffle all *Poker *Chips in your hand into your draw pile. Draw a card for each one shuffled.",
-    "UPGRADE_DESCRIPTION": "Shuffle all *Poker *Chips in your hand into your draw pile. Draw a card and gain !B! block for each one shuffled. "
+    "DESCRIPTION": "Shuffle all ${modID}:Poker_Chips in your hand into your draw pile. Draw a card for each one shuffled.",
+    "UPGRADE_DESCRIPTION": "Shuffle all ${modID}:Poker_Chips in your hand into your draw pile. Draw a card and gain !B! block for each one shuffled. "
   },
   "${modID}:FinalBet": {
     "NAME": "Final Bet",
-    "DESCRIPTION": "Exhaust all *Poker *Chips in your hand. NL Deal !D! damage for each one exhausted. NL Exhaust."
+    "DESCRIPTION": "Exhaust all ${modID}:Poker_Chips in your hand. NL Deal !D! damage for each one exhausted. NL Exhaust."
   },
   "${modID}:CardCascade": {
     "NAME": "Card Cascade",
     "DESCRIPTION": "Whenever you draw a card this turn, deal !M! damage to a random enemy."
+  },
+  "${modID}:CardCount": {
+    "NAME": "Card Count",
+    "DESCRIPTION": "Deal !D! damage. NL If you have 10 or more cards in hand, deal !D! damage again."
+  },
+  "${modID}:CrackedChip": {
+    "NAME": "Cracked Chip",
+    "DESCRIPTION": "Unplayable. NL ${modID}:Poker_Chip. NL When this is spent, Exhaust it."
+  },
+  "${modID}:RedChip": {
+    "NAME": "Red Chip",
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Gain !M! Strength. NL Exhaust."
+  },
+  "${modID}:BlueChip": {
+    "NAME": "Blue Chip",
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Gain !B! Block."
+  },
+  "${modID}:GrayChip": {
+    "NAME": "Gray Chip",
+    "DESCRIPTION": "${modID}:Poker_Chip. Unplayable. NL When this is spent, gain [E] . NL Ethereal"
+  },
+  "${modID}:GreenChip": {
+    "NAME": "Green Chip",
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Unplayable. NL Retain."
+  },
+  "${modID}:OrangeChip": {
+    "NAME": "Orange Chip",
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Increase your max hand size by 1. NL Draw 1 card. NL Exhaust."
+  },
+  "${modID}:BlackChip": {
+    "NAME": "Black Chip",
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Unplayable. NL Counts as 4 ${modID}:Poker_Chips. Always spent first."
   }
 }

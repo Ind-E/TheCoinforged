@@ -71,5 +71,14 @@
       "drawback"
     ],
     "DESCRIPTION": "When attacked, draw a card and reduce this by #b1."
+  },
+  {
+    "PROPER_NAME": "Poker Chip",
+    "NAMES": [
+      "poker chip",
+      "poker_chip",
+      "poker_chips"
+    ],
+    "DESCRIPTION": "Whenever a #yPoker #yChip is drawn, draw a card. #yPoker #yChips can be spent for extra effects and can't be upgraded."
   }
 ]

@@ -2,7 +2,8 @@ package CoinforgedPackage.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import CoinforgedPackage.cards.tempCards.PokerChip;
+
+import CoinforgedPackage.cards.chips.WhiteChip;
 
 public class MakeChipsInDeckAction extends AbstractGameAction {
     private int chipsToMake;
@@ -15,7 +16,7 @@ public class MakeChipsInDeckAction extends AbstractGameAction {
     }
 
     public void update() {
-        addToBot(new MakeTempCardInDrawPileAction(new PokerChip(), chipsToMake, shuffleInto, true));
+        addToBot(new MakeTempCardInDrawPileAction(new WhiteChip(), chipsToMake, shuffleInto, true));
         this.isDone = true;
     }
 }

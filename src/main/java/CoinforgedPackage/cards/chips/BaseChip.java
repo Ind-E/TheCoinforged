@@ -1,8 +1,6 @@
-package CoinforgedPackage.cards.tempCards;
+package CoinforgedPackage.cards.chips;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,41 +10,40 @@ import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class PokerChip extends BaseCard {
-public static final int DRAW = 1;
-public static final int UPG_DRAW = 1;
+public abstract class BaseChip extends BaseCard {
+    public static final int DRAW = 1;
+    public static final int UPG_DRAW = 1;
+    protected boolean canUse = false;
 
-    public static final String ID = makeID(PokerChip.class.getSimpleName());
-    private static final CardStats info = new CardStats(
+    public static String ID = makeID(BaseChip.class.getSimpleName());
+    protected static CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.NONE,
             -2);
 
-    public PokerChip() {
-        super(ID, info);
-        tags.add(CustomTags.POKER_CHIP);
-        setMagic(DRAW, UPG_DRAW);
+    public BaseChip() {
+        this(ID, info);
     }
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-
+    public BaseChip(String ID, CardStats info) {
+        super(ID, info);
+        tags.add(CustomTags.POKER_CHIP);
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return canUse;
+    }
+
+    @Override
+    public boolean canUpgrade() {
         return false;
     }
 
     @Override
     public void triggerWhenDrawn() {
-        addToBot(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
-    }
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new PokerChip();
+        addToBot(new DrawCardAction(AbstractDungeon.player, 1));
     }
 }

@@ -3,7 +3,7 @@ package CoinforgedPackage.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 
-import CoinforgedPackage.cards.tempCards.PokerChip;
+import CoinforgedPackage.cards.chips.WhiteChip;
 
 public class MakeChipsInHandAction extends AbstractGameAction {
     private int chipsToMake;
@@ -14,7 +14,7 @@ public class MakeChipsInHandAction extends AbstractGameAction {
     }
 
     public void update() {
-        addToTop(new MakeTempCardInHandAction(new PokerChip(), chipsToMake));
+        addToTop(new MakeTempCardInHandAction(new WhiteChip(), chipsToMake));
         this.isDone = true;
     }
 }

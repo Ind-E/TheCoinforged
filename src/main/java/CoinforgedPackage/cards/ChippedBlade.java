@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.MakeChipsInHandAction;
-import CoinforgedPackage.cards.tempCards.PokerChip;
+import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
 
@@ -31,7 +31,7 @@ public class ChippedBlade extends BaseCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(MAGIC, UPG_MAGIC);
-        this.cardsToPreview = new PokerChip();
+        this.cardsToPreview = new WhiteChip();
     }
 
     @Override

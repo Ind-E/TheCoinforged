@@ -5,10 +5,14 @@ import static CoinforgedPackage.util.GeneralUtils.getNumChips;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import CoinforgedPackage.cards.CustomTags;
+import CoinforgedPackage.cards.chips.BlackChip;
+import CoinforgedPackage.cards.chips.CrackedChip;
+import CoinforgedPackage.cards.chips.GrayChip;
 
 public class SpendChipsAction extends AbstractGameAction {
     private int chips;
@@ -27,9 +31,24 @@ public class SpendChipsAction extends AbstractGameAction {
     public void update() {
         int chipsSpent = 0;
         if (getNumChips() >= chips) {
+
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (c instanceof BlackChip) {
+                    chipsSpent += 4;
+                }
+                if (chipsSpent >= chips) {
+                    addToTop(new DiscardSpecificCardAction(c, AbstractDungeon.player.hand));
+                    this.isDone = true;
+                    return;
+                }
+            }
+
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c.hasTag(CustomTags.POKER_CHIP)) {
-                    if (exhaust) {
+                    if (c instanceof GrayChip) {
+                        addToTop(new GainEnergyAction(1));
+                    }
+                    if (exhaust || c instanceof CrackedChip) {
                         addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
                     } else {
                         addToTop(new DiscardSpecificCardAction(c, AbstractDungeon.player.hand));

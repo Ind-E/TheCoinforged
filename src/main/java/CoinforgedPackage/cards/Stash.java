@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.MakeChipsInDeckAction;
 import CoinforgedPackage.actions.MakeChipsInHandAction;
-import CoinforgedPackage.cards.tempCards.PokerChip;
+import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 
 public class Stash extends BaseCard{
@@ -25,7 +25,7 @@ public class Stash extends BaseCard{
     public Stash() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
-        this.cardsToPreview = new PokerChip();
+        this.cardsToPreview = new WhiteChip();
     }
 
     @Override
