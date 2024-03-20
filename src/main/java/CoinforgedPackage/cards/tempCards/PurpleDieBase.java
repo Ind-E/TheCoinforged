@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
-import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
 
-public abstract class PurpleDieBase extends BaseCard {
+public abstract class PurpleDieBase extends AbstractCoinforgedCard {
     private static final int UPG_MAGIC = 2;
 
     public static final String ID = makeID(PurpleDieBase.class.getSimpleName());

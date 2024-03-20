@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 
-public class Cherry extends BaseCard {
+public class Cherry extends AbstractCoinforgedCard {
     private static final int DAMAGE = 0;
     private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 2;

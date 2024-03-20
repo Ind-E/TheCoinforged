@@ -15,11 +15,11 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect.ShockWaveType;
 
-import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.util.CardStats;
 
-public abstract class GreenDieBase extends BaseCard {
+public abstract class GreenDieBase extends AbstractCoinforgedCard {
    private static final int UPG_MAGIC = 2;
 
    public static final String ID = makeID(GreenDieBase.class.getSimpleName());

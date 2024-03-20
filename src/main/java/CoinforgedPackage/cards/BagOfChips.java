@@ -7,7 +7,7 @@ import CoinforgedPackage.actions.BagOfChipsAction;
 import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 
-public class BagOfChips extends BaseCard{
+public class BagOfChips extends AbstractCoinforgedCard{
 
     public static final String ID = makeID(BagOfChips.class.getSimpleName());
     private static final CardStats info = new CardStats(

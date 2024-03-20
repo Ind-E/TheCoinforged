@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class CheatersLuck extends BaseCard {
+public class CheatersLuck extends AbstractCoinforgedCard {
     private static final int CARDS_TO_DUPE = 1;
     private static final int UPG_CARDS_TO_DUPE = 1;
 

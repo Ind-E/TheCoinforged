@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class DrunkenStrike extends BaseCard {
+public class DrunkenStrike extends AbstractCoinforgedCard {
     private static final int DAMAGE = 16;
     private static final int UPG_DAMAGE = 5;
 

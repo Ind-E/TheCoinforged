@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class LuckySeven extends BaseCard {
+public class LuckySeven extends AbstractCoinforgedCard {
     private static final int DAMAGE = 7;
     private static final int MAGIC = 7;
 

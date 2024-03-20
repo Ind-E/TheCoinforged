@@ -10,7 +10,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.ChipShuffleAction;
 import CoinforgedPackage.character.Coinforged;
 
-public class ChipShuffle extends BaseCard {
+public class ChipShuffle extends AbstractCoinforgedCard {
     public static final int BLOCK = 2;
 
     public static final String ID = makeID(ChipShuffle.class.getSimpleName());

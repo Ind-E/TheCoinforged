@@ -10,7 +10,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.ModifiedHandSizePower;
 import CoinforgedPackage.util.CardStats;
 
-public class UnleashedStrategy extends BaseCard {
+public class UnleashedStrategy extends AbstractCoinforgedCard {
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
 

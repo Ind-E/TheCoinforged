@@ -9,7 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.AdvantagePower;
 import CoinforgedPackage.util.CardStats;
 
-public class Advantage extends BaseCard {
+public class Advantage extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 

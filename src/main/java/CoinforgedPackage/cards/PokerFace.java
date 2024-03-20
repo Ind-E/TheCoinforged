@@ -9,7 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.PokerFacePower;
 import CoinforgedPackage.util.CardStats;
 
-public class PokerFace extends BaseCard {
+public class PokerFace extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(PokerFace.class.getSimpleName());
     private static final CardStats info = new CardStats(

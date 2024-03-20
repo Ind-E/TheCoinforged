@@ -7,7 +7,7 @@ import CoinforgedPackage.actions.BuyInAction;
 import CoinforgedPackage.actions.MakeChipsInHandAction;
 import CoinforgedPackage.character.Coinforged;
 
-public class BuyIn extends BaseCard {
+public class BuyIn extends AbstractCoinforgedCard {
     private static final int CHIPS = 2;
 
     public static final String ID = makeID(BuyIn.class.getSimpleName());

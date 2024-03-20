@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 
-public class Orange extends BaseCard{
+public class Orange extends AbstractCoinforgedCard{
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 2;
     private static final int TIMES_TO_DEAL_DAMAGE = 2;

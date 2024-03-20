@@ -8,7 +8,7 @@ import CoinforgedPackage.actions.DamageHighestHealthEnemyMultipleTimesAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class SlyShot extends BaseCard {
+public class SlyShot extends AbstractCoinforgedCard {
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 1;
     private static final int TIMES_TO_DEAL_DAMAGE = 3;

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class DefendSpinwarden extends BaseCard {
+public class DefendSpinwarden extends AbstractCoinforgedCard {
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 

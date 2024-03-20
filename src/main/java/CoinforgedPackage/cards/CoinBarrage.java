@@ -12,7 +12,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.ModifiedHandSizePower;
 import CoinforgedPackage.util.CardStats;
 
-public class CoinBarrage extends BaseCard {
+public class CoinBarrage extends AbstractCoinforgedCard {
     private static final int DAMAGE = 1;
     private static final int HAND_SIZE_REDUCTION = 2;
     private static final int UPG_HAND_SIZE_REDUCTION = -1;

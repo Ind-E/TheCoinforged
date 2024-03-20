@@ -17,7 +17,7 @@ import CoinforgedPackage.actions.SpendChipsAction;
 import CoinforgedPackage.character.Coinforged;
 
 //deal 12 dmg to all enemies. Chip 1: apply 2 vulnerable to all enemies
-public class Outrage extends BaseCard {
+public class Outrage extends AbstractCoinforgedCard {
     private static final int DAMAGE = 12;
     private static final int UPG_DAMAGE = 4;
     private static final int MAGIC = 2;

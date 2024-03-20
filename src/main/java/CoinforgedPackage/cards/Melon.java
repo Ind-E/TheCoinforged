@@ -13,7 +13,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.DrawbackPlayerPower;
 import CoinforgedPackage.powers.DrawbackPower;
 
-public class Melon extends BaseCard {
+public class Melon extends AbstractCoinforgedCard {
     private static final int BLOCK = 13;
     private static final int UPG_BLOCK = 4;
     private static final int MAGIC = 1;

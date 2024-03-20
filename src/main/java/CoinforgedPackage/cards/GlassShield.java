@@ -12,7 +12,7 @@ import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class GlassShield extends BaseCard {
+public class GlassShield extends AbstractCoinforgedCard {
     private static final int CHIPS = 1;
     private static final int MAGIC = 1;
 

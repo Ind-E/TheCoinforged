@@ -8,7 +8,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.GrapesAction;
 import CoinforgedPackage.character.Coinforged;
 
-public class Grapes extends BaseCard{
+public class Grapes extends AbstractCoinforgedCard{
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
 

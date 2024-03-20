@@ -9,8 +9,8 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
 
-public class Cripple extends BaseCard {
-    private static final int MAGIC = 6;
+public class Cripple extends AbstractCoinforgedCard {
+    private static final int MAGIC = 7;
     private static final int UPG_MAGIC = 3;
 
     public static final String ID = makeID(Cripple.class.getSimpleName());

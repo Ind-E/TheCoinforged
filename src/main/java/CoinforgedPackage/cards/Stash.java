@@ -9,7 +9,7 @@ import CoinforgedPackage.actions.MakeChipsInHandAction;
 import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 
-public class Stash extends BaseCard{
+public class Stash extends AbstractCoinforgedCard{
     private static final int BLOCK = 8;
     private static final int UPG_BLOCK = 3;
 

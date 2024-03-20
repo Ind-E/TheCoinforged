@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import CoinforgedPackage.util.CardStats;
 
 
-public abstract class AbstractMultiPreviewCard extends BaseCard{
+public abstract class AbstractMultiPreviewCard extends AbstractCoinforgedCard{
     public float rotationTimer;
     public int previewIndex;
     public ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();

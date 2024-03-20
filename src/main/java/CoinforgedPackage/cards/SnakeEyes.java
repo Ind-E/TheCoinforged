@@ -10,7 +10,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.SnakeEyesPower;
 import CoinforgedPackage.util.CardStats;
 
-public class SnakeEyes extends BaseCard {
+public class SnakeEyes extends AbstractCoinforgedCard {
     private static final int POWER_DURATION = 2;
 
     public static final String ID = makeID(SnakeEyes.class.getSimpleName());

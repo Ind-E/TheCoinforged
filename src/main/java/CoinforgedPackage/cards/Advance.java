@@ -10,7 +10,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.PlayerAppliedDrawReductionPower;
 import CoinforgedPackage.util.CardStats;
 
-public class Advance extends BaseCard {
+public class Advance extends AbstractCoinforgedCard {
     private static final int CARD_DRAW = 2;
     private static final int UPG_CARD_DRAW = 1;
     private static final int DRAW_REDUCTION = 1;

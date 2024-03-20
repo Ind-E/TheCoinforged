@@ -14,6 +14,7 @@ public class OrangeChip extends BaseChip {
         super(ID, info);
         setExhaust(true);
         setMagic(1);
+        this.cost = costForTurn = 0;
         this.canUse = true;
     }
 

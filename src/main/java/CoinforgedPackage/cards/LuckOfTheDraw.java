@@ -10,7 +10,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.LuckOfTheDrawPower;
 import CoinforgedPackage.util.CardStats;
 
-public class LuckOfTheDraw extends BaseCard {
+public class LuckOfTheDraw extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
 
     public static final String ID = makeID(LuckOfTheDraw.class.getSimpleName());

@@ -10,7 +10,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.GamblePower;
 import CoinforgedPackage.util.CardStats;
 
-public class RiskyInvestment extends BaseCard {
+public class RiskyInvestment extends AbstractCoinforgedCard {
     private static final int GOLD_GAIN = 75;
     private static final int UPG_GOLD_GAIN = 25;
 

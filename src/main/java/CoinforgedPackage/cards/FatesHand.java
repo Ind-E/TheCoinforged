@@ -10,7 +10,7 @@ import CoinforgedPackage.actions.FatesHandAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class FatesHand extends BaseCard {
+public class FatesHand extends AbstractCoinforgedCard {
     private static final int STRENGTH = 1;
     private static final int UPG_STRENGTH = 1;
     private static final int CARD_DRAW = 3;

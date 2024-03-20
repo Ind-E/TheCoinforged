@@ -10,7 +10,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.DrawbackPower;
 
-public class Lemon extends BaseCard{
+public class Lemon extends AbstractCoinforgedCard{
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 2;
     private static final int MAGIC = 2;

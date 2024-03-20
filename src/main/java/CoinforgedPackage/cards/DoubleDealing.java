@@ -8,7 +8,7 @@ import CoinforgedPackage.actions.DoubleDealingAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class DoubleDealing extends BaseCard {
+public class DoubleDealing extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(DoubleDealing.class.getSimpleName());
     private static final CardStats info = new CardStats(

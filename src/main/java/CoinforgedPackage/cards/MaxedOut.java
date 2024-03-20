@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class MaxedOut extends BaseCard {
+public class MaxedOut extends AbstractCoinforgedCard {
     private static final int DAMAGE = 50;
     private static final int UPG_DAMAGE = 15;
 

@@ -9,7 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.StackedDeckPower;
 import CoinforgedPackage.util.CardStats;
 
-public class StackedDeck extends BaseCard {
+public class StackedDeck extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(StackedDeck.class.getSimpleName());
     private static final CardStats info = new CardStats(

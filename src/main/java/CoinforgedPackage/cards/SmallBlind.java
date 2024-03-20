@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class SmallBlind extends BaseCard {
+public class SmallBlind extends AbstractCoinforgedCard {
     private static final int BLOCK = 13;
     private static final int UPG_BLOCK = 4;
     private static final int GOLD_LOSS = 5;

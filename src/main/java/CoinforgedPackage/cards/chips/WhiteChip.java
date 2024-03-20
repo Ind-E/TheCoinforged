@@ -4,12 +4,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class WhiteChip extends BaseChip {
-    {
-        ID = makeID(WhiteChip.class.getSimpleName());
-    }
+
+    public static final String ID = makeID(WhiteChip.class.getSimpleName());
 
     public WhiteChip() {
-        super();
+        super(ID, info);
     }
 
     @Override

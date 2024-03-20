@@ -11,7 +11,7 @@ import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class BlazingTactics extends BaseCard {
+public class BlazingTactics extends AbstractCoinforgedCard {
     private static final int CARD_DRAW = 3;
     private static final int UPG_CARD_DRAW = 1;
     private static final int CHIPS = 1;

@@ -11,7 +11,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 
-public class LowStakes extends BaseCard{
+public class LowStakes extends AbstractCoinforgedCard{
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 2;
     private static final int BLOCK = 7;
@@ -28,7 +28,7 @@ public class LowStakes extends BaseCard{
     );
 
     public LowStakes() {
-        super(ID, info);
+        super(ID, info, new Boolean(true));
         setDamage(DAMAGE, UPG_DAMAGE);
         setBlock(BLOCK, UPG_BLOCK);
         setMagic(MAGIC);

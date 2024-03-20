@@ -10,7 +10,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.BlitzPower;
 import CoinforgedPackage.powers.NoDrawBuffPower;
 
-public class Blitz extends BaseCard{
+public class Blitz extends AbstractCoinforgedCard{
 
 
     public static final String ID = makeID(Blitz.class.getSimpleName());

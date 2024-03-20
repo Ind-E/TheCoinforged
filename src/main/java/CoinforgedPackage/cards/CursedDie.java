@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 // import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class CursedDie extends BaseCard {
+public class CursedDie extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(CursedDie.class.getSimpleName());
     private static final CardStats info = new CardStats(

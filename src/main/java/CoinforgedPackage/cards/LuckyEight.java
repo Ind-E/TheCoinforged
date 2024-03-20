@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class LuckyEight extends BaseCard {
+public class LuckyEight extends AbstractCoinforgedCard {
     private static final int BLOCK = 8;
     private static final int ENERGY = 2;
     private static final int UPG_ENERGY = 1;

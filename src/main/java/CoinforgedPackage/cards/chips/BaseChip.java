@@ -5,12 +5,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public abstract class BaseChip extends BaseCard {
+public abstract class BaseChip extends AbstractCoinforgedCard {
     public static final int DRAW = 1;
     public static final int UPG_DRAW = 1;
     protected boolean canUse = false;

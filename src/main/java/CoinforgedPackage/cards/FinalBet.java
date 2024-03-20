@@ -11,7 +11,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 
 //exhaust all chips in hand and deal 20 damage for each. exhaust
-public class FinalBet extends BaseCard{
+public class FinalBet extends AbstractCoinforgedCard{
     private static final int DAMAGE = 20;
     private static final int UPG_DAMAGE = 5;
 

@@ -13,7 +13,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.ChaosFormPower;
 import CoinforgedPackage.util.CardStats;
 
-public class ChaosForm extends BaseCard {
+public class ChaosForm extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
 
     private float rotationTimer;

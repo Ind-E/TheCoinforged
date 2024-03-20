@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class LuckyNine extends BaseCard {
+public class LuckyNine extends AbstractCoinforgedCard {
     private static final int MAGIC = 9;
 
     public static final String ID = makeID(LuckyNine.class.getSimpleName());

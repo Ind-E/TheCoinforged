@@ -558,7 +558,7 @@
   },
   "${modID}:GrayChip": {
     "NAME": "Gray Chip",
-    "DESCRIPTION": "${modID}:Poker_Chip. Unplayable. NL When this is spent, gain [E] . NL Ethereal"
+    "DESCRIPTION": "${modID}:Poker_Chip. Unplayable. NL When this is spent, gain [E] . NL Ethereal."
   },
   "${modID}:GreenChip": {
     "NAME": "Green Chip",

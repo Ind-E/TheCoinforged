@@ -10,7 +10,7 @@ import CoinforgedPackage.actions.RollPurpleAction;
 import CoinforgedPackage.character.Coinforged;
 
 // card art idea: laying caltrops in front of sleeping lagavulin
-public class Anticipate extends BaseCard{
+public class Anticipate extends AbstractCoinforgedCard{
     private static final int BLOCK = 10;
     private static final int UPG_BLOCK = 5;
     private static final int MAGIC = 1;

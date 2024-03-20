@@ -7,14 +7,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.modifiers.RedKingModifier;
 import CoinforgedPackage.powers.RedKingPower;
 import CoinforgedPackage.util.CardStats;
 import basemod.helpers.CardModifierManager;
 
-public abstract class RedDieBase extends BaseCard {
+public abstract class RedDieBase extends AbstractCoinforgedCard {
     private static final int DAMAGE = 99;
     private static final int UPG_DAMAGE = 3;
 

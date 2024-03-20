@@ -13,7 +13,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import basemod.ReflectionHacks;
 
-public class GameChanger extends BaseCard {
+public class GameChanger extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(GameChanger.class.getSimpleName());
     private static final CardStats info = new CardStats(

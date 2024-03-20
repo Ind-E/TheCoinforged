@@ -9,7 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CardCascadePower;
 import CoinforgedPackage.util.CardStats;
 
-public class CardCascade extends BaseCard {
+public class CardCascade extends AbstractCoinforgedCard {
     private static final int MAGIC = 5;
     private static final int UPG_MAGIC = 2;
 

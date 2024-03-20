@@ -9,7 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.InvigoratingRifflePower;
 import CoinforgedPackage.util.CardStats;
 
-public class InvigoratingRiffle extends BaseCard {
+public class InvigoratingRiffle extends AbstractCoinforgedCard {
     private static final int VIGOR = 2;
     private static final int UPG_VIGOR = 1;
 

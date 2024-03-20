@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class LongGame extends BaseCard {
+public class LongGame extends AbstractCoinforgedCard {
     private static final int DAMAGE = 35;
     private static final int UPG_DAMAGE = 5;
     private static final int TURNS_UNTIL_PLAYABLE = 5;

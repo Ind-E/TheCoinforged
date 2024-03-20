@@ -14,7 +14,7 @@ import CoinforgedPackage.actions.SpendChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class AllIn extends BaseCard {
+public class AllIn extends AbstractCoinforgedCard {
     private static final int DAMAGE = 100;
     private static final int MAGIC = 10;
     private static final int UPG_MAGIC = -2;

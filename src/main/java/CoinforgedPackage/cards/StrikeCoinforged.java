@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class StrikeCoinforged extends BaseCard {
+public class StrikeCoinforged extends AbstractCoinforgedCard {
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
 

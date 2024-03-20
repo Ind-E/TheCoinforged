@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class WaveOfGreed extends BaseCard {
+public class WaveOfGreed extends AbstractCoinforgedCard {
     private static final int DAMAGE = 26;
     private static final int UPG_DAMAGE = 6;
     private static final int GOLD = 10;

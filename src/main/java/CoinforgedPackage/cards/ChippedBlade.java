@@ -13,7 +13,7 @@ import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
 
-public class ChippedBlade extends BaseCard {
+public class ChippedBlade extends AbstractCoinforgedCard {
     private static final int DAMAGE = 10;
     private static final int UPG_DAMAGE = 2;
     private static final int MAGIC = 6;

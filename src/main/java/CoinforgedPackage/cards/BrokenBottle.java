@@ -11,7 +11,7 @@ import CoinforgedPackage.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
-public class BrokenBottle extends BaseCard {
+public class BrokenBottle extends AbstractCoinforgedCard {
     private static final int DAMAGE = 6;
     private static final int X_COST = -1;
     private static final int GLASS_SHARD = 1;

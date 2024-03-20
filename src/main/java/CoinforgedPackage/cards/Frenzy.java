@@ -12,7 +12,7 @@ import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class Frenzy extends BaseCard {
+public class Frenzy extends AbstractCoinforgedCard {
     private static final int CHIPS = 2;
     private static final int UPG_CHIPS = -1;
 

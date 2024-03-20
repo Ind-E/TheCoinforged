@@ -12,7 +12,7 @@ import CoinforgedPackage.cards.optionCards.SkillFromDeck;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class JokerTrick extends BaseCard {
+public class JokerTrick extends AbstractCoinforgedCard {
     public static final String ID = makeID(JokerTrick.class.getSimpleName());
 
     private static final CardStats info = new CardStats(

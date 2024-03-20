@@ -9,7 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.HighRollerPower;
 import CoinforgedPackage.util.CardStats;
 
-public class HighRoller extends BaseCard {
+public class HighRoller extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(HighRoller.class.getSimpleName());
     private static final CardStats info = new CardStats(

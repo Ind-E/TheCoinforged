@@ -9,7 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.HitAndRunPower;
 import CoinforgedPackage.util.CardStats;
 
-public class HitAndRun extends BaseCard {
+public class HitAndRun extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(HitAndRun.class.getSimpleName());
     private static final CardStats info = new CardStats(

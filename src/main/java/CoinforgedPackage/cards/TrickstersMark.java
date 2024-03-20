@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class TrickstersMark extends BaseCard {
+public class TrickstersMark extends AbstractCoinforgedCard {
     private static final int WEAK_AND_VULN = 2;
     private static final int UPG_WEAK_AND_VULN = 1;
 

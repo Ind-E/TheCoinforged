@@ -4,13 +4,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.actions.AddTypeToHandAction;
-import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 
 @NoCompendium
-public class AttackFromDeck extends BaseCard {
+public class AttackFromDeck extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(AttackFromDeck.class.getSimpleName());
     private static final CardStats info = new CardStats(

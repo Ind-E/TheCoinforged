@@ -9,7 +9,7 @@ import CoinforgedPackage.actions.LuckyBreakFollowUpAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class LuckyBreak extends BaseCard {
+public class LuckyBreak extends AbstractCoinforgedCard {
     private static final int DEXTERITY = 1;
     private static final int UPG_DEXTERITY = 1;
     private static final int CARD_DRAW = 2;

@@ -37,7 +37,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-import CoinforgedPackage.cards.BaseCard;
+import CoinforgedPackage.cards.AbstractCoinforgedCard;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.potions.BasePotion;
 import CoinforgedPackage.relics.BaseRelic;
@@ -293,7 +293,7 @@ public class CoinforgedMain implements
     @Override
     public void receiveEditCards() {
         new AutoAdd(modID)
-                .packageFilter(BaseCard.class)
+                .packageFilter(AbstractCoinforgedCard.class)
                 .setDefaultSeen(true)
                 .cards();
     }

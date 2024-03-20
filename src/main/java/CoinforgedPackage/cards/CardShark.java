@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class CardShark extends BaseCard {
+public class CardShark extends AbstractCoinforgedCard {
     private static final int DAMAGE = 14;
     private static final int UPG_DAMAGE = 4;
     private AbstractPlayer p = AbstractDungeon.player;

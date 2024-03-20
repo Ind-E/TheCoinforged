@@ -10,7 +10,7 @@ import CoinforgedPackage.actions.AceInTheHoleAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class AceInTheHole extends BaseCard {
+public class AceInTheHole extends AbstractCoinforgedCard {
     private static final int CARDS_TO_SEEK = 1;
 
     public static final String ID = makeID(AceInTheHole.class.getSimpleName());

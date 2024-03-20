@@ -1,8 +1,10 @@
 package CoinforgedPackage.cards;
 
 import basemod.BaseMod;
+import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
+import basemod.helpers.CardModifierManager;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,6 +15,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.CoinforgedMain;
+import CoinforgedPackage.modifiers.MakeBlackChipModifier;
+import CoinforgedPackage.modifiers.MakeBlueChipModifier;
+import CoinforgedPackage.modifiers.MakeCrackedChipModifier;
+import CoinforgedPackage.modifiers.MakeGrayChipModifier;
+import CoinforgedPackage.modifiers.MakeGreenChipModifier;
+import CoinforgedPackage.modifiers.MakeOrangeChipModifier;
+import CoinforgedPackage.modifiers.MakeRedChipModifier;
+import CoinforgedPackage.modifiers.MakeWhiteChipModifier;
 import CoinforgedPackage.util.CardStats;
 
 import static CoinforgedPackage.util.GeneralUtils.removePrefix;
@@ -21,9 +31,10 @@ import static CoinforgedPackage.util.TextureLoader.getCardTextureString;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.function.BiFunction;
 
-public abstract class BaseCard extends CustomCard {
+public abstract class AbstractCoinforgedCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
 
     protected static String makeID(String name) {
@@ -33,6 +44,7 @@ public abstract class BaseCard extends CustomCard {
     protected CardStrings cardStrings;
 
     protected boolean upgradesDescription;
+    protected boolean hasChipModifier = false;
 
     protected int baseCost;
 
@@ -56,17 +68,19 @@ public abstract class BaseCard extends CustomCard {
     protected boolean baseRetain = false;
     protected boolean upgRetain = false;
 
+    private Map<AbstractCardModifier, Integer> chipModifiers = new HashMap<>();
+
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 
-    public BaseCard(String ID, CardStats info) {
+    public AbstractCoinforgedCard(String ID, CardStats info) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
     }
 
-    public BaseCard(String ID, CardStats info, boolean upgradesDescription) {
+    public AbstractCoinforgedCard(String ID, CardStats info, boolean upgradesDescription) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, upgradesDescription);
     }
 
-    public BaseCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color) {
+    public AbstractCoinforgedCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color) {
         super(ID, getName(ID), getCardTextureString(removePrefix(ID), cardType), cost, getInitialDescription(ID),
                 cardType, color, rarity, target);
         this.cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
@@ -86,7 +100,35 @@ public abstract class BaseCard extends CustomCard {
         this.magicUpgrade = 0;
     }
 
-    public BaseCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color,
+    public AbstractCoinforgedCard(String ID, CardStats info, Boolean addChipModifier) {
+        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
+        chipModifiers.put(new MakeOrangeChipModifier(), 3);
+        chipModifiers.put(new MakeBlackChipModifier(), 2);
+        chipModifiers.put(new MakeWhiteChipModifier(), 5);
+        chipModifiers.put(new MakeGrayChipModifier(), 4);
+        chipModifiers.put(new MakeCrackedChipModifier(), 1);
+        chipModifiers.put(new MakeBlueChipModifier(), 3);
+        chipModifiers.put(new MakeRedChipModifier(), 3);
+        chipModifiers.put(new MakeGreenChipModifier(), 10);
+
+        if (addChipModifier && !hasChipModifier) {
+            CardModifierManager.addModifier(this, getRandomChipModifier());
+            hasChipModifier = true;
+        }
+    }
+
+    public AbstractCardModifier getRandomChipModifier() {
+        ArrayList<AbstractCardModifier> weightedList = new ArrayList<>();
+        for (Map.Entry<AbstractCardModifier, Integer> entry : chipModifiers.entrySet()) {
+            for (int i = 0; i < entry.getValue(); i++) {
+                weightedList.add(entry.getKey());
+            }
+        }
+        int randomIndex = new Random().nextInt(weightedList.size());
+        return weightedList.get(randomIndex);
+    }
+
+    public AbstractCoinforgedCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color,
             boolean upgradesDescription) {
         this(ID, cost, cardType, target, rarity, color);
         this.upgradesDescription = upgradesDescription;
@@ -430,37 +472,37 @@ public abstract class BaseCard extends CustomCard {
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard card = super.makeStatEquivalentCopy();
 
-        if (card instanceof BaseCard) {
+        if (card instanceof AbstractCoinforgedCard) {
             card.rawDescription = this.rawDescription;
-            ((BaseCard) card).upgradesDescription = this.upgradesDescription;
+            ((AbstractCoinforgedCard) card).upgradesDescription = this.upgradesDescription;
 
-            ((BaseCard) card).baseCost = this.baseCost;
+            ((AbstractCoinforgedCard) card).baseCost = this.baseCost;
 
-            ((BaseCard) card).upgradeCost = this.upgradeCost;
-            ((BaseCard) card).upgradeDamage = this.upgradeDamage;
-            ((BaseCard) card).upgradeBlock = this.upgradeBlock;
-            ((BaseCard) card).upgradeMagic = this.upgradeMagic;
+            ((AbstractCoinforgedCard) card).upgradeCost = this.upgradeCost;
+            ((AbstractCoinforgedCard) card).upgradeDamage = this.upgradeDamage;
+            ((AbstractCoinforgedCard) card).upgradeBlock = this.upgradeBlock;
+            ((AbstractCoinforgedCard) card).upgradeMagic = this.upgradeMagic;
 
-            ((BaseCard) card).costUpgrade = this.costUpgrade;
-            ((BaseCard) card).damageUpgrade = this.damageUpgrade;
-            ((BaseCard) card).blockUpgrade = this.blockUpgrade;
-            ((BaseCard) card).magicUpgrade = this.magicUpgrade;
+            ((AbstractCoinforgedCard) card).costUpgrade = this.costUpgrade;
+            ((AbstractCoinforgedCard) card).damageUpgrade = this.damageUpgrade;
+            ((AbstractCoinforgedCard) card).blockUpgrade = this.blockUpgrade;
+            ((AbstractCoinforgedCard) card).magicUpgrade = this.magicUpgrade;
 
-            ((BaseCard) card).baseExhaust = this.baseExhaust;
-            ((BaseCard) card).upgExhaust = this.upgExhaust;
-            ((BaseCard) card).baseEthereal = this.baseEthereal;
-            ((BaseCard) card).upgEthereal = this.upgEthereal;
-            ((BaseCard) card).baseInnate = this.baseInnate;
-            ((BaseCard) card).upgInnate = this.upgInnate;
-            ((BaseCard) card).baseRetain = this.baseRetain;
-            ((BaseCard) card).upgRetain = this.upgRetain;
+            ((AbstractCoinforgedCard) card).baseExhaust = this.baseExhaust;
+            ((AbstractCoinforgedCard) card).upgExhaust = this.upgExhaust;
+            ((AbstractCoinforgedCard) card).baseEthereal = this.baseEthereal;
+            ((AbstractCoinforgedCard) card).upgEthereal = this.upgEthereal;
+            ((AbstractCoinforgedCard) card).baseInnate = this.baseInnate;
+            ((AbstractCoinforgedCard) card).upgInnate = this.upgInnate;
+            ((AbstractCoinforgedCard) card).baseRetain = this.baseRetain;
+            ((AbstractCoinforgedCard) card).upgRetain = this.upgRetain;
 
             for (Map.Entry<String, LocalVarInfo> varEntry : cardVariables.entrySet()) {
-                LocalVarInfo target = ((BaseCard) card).getCustomVar(varEntry.getKey()),
+                LocalVarInfo target = ((AbstractCoinforgedCard) card).getCustomVar(varEntry.getKey()),
                         current = varEntry.getValue();
                 if (target == null) {
-                    ((BaseCard) card).setCustomVar(varEntry.getKey(), current.base, current.upgrade);
-                    target = ((BaseCard) card).getCustomVar(varEntry.getKey());
+                    ((AbstractCoinforgedCard) card).setCustomVar(varEntry.getKey(), current.base, current.upgrade);
+                    target = ((AbstractCoinforgedCard) card).getCustomVar(varEntry.getKey());
                 }
                 target.base = current.base;
                 target.value = current.value;
@@ -596,7 +638,7 @@ public abstract class BaseCard extends CustomCard {
     private static class QuickDynamicVariable extends DynamicVariable {
         final String localKey, key;
 
-        private BaseCard current = null;
+        private AbstractCoinforgedCard current = null;
 
         public QuickDynamicVariable(String key) {
             this.localKey = key;
@@ -610,8 +652,8 @@ public abstract class BaseCard extends CustomCard {
 
         @Override
         public void setIsModified(AbstractCard c, boolean v) {
-            if (c instanceof BaseCard) {
-                LocalVarInfo var = ((BaseCard) c).getCustomVar(localKey);
+            if (c instanceof AbstractCoinforgedCard) {
+                LocalVarInfo var = ((AbstractCoinforgedCard) c).getCustomVar(localKey);
                 if (var != null)
                     var.forceModified = v;
             }
@@ -619,22 +661,22 @@ public abstract class BaseCard extends CustomCard {
 
         @Override
         public boolean isModified(AbstractCard c) {
-            return c instanceof BaseCard && (current = (BaseCard) c).isCustomVarModified(localKey);
+            return c instanceof AbstractCoinforgedCard && (current = (AbstractCoinforgedCard) c).isCustomVarModified(localKey);
         }
 
         @Override
         public int value(AbstractCard c) {
-            return c instanceof BaseCard ? ((BaseCard) c).customVar(localKey) : 0;
+            return c instanceof AbstractCoinforgedCard ? ((AbstractCoinforgedCard) c).customVar(localKey) : 0;
         }
 
         @Override
         public int baseValue(AbstractCard c) {
-            return c instanceof BaseCard ? ((BaseCard) c).customVarBase(localKey) : 0;
+            return c instanceof AbstractCoinforgedCard ? ((AbstractCoinforgedCard) c).customVarBase(localKey) : 0;
         }
 
         @Override
         public boolean upgraded(AbstractCard c) {
-            return c instanceof BaseCard && ((BaseCard) c).customVarUpgraded(localKey);
+            return c instanceof AbstractCoinforgedCard && ((AbstractCoinforgedCard) c).customVarUpgraded(localKey);
         }
 
         public Color getNormalColor() {

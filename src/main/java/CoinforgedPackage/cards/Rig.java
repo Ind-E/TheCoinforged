@@ -11,7 +11,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.RigPower;
 import CoinforgedPackage.util.CardStats;
 
-public class Rig extends BaseCard {
+public class Rig extends AbstractCoinforgedCard {
     private static final int CARD_DRAW = 1;
     public static final String ID = makeID(Rig.class.getSimpleName());
     private static final CardStats info = new CardStats(

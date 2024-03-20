@@ -13,7 +13,7 @@ import CoinforgedPackage.powers.DeadlyWagerPower;
 import CoinforgedPackage.powers.StrengthOnlyBuffPower;
 import CoinforgedPackage.util.CardStats;
 
-public class DeadlyWager extends BaseCard {
+public class DeadlyWager extends AbstractCoinforgedCard {
     private static final int ENEMY_STRENGTH_LOSS = 6;
     private static final int UPG_ENEMY_STRENGTH_LOSS = 2;
     private static final int PLAYER_HP_LOSS = 2;

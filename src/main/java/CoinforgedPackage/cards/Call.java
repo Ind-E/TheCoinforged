@@ -9,7 +9,7 @@ import CoinforgedPackage.actions.CallAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class Call extends BaseCard {
+public class Call extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
     private static final int DAMAGE = 10;
