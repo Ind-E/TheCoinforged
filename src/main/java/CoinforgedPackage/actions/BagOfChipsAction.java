@@ -32,7 +32,7 @@ public class BagOfChipsAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty()) {
-                addToTop((AbstractGameAction) new MakeChipsInHandAction(
+                addToTop((AbstractGameAction) new MakeRandomChipsInHandAction(
                         AbstractDungeon.handCardSelectScreen.selectedCards.group.size()));
                 for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                     AbstractDungeon.player.hand.moveToDiscardPile(c);

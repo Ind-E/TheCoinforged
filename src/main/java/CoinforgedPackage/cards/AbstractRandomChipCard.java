@@ -37,7 +37,12 @@ public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard impl
     public AbstractRandomChipCard(String ID, CardStats info, ChipColor chip) {
         super(ID, info);
         this.chip = chip;
-        this.cardsToPreview = getCardToPreview(this.chip);
+        try {
+            this.cardsToPreview = getCardToPreview(this.chip);
+        } catch (NullPointerException e) {
+            System.out.println("Error: " + e);
+        }
+        
         try {
             CardModifierManager.addModifier(this, getModifier(this.chip));
         } catch (NullPointerException e) {

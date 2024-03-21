@@ -1,10 +1,11 @@
 package CoinforgedPackage.cards;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.BuyInAction;
-import CoinforgedPackage.actions.MakeChipsInHandAction;
+import CoinforgedPackage.cards.chips.GreenChip;
 import CoinforgedPackage.character.Coinforged;
 
 public class BuyIn extends AbstractCoinforgedCard {
@@ -23,11 +24,12 @@ public class BuyIn extends AbstractCoinforgedCard {
         setMagic(CHIPS);
         setCostUpgrade(0);
         setExhaust(true);
+        this.cardsToPreview = new GreenChip();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeChipsInHandAction(this.magicNumber));
+        addToBot(new MakeTempCardInHandAction(new GreenChip(), this.magicNumber));
         addToBot(new BuyInAction());
     }
 }

@@ -457,7 +457,7 @@
   },
   "${modID}:BagOfChips": {
     "NAME": "Bag of Chips",
-    "DESCRIPTION": "Discard any number of cards then add that many ${modID}:Poker_Chips into your hand."
+    "DESCRIPTION": "Discard any number of cards then add that many random ${modID}:Poker_Chips into your hand. NL Exhaust."
   },
   "${modID}:Stash": {
     "NAME": "Stash",
@@ -485,7 +485,7 @@
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",
-    "DESCRIPTION": "Add !M! ${modID}:Poker_Chips into your hand. NL Gain [E] for each ${modID}:Poker_Chip in your hand. NL Exhaust."
+    "DESCRIPTION": "Add !M! *Green *Chips into your hand. NL Gain [E] for each ${modID}:Poker_Chip in your hand. NL Exhaust."
   },
   "${modID}:DiceShaker": {
     "NAME": "Dice Shaker",

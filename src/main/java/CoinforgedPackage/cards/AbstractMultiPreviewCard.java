@@ -15,7 +15,7 @@ public abstract class AbstractMultiPreviewCard extends AbstractCoinforgedCard{
     public int previewIndex;
     public ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
     public ArrayList<CardTags> tagsToPreview;
-    private static final float TIMER_DURATION = 1.25F;
+    protected float timerDuration = 1.25F;
 
     public abstract ArrayList<CardTags> getTags();
 
@@ -61,7 +61,7 @@ public abstract class AbstractMultiPreviewCard extends AbstractCoinforgedCard{
 
     public void updatePreview() {
         if (this.rotationTimer <= 0.0F) {
-            this.rotationTimer = TIMER_DURATION;
+            this.rotationTimer = timerDuration;
             if (this.dupeListForPrev.isEmpty()) {
                 this.cardsToPreview = CardLibrary.cards.get("Madness");
             } else {

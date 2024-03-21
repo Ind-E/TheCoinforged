@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
-import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 
 public class Stash extends AbstractRandomChipCard{
@@ -23,7 +22,6 @@ public class Stash extends AbstractRandomChipCard{
     public Stash() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
-        this.cardsToPreview = new WhiteChip();
     }
 
     @Override
