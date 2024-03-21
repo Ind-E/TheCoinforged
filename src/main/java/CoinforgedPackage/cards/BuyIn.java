@@ -22,6 +22,7 @@ public class BuyIn extends AbstractCoinforgedCard {
         super(ID, info);
         setMagic(CHIPS);
         setCostUpgrade(0);
+        setExhaust(true);
     }
 
     @Override

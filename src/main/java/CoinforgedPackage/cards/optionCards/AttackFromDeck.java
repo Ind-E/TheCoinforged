@@ -23,6 +23,13 @@ public class AttackFromDeck extends AbstractCoinforgedCard {
     public AttackFromDeck() {
         super(ID, info);
     }
+    
+    public AttackFromDeck(boolean upgraded) {
+        super(ID, info);
+        if (upgraded) {
+            upgrade();
+        }
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -31,6 +38,6 @@ public class AttackFromDeck extends AbstractCoinforgedCard {
 
     @Override
     public void onChoseThisOption() {
-        addToBot(new AddTypeToHandAction(this.type));
+        addToBot(new AddTypeToHandAction(this.type, this.upgraded));
     }
 }

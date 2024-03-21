@@ -16,8 +16,9 @@ import CoinforgedPackage.util.CardStats;
 
 public class WaveOfGreed extends AbstractCoinforgedCard {
     private static final int DAMAGE = 26;
-    private static final int UPG_DAMAGE = 6;
+    private static final int UPG_DAMAGE = 8;
     private static final int GOLD = 10;
+    private static final int UPG_GOLD = 5;
 
     public static final String ID = makeID(WaveOfGreed.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -30,7 +31,7 @@ public class WaveOfGreed extends AbstractCoinforgedCard {
     public WaveOfGreed() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(GOLD);
+        setMagic(GOLD, UPG_GOLD);
         this.isMultiDamage = true;
         this.exhaust = true;
     }

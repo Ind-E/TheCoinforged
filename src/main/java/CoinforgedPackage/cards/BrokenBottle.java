@@ -21,7 +21,7 @@ public class BrokenBottle extends AbstractCoinforgedCard {
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.ENEMY,
             X_COST);
 

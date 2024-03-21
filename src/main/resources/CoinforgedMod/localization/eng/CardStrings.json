@@ -148,7 +148,7 @@
   "${modID}:LuckOfTheDraw": {
     "NAME": "Luck of the Draw",
     "DESCRIPTION": "Whenever you draw a card, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Whenever you draw a card, gain !M! Block. NL Draw 3 cards"
+    "UPGRADE_DESCRIPTION": "Innate NL Whenever you draw a card, gain !M! Block."
   },
   "${modID}:CardShark": {
     "NAME": "Card Shark",
@@ -269,7 +269,8 @@
   },
   "${modID}:JokerTrick": {
     "NAME": "Joker Trick",
-    "DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs 0 this turn. NL Exhaust"
+    "DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs !M! less this turn. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Choose a card type. NL Put a random card of that type from your draw pile into your hand. NL It costs !M! this turn. NL Exhaust"
   },
   "${modID}:AttackFromDeck": {
     "NAME": "Attack",
@@ -460,8 +461,7 @@
   },
   "${modID}:Stash": {
     "NAME": "Stash",
-    "DESCRIPTION": "Gain !B! Block. Add a ${modID}:Poker_Chip into your hand.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Add a ${modID}:Poker_Chip into your hand and deck."
+    "DESCRIPTION": "Gain !B! Block. Add a ${modID}:Poker_Chip into your hand."
   },
   "${modID}:LowStakes": {
     "NAME": "Low Stakes",
@@ -477,7 +477,7 @@
   },
   "${modID}:GlassShard": {
     "NAME": "Glass Shard",
-    "DESCRIPTION": "Retain. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "Retain. NL Apply !M! Vulnerable. NL Exhaust."
   },
   "${modID}:ChippedBlade": {
     "NAME": "Chipped Blade",
@@ -485,7 +485,7 @@
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",
-    "DESCRIPTION": "Add !M! ${modID}:Poker_Chips into your hand. NL Gain [E] for each ${modID}:Poker_Chip in your hand."
+    "DESCRIPTION": "Add !M! ${modID}:Poker_Chips into your hand. NL Gain [E] for each ${modID}:Poker_Chip in your hand. NL Exhaust."
   },
   "${modID}:DiceShaker": {
     "NAME": "Dice Shaker",
@@ -511,8 +511,7 @@
     "NAME": "Cherry",
     "DESCRIPTION": "Deal damage equal to !M! times your cards in hand.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deals ",
-      " damage.)"
+      " NL (Deals !D! damage.)"
     ]
   },
   "${modID}:Orange": {
@@ -534,7 +533,7 @@
   },
   "${modID}:FinalBet": {
     "NAME": "Final Bet",
-    "DESCRIPTION": "Exhaust all ${modID}:Poker_Chips in your hand. NL Deal !D! damage for each one exhausted. NL Exhaust."
+    "DESCRIPTION": "Exhaust all ${modID}:Poker_Chips in your hand. Deal !D! damage for each one exhausted. NL Exhaust."
   },
   "${modID}:CardCascade": {
     "NAME": "Card Cascade",
@@ -578,6 +577,6 @@
   },
   "${modID}:GoForBroke": {
     "NAME": "Go For Broke",
-    "DESCRIPTION": "Gain !M! ${modID}:Crippling_Debt. NL Whenever you play a card, apply 1 ${modID}:Crippling_Debt to ALL enemies."
+    "DESCRIPTION": "Whenever you play a card, apply 1 ${modID}:Crippling_Debt to ALL enemies."
   }
 }

@@ -39,9 +39,8 @@ public class Cherry extends AbstractCoinforgedCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        int damageAmount = AbstractDungeon.player.hand.size() * this.magicNumber + this.damage;
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0]
-                + damageAmount + cardStrings.EXTENDED_DESCRIPTION[1];
+        this.damage = AbstractDungeon.player.hand.size() * this.magicNumber;
+        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 

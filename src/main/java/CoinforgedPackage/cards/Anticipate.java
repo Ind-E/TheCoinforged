@@ -1,5 +1,7 @@
 package CoinforgedPackage.cards;
 
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,7 +12,7 @@ import CoinforgedPackage.actions.RollPurpleAction;
 import CoinforgedPackage.character.Coinforged;
 
 // card art idea: laying caltrops in front of sleeping lagavulin
-public class Anticipate extends AbstractCoinforgedCard{
+public class Anticipate extends AbstractMultiPreviewCard{
     private static final int BLOCK = 10;
     private static final int UPG_BLOCK = 5;
     private static final int MAGIC = 1;
@@ -34,5 +36,12 @@ public class Anticipate extends AbstractCoinforgedCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new RollPurpleAction(p, this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), 1));
+    }
+
+    @Override
+    public ArrayList<CardTags> getTags() {
+        ArrayList<CardTags> tags = new ArrayList<>();
+        tags.add(CustomTags.PURPLE_DIE);
+        return tags;
     }
 }

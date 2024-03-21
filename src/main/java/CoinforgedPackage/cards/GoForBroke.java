@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.powers.CripplingDebtPower;
 import CoinforgedPackage.powers.GoForBrokePower;
 
 public class GoForBroke extends AbstractCoinforgedCard{
@@ -24,11 +23,11 @@ public class GoForBroke extends AbstractCoinforgedCard{
     public GoForBroke() {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
+        setCostUpgrade(0);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CripplingDebtPower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new GoForBrokePower(p, 1)));
     }
 }

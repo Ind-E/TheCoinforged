@@ -15,7 +15,6 @@ import CoinforgedPackage.util.CardStats;
 
 public class Upswing extends AbstractMultiPreviewCard {
     private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 2;
     private static final int DICE_TO_ROLL = 1;
     private static final int UPG_DICE_TO_ROLL = 1;
 
@@ -29,7 +28,7 @@ public class Upswing extends AbstractMultiPreviewCard {
 
     public Upswing() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setDamage(DAMAGE);
         setMagic(DICE_TO_ROLL, UPG_DICE_TO_ROLL);
     }
 

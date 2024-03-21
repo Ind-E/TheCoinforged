@@ -28,7 +28,7 @@ public class LowStakes extends AbstractCoinforgedCard{
     );
 
     public LowStakes() {
-        super(ID, info, new Boolean(true));
+        super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setBlock(BLOCK, UPG_BLOCK);
         setMagic(MAGIC);

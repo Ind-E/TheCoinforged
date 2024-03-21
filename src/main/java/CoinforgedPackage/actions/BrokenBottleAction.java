@@ -37,13 +37,14 @@ public class BrokenBottleAction extends AbstractGameAction {
         }
         if (effect > 0) {
             for (int i = 0; i < effect; i++) {
-                addToBot(new DamageAction(target, new DamageInfo(this.p, this.damage, this.damageType),
+                addToTop(new DamageAction(target, new DamageInfo(this.p, this.damage, this.damageType),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true));
             }
             if (!this.freeToPlayOnce)
                 this.p.energy.use(EnergyPanel.totalCount);
         }
-        // addToBot(new ApplyPowerAction(target, p, new VulnerablePower(target, effect + 1, false)));
+        // addToBot(new ApplyPowerAction(target, p, new VulnerablePower(target, effect +
+        // 1, false)));
         this.isDone = true;
     }
 }

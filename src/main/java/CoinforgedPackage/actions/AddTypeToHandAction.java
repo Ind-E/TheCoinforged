@@ -15,12 +15,14 @@ import basemod.BaseMod;
 
 public class AddTypeToHandAction extends AbstractGameAction {
     private CardType type;
+    private boolean upgraded;
 
-    public AddTypeToHandAction(CardType type) {
+    public AddTypeToHandAction(CardType type, boolean upgraded) {
         super();
         this.type = type;
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_MED;
+        this.upgraded = upgraded;
     }
 
     public void update() {
@@ -49,7 +51,7 @@ public class AddTypeToHandAction extends AbstractGameAction {
             cardToDraw.targetDrawScale = 0.75F;
             cardToDraw.current_x = CardGroup.DRAW_PILE_X;
             cardToDraw.current_y = CardGroup.DRAW_PILE_Y;
-            cardToDraw.setCostForTurn(0);
+            cardToDraw.setCostForTurn(upgraded ? 0 : cardToDraw.costForTurn - 1);
             p.drawPile.removeCard(cardToDraw);
             AbstractDungeon.player.hand.addToTop(cardToDraw);
             AbstractDungeon.player.hand.refreshHandLayout();

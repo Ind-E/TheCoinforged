@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
-import CoinforgedPackage.actions.MakeChipsInDeckAction;
 import CoinforgedPackage.actions.MakeChipsInHandAction;
 import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
@@ -32,8 +31,5 @@ public class Stash extends AbstractCoinforgedCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new MakeChipsInHandAction(1));
-        if (upgraded) {
-            addToBot(new MakeChipsInDeckAction(1, true));
-        }
     }
 }

@@ -25,22 +25,15 @@ public class JokerTrick extends AbstractCoinforgedCard {
     public JokerTrick() {
         super(ID, info);
         this.exhaust = true;
-    }
-
-    @Override
-    public void upgrade() {
-        if (!upgraded) {
-            super.upgrade();
-            upgradeBaseCost(0);
-        }
+        setMagic(1, 0);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> cardChoices = new ArrayList<>();
-        cardChoices.add(new AttackFromDeck());
-        cardChoices.add(new SkillFromDeck());
-        cardChoices.add(new PowerFromDeck());
+        cardChoices.add(new AttackFromDeck(this.upgraded));
+        cardChoices.add(new SkillFromDeck(this.upgraded));
+        cardChoices.add(new PowerFromDeck(this.upgraded));
         addToBot(new ChooseOneAction(cardChoices));
     }
 

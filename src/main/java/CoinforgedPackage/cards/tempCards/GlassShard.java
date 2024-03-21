@@ -27,10 +27,11 @@ public class GlassShard extends AbstractCoinforgedCard {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
         setSelfRetain(true);
+        setExhaust(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(p, this.magicNumber, false)));
+        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false)));
     }
 }
