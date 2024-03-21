@@ -4,11 +4,10 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
-import CoinforgedPackage.actions.MakeChipsInHandAction;
 import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 
-public class Stash extends AbstractCoinforgedCard{
+public class Stash extends AbstractRandomChipCard{
     private static final int BLOCK = 8;
     private static final int UPG_BLOCK = 3;
 
@@ -30,6 +29,5 @@ public class Stash extends AbstractCoinforgedCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new MakeChipsInHandAction(1));
     }
 }

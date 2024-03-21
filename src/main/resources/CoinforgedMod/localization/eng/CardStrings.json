@@ -461,7 +461,7 @@
   },
   "${modID}:Stash": {
     "NAME": "Stash",
-    "DESCRIPTION": "Gain !B! Block. Add a ${modID}:Poker_Chip into your hand."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "${modID}:LowStakes": {
     "NAME": "Low Stakes",

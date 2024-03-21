@@ -9,6 +9,15 @@ import CoinforgedPackage.cards.chips.CrackedChip;
 import basemod.abstracts.AbstractCardModifier;
 
 public class MakeCrackedChipModifier extends AbstractCardModifier {
+    private boolean removeOnCardPlayed;
+
+    public MakeCrackedChipModifier() {
+        this(true);
+    }
+
+    public MakeCrackedChipModifier(boolean removeOnCardPlayed) {
+        this.removeOnCardPlayed = removeOnCardPlayed;
+    }
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
@@ -24,6 +33,11 @@ public class MakeCrackedChipModifier extends AbstractCardModifier {
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         addToTop(new MakeTempCardInHandAction(new CrackedChip(), 1));
+    }
+
+    @Override
+    public boolean removeOnCardPlayed(AbstractCard card) {
+        return removeOnCardPlayed;
     }
 
     @Override

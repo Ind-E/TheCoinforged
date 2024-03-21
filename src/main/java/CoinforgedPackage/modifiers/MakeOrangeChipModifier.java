@@ -9,7 +9,16 @@ import CoinforgedPackage.cards.chips.OrangeChip;
 import basemod.abstracts.AbstractCardModifier;
 
 public class MakeOrangeChipModifier extends AbstractCardModifier{
-    
+    private boolean removeOnCardPlayed;
+
+    public MakeOrangeChipModifier() {
+        this(true);
+    }
+
+    public MakeOrangeChipModifier(boolean removeOnCardPlayed) {
+        this.removeOnCardPlayed = removeOnCardPlayed;
+    }
+
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
 
@@ -24,6 +33,11 @@ public class MakeOrangeChipModifier extends AbstractCardModifier{
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         addToTop(new MakeTempCardInHandAction(new OrangeChip(), 1));
+    }
+
+    @Override
+    public boolean removeOnCardPlayed(AbstractCard card) {
+        return removeOnCardPlayed;
     }
 
     @Override

@@ -9,6 +9,15 @@ import CoinforgedPackage.cards.chips.GreenChip;
 import basemod.abstracts.AbstractCardModifier;
 
 public class MakeGreenChipModifier extends AbstractCardModifier {
+    private boolean removeOnCardPlayed;
+
+    public MakeGreenChipModifier() {
+        this(true);
+    }
+
+    public MakeGreenChipModifier(boolean removeOnCardPlayed) {
+        this.removeOnCardPlayed = removeOnCardPlayed;
+    }
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
@@ -24,6 +33,11 @@ public class MakeGreenChipModifier extends AbstractCardModifier {
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         addToTop(new MakeTempCardInHandAction(new GreenChip(), 1));
+    }
+
+    @Override
+    public boolean removeOnCardPlayed(AbstractCard card) {
+        return removeOnCardPlayed;
     }
 
     @Override

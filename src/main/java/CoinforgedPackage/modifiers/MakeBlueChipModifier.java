@@ -9,7 +9,15 @@ import CoinforgedPackage.cards.chips.BlueChip;
 import basemod.abstracts.AbstractCardModifier;
 
 public class MakeBlueChipModifier extends AbstractCardModifier {
+    private boolean removeOnCardPlayed;
 
+    public MakeBlueChipModifier() {
+        this(true);
+    }
+
+    public MakeBlueChipModifier(boolean removeOnCardPlayed) {
+        this.removeOnCardPlayed = removeOnCardPlayed;
+    }
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
 
@@ -24,6 +32,11 @@ public class MakeBlueChipModifier extends AbstractCardModifier {
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         addToTop(new MakeTempCardInHandAction(new BlueChip(), 1));
+    }
+
+    @Override
+    public boolean removeOnCardPlayed(AbstractCard card) {
+        return removeOnCardPlayed;
     }
 
     @Override
