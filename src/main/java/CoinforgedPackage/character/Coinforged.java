@@ -106,7 +106,6 @@ public class Coinforged extends CustomPlayer {
         // IDs of starting relics. You can have multiple, but one is recommended.
         retVal.add(CasinoCatalyst.ID);
         retVal.add(LuckRelic.ID);
-
         return retVal;
     }
 

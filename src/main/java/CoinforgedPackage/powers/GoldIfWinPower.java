@@ -14,7 +14,6 @@ public class GoldIfWinPower extends BasePower {
 
     public GoldIfWinPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-        this.amount = amount;
     }
 
     public void updateDescription() {
@@ -22,7 +21,7 @@ public class GoldIfWinPower extends BasePower {
     }
 
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, makeID("GoldIfWinPower")));
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, GoldIfWinPower.POWER_ID));
     }
 
     public void stackPower(int stackAmount) {

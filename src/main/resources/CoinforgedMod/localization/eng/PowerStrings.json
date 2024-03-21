@@ -186,5 +186,12 @@
     "DESCRIPTIONS": [
       "When attacked, draw a card and reduce this by #b1."
     ]
+  },
+  "${modID}:GoForBrokePower": {
+    "NAME": "Gone Broke",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, apply #b",
+      " #yCrippling #yDebt to ALL enemies."
+    ]
   }
 }

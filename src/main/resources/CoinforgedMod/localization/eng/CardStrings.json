@@ -571,5 +571,13 @@
   "${modID}:BlackChip": {
     "NAME": "Black Chip",
     "DESCRIPTION": "${modID}:Poker_Chip. NL Unplayable. NL Counts as 4 ${modID}:Poker_Chips. Always spent first."
+  },
+  "${modID}:DownPayment": {
+    "NAME": "Down Payment",
+    "DESCRIPTION": "Innate. NL Apply !M! ${modID}:Crippling_Debt. NL Exhaust."
+  },
+  "${modID}:GoForBroke": {
+    "NAME": "Go For Broke",
+    "DESCRIPTION": "Gain !M! ${modID}:Crippling_Debt. NL Whenever you play a card, apply 1 ${modID}:Crippling_Debt to ALL enemies."
   }
 }
