@@ -14,7 +14,7 @@ import CoinforgedPackage.powers.RedKingPower;
 import CoinforgedPackage.util.CardStats;
 import basemod.helpers.CardModifierManager;
 
-public class RedKing extends AbstractMultiPreviewCard {
+public class RedKing extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 2;
     private static final int UPG_DICE_TO_ROLL = 2;
 
@@ -28,7 +28,7 @@ public class RedKing extends AbstractMultiPreviewCard {
             1);
 
     public RedKing() {
-        super(ID, info);
+        super(ID, info, true);
         setMagic(DICE_TO_ROLL, UPG_DICE_TO_ROLL);
     }
 

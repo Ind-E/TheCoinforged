@@ -1,11 +1,14 @@
 package CoinforgedPackage.cards;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import CoinforgedPackage.cards.chips.BlackChip;
 import CoinforgedPackage.cards.chips.BlueChip;
 import CoinforgedPackage.cards.chips.CrackedChip;
@@ -27,56 +30,94 @@ import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.CardModifierManager;
 
-public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard implements CustomSavable<Integer>{
+public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard implements CustomSavable<Integer> {
     protected ChipColor chip;
+    protected boolean removeModifierOnPlay;
+    protected HashMap<ChipColor, Integer> chipWeights = null;
+
+    public static ChipColor getRandomChip(HashMap<ChipColor, Integer> chipWeights) {
+        if (!CardCrawlGame.isInARun() || AbstractDungeon.miscRng == null) {
+            return null;
+        } else if (chipWeights == null) {
+            return intToChip(AbstractDungeon.miscRng.random(ChipColor.values().length - 1));
+        } else {
+            ArrayList<ChipColor> weightedChipColors = new ArrayList<>();
+            for (Map.Entry<ChipColor, Integer> entry : chipWeights.entrySet()) {
+                for (int i = 0; i < entry.getValue(); i++) {
+                    weightedChipColors.add(entry.getKey());
+                }
+            }
+            return weightedChipColors.get(AbstractDungeon.miscRng.random(weightedChipColors.size() - 1));
+        }
+
+    }
+
+    protected HashMap<ChipColor, Integer> getChipWeights() {
+        HashMap<ChipColor, Integer> weights = new HashMap<>();
+        for (ChipColor color : ChipColor.values()) {
+            weights.put(color, 1); // Default weight
+        }
+        return weights;
+    }
+
+    public AbstractRandomChipCard(String ID, CardStats info, boolean removeModifierOnPlay) {
+        this(ID, info, getRandomChip(null), null, removeModifierOnPlay);
+    }
 
     public AbstractRandomChipCard(String ID, CardStats info) {
-        this(ID, info, !CardCrawlGame.isInARun() || AbstractDungeon.miscRng == null ? null : intToChip(AbstractDungeon.miscRng.random(ChipColor.values().length - 1)));
+        this(ID, info, getRandomChip(null), null, true);
     }
-    
+
+    public AbstractRandomChipCard(String ID, CardStats info, HashMap<ChipColor, Integer> chipWeights,
+            boolean removeModifierOnPlay) {
+        this(ID, info, getRandomChip(chipWeights), chipWeights, removeModifierOnPlay);
+    }
+
     public AbstractRandomChipCard(String ID, CardStats info, ChipColor chip) {
+        this(ID, info, chip, null, true);
+    }
+
+    public AbstractRandomChipCard(String ID, CardStats info, ChipColor chip, HashMap<ChipColor, Integer> chipWeights,
+            boolean removeModifierOnPlay) {
         super(ID, info);
         this.chip = chip;
+        this.removeModifierOnPlay = removeModifierOnPlay;
+        this.chipWeights = chipWeights;
+        if (this.chipWeights == null) {
+            this.chipWeights = getChipWeights();
+        }
+
         try {
             this.cardsToPreview = getCardToPreview(this.chip);
         } catch (NullPointerException e) {
             System.out.println("Error: " + e);
         }
-        
+
         try {
-            CardModifierManager.addModifier(this, getModifier(this.chip));
+            CardModifierManager.addModifier(this, getModifier(this.chip, removeModifierOnPlay));
         } catch (NullPointerException e) {
             System.out.println("Error: " + e);
         }
-        // CardModifierManager.addModifier(this, getModifier(this.chip));
     }
 
-    @Override
-    public void use(AbstractPlayer arg0, AbstractMonster arg1) {
-        AbstractCardModifier chipToMake = getModifier(this.chip);
-        if (chipToMake != null) {
-            CardModifierManager.addModifier(this, chipToMake);
-        }
-    }
-
-    protected static AbstractCardModifier getModifier(ChipColor chip) {
+    protected static AbstractCardModifier getModifier(ChipColor chip, boolean removeModifierOnPlay) {
         switch (chip) {
             case Blue:
-                return new MakeBlueChipModifier();
+                return new MakeBlueChipModifier(removeModifierOnPlay);
             case Black:
-                return new MakeBlackChipModifier();
+                return new MakeBlackChipModifier(removeModifierOnPlay);
             case Cracked:
-                return new MakeCrackedChipModifier();
+                return new MakeCrackedChipModifier(removeModifierOnPlay);
             case Gray:
-                return new MakeGrayChipModifier();
+                return new MakeGrayChipModifier(removeModifierOnPlay);
             case Green:
-                return new MakeGreenChipModifier();
+                return new MakeGreenChipModifier(removeModifierOnPlay);
             case Orange:
-                return new MakeOrangeChipModifier();
+                return new MakeOrangeChipModifier(removeModifierOnPlay);
             case Red:
-                return new MakeRedChipModifier();
+                return new MakeRedChipModifier(removeModifierOnPlay);
             case White:
-                return new MakeWhiteChipModifier();
+                return new MakeWhiteChipModifier(removeModifierOnPlay);
             default:
                 return null;
         }
@@ -151,28 +192,33 @@ public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard impl
         }
     }
 
+    public abstract AbstractCard makeCopy();
+
     @Override
     public Integer onSave() {
         return chipToInt(this.chip);
     }
 
     @Override
+    public Type savedType() {
+        return new TypeToken<Integer>() {
+        }.getType();
+    }
+
+    @Override
     public void onLoad(Integer n) {
         this.chip = intToChip(n);
-        CardModifierManager.addModifier(this, getModifier(chip));
     }
 
     public enum ChipColor {
-        Black,   // 0
-        Blue,    // 1
+        Black, // 0
+        Blue, // 1
         Cracked, // 2
-        Gray,    // 3
-        Green,   // 4
-        Orange,  // 5
-        Red,     // 6
-        White    // 7
+        Gray, // 3
+        Green, // 4
+        Orange, // 5
+        Red, // 6
+        White // 7
     }
-
-    
 
 }

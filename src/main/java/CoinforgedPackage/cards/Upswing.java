@@ -13,7 +13,7 @@ import CoinforgedPackage.actions.RollBlueAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class Upswing extends AbstractMultiPreviewCard {
+public class Upswing extends AbstractCoinforgedCard {
     private static final int DAMAGE = 8;
     private static final int DICE_TO_ROLL = 1;
     private static final int UPG_DICE_TO_ROLL = 1;
@@ -27,7 +27,7 @@ public class Upswing extends AbstractMultiPreviewCard {
             1);
 
     public Upswing() {
-        super(ID, info);
+        super(ID, info, true);
         setDamage(DAMAGE);
         setMagic(DICE_TO_ROLL, UPG_DICE_TO_ROLL);
     }

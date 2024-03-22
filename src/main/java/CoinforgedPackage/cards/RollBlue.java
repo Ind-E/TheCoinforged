@@ -10,7 +10,7 @@ import CoinforgedPackage.actions.RollBlueAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class RollBlue extends AbstractMultiPreviewCard {
+public class RollBlue extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 1;
     private static final int UPG_DICE_TO_ROLL = 1;
 
@@ -23,7 +23,7 @@ public class RollBlue extends AbstractMultiPreviewCard {
             0);
 
     public RollBlue() {
-        super(ID, info);
+        super(ID, info, true);
         setMagic(DICE_TO_ROLL, UPG_DICE_TO_ROLL);
     }
 

@@ -9,7 +9,7 @@ import CoinforgedPackage.actions.BagOfChipsAction;
 import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 
-public class BagOfChips extends AbstractMultiPreviewCard{
+public class BagOfChips extends AbstractCoinforgedCard{
 
     public static final String ID = makeID(BagOfChips.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -21,7 +21,7 @@ public class BagOfChips extends AbstractMultiPreviewCard{
     );
 
     public BagOfChips() {
-        super(ID, info);
+        super(ID, info, true);
         this.cardsToPreview = new WhiteChip();
         setCostUpgrade(0);
         this.timerDuration = 1.75f;

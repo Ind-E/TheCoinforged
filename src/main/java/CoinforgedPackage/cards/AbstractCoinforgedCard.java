@@ -1,28 +1,21 @@
 package CoinforgedPackage.cards;
 
 import basemod.BaseMod;
-import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
-import basemod.helpers.CardModifierManager;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.CoinforgedMain;
-import CoinforgedPackage.modifiers.MakeBlackChipModifier;
-import CoinforgedPackage.modifiers.MakeBlueChipModifier;
-import CoinforgedPackage.modifiers.MakeCrackedChipModifier;
-import CoinforgedPackage.modifiers.MakeGrayChipModifier;
-import CoinforgedPackage.modifiers.MakeGreenChipModifier;
-import CoinforgedPackage.modifiers.MakeOrangeChipModifier;
-import CoinforgedPackage.modifiers.MakeRedChipModifier;
-import CoinforgedPackage.modifiers.MakeWhiteChipModifier;
 import CoinforgedPackage.util.CardStats;
 
 import static CoinforgedPackage.util.GeneralUtils.removePrefix;
@@ -31,7 +24,6 @@ import static CoinforgedPackage.util.TextureLoader.getCardTextureString;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.function.BiFunction;
 
 public abstract class AbstractCoinforgedCard extends CustomCard {
@@ -68,19 +60,25 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     protected boolean baseRetain = false;
     protected boolean upgRetain = false;
 
-    private Map<AbstractCardModifier, Integer> chipModifiers = new HashMap<>();
+    protected float rotationTimer;
+    protected int previewIndex;
+    protected ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
+    protected boolean isMultiPreview;
+    protected ArrayList<CardTags> multiPreviewTags;
+    protected float timerDuration = 1.25F;
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 
     public AbstractCoinforgedCard(String ID, CardStats info) {
-        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
+        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, false);
     }
 
-    public AbstractCoinforgedCard(String ID, CardStats info, boolean upgradesDescription) {
-        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, upgradesDescription);
+    public AbstractCoinforgedCard(String ID, CardStats info, boolean isMultiPreview) {
+        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, isMultiPreview);
     }
 
-    public AbstractCoinforgedCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color) {
+    public AbstractCoinforgedCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity,
+            CardColor color, boolean isMultiPreview) {
         super(ID, getName(ID), getCardTextureString(removePrefix(ID), cardType), cost, getInitialDescription(ID),
                 cardType, color, rarity, target);
         this.cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
@@ -98,40 +96,73 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
         this.damageUpgrade = 0;
         this.blockUpgrade = 0;
         this.magicUpgrade = 0;
-    }
 
-    public AbstractCoinforgedCard(String ID, CardStats info, Boolean addChipModifier) {
-        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
-        chipModifiers.put(new MakeOrangeChipModifier(), 3);
-        chipModifiers.put(new MakeBlackChipModifier(), 2);
-        chipModifiers.put(new MakeWhiteChipModifier(), 5);
-        chipModifiers.put(new MakeGrayChipModifier(), 4);
-        chipModifiers.put(new MakeCrackedChipModifier(), 1);
-        chipModifiers.put(new MakeBlueChipModifier(), 3);
-        chipModifiers.put(new MakeRedChipModifier(), 3);
-        chipModifiers.put(new MakeGreenChipModifier(), 10);
-
-        if (addChipModifier && !hasChipModifier) {
-            CardModifierManager.addModifier(this, getRandomChipModifier());
-            hasChipModifier = true;
+        this.isMultiPreview = isMultiPreview;
+        if (isMultiPreview && getTags() == null) {
+            throw new IllegalStateException("getTags() must be overridden when isMultiPreview is true");
+        }
+        if (isMultiPreview) {
+            this.multiPreviewTags = getTags();
+            this.cardsToPreview = CardLibrary.cards.get("Madness");
         }
     }
 
-    public AbstractCardModifier getRandomChipModifier() {
-        ArrayList<AbstractCardModifier> weightedList = new ArrayList<>();
-        for (Map.Entry<AbstractCardModifier, Integer> entry : chipModifiers.entrySet()) {
-            for (int i = 0; i < entry.getValue(); i++) {
-                weightedList.add(entry.getKey());
+    public ArrayList<CardTags> getTags() {
+        return null;
+    }
+
+    public ArrayList<AbstractCard> getList() {
+        ArrayList<AbstractCard> myList = new ArrayList<>();
+        for (AbstractCard q : CardLibrary.getAllCards()) {
+            for (CardTags tag : multiPreviewTags) {
+                if (q.hasTag(tag) && q.damage <= 6) { // damage <= 6 b/c red dice go up to 10
+                    AbstractCard r = q.makeCopy();
+                    myList.add(r);
+                    break;
+                }
             }
         }
-        int randomIndex = new Random().nextInt(weightedList.size());
-        return weightedList.get(randomIndex);
+        return myList;
     }
 
-    public AbstractCoinforgedCard(String ID, int cost, CardType cardType, CardTarget target, CardRarity rarity, CardColor color,
-            boolean upgradesDescription) {
-        this(ID, cost, cardType, target, rarity, color);
-        this.upgradesDescription = upgradesDescription;
+    @Override
+    public void renderCardPreviewInSingleView(SpriteBatch sb) {
+        if (!isMultiPreview) {
+            super.renderCardPreviewInSingleView(sb);
+            return;
+        }
+        if (this.dupeListForPrev.isEmpty()) {
+            this.dupeListForPrev.addAll(getList());
+        }
+        updatePreview();
+        super.renderCardPreviewInSingleView(sb);
+    }
+
+    public void updatePreview() {
+        if (this.rotationTimer <= 0.0F) {
+            this.rotationTimer = timerDuration;
+            if (this.dupeListForPrev.isEmpty()) {
+                this.cardsToPreview = CardLibrary.cards.get("Madness");
+            } else {
+                this.cardsToPreview = this.dupeListForPrev.get(this.previewIndex);
+            }
+            this.previewIndex = (this.previewIndex + 1) % this.dupeListForPrev.size();
+        } else {
+            this.rotationTimer -= Gdx.graphics.getDeltaTime();
+        }
+    }
+
+    @Override
+    public void update() {
+        super.update();
+        if (!isMultiPreview)
+            return;
+        if (this.dupeListForPrev.isEmpty()) {
+            this.dupeListForPrev.addAll(getList());
+        }
+        if (this.hb.hovered) {
+            updatePreview();
+        }
     }
 
     private static String getName(String ID) {
@@ -661,7 +692,8 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
 
         @Override
         public boolean isModified(AbstractCard c) {
-            return c instanceof AbstractCoinforgedCard && (current = (AbstractCoinforgedCard) c).isCustomVarModified(localKey);
+            return c instanceof AbstractCoinforgedCard
+                    && (current = (AbstractCoinforgedCard) c).isCustomVarModified(localKey);
         }
 
         @Override

@@ -12,7 +12,7 @@ import CoinforgedPackage.actions.RollRedAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class DiceShaker extends AbstractMultiPreviewCard {
+public class DiceShaker extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
@@ -25,7 +25,7 @@ public class DiceShaker extends AbstractMultiPreviewCard {
             1);
 
     public DiceShaker() {
-        super(ID, info);
+        super(ID, info, true);
         setMagic(MAGIC, UPG_MAGIC);
     }
 

@@ -3,12 +3,12 @@ package CoinforgedPackage.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import CoinforgedPackage.util.CardStats;
-import CoinforgedPackage.cards.chips.WhiteChip;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
 
@@ -30,7 +30,12 @@ public class ChippedBlade extends AbstractRandomChipCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(MAGIC, UPG_MAGIC);
-        this.cardsToPreview = new WhiteChip();
+    }
+
+    public ChippedBlade(ChipColor chip) {
+        super(ID, info, chip);
+        setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
@@ -38,5 +43,10 @@ public class ChippedBlade extends AbstractRandomChipCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.NONE));
         addToBot(new ApplyPowerAction(m, p, new CripplingDebtPower(m, this.magicNumber)));
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return this.chip == null ? new ChippedBlade() : new ChippedBlade(this.chip);
     }
 }

@@ -13,7 +13,7 @@ import CoinforgedPackage.actions.RollRedAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-public class PrismaticRoll extends AbstractMultiPreviewCard {
+public class PrismaticRoll extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 1;
 
     public static final String ID = makeID(PrismaticRoll.class.getSimpleName());
@@ -25,7 +25,7 @@ public class PrismaticRoll extends AbstractMultiPreviewCard {
             2);
 
     public PrismaticRoll() {
-        super(ID, info);
+        super(ID, info, true);
         setMagic(DICE_TO_ROLL);
         setExhaust(true, false);
         this.exhaust = true;

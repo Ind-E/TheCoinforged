@@ -14,7 +14,7 @@ import CoinforgedPackage.powers.LoadedDicePower;
 import CoinforgedPackage.util.CardStats;
 import basemod.helpers.CardModifierManager;
 
-public class PocketPair extends AbstractMultiPreviewCard {
+public class PocketPair extends AbstractCoinforgedCard {
     private static final int DICE_TO_ROLL = 2;
 
     public static final String ID = makeID(PocketPair.class.getSimpleName());
@@ -26,7 +26,7 @@ public class PocketPair extends AbstractMultiPreviewCard {
             1);
 
     public PocketPair() {
-        super(ID, info);
+        super(ID, info, true);
         this.exhaust = true;
         setMagic(DICE_TO_ROLL);
     }
