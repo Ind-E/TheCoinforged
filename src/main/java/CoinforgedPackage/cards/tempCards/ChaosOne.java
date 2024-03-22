@@ -12,7 +12,7 @@ import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScre
 
 @NoCompendium
 public class ChaosOne extends AbstractCoinforgedCard {
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 1;
 
     public static final String ID = makeID(ChaosOne.class.getSimpleName());

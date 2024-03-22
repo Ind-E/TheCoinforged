@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rethink
 public class Jackpot extends AbstractCoinforgedCard {
     private static final int CARD_DRAW = 5;
     private static final int UPG_CARD_DRAW = 5;

@@ -25,7 +25,8 @@ public class ChaosForm extends AbstractCoinforgedCard {
     public ChaosForm() {
         super(ID, info, true);
         setMagic(MAGIC);
-        this.isEthereal = true;
+        setEthereal(true);
+        this.rotationTimer = 1.5F;
     }
 
     public void upgrade() {

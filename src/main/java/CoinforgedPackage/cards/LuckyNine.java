@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TOD: rebalance/rethink
 public class LuckyNine extends AbstractCoinforgedCard {
     private static final int MAGIC = 9;
 

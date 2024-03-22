@@ -25,7 +25,7 @@ All In,0,ATTACK,RARE,"coinforged:Chip !M!: Deal !D! damage to ALL enemies. If yo
 Attack,-2,ATTACK,SPECIAL,"Put a random Attack from your draw pile into your hand. NL It costs 0 this turn."
 High Roller,1,POWER,UNCOMMON,"Whenever you play a *Six, draw a card."
 Grapes,0,SKILL,UNCOMMON,"Ethereal. NL Increase a card's Block and damage by !M! this combat. Add a copy of this card into your hand that costs 1 more. NL Exhaust."
-Card Cascade,1,SKILL,UNCOMMON,"Whenever you draw a card this turn, deal !M! damage to a random enemy."
+Card Cascade,1,SKILL,UNCOMMON,"Whenever you draw a card this turn, deal !M! damage to a random enemy. NL Draw a card."
 Roll Red,1,SKILL,BASIC,"Roll !M! coinforged:Red_Dice."
 Cash Advance,0,SKILL,BASIC,"Draw !M! Cards. NL Draw 1 less card next turn."
 Lucky Eight,1,SKILL,UNCOMMON,"Gain !B! Block. NL If this is the 8th card you've played this turn, gain 8 Thorns."

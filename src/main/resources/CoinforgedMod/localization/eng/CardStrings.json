@@ -537,7 +537,7 @@
   },
   "${modID}:CardCascade": {
     "NAME": "Card Cascade",
-    "DESCRIPTION": "Whenever you draw a card this turn, deal !M! damage to a random enemy."
+    "DESCRIPTION": "Whenever you draw a card this turn, deal !M! damage to a random enemy. NL Draw a card."
   },
   "${modID}:CardCount": {
     "NAME": "Card Count",

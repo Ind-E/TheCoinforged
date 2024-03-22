@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 
+//TODO: adjust color weights, add description for compendium.
 public class Stash extends AbstractRandomChipCard{
     private static final int BLOCK = 8;
     private static final int UPG_BLOCK = 3;

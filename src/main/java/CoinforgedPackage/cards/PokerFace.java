@@ -9,6 +9,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.PokerFacePower;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rethink
 public class PokerFace extends AbstractCoinforgedCard {
 
     public static final String ID = makeID(PokerFace.class.getSimpleName());

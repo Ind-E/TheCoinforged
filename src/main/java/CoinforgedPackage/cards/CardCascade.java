@@ -1,6 +1,7 @@
 package CoinforgedPackage.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,6 +13,7 @@ import CoinforgedPackage.util.CardStats;
 public class CardCascade extends AbstractCoinforgedCard {
     private static final int MAGIC = 5;
     private static final int UPG_MAGIC = 2;
+    private static final int DRAW = 1;
 
     public static final String ID = makeID(CardCascade.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -29,6 +31,7 @@ public class CardCascade extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new CardCascadePower(p, this.magicNumber)));
+        addToBot(new DrawCardAction(DRAW));
     }
 
     @Override

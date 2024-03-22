@@ -14,6 +14,7 @@ import CoinforgedPackage.actions.SpendChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: remove/rework
 public class AllIn extends AbstractCoinforgedCard {
     private static final int DAMAGE = 100;
     private static final int MAGIC = 10;

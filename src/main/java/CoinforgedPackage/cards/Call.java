@@ -9,6 +9,7 @@ import CoinforgedPackage.actions.CallAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rethink
 public class Call extends AbstractCoinforgedCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;

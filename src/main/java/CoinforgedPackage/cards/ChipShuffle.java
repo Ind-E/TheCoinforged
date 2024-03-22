@@ -10,6 +10,7 @@ import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.actions.ChipShuffleAction;
 import CoinforgedPackage.character.Coinforged;
 
+//TODO: rethink
 public class ChipShuffle extends AbstractCoinforgedCard {
     public static final int BLOCK = 2;
 
