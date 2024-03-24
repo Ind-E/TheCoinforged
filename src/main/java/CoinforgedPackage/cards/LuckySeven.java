@@ -35,7 +35,7 @@ public class LuckySeven extends AbstractCoinforgedCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 7) {
-            addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true),
+            addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, false),
                     DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         }
     }

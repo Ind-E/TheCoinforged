@@ -35,7 +35,8 @@ public class GeneralUtils {
         int chips = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c instanceof BlackChip) {
-                chips+= 3;
+                chips+= BlackChip.BlackChipValue;
+                continue;
             }
             if (c.hasTag(CustomTags.POKER_CHIP)) {
                 chips++;

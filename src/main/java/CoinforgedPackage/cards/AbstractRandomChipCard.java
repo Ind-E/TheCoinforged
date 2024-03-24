@@ -87,16 +87,9 @@ public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard impl
             this.chipWeights = getChipWeights();
         }
 
-        try {
+        if (this.chip != null) {
             this.cardsToPreview = getCardToPreview(this.chip);
-        } catch (NullPointerException e) {
-            System.out.println("Error: " + e);
-        }
-
-        try {
             CardModifierManager.addModifier(this, getModifier(this.chip, removeModifierOnPlay));
-        } catch (NullPointerException e) {
-            System.out.println("Error: " + e);
         }
     }
 

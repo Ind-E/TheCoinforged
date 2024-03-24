@@ -2,50 +2,36 @@ package CoinforgedPackage.cards;
 
 import static CoinforgedPackage.util.GeneralUtils.getNumChips;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import CoinforgedPackage.actions.IfChipsAction;
 import CoinforgedPackage.actions.SpendChipsAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
-//TODO: remove/rework
 public class AllIn extends AbstractCoinforgedCard {
-    private static final int DAMAGE = 100;
-    private static final int MAGIC = 10;
-    private static final int UPG_MAGIC = -2;
 
     public static final String ID = makeID(AllIn.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.RARE,
-            CardTarget.ALL_ENEMY,
-            0);
+            CardTarget.ENEMY,
+            1);
 
     public AllIn() {
         super(ID, info);
-        setDamage(DAMAGE);
-        setMagic(MAGIC, UPG_MAGIC);
-        this.isMultiDamage = true;
+        setExhaust(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int chips = getNumChips();
-        if (chips >= this.magicNumber) {
-            addToBot(new IfChipsAction(this.magicNumber,
-                    new DamageAllEnemiesAction(p, multiDamage, DamageType.NORMAL, AttackEffect.SLASH_HORIZONTAL)));
-        } else {
-            addToBot(new SpendChipsAction(chips, true));
-            setMagic(this.magicNumber - chips);
-            initializeDescription();
-        }
+        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -chips - (upgraded ? 1 : 0))));
+        addToBot(new SpendChipsAction(chips));
     }
 
     @Override

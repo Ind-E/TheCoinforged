@@ -69,6 +69,7 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 
+    //TODO: multi preview doesn't work when single view upgraded
     public AbstractCoinforgedCard(String ID, CardStats info) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, false);
     }

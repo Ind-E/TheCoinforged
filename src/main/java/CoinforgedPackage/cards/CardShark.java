@@ -38,11 +38,11 @@ public class CardShark extends AbstractCoinforgedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hand.getBottomCard().uuid == this.uuid) {
             if (Settings.FAST_MODE) {
-                addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.GREEN)));
+                addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SKY)));
                 for (int i = 0; i < 5; i++)
                     addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
             } else {
-                addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.GREEN), 0.4F));
+                addToBot(new VFXAction(new ViolentAttackEffect(m.hb.cX, m.hb.cY, Color.SKY), 0.4F));
                 for (int i = 0; i < 5; i++)
                     addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
             }

@@ -13,7 +13,8 @@
   },
   "${modID}:AllIn": {
     "NAME": "All In",
-    "DESCRIPTION": "${modID}:Chip !M!: Deal !D! damage to ALL enemies. If you can't afford the chip cost, exhaust all ${modID}:Poker_Chips in hand and reduce it by that much."
+    "DESCRIPTION": "${modID}:Chip X: Enemey loses X Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Chip X: Enemy loses X+1 Strength. NL Exhaust."
   },
   "${modID}:RiskyInvestment": {
     "NAME": "Risky Investment",
@@ -157,11 +158,6 @@
   "${modID}:BlazingTactics": {
     "NAME": "Blazing Tactics",
     "DESCRIPTION": "Gain [E] . NL ${modID}:Chip 1: draw !M! cards."
-  },
-  "${modID}:Call": {
-    "NAME": "Call",
-    "DESCRIPTION": "Discard a card. NL Attack: deal !D! damage to a random enemy. NL Skill: apply !M! Weak to all enemies. NL Power: gain [E] [E].",
-    "UPGRADE_DESCRIPTION": "Discard a card. NL Attack: deal !D! damage to a random enemy. NL Skill: apply !M! Weak to all enemies. NL Power: gain [E] [E] [E]."
   },
   "${modID}:Bluff": {
     "NAME": "Bluff",
@@ -365,8 +361,7 @@
   },
   "${modID}:Underdog": {
     "NAME": "Underdog",
-    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage for each Curse in your deck. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Deal !D! damage for each Curse in your deck."
+    "DESCRIPTION": "Deal !D! damage. NL  If your HP is lower than the enemy's, this deals triple damage."
   },
   "${modID}:InvigoratingRiffle": {
     "NAME": "Invigorating Riffle",
@@ -481,7 +476,7 @@
   },
   "${modID}:ChippedBlade": {
     "NAME": "Chipped Blade",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt. Add a ${modID}:Poker_Chip into your hand."
+    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt."
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",
@@ -520,7 +515,7 @@
   },
   "${modID}:Blitz": {
     "NAME": "Blitz",
-    "DESCRIPTION": "Whenever you attack this turn, gain [E]. NL Drawing cards is forbidden this turn."
+    "DESCRIPTION": "You cannot draw additional cards this turn. Whenever you attack this turn, gain [E]."
   },
   "${modID}:Anticipate": {
     "NAME": "Anticipate",
@@ -569,7 +564,7 @@
   },
   "${modID}:BlackChip": {
     "NAME": "Black Chip",
-    "DESCRIPTION": "${modID}:Poker_Chip. NL Unplayable. NL Counts as 4 ${modID}:Poker_Chips. Always spent first."
+    "DESCRIPTION": "${modID}:Poker_Chip. NL Unplayable. NL Counts as !M! ${modID}:Poker_Chips. Always spent first."
   },
   "${modID}:DownPayment": {
     "NAME": "Down Payment",
@@ -578,5 +573,10 @@
   "${modID}:GoForBroke": {
     "NAME": "Go For Broke",
     "DESCRIPTION": "Whenever you play a card, apply 1 ${modID}:Crippling_Debt to ALL enemies."
+  },
+  "${modID}:Reevaluate": {
+    "NAME": "Reevaluate",
+    "DESCRIPTION": "Discard a card. Gain Block equal to its damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard a card. Gain Block equal to its damage."
   }
 }
