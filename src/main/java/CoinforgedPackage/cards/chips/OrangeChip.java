@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
 import CoinforgedPackage.powers.ModifiedHandSizePower;
 
 public class OrangeChip extends BaseChip {
@@ -16,6 +18,7 @@ public class OrangeChip extends BaseChip {
         setMagic(1);
         this.cost = costForTurn = 0;
         this.canUse = true;
+        this.chipColor = ChipColor.Orange;
     }
 
     @Override

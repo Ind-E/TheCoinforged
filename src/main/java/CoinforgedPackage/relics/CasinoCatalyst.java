@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 import CoinforgedPackage.character.Coinforged;
@@ -36,6 +37,9 @@ public class CasinoCatalyst extends BaseRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
+        if (AbstractDungeon.getCurrRoom().monsters == null || AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead() || AbstractDungeon.actionManager.turnHasEnded || AbstractDungeon.getCurrRoom().phase != RoomPhase.COMBAT) {
+            return;
+        }
         if (counter < 1) {
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX,
                     AbstractDungeon.player.dialogY, 3.0F, this.DESCRIPTIONS[1], true));
@@ -49,6 +53,7 @@ public class CasinoCatalyst extends BaseRelic implements ClickableRelic {
 
     @Override
     public void atBattleStart() {
+        this.usedThisCombat = false;
         this.bossOrElite = AbstractDungeon.getMonsters().monsters.stream()
                 .anyMatch(m -> m.type == EnemyType.BOSS || m.type == EnemyType.ELITE);
     }
@@ -58,12 +63,13 @@ public class CasinoCatalyst extends BaseRelic implements ClickableRelic {
         if (!usedThisCombat && AbstractDungeon.player.hasRelic(LuckRelic.ID)) {
             LuckRelic luckRelic = (LuckRelic) AbstractDungeon.player.getRelic(LuckRelic.ID);
             if (luckRelic != null) {
-                flash();
+                luckRelic.flash();
                 luckRelic.setCounter(luckRelic.getCounter() + 1);
             }
         }
         if (bossOrElite) {
             setCounter(this.counter + 1);
+            flash();
         }
     }
 

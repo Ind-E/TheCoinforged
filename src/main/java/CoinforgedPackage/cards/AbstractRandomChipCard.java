@@ -17,16 +17,8 @@ import CoinforgedPackage.cards.chips.GreenChip;
 import CoinforgedPackage.cards.chips.OrangeChip;
 import CoinforgedPackage.cards.chips.RedChip;
 import CoinforgedPackage.cards.chips.WhiteChip;
-import CoinforgedPackage.modifiers.MakeBlackChipModifier;
-import CoinforgedPackage.modifiers.MakeBlueChipModifier;
-import CoinforgedPackage.modifiers.MakeCrackedChipModifier;
-import CoinforgedPackage.modifiers.MakeGrayChipModifier;
-import CoinforgedPackage.modifiers.MakeGreenChipModifier;
-import CoinforgedPackage.modifiers.MakeOrangeChipModifier;
-import CoinforgedPackage.modifiers.MakeRedChipModifier;
-import CoinforgedPackage.modifiers.MakeWhiteChipModifier;
+import CoinforgedPackage.modifiers.ChipModifier;
 import CoinforgedPackage.util.CardStats;
-import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.CardModifierManager;
 
@@ -88,37 +80,13 @@ public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard impl
         }
 
         if (this.chip != null) {
-            this.cardsToPreview = getCardToPreview(this.chip);
-            CardModifierManager.addModifier(this, getModifier(this.chip, removeModifierOnPlay));
+            CardModifierManager.addModifier(this, new ChipModifier(chip, removeModifierOnPlay));
         }
         if (CardCrawlGame.isInARun()) {
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
             this.initializeDescription();
         }
         this.keywords.add("${modID}:Poker_Chip");
-    }
-
-    protected static AbstractCardModifier getModifier(ChipColor chip, boolean removeModifierOnPlay) {
-        switch (chip) {
-            case Blue:
-                return new MakeBlueChipModifier(removeModifierOnPlay);
-            case Black:
-                return new MakeBlackChipModifier(removeModifierOnPlay);
-            case Cracked:
-                return new MakeCrackedChipModifier(removeModifierOnPlay);
-            case Gray:
-                return new MakeGrayChipModifier(removeModifierOnPlay);
-            case Green:
-                return new MakeGreenChipModifier(removeModifierOnPlay);
-            case Orange:
-                return new MakeOrangeChipModifier(removeModifierOnPlay);
-            case Red:
-                return new MakeRedChipModifier(removeModifierOnPlay);
-            case White:
-                return new MakeWhiteChipModifier(removeModifierOnPlay);
-            default:
-                return null;
-        }
     }
 
     protected static AbstractCard getCardToPreview(ChipColor chip) {

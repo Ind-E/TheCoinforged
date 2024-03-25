@@ -3,6 +3,8 @@ package CoinforgedPackage.cards.chips;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+
 public class BlackChip extends BaseChip {
 
     public static final String ID = makeID(BlackChip.class.getSimpleName());
@@ -11,6 +13,7 @@ public class BlackChip extends BaseChip {
     public BlackChip() {
         super(ID, info);
         setMagic(BlackChipValue);
+        this.chipColor = ChipColor.Black;
     }
 
     @Override

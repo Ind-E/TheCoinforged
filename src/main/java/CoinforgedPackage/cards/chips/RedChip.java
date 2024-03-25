@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
+import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+
 public class RedChip extends BaseChip {
 
     public static final String ID = makeID(RedChip.class.getSimpleName());
@@ -17,6 +19,7 @@ public class RedChip extends BaseChip {
         setExhaust(true);
         this.canUse = true;
         setMagic(MAGIC);
+        this.chipColor = ChipColor.Red;
     }
 
     @Override

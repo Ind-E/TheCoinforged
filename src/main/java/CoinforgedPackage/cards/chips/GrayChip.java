@@ -3,6 +3,8 @@ package CoinforgedPackage.cards.chips;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+
 //code for energy on spend in SpendChipsAction
 public class GrayChip extends BaseChip {
 
@@ -10,6 +12,7 @@ public class GrayChip extends BaseChip {
 
     public GrayChip() {
         super(ID, info);
+        this.chipColor = ChipColor.Gray;
     }
 
     @Override

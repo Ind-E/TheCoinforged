@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
+
 public class BlueChip extends BaseChip {
 
     public static final String ID = makeID(BlueChip.class.getSimpleName());
@@ -15,6 +17,7 @@ public class BlueChip extends BaseChip {
         this.cost = this.costForTurn = 0;
         this.canUse = true;
         setBlock(BLOCK);
+        this.chipColor = ChipColor.Blue;
     }
 
     @Override
