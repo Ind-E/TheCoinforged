@@ -29,14 +29,6 @@ public class CasinoCatalyst extends BaseRelic {
         return this.DESCRIPTIONS[0];
     }
 
-    public void atPreBattle() {
-        flash();
-        if (!this.pulse) {
-            beginPulse();
-            this.pulse = true;
-        }
-    }
-
     @Override
     public void atTurnStartPostDraw() {
         if (GameActionManager.turn == 1) {
@@ -50,22 +42,21 @@ public class CasinoCatalyst extends BaseRelic {
 
     @Override
     public void onVictory() {
-        this.pulse = false;
         if (!markedCardPlayedThisCombat && AbstractDungeon.player.hasRelic(LuckRelic.ID)) {
             LuckRelic luckRelic = (LuckRelic) AbstractDungeon.player.getRelic(LuckRelic.ID);
             if (luckRelic != null) {
-                luckRelic.flash();
+                flash();
                 luckRelic.setCounter(luckRelic.getCounter() + 1);
             }
         }
+        this.grayscale = false;
     }
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (markedCardPlayedThisCombat == false && c.hasTag(CustomTags.MARKED)) {
             markedCardPlayedThisCombat = true;
-            this.pulse = false;
-            stopPulse();
+            this.grayscale = true;
         }
     }
 

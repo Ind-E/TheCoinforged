@@ -122,7 +122,7 @@
     ]
   },
   "${modID}:ModifiedHandSizePower": {
-    "NAME": "Modified Hand Size",
+    "NAME": "Hand Size",
     "DESCRIPTIONS": [
       "Max hand size reduced by #b",
       " (minimum 1 card).",
