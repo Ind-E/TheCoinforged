@@ -486,7 +486,7 @@
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",
-    "DESCRIPTION": "Add !M! *Green *Chips into your hand. NL Gain [E] for each ${modID}:Poker_Chip in your hand. NL Exhaust."
+    "DESCRIPTION": "Add !M! *Green *Chips into your hand. NL Gain [E]  for each ${modID}:Poker_Chip in your hand. NL Exhaust."
   },
   "${modID}:DiceShaker": {
     "NAME": "Dice Shaker",

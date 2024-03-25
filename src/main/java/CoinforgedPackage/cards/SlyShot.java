@@ -29,7 +29,7 @@ public class SlyShot extends AbstractCoinforgedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-            addToTop(new DamageHighestHealthEnemyMultipleTimesAction(this.damage, this.magicNumber));
+        addToTop(new DamageHighestHealthEnemyMultipleTimesAction(this.damage, this.magicNumber));
 
     }
 

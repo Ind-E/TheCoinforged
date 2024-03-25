@@ -11,7 +11,8 @@
     "NAME": "Casino Catalyst",
     "FLAVOR": "A mysterious catalyst containing enormous power. Stolen from the Casino.",
     "DESCRIPTIONS": [
-      "At the start of each combat, #y${modID}:Mark a card in hand. If you win a combat without ever playing a #y${modID}:Marked card, increase your #yLuck."
+      "Gains 1 charge after each elite or boss combat. Right click to consume a charge and gain 1 energy. If you win a combat without using any charges, increase your #yLuck",
+      "No Charges Left."
     ]
   }
 }
