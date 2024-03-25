@@ -55,6 +55,7 @@ public class CasinoCatalyst extends BaseRelic {
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (markedCardPlayedThisCombat == false && c.hasTag(CustomTags.MARKED)) {
+            flash();
             markedCardPlayedThisCombat = true;
             this.grayscale = true;
         }

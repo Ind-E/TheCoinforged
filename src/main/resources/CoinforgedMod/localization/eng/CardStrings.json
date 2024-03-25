@@ -456,7 +456,10 @@
   },
   "${modID}:Stash": {
     "NAME": "Stash",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Add a ${modID}:randomized ${modID}:Poker_Chip into your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block."
+    ]
   },
   "${modID}:LowStakes": {
     "NAME": "Low Stakes",
@@ -476,7 +479,10 @@
   },
   "${modID}:ChippedBlade": {
     "NAME": "Chipped Blade",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt."
+    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt. NL Add a ${modID}:randomized ${modID}:Poker_Chip into your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt."
+    ]
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",

@@ -91,6 +91,11 @@ public abstract class AbstractRandomChipCard extends AbstractCoinforgedCard impl
             this.cardsToPreview = getCardToPreview(this.chip);
             CardModifierManager.addModifier(this, getModifier(this.chip, removeModifierOnPlay));
         }
+        if (CardCrawlGame.isInARun()) {
+            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
+            this.initializeDescription();
+        }
+        this.keywords.add("${modID}:Poker_Chip");
     }
 
     protected static AbstractCardModifier getModifier(ChipColor chip, boolean removeModifierOnPlay) {

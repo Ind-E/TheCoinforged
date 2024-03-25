@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import CoinforgedPackage.CoinforgedMain;
 import CoinforgedPackage.util.CardStats;
 
@@ -60,8 +59,8 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     protected boolean baseRetain = false;
     protected boolean upgRetain = false;
 
-    protected float rotationTimer;
-    protected int previewIndex;
+    protected static float rotationTimer;
+    protected static int previewIndex;
     protected ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
     protected boolean isMultiPreview;
     protected ArrayList<CardTags> multiPreviewTags;
@@ -69,7 +68,6 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 
-    //TODO: multi preview doesn't work when single view upgraded
     public AbstractCoinforgedCard(String ID, CardStats info) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, false);
     }
@@ -140,16 +138,18 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     }
 
     public void updatePreview() {
-        if (this.rotationTimer <= 0.0F) {
-            this.rotationTimer = timerDuration;
-            if (this.dupeListForPrev.isEmpty()) {
-                this.cardsToPreview = CardLibrary.cards.get("Madness");
-            } else {
-                this.cardsToPreview = this.dupeListForPrev.get(this.previewIndex);
-            }
-            this.previewIndex = (this.previewIndex + 1) % this.dupeListForPrev.size();
+        previewIndex %= this.dupeListForPrev.size();
+        if (this.dupeListForPrev.isEmpty()) {
+            this.cardsToPreview = CardLibrary.cards.get("Madness");
         } else {
-            this.rotationTimer -= Gdx.graphics.getDeltaTime();
+            this.cardsToPreview = this.dupeListForPrev.get(previewIndex);
+        }
+
+        if (rotationTimer <= 0.0F) {
+            rotationTimer = timerDuration;
+            previewIndex = (previewIndex + 1) % this.dupeListForPrev.size();
+        } else {
+            rotationTimer -= Gdx.graphics.getDeltaTime();
         }
     }
 

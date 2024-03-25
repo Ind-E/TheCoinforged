@@ -1,5 +1,7 @@
 package CoinforgedPackage.modifiers;
 
+import static CoinforgedPackage.util.GeneralUtils.makeKeyword;
+
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -7,7 +9,6 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-import CoinforgedPackage.CoinforgedMain;
 import CoinforgedPackage.cards.CustomTags;
 import basemod.abstracts.AbstractCardModifier;
 
@@ -18,7 +19,7 @@ public class MarkedCardModifier extends AbstractCardModifier {
         if (!card.hasTag(CustomTags.MARKED)) {
             return rawDescription;
         }
-        return CoinforgedMain.modID + ":Marked. NL " + rawDescription;
+        return makeKeyword("Marked") + ". NL " + rawDescription;
     }
 
     @Override

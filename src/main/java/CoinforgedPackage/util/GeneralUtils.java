@@ -3,12 +3,12 @@ package CoinforgedPackage.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
+import CoinforgedPackage.CoinforgedMain;
 import CoinforgedPackage.cards.CustomTags;
 import CoinforgedPackage.cards.chips.BlackChip;
 
@@ -45,14 +45,6 @@ public class GeneralUtils {
         return chips;
     }
 
-    public static Color glowForChip(int chips) {
-        if (getNumChips() > chips) {
-            return Color.GOLD.cpy();
-        } else {
-            return new Color(0.2F, 0.9F, 1.0F, 0.25F);
-        }
-    }
-
     public static AbstractCard generateRandomStatusCard() {
         List<AbstractCard> statusCards = new ArrayList<>();
 
@@ -68,5 +60,9 @@ public class GeneralUtils {
             return randomStatusCard;
         }
         throw new RuntimeException("No Status cards found");
+    }
+
+    public static String makeKeyword(String keyword) {
+        return CoinforgedMain.modID + ":" + keyword;
     }
 }

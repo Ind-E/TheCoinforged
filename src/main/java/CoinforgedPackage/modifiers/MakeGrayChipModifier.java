@@ -1,5 +1,7 @@
 package CoinforgedPackage.modifiers;
 
+import static CoinforgedPackage.util.GeneralUtils.makeKeyword;
+
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +24,7 @@ public class MakeGrayChipModifier extends AbstractCardModifier {
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
 
-        return rawDescription + " NL Add a Gray Chip into your hand.";
+        return rawDescription + " NL Add a " + makeKeyword("Gray_Chip") + " into your hand.";
     }
 
     @Override

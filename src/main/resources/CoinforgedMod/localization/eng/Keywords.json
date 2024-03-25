@@ -77,8 +77,31 @@
     "NAMES": [
       "poker chip",
       "poker_chip",
-      "poker_chips"
+      "poker_chips",
+      "black_chip",
+      "black_chips",
+      "blue_chip",
+      "blue_chips",
+      "cracked_chip",
+      "cracked_chips",
+      "gray_chip",
+      "gray_chips",
+      "green_chip",
+      "green_chips",
+      "orange_chip",
+      "orange_chips",
+      "red_chip",
+      "red_chips",
+      "white_chip",
+      "white_chips"
     ],
     "DESCRIPTION": "Whenever a #yPoker #yChip is drawn, draw a card. #yPoker #yChips can be spent for extra effects and can't be upgraded."
+  },
+  {
+    "PROPER_NAME": "Randomized",
+    "NAMES": [
+      "randomized"
+    ],
+    "DESCRIPTION": "When this card is created, the color of #yPoker #yChip it adds into your hand is randomized. Different cards have different probabilities of each color."
   }
 ]

@@ -8,19 +8,17 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
 
-//TODO: adjust color weights, add description for compendium.
-public class Stash extends AbstractRandomChipCard{
+public class Stash extends AbstractRandomChipCard {
     private static final int BLOCK = 8;
     private static final int UPG_BLOCK = 3;
 
     public static final String ID = makeID(Stash.class.getSimpleName());
     private static final CardStats info = new CardStats(
-        Coinforged.Enums.CARD_COLOR, 
-        CardType.SKILL,
-        CardRarity.COMMON,
-        CardTarget.SELF,
-        1
-    );
+            Coinforged.Enums.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.COMMON,
+            CardTarget.SELF,
+            1);
 
     public Stash() {
         super(ID, info, initializeChipWeights(), false);
@@ -34,14 +32,14 @@ public class Stash extends AbstractRandomChipCard{
 
     private static HashMap<ChipColor, Integer> initializeChipWeights() {
         HashMap<ChipColor, Integer> chipWeights = new HashMap<>();
-        chipWeights.put(ChipColor.Black, 1);
-        chipWeights.put(ChipColor.Blue, 0);
-        chipWeights.put(ChipColor.Cracked, 0);
-        chipWeights.put(ChipColor.Gray, 0);
-        chipWeights.put(ChipColor.Green, 0);
-        chipWeights.put(ChipColor.Orange, 0);
-        chipWeights.put(ChipColor.Red, 0);
-        chipWeights.put(ChipColor.White, 0);
+        chipWeights.put(ChipColor.Black, 2);
+        chipWeights.put(ChipColor.Blue, 3);
+        chipWeights.put(ChipColor.Cracked, 1);
+        chipWeights.put(ChipColor.Gray, 4);
+        chipWeights.put(ChipColor.Green, 8);
+        chipWeights.put(ChipColor.Orange, 2);
+        chipWeights.put(ChipColor.Red, 3);
+        chipWeights.put(ChipColor.White, 4);
         return chipWeights;
     }
 
