@@ -8,8 +8,8 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.CripplingDebtPower;
 
 public class DownPayment extends AbstractCoinforgedCard{
-    private static final int MAGIC = 10;
-    private static final int UPG_MAGIC = 4;
+    private static final int MAGIC = 15;
+    private static final int UPG_MAGIC = 5;
 
     public static final String ID = makeID(DownPayment.class.getSimpleName());
     private static final CardStats info = new CardStats(

@@ -422,7 +422,7 @@
   },
   "${modID}:UnleashedStrategy": {
     "NAME": "Unleashed Strategy",
-    "DESCRIPTION": "Increase your max hand size by !M!. Draw !M! cards. Gain [E] for every 3 cards in hand. NL Exhaust."
+    "DESCRIPTION": "Increase your max hand size by !M!. Draw !M! cards. Gain [E]  for every 3 cards in hand. NL Exhaust."
   },
   "${modID}:GameChanger": {
     "NAME": "Game Changer",

@@ -3,6 +3,7 @@ package CoinforgedPackage.relics;
 import static CoinforgedPackage.CoinforgedMain.makeID;
 
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
@@ -46,6 +47,7 @@ public class CasinoCatalyst extends BaseRelic implements ClickableRelic {
             return;
         }
         addToBot(new GainEnergyAction(1));
+        addToBot(new DrawCardAction(1));
         flash();
         setCounter(counter - 1);
         this.usedThisCombat = true;

@@ -12,6 +12,7 @@ import CoinforgedPackage.actions.HighCardAction;
 import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.util.CardStats;
 
+//TODO: rework
 public class HighCard extends AbstractCoinforgedCard {
     private static final int DAMAGE = 12;
     private static final int MAGIC = 12;

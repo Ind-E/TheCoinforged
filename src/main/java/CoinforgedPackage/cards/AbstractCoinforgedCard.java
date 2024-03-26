@@ -64,7 +64,7 @@ public abstract class AbstractCoinforgedCard extends CustomCard {
     protected ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
     protected boolean isMultiPreview;
     protected ArrayList<CardTags> multiPreviewTags;
-    protected float timerDuration = 1.25F;
+    protected float timerDuration = 1.5F;
 
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 

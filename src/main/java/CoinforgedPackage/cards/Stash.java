@@ -32,7 +32,7 @@ public class Stash extends AbstractRandomChipCard {
 
     private static HashMap<ChipColor, Integer> initializeChipWeights() {
         HashMap<ChipColor, Integer> chipWeights = new HashMap<>();
-        chipWeights.put(ChipColor.Black, 2);
+        chipWeights.put(ChipColor.Black, 1);
         chipWeights.put(ChipColor.Blue, 3);
         chipWeights.put(ChipColor.Cracked, 1);
         chipWeights.put(ChipColor.Gray, 4);

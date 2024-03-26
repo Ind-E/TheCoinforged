@@ -58,7 +58,11 @@ public class ChipModifier extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + " NL Add a " + makeKeyword(color.toString() + "_Chip") + " into your hand.";
+        if (removeOnCardPlayed) {
+            return rawDescription + " NL " + makeKeyword("Initiate:") + " Add a " + makeKeyword(color.toString() + "_Chip") + " into your hand.";
+        } else {
+            return rawDescription + " NL Add a " + makeKeyword(color.toString() + "_Chip") + " into your hand.";
+        }
     }
 
     @Override

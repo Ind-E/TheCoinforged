@@ -13,6 +13,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.DrawbackPlayerPower;
 import CoinforgedPackage.powers.DrawbackPower;
 
+//TODO: change to: whenever you are attacked this turn, draw a card.
 public class Melon extends AbstractCoinforgedCard {
     private static final int BLOCK = 13;
     private static final int UPG_BLOCK = 4;

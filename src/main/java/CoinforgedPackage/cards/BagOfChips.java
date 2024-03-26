@@ -24,7 +24,6 @@ public class BagOfChips extends AbstractCoinforgedCard{
         super(ID, info, true);
         this.cardsToPreview = new WhiteChip();
         setCostUpgrade(0);
-        this.timerDuration = 1.75f;
         setExhaust(true);
     }
 

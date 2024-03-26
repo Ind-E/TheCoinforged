@@ -16,7 +16,7 @@ import basemod.helpers.CardModifierManager;
 
 public abstract class RedDieBase extends AbstractCoinforgedCard {
     private static final int DAMAGE = 99;
-    private static final int UPG_DAMAGE = 3;
+    private static final int UPG_DAMAGE = 2;
 
     public static final String ID = makeID(RedDieBase.class.getSimpleName());
     public static final CardStats info = new CardStats(
