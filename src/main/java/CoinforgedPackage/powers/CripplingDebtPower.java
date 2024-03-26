@@ -54,7 +54,7 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
 
     @Override
     public Color getColor() {
-        return Color.SKY;
+        return Color.NAVY;
     }
 
     @Override
