@@ -11,7 +11,7 @@
     "NAME": "Casino Catalyst",
     "FLAVOR": "A mysterious catalyst containing enormous power. Stolen from the Casino.",
     "DESCRIPTIONS": [
-      "Right click to gain [E] and draw a card, consuming a charge. Gains #b1 charge after Boss or Elite combats.  If you win a combat without using any charges, increase your #yLuck.",
+      "Right click to gain [E] and draw a card, consuming a charge. Gains #b1 charge after Boss or Elite combats. If you win a combat without using any charges, increase your #yLuck.",
       "No Charges Left."
     ]
   }

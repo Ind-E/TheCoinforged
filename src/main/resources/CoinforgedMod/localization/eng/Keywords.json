@@ -66,13 +66,6 @@
     "DESCRIPTION": "If you have a certain number of #yPoker #yChips in hand, discard them for an extra effect. Chips are spent from left to right."
   },
   {
-    "PROPER_NAME": "Drawback",
-    "NAMES": [
-      "drawback"
-    ],
-    "DESCRIPTION": "When attacked, draw a card and reduce this by #b1."
-  },
-  {
     "PROPER_NAME": "Poker Chip",
     "NAMES": [
       "poker chip",

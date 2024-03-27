@@ -31,7 +31,7 @@ public class TrickstersMark extends AbstractCoinforgedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractMonster r = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-        if (r != null) {
+        if (r != null && !r.isDeadOrEscaped()) {
             addToBot(new ApplyPowerAction(r, p, new VulnerablePower(r, this.magicNumber, false), this.magicNumber));
             addToBot(new ApplyPowerAction(r, p, new WeakPower(r, this.magicNumber, false), this.magicNumber));
         }

@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 
 public class BrokenBottle extends AbstractCoinforgedCard {
     private static final int DAMAGE = 6;
+    private static final int UPG_DAMAGE = 2;
     private static final int X_COST = -1;
     private static final int GLASS_SHARD = 1;
-    private static final int UPG_GLASS_SHARD = 1;
 
     public static final String ID = makeID(BrokenBottle.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -27,8 +27,8 @@ public class BrokenBottle extends AbstractCoinforgedCard {
 
     public BrokenBottle() {
         super(ID, info);
-        setDamage(DAMAGE);
-        setMagic(GLASS_SHARD, UPG_GLASS_SHARD);
+        setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(GLASS_SHARD);
         this.damageType = this.damageTypeForTurn = DamageInfo.DamageType.NORMAL;
         this.cardsToPreview = new GlassShard();
     }

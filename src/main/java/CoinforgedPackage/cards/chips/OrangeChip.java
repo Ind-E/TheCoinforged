@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
 import CoinforgedPackage.powers.ModifiedHandSizePower;
 
+//TODO: rebalance
 public class OrangeChip extends BaseChip {
 
     public static final String ID = makeID(OrangeChip.class.getSimpleName());

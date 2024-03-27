@@ -10,11 +10,11 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.GamblePower;
 import CoinforgedPackage.util.CardStats;
 
-public class RiskyInvestment extends AbstractCoinforgedCard {
+public class GoldenGamble extends AbstractCoinforgedCard {
     private static final int GOLD_GAIN = 75;
     private static final int UPG_GOLD_GAIN = 25;
 
-    public static final String ID = makeID(RiskyInvestment.class.getSimpleName());
+    public static final String ID = makeID(GoldenGamble.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Coinforged.Enums.CARD_COLOR,
             CardType.SKILL,
@@ -22,7 +22,7 @@ public class RiskyInvestment extends AbstractCoinforgedCard {
             CardTarget.NONE,
             1);
 
-    public RiskyInvestment() {
+    public GoldenGamble() {
         super(ID, info);
         setMagic(GOLD_GAIN, UPG_GOLD_GAIN);
         setExhaust(true);
@@ -36,6 +36,6 @@ public class RiskyInvestment extends AbstractCoinforgedCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new RiskyInvestment();
+        return new GoldenGamble();
     }
 }

@@ -43,8 +43,6 @@ public class BrokenBottleAction extends AbstractGameAction {
             if (!this.freeToPlayOnce)
                 this.p.energy.use(EnergyPanel.totalCount);
         }
-        // addToBot(new ApplyPowerAction(target, p, new VulnerablePower(target, effect +
-        // 1, false)));
         this.isDone = true;
     }
 }

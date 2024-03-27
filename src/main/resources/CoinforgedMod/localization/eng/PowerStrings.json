@@ -181,17 +181,26 @@
       " damage to a random enemy."
     ]
   },
-  "${modID}:DrawbackPlayerPower": {
-    "NAME": "Drawback",
+  "${modID}:MelonPower": {
+    "NAME": "Melon",
     "DESCRIPTIONS": [
-      "When attacked, draw a card and reduce this by #b1."
+      "When attacked, draw a card."
     ]
   },
   "${modID}:GoForBrokePower": {
     "NAME": "Gone Broke",
     "DESCRIPTIONS": [
       "Whenever you play a card, apply #b",
-      " #yCrippling #yDebt to ALL enemies."
+      " #yCrippling #yDebt to a random enemy and increase this by #b",
+      ". Resets to #b",
+      " each turn."
+    ]
+  },
+  "${modID}:DangerousInvestmentPower": {
+    "NAME": "Invested",
+    "DESCRIPTIONS": [
+      "While this enemy is alive, gain",
+      "at the start of your turn"
     ]
   }
 }

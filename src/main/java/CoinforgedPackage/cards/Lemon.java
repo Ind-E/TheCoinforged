@@ -1,15 +1,14 @@
 package CoinforgedPackage.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import CoinforgedPackage.util.CardStats;
 import CoinforgedPackage.character.Coinforged;
-import CoinforgedPackage.powers.DrawbackPower;
 
+//TODO: remove drawback
 public class Lemon extends AbstractCoinforgedCard{
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 2;
@@ -34,6 +33,5 @@ public class Lemon extends AbstractCoinforgedCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new ApplyPowerAction(m, p, new DrawbackPower(m, this.magicNumber), this.magicNumber));
     }
 }

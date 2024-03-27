@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import CoinforgedPackage.cards.AbstractRandomChipCard.ChipColor;
 
+//TODO: rebalance
 public class RedChip extends BaseChip {
 
     public static final String ID = makeID(RedChip.class.getSimpleName());

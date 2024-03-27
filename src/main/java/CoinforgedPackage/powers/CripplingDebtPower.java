@@ -28,7 +28,7 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atEndOfRound() {
         flashWithoutSound();
         this.stackPower((int) Math.max(1, Math.round(this.amount * 0.25)));
     }
@@ -54,7 +54,7 @@ public class CripplingDebtPower extends BasePower implements HealthBarRenderPowe
 
     @Override
     public Color getColor() {
-        return Color.NAVY;
+        return new Color(53f / 255f, 65f / 255f, 100f / 255f, 1f);
     }
 
     @Override

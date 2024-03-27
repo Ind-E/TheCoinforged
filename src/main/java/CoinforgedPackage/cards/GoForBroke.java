@@ -8,8 +8,7 @@ import CoinforgedPackage.character.Coinforged;
 import CoinforgedPackage.powers.GoForBrokePower;
 
 public class GoForBroke extends AbstractCoinforgedCard{
-    private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 0;
+    private static final int MAGIC = 1;
 
     public static final String ID = makeID(GoForBroke.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -17,17 +16,17 @@ public class GoForBroke extends AbstractCoinforgedCard{
         CardType.POWER,
         CardRarity.RARE,
         CardTarget.SELF,
-        1
+        2
     );
 
     public GoForBroke() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
-        setCostUpgrade(0);
+        setMagic(MAGIC);
+        setCostUpgrade(1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new GoForBrokePower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new GoForBrokePower(p, this.magicNumber), this.magicNumber));
     }
 }

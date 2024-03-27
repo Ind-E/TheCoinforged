@@ -16,8 +16,8 @@
     "DESCRIPTION": "${modID}:Chip X: Enemey loses X Strength. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "${modID}:Chip X: Enemy loses X+1 Strength. NL Exhaust."
   },
-  "${modID}:RiskyInvestment": {
-    "NAME": "Risky Investment",
+  "${modID}:GoldenGamble": {
+    "NAME": "Golden Gamble",
     "DESCRIPTION": "Lose 10 Gold. NL If you win next turn, gain !M! Gold. NL Exhaust."
   },
   "${modID}:RedOne": {
@@ -82,7 +82,7 @@
   },
   "${modID}:SnakeEyes": {
     "NAME": "Snake Eyes",
-    "DESCRIPTION": "*Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer. NL Ethereal.",
+    "DESCRIPTION": "NL Ethereal. *Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer.",
     "UPGRADE_DESCRIPTION": "*Die Rolls are 1 for 2 turns. NL Gain 1 *Buffer."
   },
   "${modID}:RedKing": {
@@ -203,7 +203,7 @@
   },
   "${modID}:MaxedOut": {
     "NAME": "Maxed Out",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E] [E]."
   },
   "${modID}:CoinBarrage": {
     "NAME": "Coin Barrage",
@@ -413,8 +413,7 @@
   },
   "${modID}:BrokenBottle": {
     "NAME": "Broken Bottle",
-    "DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shard into your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shards into your hand."
+    "DESCRIPTION": "Deal !D! damage X times. NL Add !M! *Glass *Shard into your hand."
   },
   "${modID}:LoadedDice": {
     "NAME": "Loaded Dice",
@@ -422,7 +421,7 @@
   },
   "${modID}:UnleashedStrategy": {
     "NAME": "Unleashed Strategy",
-    "DESCRIPTION": "Increase your max hand size by !M!. Draw !M! cards. Gain [E]  for every 3 cards in hand. NL Exhaust."
+    "DESCRIPTION": "Increase your max hand size by !M!. Draw !M! cards. Gain [E] \u00a0for every 3 cards in hand. NL Exhaust."
   },
   "${modID}:GameChanger": {
     "NAME": "Game Changer",
@@ -479,10 +478,7 @@
   },
   "${modID}:ChippedBlade": {
     "NAME": "Chipped Blade",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt. NL Add a ${modID}:randomized ${modID}:Poker_Chip into your hand.",
-    "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage. Apply !M! ${modID}:Crippling_Debt."
-    ]
+    "DESCRIPTION": "Apply !M! ${modID}:Crippling_Debt. NL Apply !${modID}:W! Weak."
   },
   "${modID}:BuyIn": {
     "NAME": "Buy In",
@@ -502,11 +498,11 @@
   },
   "${modID}:Melon": {
     "NAME": "Melon",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${modID}:Drawback to EVERYONE."
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, draw a card."
   },
   "${modID}:CoinFlick": {
     "NAME": "Coin Flick",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Drawback. Shuffle a copy of this card into your draw pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL When you play a 2+ cost card, return this from the discard pile to your hand and increase this card's damage by the cost of the card played"
   },
   "${modID}:Cherry": {
     "NAME": "Cherry",
@@ -521,7 +517,7 @@
   },
   "${modID}:Blitz": {
     "NAME": "Blitz",
-    "DESCRIPTION": "You cannot draw additional cards this turn. Whenever you attack this turn, gain [E]."
+    "DESCRIPTION": "Whenever you attack this turn, gain [E]. You cannot draw additional cards this turn."
   },
   "${modID}:Anticipate": {
     "NAME": "Anticipate",
@@ -578,11 +574,34 @@
   },
   "${modID}:GoForBroke": {
     "NAME": "Go For Broke",
-    "DESCRIPTION": "Whenever you play a card, apply 1 ${modID}:Crippling_Debt to ALL enemies."
+    "DESCRIPTION": "Whenever you play a card, apply !M! ${modID}:Crippling_Debt to a random enemy and increase this by 1. Resets each turn."
   },
   "${modID}:Reevaluate": {
     "NAME": "Reevaluate",
     "DESCRIPTION": "Discard a card. Gain Block equal to its damage. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Discard a card. Gain Block equal to its damage."
+  },
+  "${modID}:DangerousInvestment": {
+    "NAME": "Dangerous Investment",
+    "DESCRIPTION": "Enemy gains !M! Strength. While they are alive, gain [E] \u00a0at the start of your turn.",
+    "UPGRADE_DESCRIPTION": "Enemy gains !M! Strength. While they are alive, gain [E] [E] \u00a0at the start of your turn."
+  },
+  "${modID}:CollectorsBlade": {
+    "NAME": "Collector's Blade",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has ${modID}:Crippling_Debt or Artifact, gain [E] and apply !M! Vulnerable."
+  },
+  "${modID}:Bond": {
+    "NAME": "Bond",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When Retained, increase its damage by 50% this combat. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Retain. NL Deal X damage. NL When Retained, increase its damage by 50% this combat. NL Exhaust."
+    ]
+  },
+  "${modID}:DebtTransfer": {
+    "NAME": "Debt Transfer",
+    "DESCRIPTION": "Remove all ${modID}:Crippling_Debt from target enemy and add a *Bond into your hand that deals that much damage.",
+    "EXTENDED_DESCRIPTION": [
+      "Enemy has no #rCrippling #rDebt."
+    ]
   }
 }
